@@ -3,109 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio – Didin S.</title>
+  <title>Selamat Datang – Didin S.</title>
 
-  <!-- CSS global (nanti kita buat file-nya) -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
-  <!-- HEADER / NAVBAR -->
-  <header>
-    <div class="container">
-      <div class="brand">
-        <a href="#home" class="brand-link">
-          <!-- nanti bisa diisi logo / inisial -->
-          <span class="brand-mark">DS</span>
-          <span class="brand-text">Didin S.</span>
-        </a>
-      </div>
+  <!-- HEADER (dipakai di semua halaman) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">DS</span>
+        <span class="brand-text">Didin S.</span>
+      </a>
 
       <nav class="main-nav">
         <ul>
-          <li><a href="#profil">Profil</a></li>
-          <li><a href="#skill">Skill</a></li>
-          <li><a href="#airdrop">Airdrop</a></li>
-          <li><a href="#social-donasi">Social Media & Donasi</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="skill.html">Skill</a></li>
+          <li><a href="airdrop.html">Airdrop</a></li>
+          <li><a href="social.html">Social Media</a></li>
+          <li><a href="donasi.html">Donasi</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <!-- SECTION: SELAMAT DATANG / HERO -->
-    <section id="welcome" class="section section-welcome">
+  <!-- HALAMAN UTAMA SEDERHANA -->
+  <main class="page page-home">
+    <section class="section section-welcome">
       <div class="container">
-        <div class="welcome-content">
-          <h1>Selamat datang di portfolio saya</h1>
-          <p>
-            Sedikit intro singkat tentang siapa kamu, fokus kamu (Web & UI Designer, Front-end, dll),
-            dan apa yang pengunjung bisa temukan di website ini.
-          </p>
-          <!-- nanti bisa tambah tombol ke profil / kontak -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION: PROFIL -->
-    <section id="profil" class="section section-profil">
-      <div class="container">
-        <h2>Profil</h2>
+        <h1>Selamat datang di website saya</h1>
         <p>
-          Di bagian ini nanti berisi cerita tentang kamu: latar belakang, pengalaman singkat,
-          dan apa yang sedang kamu kerjakan sekarang.
+          Ini adalah halaman utama. Di sini bisa kamu isi sambutan singkat,
+          misalnya siapa kamu dan apa yang bisa pengunjung temukan di menu di atas.
         </p>
-        <!-- nanti bisa tambah foto profil + detail lainnya -->
-      </div>
-    </section>
-
-    <!-- SECTION: SKILL -->
-    <section id="skill" class="section section-skill">
-      <div class="container">
-        <h2>Skill</h2>
         <p>
-          Penjelasan umum skill kamu, lalu di bawahnya nanti bisa kita buat list / card skill
-          (contoh: UI Design, HTML/CSS, Front-end, dsb).
+          Untuk melihat detail profil dan hero utama, silakan klik menu <strong>Profil</strong>.
         </p>
-        <!-- di sini nanti ada daftar skill, bar, atau card -->
-      </div>
-    </section>
-
-    <!-- SECTION: AIRDROP -->
-    <section id="airdrop" class="section section-airdrop">
-      <div class="container">
-        <h2>Airdrop</h2>
-        <p>
-          Bagian khusus untuk airdrop: bisa isi daftar campaign, catatan, link form, atau tutorial
-          cara ikut airdrop yang kamu rekomendasikan.
-        </p>
-        <!-- nanti bisa tambah tabel / card airdrop -->
-      </div>
-    </section>
-
-    <!-- SECTION: SOCIAL MEDIA & DONASI -->
-    <section id="social-donasi" class="section section-social-donasi">
-      <div class="container">
-        <h2>Social Media & Donasi</h2>
-        <p>
-          Di sini nanti ada link ke social media kamu (Instagram, X, Telegram, dsb)
-          dan informasi untuk dukungan/donasi (QRIS, wallet, dll).
-        </p>
-        <!-- nanti kita buat list social + card donasi -->
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- FOOTER (dipakai di semua halaman) -->
+  <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Didin S. · All rights reserved.</p>
+      <p>© <span id="year"></span> Didin S. · didinska.my.id</p>
     </div>
   </footer>
 
-  <!-- JS utama (nanti kita isi animasi di sini) -->
   <script src="js/main.js" defer></script>
 </body>
 </html>
