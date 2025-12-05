@@ -1,10 +1,1244 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Selamat Datang di didinska.my.id</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Didin S.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: rgba(15, 23, 42, 0.82);
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.25);
+      --accent-strong: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.25);
+      --radius-xl: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --transition-fast: 0.18s ease-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 40%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      mix-blend-mode: soft-light;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-symbol {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: conic-gradient(from 140deg, #22d3ee, #a855f7, #f97316, #22d3ee);
+      padding: 2px;
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.5);
+    }
+
+    .logo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-text span:first-child {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--transition-fast);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #22d3ee, #a855f7);
+      transition: width var(--transition-fast);
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn-small {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+      transition: all var(--transition-fast);
+    }
+
+    .btn-small span {
+      font-size: 1rem;
+    }
+
+    .btn-small:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 2.7rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #f97316, #facc15);
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(120deg, #22d3ee, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(120deg, #22d3ee, #a855f7);
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      color: #0b1120;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 18px 40px rgba(59, 130, 246, 0.55);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 22px 55px rgba(37, 99, 235, 0.75);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      padding: 0.7rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-ghost:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 26px;
+      padding: 1.1rem 1.1rem 1.2rem;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12) 0, rgba(15, 23, 42, 0.98) 42%, #020617 100%);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.28rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #f97316;
+    }
+
+    .dot:nth-child(2) {
+      background: #facc15;
+    }
+
+    .dot:nth-child(3) {
+      background: #22c55e;
+    }
+
+    .tag {
+      font-size: 0.68rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-figure {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), rgba(15, 23, 42, 1));
+      padding: 0.75rem;
+    }
+
+    .hero-figure-inner {
+      border-radius: 16px;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      min-height: 220px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1.1rem;
+    }
+
+    .hero-preview-main {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-preview-main h2 {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-preview-main p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 0.9rem;
+      font-size: 0.7rem;
+    }
+
+    .metric {
+      flex: 1;
+      padding: 0.55rem 0.65rem;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+    }
+
+    .metric span {
+      display: block;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    .metric strong {
+      font-size: 0.95rem;
+    }
+
+    .hero-preview-side {
+      border-left: 1px solid rgba(30, 64, 175, 0.65);
+      padding: 0.9rem 0.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.18), transparent);
+    }
+
+    .stack-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .stack-item {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+    }
+
+    .hero-badge-floating {
+      position: absolute;
+      right: -10px;
+      bottom: -8px;
+      transform: translateY(-15%);
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      box-shadow: 0 18px 45px rgba(8, 47, 73, 0.8);
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #22c55e, #16a34a);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
+    }
+
+    /* SECTION TITLES */
+
+    .section-header {
+      margin-bottom: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .section-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 0.85rem;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.7);
+      border-color: rgba(56, 189, 248, 0.8);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.22), rgba(15, 23, 42, 0.98));
+    }
+
+    .project-thumb {
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(15, 23, 42, 1));
+      height: 120px;
+      margin-bottom: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(120deg, rgba(56, 189, 248, 0.15), transparent 40%, rgba(147, 51, 234, 0.18));
+      mix-blend-mode: screen;
+    }
+
+    .project-meta {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.7rem;
+    }
+
+    .project-tag {
+      padding: 0.2rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.93);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .project-link {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.8rem;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--accent);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .skills-card, .timeline-card {
+      border-radius: var(--radius-xl);
+      background: var(--bg-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      padding: 1rem;
+    }
+
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .skills-bars {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .skill-row {
+      font-size: 0.78rem;
+    }
+
+    .skill-row span {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.2rem;
+      color: var(--muted);
+    }
+
+    .bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 1);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #22d3ee, #a855f7);
+      width: 0;
+      transition: width 1s ease-out;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.7rem;
+      align-items: flex-start;
+    }
+
+    .timeline-dot-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .timeline-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+    }
+
+    .timeline-line {
+      flex: 1;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(148, 163, 184, 0.65), transparent);
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+    }
+
+    .timeline-meta {
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.4rem;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-xl);
+      padding: 1.1rem;
+      background: var(--bg-soft);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin: 0.6rem 0;
+    }
+
+    .contact-row span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    label {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.55rem 0.7rem;
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .skills-grid,
+      .contact {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding-inline: 1rem;
+      }
+      header {
+        margin-bottom: 2rem;
+      }
+      nav {
+        display: none; /* simple: hide nav di mobile */
+      }
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-meta {
+        gap: 0.9rem;
+      }
+      .hero-card {
+        margin-top: 0.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Halo! Website ini sudah online.</h1>
-  <p>Website gratis dengan GitHub Pages + domain IDwebhost.</p>
+  <div class="noise"></div>
+
+  <main>
+    <header>
+      <div class="logo">
+        <div class="logo-symbol">
+          <div class="logo-inner">DS</div> <!-- Ganti inisialmu -->
+        </div>
+        <div class="logo-text">
+          <span>Didin S.</span> <!-- Ganti namamu -->
+          <span>Creative Web & UI Designer</span> <!-- Ganti role -->
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-small" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          <span>✉</span> Hire Me
+        </button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Available for freelance & remote work
+        </div>
+        <h1>Web & UI Designer<br><span>yang fokus pada detail dan pengalaman pengguna.</span></h1>
+        <p class="hero-sub">
+          Saya membantu brand, bisnis kecil, dan personal membangun tampilan digital yang modern,
+          rapi, dan mudah dipakai. Mulai dari landing page, portofolio, hingga website company profile.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            Lihat Project Terbaru →
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            Download / Lihat CV
+          </button>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>3+ Tahun</strong>
+            pengalaman ngulik UI/UX & web
+          </div>
+          <div>
+            <strong>20+ Project</strong>
+            website & desain digital
+          </div>
+          <div>
+            <strong>Indonesia</strong>
+            siap kerja remote worldwide
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="dots">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <span>Live Preview</span>
+            <span class="tag">Portfolio Dashboard</span>
+          </div>
+
+          <div class="hero-figure">
+            <div class="hero-figure-inner">
+              <div class="hero-preview-main">
+                <div>
+                  <h2>Design Portfolio – 2025</h2>
+                  <p>Clean layout, micro-interactions, and responsive components for modern brands.</p>
+                  <div class="pill-row">
+                    <span class="pill">Landing Page</span>
+                    <span class="pill">Dashboard</span>
+                    <span class="pill">Portfolio</span>
+                  </div>
+                </div>
+                <div class="hero-metrics">
+                  <div class="metric">
+                    <span>Avg. project rating</span>
+                    <strong>4.9/5</strong>
+                  </div>
+                  <div class="metric">
+                    <span>On-time delivery</span>
+                    <strong>98%</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-preview-side">
+                <div>
+                  <div class="stack-label">Tech & Tools</div>
+                  <div class="stack-list">
+                    <span class="stack-item">Figma</span>
+                    <span class="stack-item">HTML</span>
+                    <span class="stack-item">CSS</span>
+                    <span class="stack-item">Tailwind vibes</span>
+                    <span class="stack-item">Framer feel</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="stack-label">Fokus desain</div>
+                  <div class="stack-list">
+                    <span class="stack-item">Clean UI</span>
+                    <span class="stack-item">Strong Grid</span>
+                    <span class="stack-item">Smooth Interaction</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-badge-floating">
+            <span class="hero-badge-dot"></span>
+            <span>Open to collaboration & interesting projects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-kicker">Selected work</span>
+          <h2 class="section-title">Project pilihan yang paling aku banggakan.</h2>
+        </div>
+        <p class="section-sub">
+          Ini beberapa contoh landing page, dashboard, dan website yang pernah saya desain & kembangkan.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <span class="project-link">Live</span>
+          <div class="project-thumb">
+            <div class="project-thumb-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span>2024 • Landing Page</span>
+            <span>Fintech Startup</span>
+          </div>
+          <h3 class="project-title">HaloPay – Modern Payment Experience</h3>
+          <p class="project-desc">
+            Landing page dengan fokus pada konversi, tipografi kuat, dan ilustrasi yang minimalis.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Hero design</span>
+            <span class="project-tag">Pricing section</span>
+            <span class="project-tag">Conversion-focused</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <span class="project-link">Case Study</span>
+          <div class="project-thumb">
+            <div class="project-thumb-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span>2023 • Dashboard</span>
+            <span>Analytic SaaS</span>
+          </div>
+          <h3 class="project-title">Insightly – Analytics Dashboard</h3>
+          <p class="project-desc">
+            Desain dashboard data yang tetap kelihatan simple walaupun informasinya kompleks.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Dark UI</span>
+            <span class="project-tag">Data viz</span>
+            <span class="project-tag">Responsive grid</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <span class="project-link">Coming soon</span>
+          <div class="project-thumb">
+            <div class="project-thumb-overlay"></div>
+          </div>
+          <div class="project-meta">
+            <span>2025 • Portfolio</span>
+            <span>Personal brand</span>
+          </div>
+          <h3 class="project-title">Personal Brand Visual System</h3>
+          <p class="project-desc">
+            Sistem desain yang konsisten untuk social media, website, dan materi promosi offline.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Design system</span>
+            <span class="project-tag">Component-based</span>
+            <span class="project-tag">Branding</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS & TIMELINE -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-kicker">Skills & experience</span>
+          <h2 class="section-title">Tools yang sering dipakai & jalur belajarku.</h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-card">
+          <p class="section-sub" style="margin-bottom:0.9rem">
+            Fokus utama saya adalah menggabungkan desain yang rapi dengan implementasi front-end yang bersih.
+          </p>
+          <div class="skills-chips">
+            <span class="chip">Figma</span>
+            <span class="chip">Wireframing</span>
+            <span class="chip">Prototype</span>
+            <span class="chip">HTML / CSS</span>
+            <span class="chip">Responsive layout</span>
+            <span class="chip">Component thinking</span>
+            <span class="chip">Design system</span>
+          </div>
+
+          <div class="skills-bars">
+            <div class="skill-row">
+              <span><strong>UI Design</strong><span>90%</span></span>
+              <div class="bar"><div class="bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-row">
+              <span><strong>Front-end (HTML/CSS)</strong><span>80%</span></span>
+              <div class="bar"><div class="bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-row">
+              <span><strong>UX & Research</strong><span>70%</span></span>
+              <div class="bar"><div class="bar-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot-wrap">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div>
+                <div class="timeline-title">Freelance Web & UI Designer</div>
+                <div class="timeline-meta">2022 – Sekarang · Remote</div>
+                <p>Mengerjakan landing page, dashboard, dan portofolio untuk klien lokal maupun internasional.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot-wrap">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line"></div>
+              </div>
+              <div>
+                <div class="timeline-title">Front-end Enthusiast</div>
+                <div class="timeline-meta">2021 – 2022 · Self-taught</div>
+                <p>Belajar HTML, CSS, dan dasar JavaScript untuk menerjemahkan desain ke website nyata.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot-wrap">
+                <div class="timeline-dot"></div>
+                <div class="timeline-line" style="background:transparent"></div>
+              </div>
+              <div>
+                <div class="timeline-title">Start: Figma & Design</div>
+                <div class="timeline-meta">2019 – 2021</div>
+                <p>Mulai tertarik dengan desain antarmuka dan membuat konsep UI untuk aplikasi & website.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-kicker">About</span>
+          <h2 class="section-title">Sedikit cerita tentang saya.</h2>
+        </div>
+      </div>
+
+      <div class="contact-card" style="margin-bottom:1.2rem">
+        <p>
+          Saya adalah seorang <strong>web & UI designer</strong> yang suka menggabungkan estetika dan fungsi.
+          Buat saya, desain yang bagus itu bukan cuma kelihatan keren, tapi juga memudahkan orang mencapai tujuan mereka.
+        </p>
+        <p>
+          Di luar desain, saya tertarik dengan teknologi, produktivitas, dan cara membuat pengalaman digital yang terasa
+          “ringan dan menyenangkan” untuk dipakai.
+        </p>
+        <p>
+          Kalau kamu butuh seseorang untuk bantu merapikan tampilan website atau membuat landing page yang kelihatan
+          profesional, kita bisa ngobrol dulu tanpa komitmen apa pun. 🙂
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-kicker">Let’s work together</span>
+          <h2 class="section-title">Tertarik kerja sama atau sekadar say hi?</h2>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card">
+          <p>
+            Kirim pesan lewat form di samping atau langsung ke salah satu kontak di bawah.
+            Saya biasanya membalas dalam waktu 24 jam di hari kerja.
+          </p>
+          <div class="contact-row">
+            <span>Email</span>
+            <a href="mailto:emailkamu@didinska.my.id">emailkamu@didinska.my.id</a>
+          </div>
+          <div class="contact-row">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/628xxxxxxxxxx" target="_blank" rel="noreferrer">+62 8xx-xxxx-xxxx</a>
+          </div>
+          <div class="contact-row">
+            <span>Social</span>
+            <a href="#" target="_blank" rel="noreferrer">Instagram</a> ·
+            <a href="#" target="_blank" rel="noreferrer">Dribbble</a> ·
+            <a href="#" target="_blank" rel="noreferrer">Behance</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <!-- Form statis: bisa dihubungkan ke Formspree / Google Form nanti -->
+          <form onsubmit="handleSubmit(event)">
+            <div>
+              <label for="name">Nama</label>
+              <input id="name" name="name" placeholder="Nama kamu" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="email@example.com" required />
+            </div>
+            <div>
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" placeholder="Ceritakan singkat project atau kebutuhanmu"></textarea>
+            </div>
+            <button class="btn-primary" type="submit" style="width:max-content">
+              Kirim pesan →
+            </button>
+            <p id="form-status" style="margin-top:0.4rem;font-size:0.78rem;color:var(--muted);"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© <span id="year"></span> Didin S. · Crafted with care.</span>
+      <div class="footer-links">
+        <a href="#top">Back to top ↑</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // tahun otomatis
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // animasi skill bar
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".bar-fill").forEach((bar) => {
+        const width = bar.getAttribute("data-width");
+        bar.style.width = width + "%";
+      });
+    });
+
+    // form dummy (front-end only)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById("form-status");
+      status.textContent = "Terima kasih! Ini hanya form demo (belum terhubung ke backend).";
+    }
+  </script>
 </body>
-</html>
+  </html>
