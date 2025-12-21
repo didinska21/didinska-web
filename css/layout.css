@@ -1,0 +1,157 @@
+/* ==========================================
+   LAYOUT.CSS - Container, Grid & Sections
+   ========================================== */
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* Section Spacing */
+.section {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.section:first-of-type {
+  padding-top: var(--spacing-xl);
+}
+
+/* Header Layout */
+.site-header {
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Footer Layout */
+.site-footer {
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+/* Page Wrapper */
+.page {
+  min-height: calc(100vh - 200px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 968px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+
+/* Spacing Utilities */
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Responsive Helpers */
+@media (max-width: 968px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
