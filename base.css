@@ -1,0 +1,204 @@
+/* ==========================================
+   BASE.CSS - Reset & Variabel Dasar
+   ========================================== */
+
+/* CSS Variables untuk konsistensi warna & spacing */
+:root {
+  /* Colors */
+  --color-primary: #00aeef;
+  --color-primary-dark: #0096d1;
+  --color-secondary: #1a3a5c;
+  --color-dark: #0a1628;
+  --color-dark-alt: #0d2847;
+  --color-text: #ffffff;
+  --color-text-muted: #a0aec0;
+  --color-border: #334155;
+  --color-bg-card: rgba(15, 40, 71, 0.5);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #0a1628 0%, #0d2847 50%, #0a1628 100%);
+  --gradient-card: linear-gradient(135deg, #0f2847 0%, #1a3a5c 100%);
+  --gradient-glow: radial-gradient(circle, rgba(0, 174, 239, 0.15) 0%, transparent 70%);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Typography */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 50%;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 174, 239, 0.3);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base Typography */
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--gradient-primary);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated background effect */
+body::before {
+  content: '';
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: var(--gradient-glow);
+  border-radius: var(--radius-full);
+  right: -150px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulseGlow 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  background: var(--gradient-glow);
+  border-radius: var(--radius-full);
+  left: -100px;
+  bottom: 10%;
+  animation: pulseGlow 5s ease-in-out infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1); 
+    opacity: 0.3; 
+  }
+  50% { 
+    transform: translateY(-50%) scale(1.1); 
+    opacity: 0.6; 
+  }
+}
+
+/* Typography Elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-muted);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons Base Style */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
