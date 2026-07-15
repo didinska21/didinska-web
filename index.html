@@ -223,6 +223,7 @@
   .chain-ethereum { background: #2a2544; color: #b4a5ff; }
   .chain-bsc { background: #2e2814; color: #f3ba2f; }
   .chain-bitcoin { background: #2e2013; color: #f7931a; }
+  .chain-solana { background: #142e28; color: #14f195; }
   .amount-usd { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 1rem; }
   .amount-native { color: var(--muted); font-size: 0.78rem; font-family: 'IBM Plex Mono', monospace; }
   .addr { font-size: 0.72rem; color: var(--muted); word-break: break-all; margin-top: 3px; }
@@ -287,6 +288,7 @@
       <button data-chain="ethereum">ETH</button>
       <button data-chain="bsc">BSC</button>
       <button data-chain="bitcoin">BTC</button>
+      <button data-chain="solana">SOL</button>
     </div>
   </div>
 
@@ -375,12 +377,13 @@
 
   async function loadTicker() {
     try {
-      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd&include_24hr_change=true");
+      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,solana&vs_currencies=usd&include_24hr_change=true");
       const d = await res.json();
       const items = [
         { sym: "BTC", price: d.bitcoin.usd, chg: d.bitcoin.usd_24h_change },
         { sym: "ETH", price: d.ethereum.usd, chg: d.ethereum.usd_24h_change },
         { sym: "BNB", price: d.binancecoin.usd, chg: d.binancecoin.usd_24h_change },
+        { sym: "SOL", price: d.solana.usd, chg: d.solana.usd_24h_change },
       ];
       document.getElementById("ticker").innerHTML = items.map(i => `
         <div class="ticker-item">
