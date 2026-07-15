@@ -136,6 +136,7 @@
           <option value="bitcoin" data-sym="BTC">BTC</option>
           <option value="ethereum" data-sym="ETH">ETH</option>
           <option value="binancecoin" data-sym="BNB">BNB</option>
+          <option value="solana" data-sym="SOL">SOL</option>
         </select>
       </div>
       <div>
@@ -179,7 +180,7 @@
 
   async function fetchPrices() {
     try {
-      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd");
+      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,solana&vs_currencies=usd");
       livePrices = await res.json();
     } catch (e) { /* biarin pakai harga lama kalau gagal */ }
     render();
