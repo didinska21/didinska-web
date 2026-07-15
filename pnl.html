@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PODWATCH — PnL Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060d16;
+    --surface: #0d1926;
+    --surface-2: #122236;
+    --line: #1c2f42;
+    --teal: #1fd8c4;
+    --coral: #ff6b4a;
+    --text: #dce8ef;
+    --muted: #5d7285;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.15rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 8px var(--teal); }
+  .navlinks a { text-decoration: none; color: var(--muted); font-size: 0.85rem; margin-left: 20px; font-weight: 500; }
+  .navlinks a.active { color: var(--text); }
+
+  main { max-width: 720px; margin: 0 auto; padding: 24px 16px 60px; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; margin: 0 0 4px; }
+  .note { color: var(--muted); font-size: 0.82rem; margin: 0 0 20px; line-height: 1.5; }
+
+  .summary {
+    display: flex; gap: 10px; margin-bottom: 20px;
+  }
+  .summary-card {
+    flex: 1; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; padding: 14px 16px;
+  }
+  .summary-card .lbl { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .summary-card .val { font-family: 'IBM Plex Mono', monospace; font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
+
+  form {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px; margin-bottom: 24px;
+  }
+  .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+  .form-row > div { flex: 1; }
+  label { display: block; font-size: 0.72rem; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  input, select {
+    width: 100%; background: var(--surface-2); border: 1px solid var(--line); color: var(--text);
+    padding: 9px 10px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 0.9rem;
+  }
+  select { font-family: 'Inter', sans-serif; }
+  .side-toggle { display: flex; gap: 8px; }
+  .side-toggle button {
+    flex: 1; padding: 9px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface-2); color: var(--muted); font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  }
+  .side-toggle button.active.long { background: rgba(31,216,196,0.15); border-color: var(--teal); color: var(--teal); }
+  .side-toggle button.active.short { background: rgba(255,107,74,0.15); border-color: var(--coral); color: var(--coral); }
+
+  .submit-btn {
+    width: 100%; padding: 12px; background: var(--teal); color: #06110f;
+    border: none; border-radius: 8px; font-weight: 700; font-size: 0.9rem; cursor: pointer; margin-top: 6px;
+  }
+
+  .position {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin-bottom: 8px;
+  }
+  .pos-top { display: flex; justify-content: space-between; align-items: center; }
+  .pos-asset { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; }
+  .pos-side { font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: 700; margin-left: 6px; }
+  .pos-side.long { background: rgba(31,216,196,0.15); color: var(--teal); }
+  .pos-side.short { background: rgba(255,107,74,0.15); color: var(--coral); }
+  .pos-pnl { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 1.05rem; }
+  .pos-pnl.pos { color: var(--teal); }
+  .pos-pnl.neg { color: var(--coral); }
+  .pos-detail { display: flex; gap: 16px; margin-top: 8px; font-size: 0.78rem; color: var(--muted); font-family: 'IBM Plex Mono', monospace; }
+  .pos-actions { margin-top: 10px; }
+  .pos-actions button {
+    background: none; border: 1px solid var(--line); color: var(--muted);
+    padding: 5px 12px; border-radius: 8px; font-size: 0.75rem; cursor: pointer;
+  }
+  .empty { text-align: center; color: var(--muted); padding: 30px 16px; font-size: 0.85rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.72rem; padding: 24px 16px 40px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand"><span class="dot"></span>PODWATCH</div>
+  <div class="navlinks">
+    <a href="index.html">Dashboard</a>
+    <a href="pnl.html" class="active">PnL</a>
+  </div>
+</nav>
+
+<main>
+  <div class="eyebrow">Portofolio pribadi</div>
+  <h1>PnL Tracker</h1>
+  <p class="note">Catat posisi kamu manual di sini. Harga live diambil dari CoinGecko, PnL dihitung otomatis. Data cuma tersimpan di browser HP/laptop ini (belum sinkron ke exchange manapun) — jangan lupa dicatat ulang kalau ganti device.</p>
+
+  <div class="summary">
+    <div class="summary-card">
+      <div class="lbl">Total PnL</div>
+      <div class="val" id="totalPnl">$0.00</div>
+    </div>
+    <div class="summary-card">
+      <div class="lbl">Posisi aktif</div>
+      <div class="val" id="totalPos">0</div>
+    </div>
+  </div>
+
+  <form id="posForm">
+    <div class="form-row">
+      <div>
+        <label>Asset</label>
+        <select id="asset">
+          <option value="bitcoin" data-sym="BTC">BTC</option>
+          <option value="ethereum" data-sym="ETH">ETH</option>
+          <option value="binancecoin" data-sym="BNB">BNB</option>
+        </select>
+      </div>
+      <div>
+        <label>Posisi</label>
+        <div class="side-toggle">
+          <button type="button" data-side="long" class="active long">Long</button>
+          <button type="button" data-side="short" class="short">Short</button>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Harga entry (USD)</label>
+        <input type="number" id="entryPrice" step="any" placeholder="65000" required>
+      </div>
+      <div>
+        <label>Jumlah (unit)</label>
+        <input type="number" id="amount" step="any" placeholder="0.05" required>
+      </div>
+    </div>
+    <button type="submit" class="submit-btn">Tambah posisi</button>
+  </form>
+
+  <div id="positions"><div class="empty">Belum ada posisi. Tambah lewat form di atas.</div></div>
+</main>
+
+<footer>PODWATCH · PnL tracker manual, bukan saran finansial · data tersimpan lokal di browser</footer>
+
+<script>
+  const STORAGE_KEY = "podwatch_positions";
+  let selectedSide = "long";
+  let livePrices = {};
+
+  function loadPositions() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    catch (e) { return []; }
+  }
+  function savePositions(pos) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(pos));
+  }
+
+  async function fetchPrices() {
+    try {
+      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin&vs_currencies=usd");
+      livePrices = await res.json();
+    } catch (e) { /* biarin pakai harga lama kalau gagal */ }
+    render();
+  }
+
+  function calcPnl(pos) {
+    const current = livePrices[pos.assetId]?.usd;
+    if (!current) return { pnl: null, pct: null };
+    const diff = pos.side === "long" ? (current - pos.entry) : (pos.entry - current);
+    const pnl = diff * pos.amount;
+    const pct = (diff / pos.entry) * 100;
+    return { pnl, pct, current };
+  }
+
+  function render() {
+    const positions = loadPositions();
+    const container = document.getElementById("positions");
+
+    if (positions.length === 0) {
+      container.innerHTML = '<div class="empty">Belum ada posisi. Tambah lewat form di atas.</div>';
+      document.getElementById("totalPnl").textContent = "$0.00";
+      document.getElementById("totalPos").textContent = "0";
+      return;
+    }
+
+    let totalPnl = 0;
+    container.innerHTML = positions.map((pos, i) => {
+      const { pnl, pct, current } = calcPnl(pos);
+      if (pnl !== null) totalPnl += pnl;
+      const pnlClass = pnl >= 0 ? "pos" : "neg";
+      return `
+        <div class="position">
+          <div class="pos-top">
+            <div><span class="pos-asset">${pos.sym}</span><span class="pos-side ${pos.side}">${pos.side.toUpperCase()}</span></div>
+            <div class="pos-pnl ${pnl === null ? '' : pnlClass}">${pnl === null ? '—' : (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2)}</div>
+          </div>
+          <div class="pos-detail">
+            <span>Entry: $${pos.entry.toLocaleString()}</span>
+            <span>Now: ${current ? '$' + current.toLocaleString() : '—'}</span>
+            <span>${pct !== null ? (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%' : ''}</span>
+          </div>
+          <div class="pos-actions">
+            <button onclick="removePosition(${i})">Hapus</button>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    document.getElementById("totalPnl").textContent = (totalPnl >= 0 ? '+' : '') + '$' + totalPnl.toFixed(2);
+    document.getElementById("totalPnl").style.color = totalPnl >= 0 ? "var(--teal)" : "var(--coral)";
+    document.getElementById("totalPos").textContent = positions.length;
+  }
+
+  function removePosition(index) {
+    const positions = loadPositions();
+    positions.splice(index, 1);
+    savePositions(positions);
+    render();
+  }
+
+  document.querySelectorAll(".side-toggle button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".side-toggle button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedSide = btn.dataset.side;
+    });
+  });
+
+  document.getElementById("posForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const assetSelect = document.getElementById("asset");
+    const assetId = assetSelect.value;
+    const sym = assetSelect.selectedOptions[0].dataset.sym;
+    const entry = parseFloat(document.getElementById("entryPrice").value);
+    const amount = parseFloat(document.getElementById("amount").value);
+    if (!entry || !amount) return;
+
+    const positions = loadPositions();
+    positions.push({ assetId, sym, side: selectedSide, entry, amount, addedAt: new Date().toISOString() });
+    savePositions(positions);
+    e.target.reset();
+    render();
+  });
+
+  fetchPrices();
+  setInterval(fetchPrices, 30000);
+</script>
+
+</body>
+</html>
