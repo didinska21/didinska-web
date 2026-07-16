@@ -14,18 +14,24 @@ MAX_STORED = 500
 SIGNAL_WINDOW_HOURS = 24
 SIGNAL_THRESHOLD_USD = float(os.environ.get("SIGNAL_THRESHOLD_USD", "5000000"))
 
-ETHERSCAN_KEY = os.environ.get("ETHERSCAN_API_KEY", "")
 SOLANA_RPC_URL = os.environ.get("SOLANA_RPC_URL", "https://api.mainnet-beta.solana.com")
 
-ETHERSCAN_V2_BASE = "https://api.etherscan.io/v2/api"
-
-# Etherscan API V2 sekarang unified - satu API key buat semua chain EVM,
-# tinggal beda chainid. Mau nambah chain lain (Polygon=137, Avalanche=43114,
-# Arbitrum=42161, Optimism=10, dll)? Tinggal tambah 1 entry di sini,
-# gak perlu daftar API key baru lagi.
+# Semua chain EVM sekarang diakses langsung lewat RPC publik (JSON-RPC standar),
+# BUKAN lewat Etherscan API - soalnya Etherscan sekarang mewajibkan paket
+# berbayar buat scan BSC dan beberapa chain lain. RPC publik gratis, gak perlu key.
+# Mau ganti RPC (misal lebih stabil pakai Alchemy/Ankr/QuickNode gratis)?
+# Tinggal override lewat secret ETH_RPC_URL / BSC_RPC_URL di GitHub.
 EVM_CHAINS = [
-    {"name": "ethereum", "symbol": "ETH", "chain_id": 1, "coingecko_id": "ethereum"},
-    {"name": "bsc", "symbol": "BNB", "chain_id": 56, "coingecko_id": "binancecoin"},
+    {
+        "name": "ethereum", "symbol": "ETH",
+        "rpc_url": os.environ.get("ETH_RPC_URL", "https://ethereum-rpc.publicnode.com"),
+        "coingecko_id": "ethereum",
+    },
+    {
+        "name": "bsc", "symbol": "BNB",
+        "rpc_url": os.environ.get("BSC_RPC_URL", "https://bsc-rpc.publicnode.com"),
+        "coingecko_id": "binancecoin",
+    },
 ]
 
 # Alamat hot-wallet exchange di Solana yang dikenal publik (belum lengkap).
@@ -95,36 +101,31 @@ def get_prices():
     }
 
 
-def get_latest_block_num(chain_id, api_key):
-    r = requests.get(
-        ETHERSCAN_V2_BASE,
-        params={"chainid": chain_id, "module": "proxy", "action": "eth_blockNumber", "apikey": api_key},
+def evm_rpc(rpc_url, method, params):
+    r = requests.post(
+        rpc_url,
+        json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params},
         timeout=20,
     )
     r.raise_for_status()
-    return int(r.json()["result"], 16)
+    data = r.json()
+    if "error" in data:
+        raise RuntimeError(data["error"])
+    return data.get("result")
 
 
-def fetch_evm_block(chain_id, api_key, block_num):
-    r = requests.get(
-        ETHERSCAN_V2_BASE,
-        params={
-            "chainid": chain_id,
-            "module": "proxy",
-            "action": "eth_getBlockByNumber",
-            "tag": hex(block_num),
-            "boolean": "true",
-            "apikey": api_key,
-        },
-        timeout=20,
-    )
-    r.raise_for_status()
-    return r.json().get("result")
+def get_latest_block_num(rpc_url):
+    result = evm_rpc(rpc_url, "eth_blockNumber", [])
+    return int(result, 16)
 
 
-def scan_evm_chain(chain_name, symbol, chain_id, api_key, price_usd, state):
+def fetch_evm_block(rpc_url, block_num):
+    return evm_rpc(rpc_url, "eth_getBlockByNumber", [hex(block_num), True])
+
+
+def scan_evm_chain(chain_name, symbol, rpc_url, price_usd, state):
     whales = []
-    latest = get_latest_block_num(chain_id, api_key)
+    latest = get_latest_block_num(rpc_url)
     last = state.get(chain_name)
     if last is None:
         last = latest - 5  # first run: jangan backfill kejauhan
@@ -137,7 +138,7 @@ def scan_evm_chain(chain_name, symbol, chain_id, api_key, price_usd, state):
 
     for block_num in range(start, end + 1):
         try:
-            block = fetch_evm_block(chain_id, api_key, block_num)
+            block = fetch_evm_block(rpc_url, block_num)
         except Exception as e:
             print(f"[{chain_name}] error fetching block {block_num}: {e}")
             continue
@@ -362,13 +363,13 @@ def main():
     new_whales = []
 
     for chain in EVM_CHAINS:
-        if ETHERSCAN_KEY:
+        try:
             new_whales += scan_evm_chain(
-                chain["name"], chain["symbol"], chain["chain_id"], ETHERSCAN_KEY,
+                chain["name"], chain["symbol"], chain["rpc_url"],
                 prices[chain["symbol"]], state,
             )
-        else:
-            print(f"Skip {chain['name']}: ETHERSCAN_API_KEY belum diset")
+        except Exception as e:
+            print(f"[{chain['name']}] gagal scan: {e}")
 
     new_whales += scan_bitcoin(prices["BTC"], state)
 
