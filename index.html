@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PODWATCH — On-chain Whale Radar</title>
+<title>Didinska — Crypto News & Analysis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -73,79 +73,67 @@
     margin-bottom: 6px;
   }
 
-  .signal-card {
+  /* --- Analysis card --- */
+  .analysis-card {
     background: linear-gradient(180deg, var(--surface), var(--surface-2));
     border: 1px solid var(--line);
     border-radius: 16px;
     padding: 24px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     position: relative;
     overflow: hidden;
   }
-  .signal-card::before {
+  .analysis-card::before {
     content: "";
     position: absolute;
     inset: 0;
     background: repeating-radial-gradient(circle at 100% 0%, transparent 0, transparent 24px, rgba(31,216,196,0.035) 25px);
     pointer-events: none;
   }
-  .gauge-wrap {
+  .analysis-top {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     position: relative;
     z-index: 1;
   }
-  .gauge {
-    width: 88px; height: 88px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: conic-gradient(var(--teal) var(--pct, 50%), var(--line) 0);
-    position: relative;
-  }
-  .gauge::after {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    background: var(--surface);
-  }
-  .gauge-label {
-    position: relative;
-    z-index: 1;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-  .signal-title {
+  .bias-badge {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.3rem;
     font-weight: 700;
-    margin: 0 0 4px;
+    font-size: 1rem;
+    padding: 8px 18px;
+    border-radius: 10px;
+    flex-shrink: 0;
   }
-  .signal-sub {
-    color: var(--muted);
+  .bias-Bullish { background: rgba(31,216,196,0.15); color: var(--teal); }
+  .bias-Bearish { background: rgba(255,107,74,0.15); color: var(--coral); }
+  .bias-Netral { background: rgba(93,114,133,0.2); color: var(--muted); }
+  .analysis-score {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8rem;
-    margin: 0;
+    color: var(--muted);
   }
-  .flow-rows {
+  .analysis-summary {
+    margin-top: 16px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+  }
+  .analysis-breakdown {
     display: flex;
     gap: 20px;
     margin-top: 18px;
     position: relative;
     z-index: 1;
   }
-  .flow-item { flex: 1; }
-  .flow-item .num {
+  .bd-item .num {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
   }
-  .flow-item .lbl {
-    font-size: 0.7rem;
+  .bd-item .lbl {
+    font-size: 0.68rem;
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -160,48 +148,37 @@
     position: relative;
     z-index: 1;
   }
-
-  .ticker {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    margin-bottom: 24px;
-    padding-bottom: 4px;
+  .updated-at {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 6px;
   }
-  .ticker-item {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 10px 16px;
-    min-width: 110px;
-    flex-shrink: 0;
-  }
-  .ticker-item .sym { font-size: 0.7rem; color: var(--muted); }
-  .ticker-item .price { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 600; }
 
-  .feed-header {
+  /* --- Section headers --- */
+  .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
   }
-  .feed-header h2 {
+  .section-header h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1rem;
     margin: 0;
   }
-  .filters { display: flex; gap: 6px; }
-  .filters button {
+  .tabs { display: flex; gap: 6px; }
+  .tabs button {
     background: var(--surface);
     color: var(--muted);
     border: 1px solid var(--line);
-    padding: 5px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
     font-size: 0.78rem;
     cursor: pointer;
   }
-  .filters button.active { color: var(--bg); background: var(--teal); border-color: var(--teal); }
+  .tabs button.active { color: var(--bg); background: var(--teal); border-color: var(--teal); }
 
+  /* --- News/event cards --- */
   .card {
     background: var(--surface);
     border: 1px solid var(--line);
@@ -209,29 +186,53 @@
     padding: 14px 16px;
     margin-bottom: 8px;
   }
-  .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .chain-badge {
+  .card a.title-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .card a.title-link:hover { color: var(--teal); }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  .source-badge {
     font-size: 0.65rem;
     padding: 2px 8px;
     border-radius: 10px;
     font-weight: 600;
     font-family: 'IBM Plex Mono', monospace;
+    background: rgba(31,216,196,0.1);
+    color: var(--teal);
   }
-  .chain-ethereum { background: #2a2544; color: #b4a5ff; }
-  .chain-bsc { background: #2e2814; color: #f3ba2f; }
-  .chain-bitcoin { background: #2e2013; color: #f7931a; }
-  .chain-solana { background: #142e28; color: #14f195; }
-  .amount-usd { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 1rem; }
-  .amount-native { color: var(--muted); font-size: 0.78rem; font-family: 'IBM Plex Mono', monospace; }
-  .flow-badge {
-    display: inline-block; font-size: 0.7rem; color: var(--teal);
-    background: rgba(31,216,196,0.1); padding: 2px 8px; border-radius: 8px;
-    margin-top: 6px; font-weight: 600;
+  .event-badge {
+    background: rgba(255,107,74,0.1);
+    color: var(--coral);
   }
-  .addr { font-size: 0.72rem; color: var(--muted); word-break: break-all; margin-top: 3px; }
-  .addr .tag { color: var(--teal); font-weight: 600; }
-  .time { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+  .card-summary {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .time { font-size: 0.72rem; color: var(--muted); }
+  .coin-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+  .coin-tag {
+    font-size: 0.68rem;
+    background: var(--surface-2);
+    color: var(--text);
+    padding: 1px 7px;
+    border-radius: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
   .empty { text-align: center; color: var(--muted); padding: 40px 16px; font-size: 0.88rem; }
+
+  .feed-section { margin-bottom: 28px; }
 
   footer {
     text-align: center;
@@ -244,175 +245,174 @@
 <body>
 
 <nav>
-  <div class="brand"><span class="dot"></span>PODWATCH</div>
+  <div class="brand"><span class="dot"></span>DIDINSKA</div>
   <div class="navlinks">
-    <a href="index.html" class="active">Dashboard</a>
+    <a href="index.html" class="active">News</a>
+    <a href="wallet.html">Wallet</a>
     <a href="watchlist.html">Watchlist</a>
     <a href="pnl.html">PnL</a>
   </div>
 </nav>
 
 <main>
-  <div class="eyebrow">On-chain radar</div>
+  <div class="eyebrow">Market pulse</div>
 
-  <div class="signal-card">
-    <div class="gauge-wrap">
-      <div class="gauge" id="gauge"><span class="gauge-label" id="gaugePct">—</span></div>
+  <div class="analysis-card">
+    <div class="analysis-top">
+      <div class="bias-badge" id="biasBadge">—</div>
       <div>
-        <p class="signal-title" id="signalLabel">Memuat sinyal…</p>
-        <p class="signal-sub" id="signalSub">Net flow whale ke exchange, 24 jam terakhir</p>
+        <div class="analysis-score" id="scoreText">Memuat analisa…</div>
       </div>
     </div>
-    <div class="flow-rows">
-      <div class="flow-item">
-        <div class="num" id="inflowNum">—</div>
-        <div class="lbl">Masuk exchange</div>
+    <p class="analysis-summary" id="summaryText">Memuat ringkasan…</p>
+    <div class="analysis-breakdown">
+      <div class="bd-item">
+        <div class="num" id="newsScoreNum">—</div>
+        <div class="lbl">Skor News (90%)</div>
       </div>
-      <div class="flow-item">
-        <div class="num" id="outflowNum">—</div>
-        <div class="lbl">Keluar exchange</div>
-      </div>
-      <div class="flow-item">
-        <div class="num" id="netNum">—</div>
-        <div class="lbl">Net flow</div>
+      <div class="bd-item">
+        <div class="num" id="techScoreNum">—</div>
+        <div class="lbl">Skor Teknikal (10%)</div>
       </div>
     </div>
+    <div class="updated-at" id="updatedAt"></div>
     <div class="disclaimer">
-      ⚠️ Ini indikator edukatif dari data on-chain publik, bukan saran finansial atau sinyal beli/jual otomatis. Selalu riset sendiri (DYOR) sebelum ambil posisi.
+      ⚠️ Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu riset sendiri (DYOR) sebelum ambil posisi.
     </div>
   </div>
 
-  <div class="ticker" id="ticker"></div>
-
-  <div class="feed-header">
-    <h2>Whale feed</h2>
-    <div class="filters" id="filters">
-      <button data-chain="all" class="active">Semua</button>
-      <button data-chain="ethereum">ETH</button>
-      <button data-chain="bsc">BSC</button>
-      <button data-chain="bitcoin">BTC</button>
-      <button data-chain="solana">SOL</button>
+  <div class="feed-section">
+    <div class="section-header">
+      <h2>Highlight</h2>
+      <div class="tabs" id="tabs">
+        <button data-tab="all" class="active">Semua</button>
+        <button data-tab="news">Berita</button>
+        <button data-tab="events">Event</button>
+      </div>
     </div>
+    <div id="feedList"><div class="empty">Memuat data…</div></div>
   </div>
-
-  <div id="list"><div class="empty">Memuat data…</div></div>
 </main>
 
-<footer>PODWATCH · data on-chain publik, bukan saran finansial · update tiap 15 menit</footer>
+<footer>DIDINSKA · analisa edukatif dari berita & data publik, bukan saran finansial · update tiap 30 menit</footer>
 
 <script>
-  let allData = [];
-  let currentFilter = "all";
+  let newsData = [];
+  let eventsData = [];
+  let currentTab = "all";
 
-  function fmtUsd(v) {
-    const abs = Math.abs(v);
-    if (abs >= 1e6) return (v/1e6).toFixed(2) + "M";
-    if (abs >= 1e3) return (v/1e3).toFixed(1) + "K";
-    return v.toFixed(0);
-  }
   function timeAgo(iso) {
+    if (!iso) return "-";
     const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (diff < 0) {
+      const future = Math.abs(diff);
+      if (future < 3600) return "dalam " + Math.floor(future/60) + "m";
+      if (future < 86400) return "dalam " + Math.floor(future/3600) + "j";
+      return "dalam " + Math.floor(future/86400) + " hari";
+    }
     if (diff < 60) return Math.floor(diff) + "d lalu";
     if (diff < 3600) return Math.floor(diff/60) + "m lalu";
     if (diff < 86400) return Math.floor(diff/3600) + "j lalu";
     return Math.floor(diff/86400) + " hari lalu";
   }
-  function shortAddr(a) { return a ? a.slice(0,8) + "…" + a.slice(-6) : "-"; }
 
-  function render() {
-    const list = document.getElementById("list");
-    const filtered = currentFilter === "all" ? allData : allData.filter(w => w.chain === currentFilter);
-    if (filtered.length === 0) {
-      list.innerHTML = '<div class="empty">Belum ada transaksi whale tercatat.</div>';
+  function renderFeed() {
+    const list = document.getElementById("feedList");
+    let items = [];
+
+    if (currentTab === "all" || currentTab === "news") {
+      items = items.concat(newsData.map(n => ({...n, _type: "news"})));
+    }
+    if (currentTab === "all" || currentTab === "events") {
+      items = items.concat(eventsData.map(e => ({...e, _type: "event"})));
+    }
+
+    items.sort((a, b) => {
+      const da = a._type === "news" ? a.published_at : a.event_date;
+      const db = b._type === "news" ? b.published_at : b.event_date;
+      return new Date(db) - new Date(da);
+    });
+
+    if (items.length === 0) {
+      list.innerHTML = '<div class="empty">Belum ada data.</div>';
       return;
     }
-    list.innerHTML = filtered.map(w => `
-      <div class="card">
-        <div class="card-top">
-          <span class="chain-badge chain-${w.chain}">${w.symbol}</span>
-          <span class="amount-usd">$${fmtUsd(w.amount_usd)}</span>
-        </div>
-        <div class="amount-native">${w.amount} ${w.symbol}</div>
-        ${w.flow_label ? `<div class="flow-badge">${w.flow_label}</div>` : ""}
-        ${w.from ? `<div class="addr">dari ${shortAddr(w.from)} ${w.from_label ? `<span class="tag">[${w.from_label}]</span>` : ""}</div>` : ""}
-        ${w.to ? `<div class="addr">ke ${shortAddr(w.to)} ${w.to_label ? `<span class="tag">[${w.to_label}]</span>` : ""}</div>` : ""}
-        <div class="time">${timeAgo(w.timestamp)}</div>
-      </div>
-    `).join("");
-  }
 
-  async function loadWhales() {
-    try {
-      const res = await fetch("data/whales.json?t=" + Date.now());
-      allData = await res.json();
-      render();
-    } catch (e) {
-      document.getElementById("list").innerHTML = '<div class="empty">Gagal memuat data whale.</div>';
-    }
-  }
-
-  async function loadSignal() {
-    try {
-      const res = await fetch("data/signal.json?t=" + Date.now());
-      const s = await res.json();
-      if (!s.label) return;
-      document.getElementById("signalLabel").textContent = s.label;
-      document.getElementById("signalSub").textContent = `Net flow ${s.window_hours} jam terakhir`;
-      document.getElementById("inflowNum").textContent = "$" + fmtUsd(s.inflow_usd);
-      document.getElementById("outflowNum").textContent = "$" + fmtUsd(s.outflow_usd);
-      document.getElementById("netNum").textContent = (s.net_usd >= 0 ? "+" : "") + "$" + fmtUsd(s.net_usd);
-
-      const gauge = document.getElementById("gauge");
-      const pctEl = document.getElementById("gaugePct");
-      if (s.bias === "bearish") {
-        gauge.style.setProperty("--pct", "75%");
-        gauge.style.background = `conic-gradient(var(--coral) 75%, var(--line) 0)`;
-        pctEl.textContent = "SELL";
-      } else if (s.bias === "bullish") {
-        gauge.style.setProperty("--pct", "75%");
-        gauge.style.background = `conic-gradient(var(--teal) 75%, var(--line) 0)`;
-        pctEl.textContent = "BUY";
+    list.innerHTML = items.slice(0, 40).map(item => {
+      if (item._type === "news") {
+        return `
+          <div class="card">
+            <div class="card-meta">
+              <span class="source-badge">${item.source}</span>
+              <span class="time">${timeAgo(item.published_at)}</span>
+            </div>
+            <a class="title-link" href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
+            ${item.summary ? `<div class="card-summary">${item.summary}</div>` : ""}
+          </div>
+        `;
       } else {
-        gauge.style.background = `conic-gradient(var(--muted) 50%, var(--line) 0)`;
-        pctEl.textContent = "FLAT";
+        return `
+          <div class="card">
+            <div class="card-meta">
+              <span class="source-badge event-badge">EVENT · ${item.category || "General"}</span>
+              <span class="time">${timeAgo(item.event_date)}</span>
+            </div>
+            <div class="title-link">${item.title}</div>
+            ${item.description ? `<div class="card-summary">${item.description}</div>` : ""}
+            ${item.coins && item.coins.length ? `<div class="coin-tags">${item.coins.map(c => `<span class="coin-tag">${c}</span>`).join("")}</div>` : ""}
+          </div>
+        `;
       }
-    } catch (e) { /* signal belum ada, biarin default */ }
+    }).join("");
   }
 
-  async function loadTicker() {
+  async function loadNews() {
     try {
-      const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,binancecoin,solana&vs_currencies=usd&include_24hr_change=true");
-      const d = await res.json();
-      const items = [
-        { sym: "BTC", price: d.bitcoin.usd, chg: d.bitcoin.usd_24h_change },
-        { sym: "ETH", price: d.ethereum.usd, chg: d.ethereum.usd_24h_change },
-        { sym: "BNB", price: d.binancecoin.usd, chg: d.binancecoin.usd_24h_change },
-        { sym: "SOL", price: d.solana.usd, chg: d.solana.usd_24h_change },
-      ];
-      document.getElementById("ticker").innerHTML = items.map(i => `
-        <div class="ticker-item">
-          <div class="sym">${i.sym}</div>
-          <div class="price">$${i.price.toLocaleString("en-US", {maximumFractionDigits: 2})}</div>
-          <div class="sym" style="color:${i.chg >= 0 ? 'var(--teal)' : 'var(--coral)'}">${i.chg >= 0 ? '+' : ''}${i.chg.toFixed(2)}%</div>
-        </div>
-      `).join("");
-    } catch (e) { /* diam-diam gagal, gak fatal */ }
+      const res = await fetch("data/news.json?t=" + Date.now());
+      newsData = await res.json();
+    } catch (e) { newsData = []; }
   }
 
-  document.getElementById("filters").addEventListener("click", (e) => {
+  async function loadEvents() {
+    try {
+      const res = await fetch("data/events.json?t=" + Date.now());
+      eventsData = await res.json();
+    } catch (e) { eventsData = []; }
+  }
+
+  async function loadAnalysis() {
+    try {
+      const res = await fetch("data/analysis.json?t=" + Date.now());
+      const a = await res.json();
+      if (!a.final_label) return;
+
+      const badge = document.getElementById("biasBadge");
+      badge.textContent = a.final_label;
+      badge.className = "bias-badge bias-" + a.final_label;
+
+      document.getElementById("scoreText").textContent = `Skor gabungan: ${a.final_score >= 0 ? "+" : ""}${a.final_score}`;
+      document.getElementById("summaryText").textContent = a.summary || "Ringkasan belum tersedia.";
+      document.getElementById("newsScoreNum").textContent = (a.breakdown?.news_score >= 0 ? "+" : "") + (a.breakdown?.news_score ?? "—");
+      document.getElementById("techScoreNum").textContent = (a.breakdown?.technical_score >= 0 ? "+" : "") + (a.breakdown?.technical_score ?? "—");
+      document.getElementById("updatedAt").textContent = "Update terakhir: " + timeAgo(a.updated_at);
+    } catch (e) { /* belum ada data, biarin default */ }
+  }
+
+  document.getElementById("tabs").addEventListener("click", (e) => {
     if (e.target.tagName !== "BUTTON") return;
-    document.querySelectorAll("#filters button").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll("#tabs button").forEach(b => b.classList.remove("active"));
     e.target.classList.add("active");
-    currentFilter = e.target.dataset.chain;
-    render();
+    currentTab = e.target.dataset.tab;
+    renderFeed();
   });
 
-  loadWhales();
-  loadSignal();
-  loadTicker();
-  setInterval(loadWhales, 60000);
-  setInterval(loadSignal, 60000);
-  setInterval(loadTicker, 60000);
+  async function init() {
+    await Promise.all([loadNews(), loadEvents(), loadAnalysis()]);
+    renderFeed();
+  }
+
+  init();
+  setInterval(init, 60000);
 </script>
 
 </body>
