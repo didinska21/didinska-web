@@ -33,6 +33,6 @@ jobs:
         run: |
           git config user.name "whale-tracker-bot"
           git config user.email "actions@github.com"
-          git add data/whales.json data/state.json data/signal.json
+          git add data/whales.json data/state.json data/signal.json data/watchlist.json
           git diff --quiet --cached || git commit -m "Update whale data [skip ci]"
           git push
