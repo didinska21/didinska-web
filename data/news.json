@@ -1,5 +1,13 @@
 [
   {
+    "id": "71f1fc7e939fa458",
+    "title": "Polygon CEO announces job cuts amid Coinme acquisition",
+    "url": "https://cointelegraph.com/news/polygon-ceo-job-cuts-coinme-transition?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The round of layoffs was part of Polygon transitioning operations to payments following a $250 million deal to acquire Coinme and Sequence in January.",
+    "published_at": "2026-07-16T22:05:06+00:00"
+  },
+  {
     "id": "60be20e14668e7e6",
     "title": "Leaks Reveal Suno Fed Thousands of Hours of Deezer, YouTube and Pond5 Data Into Its AI",
     "url": "https://decrypt.co/373682/leaks-reveal-suno-fed-thousands-hours-deezer-youtube-pond5-data-ai",
@@ -630,13 +638,5 @@
     "source": "Decrypt",
     "summary": "Consumer prices cooled more than expected in June, yet geopolitical tensions continue to cast a shadow over crypto prices",
     "published_at": "2026-07-14T15:24:27+00:00"
-  },
-  {
-    "id": "cbb59edc08136e34",
-    "title": "UK to Defer Capital Gains Tax on DeFi Lending, Liquidity Pool Deposits",
-    "url": "https://decrypt.co/373481/uk-to-defer-capital-gains-tax-on-defi-lending-liquidity-pool-deposits",
-    "source": "Decrypt",
-    "summary": "Moving crypto into a lending protocol or liquidity pool won\u2019t count as a taxable disposal, deferring the charge until a real cash-out.",
-    "published_at": "2026-07-14T15:00:26+00:00"
   }
 ]
