@@ -7,6 +7,21 @@ from datetime import datetime, timezone
 STATE_FILE = "data/state.json"
 OUTPUT_FILE = "data/whales.json"
 SIGNAL_FILE = "data/signal.json"
+WATCHLIST_FILE = "data/watchlist.json"
+
+# Alamat whale/institusi yang udah PUBLIK & terverifikasi banyak sumber
+# (Bitinfocharts, Arkham Intelligence, laporan berita). Ini alamat CUSTODIAL
+# (exchange nyimpen duit customer, bukan berarti exchange "punya" koin itu)
+# kecuali yang ditandai individu/pemerintah. Saldo real-time, update tiap siklus.
+WATCHLIST = [
+    {"name": "Binance Cold Wallet #1", "chain": "bitcoin", "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo", "category": "Exchange"},
+    {"name": "Binance Cold Wallet #2", "chain": "bitcoin", "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6", "category": "Exchange"},
+    {"name": "Bitfinex Cold Wallet", "chain": "bitcoin", "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97", "category": "Exchange"},
+    {"name": "Robinhood Cold Wallet", "chain": "bitcoin", "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2", "category": "Exchange"},
+    {"name": "US Government (Bitfinex Hack Recovery)", "chain": "bitcoin", "address": "bc1qazcm763858nkj2dj986etajv6wquslv8uxwczt", "category": "Pemerintah"},
+    {"name": "Satoshi Nakamoto (Genesis Address)", "chain": "bitcoin", "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa", "category": "Individu"},
+    {"name": "Satoshi Nakamoto (First TX Recipient)", "chain": "bitcoin", "address": "12cbQLTFMXRnSzktFkuoG3eHoMeFtpTu3S", "category": "Individu"},
+]
 
 THRESHOLD_USD = float(os.environ.get("THRESHOLD_USD", "1000000"))
 MAX_BLOCKS_PER_RUN = int(os.environ.get("MAX_BLOCKS_PER_RUN", "40"))
@@ -70,6 +85,38 @@ def label_address(addr):
     if not addr:
         return None
     return EXCHANGE_ADDRESSES.get(addr.lower())
+
+
+# Alamat exchange BTC yang sudah dikenal publik & terverifikasi banyak sumber
+# (Bitinfocharts, Arkham Intelligence). Tidak lengkap, bisa ditambah sendiri.
+BITCOIN_EXCHANGE_ADDRESSES = {
+    "34xp4vrocgjym3xr7ycvpfhocnxv4twseo": "Binance",
+    "3m219kr5venenb47ewrpfwyb5jq2djxrp6": "Binance",
+    "3lyjfcfhpxyjremsask2jkn69lweykzexb": "Binance",
+    "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97": "Bitfinex",
+    "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2": "Robinhood",
+    "bc1qazcm763858nkj2dj986etajv6wquslv8uxwczt": "US Government",
+}
+
+
+def label_bitcoin_address(addr):
+    if not addr:
+        return None
+    return BITCOIN_EXCHANGE_ADDRESSES.get(addr.lower())
+
+
+def compute_flow_label(from_label, to_label):
+    """
+    Label arah dana - INI BUKAN kepastian buy/sell, cuma indikasi kasar
+    berdasarkan apakah salah satu pihak diketahui exchange.
+    """
+    if to_label and from_label:
+        return f"Antar Exchange ({from_label} -> {to_label})"
+    if to_label:
+        return f"Ke {to_label} (indikasi Jual)"
+    if from_label:
+        return f"Dari {from_label} (indikasi Beli)"
+    return "Wallet ke Wallet"
 
 
 def load_json(path, default):
@@ -156,14 +203,17 @@ def scan_evm_chain(chain_name, symbol, rpc_url, price_usd, state):
             if value_usd >= THRESHOLD_USD:
                 from_addr = tx.get("from")
                 to_addr = tx.get("to")
+                from_lbl = label_address(from_addr)
+                to_lbl = label_address(to_addr)
                 whales.append({
                     "chain": chain_name,
                     "symbol": symbol,
                     "hash": tx.get("hash"),
                     "from": from_addr,
                     "to": to_addr,
-                    "from_label": label_address(from_addr),
-                    "to_label": label_address(to_addr),
+                    "from_label": from_lbl,
+                    "to_label": to_lbl,
+                    "flow_label": compute_flow_label(from_lbl, to_lbl),
                     "amount": round(value_native, 4),
                     "amount_usd": round(value_usd, 2),
                     "timestamp": datetime.fromtimestamp(ts, tz=timezone.utc).isoformat(),
@@ -207,12 +257,19 @@ def scan_bitcoin(price_usd, state):
                 value_btc = total_out_satoshi / 1e8
                 value_usd = value_btc * price_usd
                 if value_usd >= THRESHOLD_USD:
+                    in_addrs = [i.get("prev_out", {}).get("addr") for i in tx.get("inputs", [])]
+                    out_addrs = [o.get("addr") for o in tx.get("out", [])]
+                    from_lbl = next((label_bitcoin_address(a) for a in in_addrs if label_bitcoin_address(a)), None)
+                    to_lbl = next((label_bitcoin_address(a) for a in out_addrs if label_bitcoin_address(a)), None)
                     whales.append({
                         "chain": "bitcoin",
                         "symbol": "BTC",
                         "hash": tx.get("hash"),
-                        "from": None,
-                        "to": None,
+                        "from": in_addrs[0] if in_addrs else None,
+                        "to": out_addrs[0] if out_addrs else None,
+                        "from_label": from_lbl,
+                        "to_label": to_lbl,
+                        "flow_label": compute_flow_label(from_lbl, to_lbl),
                         "amount": round(value_btc, 6),
                         "amount_usd": round(value_usd, 2),
                         "timestamp": datetime.fromtimestamp(ts, tz=timezone.utc).isoformat(),
@@ -289,14 +346,17 @@ def scan_solana(price_usd, state):
                     if value_usd >= THRESHOLD_USD:
                         src = info.get("source")
                         dst = info.get("destination")
+                        from_lbl = label_solana_address(src)
+                        to_lbl = label_solana_address(dst)
                         whales.append({
                             "chain": "solana",
                             "symbol": "SOL",
                             "hash": tx["transaction"]["signatures"][0],
                             "from": src,
                             "to": dst,
-                            "from_label": label_solana_address(src),
-                            "to_label": label_solana_address(dst),
+                            "from_label": from_lbl,
+                            "to_label": to_lbl,
+                            "flow_label": compute_flow_label(from_lbl, to_lbl),
                             "amount": round(value_sol, 4),
                             "amount_usd": round(value_usd, 2),
                             "timestamp": datetime.fromtimestamp(ts, tz=timezone.utc).isoformat() if ts else datetime.now(timezone.utc).isoformat(),
@@ -308,6 +368,55 @@ def scan_solana(price_usd, state):
 
     state["solana"] = end
     return whales
+
+
+def fetch_btc_balance(address):
+    r = requests.get(f"https://mempool.space/api/address/{address}", timeout=20)
+    r.raise_for_status()
+    d = r.json()
+    funded = d["chain_stats"]["funded_txo_sum"]
+    spent = d["chain_stats"]["spent_txo_sum"]
+    return (funded - spent) / 1e8
+
+
+def fetch_evm_balance(rpc_url, address):
+    result = evm_rpc(rpc_url, "eth_getBalance", [address, "latest"])
+    return int(result, 16) / 1e18
+
+
+def scan_watchlist(prices):
+    rpc_by_chain = {c["name"]: c["rpc_url"] for c in EVM_CHAINS}
+    symbol_by_chain = {c["name"]: c["symbol"] for c in EVM_CHAINS}
+    results = []
+
+    for w in WATCHLIST:
+        try:
+            if w["chain"] == "bitcoin":
+                balance = fetch_btc_balance(w["address"])
+                symbol = "BTC"
+                price = prices["BTC"]
+            elif w["chain"] in rpc_by_chain:
+                balance = fetch_evm_balance(rpc_by_chain[w["chain"]], w["address"])
+                symbol = symbol_by_chain[w["chain"]]
+                price = prices[symbol]
+            else:
+                continue
+
+            results.append({
+                "name": w["name"],
+                "category": w["category"],
+                "chain": w["chain"],
+                "symbol": symbol,
+                "address": w["address"],
+                "balance": round(balance, 4),
+                "balance_usd": round(balance * price, 2),
+            })
+            time.sleep(0.3)
+        except Exception as e:
+            print(f"[watchlist] gagal fetch {w['name']}: {e}")
+
+    results.sort(key=lambda x: x["balance_usd"], reverse=True)
+    return results
 
 
 def compute_signal(whales):
@@ -392,9 +501,19 @@ def main():
 
     signal = compute_signal(deduped)
 
+    try:
+        watchlist_data = scan_watchlist(prices)
+    except Exception as e:
+        print(f"[watchlist] gagal: {e}")
+        watchlist_data = load_json(WATCHLIST_FILE, {}).get("wallets", [])
+
     save_json(OUTPUT_FILE, deduped)
     save_json(STATE_FILE, state)
     save_json(SIGNAL_FILE, signal)
+    save_json(WATCHLIST_FILE, {
+        "updated_at": datetime.now(timezone.utc).isoformat(),
+        "wallets": watchlist_data,
+    })
     print(f"Ditemukan {len(new_whales)} transaksi whale baru. Total tersimpan: {len(deduped)}")
     print(f"Signal: {signal['label']} (net flow ${signal['net_usd']:,.0f})")
 
