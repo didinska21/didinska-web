@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T10:46:21.464385+00:00",
+  "updated_at": "2026-07-16T12:23:47.561497+00:00",
   "wallets": [
     {
       "name": "Binance Cold Wallet #1",
@@ -8,7 +8,7 @@
       "symbol": "BTC",
       "address": "34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo",
       "balance": 248597.5906,
-      "balance_usd": 15946789642.98
+      "balance_usd": 15934608361.04
     },
     {
       "name": "Binance Cold Wallet #2",
@@ -17,7 +17,7 @@
       "symbol": "BTC",
       "address": "3M219KR5vEneNb47ewrPfWyb5jQ2DjxRP6",
       "balance": 181321.1483,
-      "balance_usd": 11631207699.35
+      "balance_usd": 11622322963.09
     },
     {
       "name": "Robinhood Cold Wallet",
@@ -26,7 +26,7 @@
       "symbol": "BTC",
       "address": "bc1ql49ydapnjafl5t2cp9zqpjwe6pdgmxy98859v2",
       "balance": 140849.9854,
-      "balance_usd": 9035104011.64
+      "balance_usd": 9028202362.36
     },
     {
       "name": "Bitfinex Cold Wallet",
@@ -35,7 +35,7 @@
       "symbol": "BTC",
       "address": "bc1qgdjqv0av3q56jvd82tkdjpy7gdp9ut8tlqmgrpmv24sq90ecnvqqjwvw97",
       "balance": 130010.079,
-      "balance_usd": 8339756538.12
+      "balance_usd": 8333386044.25
     },
     {
       "name": "US Government (Bitfinex Hack Recovery)",
@@ -44,7 +44,7 @@
       "symbol": "BTC",
       "address": "bc1qazcm763858nkj2dj986etajv6wquslv8uxwczt",
       "balance": 94643.4882,
-      "balance_usd": 6071095840.14
+      "balance_usd": 6066458309.22
     },
     {
       "name": "Satoshi Nakamoto (Genesis Address)",
@@ -53,7 +53,7 @@
       "symbol": "BTC",
       "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
       "balance": 57.2259,
-      "balance_usd": 3670867.97
+      "balance_usd": 3668064.6
     },
     {
       "name": "Satoshi Nakamoto (First TX Recipient)",
@@ -62,7 +62,7 @@
       "symbol": "BTC",
       "address": "12cbQLTFMXRnSzktFkuoG3eHoMeFtpTu3S",
       "balance": 0.444,
-      "balance_usd": 28483.52
+      "balance_usd": 28461.76
     }
   ]
 }
