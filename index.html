@@ -73,7 +73,6 @@
     margin-bottom: 6px;
   }
 
-  /* --- Signal gauge (signature element) --- */
   .signal-card {
     background: linear-gradient(180deg, var(--surface), var(--surface-2));
     border: 1px solid var(--line);
@@ -162,7 +161,6 @@
     z-index: 1;
   }
 
-  /* --- Ticker --- */
   .ticker {
     display: flex;
     gap: 10px;
@@ -181,7 +179,6 @@
   .ticker-item .sym { font-size: 0.7rem; color: var(--muted); }
   .ticker-item .price { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 600; }
 
-  /* --- Whale feed --- */
   .feed-header {
     display: flex;
     justify-content: space-between;
@@ -226,6 +223,11 @@
   .chain-solana { background: #142e28; color: #14f195; }
   .amount-usd { font-family: 'IBM Plex Mono', monospace; font-weight: 700; font-size: 1rem; }
   .amount-native { color: var(--muted); font-size: 0.78rem; font-family: 'IBM Plex Mono', monospace; }
+  .flow-badge {
+    display: inline-block; font-size: 0.7rem; color: var(--teal);
+    background: rgba(31,216,196,0.1); padding: 2px 8px; border-radius: 8px;
+    margin-top: 6px; font-weight: 600;
+  }
   .addr { font-size: 0.72rem; color: var(--muted); word-break: break-all; margin-top: 3px; }
   .addr .tag { color: var(--teal); font-weight: 600; }
   .time { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
@@ -245,6 +247,7 @@
   <div class="brand"><span class="dot"></span>PODWATCH</div>
   <div class="navlinks">
     <a href="index.html" class="active">Dashboard</a>
+    <a href="watchlist.html">Watchlist</a>
     <a href="pnl.html">PnL</a>
   </div>
 </nav>
@@ -330,6 +333,7 @@
           <span class="amount-usd">$${fmtUsd(w.amount_usd)}</span>
         </div>
         <div class="amount-native">${w.amount} ${w.symbol}</div>
+        ${w.flow_label ? `<div class="flow-badge">${w.flow_label}</div>` : ""}
         ${w.from ? `<div class="addr">dari ${shortAddr(w.from)} ${w.from_label ? `<span class="tag">[${w.from_label}]</span>` : ""}</div>` : ""}
         ${w.to ? `<div class="addr">ke ${shortAddr(w.to)} ${w.to_label ? `<span class="tag">[${w.to_label}]</span>` : ""}</div>` : ""}
         <div class="time">${timeAgo(w.timestamp)}</div>
