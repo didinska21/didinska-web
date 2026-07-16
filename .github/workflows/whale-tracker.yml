@@ -1,8 +1,8 @@
-name: Whale Tracker
+name: News Tracker
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -19,20 +19,31 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests feedparser
 
-      - name: Run whale tracker
+      - name: Fetch news
         env:
-          ETH_RPC_URL: ${{ secrets.ETH_RPC_URL }}
-          BSC_RPC_URL: ${{ secrets.BSC_RPC_URL }}
-          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
-          THRESHOLD_USD: "1000000"
-        run: python scripts/fetch_whales.py
+          CRYPTOPANIC_API_KEY: ${{ secrets.CRYPTOPANIC_API_KEY }}
+        run: python scripts/fetch_news.py
+
+      - name: Fetch events
+        env:
+          COINMARKETCAL_API_KEY: ${{ secrets.COINMARKETCAL_API_KEY }}
+        run: python scripts/fetch_events.py
+
+      - name: Analyze news
+        env:
+          GROQ_API_KEY_1: ${{ secrets.GROQ_API_KEY_1 }}
+          GROQ_API_KEY_2: ${{ secrets.GROQ_API_KEY_2 }}
+          GROQ_API_KEY_3: ${{ secrets.GROQ_API_KEY_3 }}
+          GROQ_API_KEY_4: ${{ secrets.GROQ_API_KEY_4 }}
+          GROQ_API_KEY_5: ${{ secrets.GROQ_API_KEY_5 }}
+        run: python scripts/analyze_news.py
 
       - name: Commit & push updated data
         run: |
-          git config user.name "whale-tracker-bot"
+          git config user.name "news-tracker-bot"
           git config user.email "actions@github.com"
-          git add data/whales.json data/state.json data/signal.json data/watchlist.json
-          git diff --quiet --cached || git commit -m "Update whale data [skip ci]"
+          git add data/news.json data/events.json data/analysis.json
+          git diff --quiet --cached || git commit -m "Update news & analysis [skip ci]"
           git push
