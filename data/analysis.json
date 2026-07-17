@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T17:43:49.631026+00:00",
-  "final_score": 0.006,
+  "updated_at": "2026-07-17T18:42:18.907226+00:00",
+  "final_score": 0.019,
   "final_label": "Netral",
-  "summary": "AI China Kimi K3 melampaui Claude dan GPT menambah persaingan teknologi yang dapat mempercepat adopsi blockchain dalam pengembangan kode. Di sisi regulasi, OKX Europe meluncurkan USDT\u2011USDC MiCA\u2011compliant, HSBC dapat sandbox sekuritas digital BOE, dan SBI membangun ekosistem lintas\u2011batas serta akuisisi Coinhako, menandai dorongan institusional di Asia. Sementara itu, Stripe dan Swift bersaing menguasai infrastruktur pembayaran global, dan Robinhood menargetkan 10\u202fjuta pengguna DeFi, meningkatkan likuiditas ritel. Harga Bitcoin turun di bawah $62,5\u202fk akibat ketegangan geopolitik (Iran) dan tekanan pasar saham AS. Investasi besar Citadel $400\u202fM ke Crypto.com serta pertumbuhan stablecoin yang diprediksi menggerus simpanan bank menambah dinamika pasar.",
+  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.016,
-    "technical_score": -0.082,
-    "technical_avg_change_pct": -0.82,
+    "news_score": 0.032,
+    "technical_score": -0.095,
+    "technical_avg_change_pct": -0.95,
     "rule_based_score": 0.032,
     "rule_based_bull_hits": 16,
     "rule_based_bear_hits": 15,
-    "ai_bias": 0.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
