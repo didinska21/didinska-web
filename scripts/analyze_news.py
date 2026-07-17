@@ -15,7 +15,7 @@ GROQ_KEYS = [
     os.environ.get(f"GROQ_API_KEY_{i}") for i in range(1, 11)
 ]
 GROQ_KEYS = [k for k in GROQ_KEYS if k]  # buang yang kosong
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 NEWS_WEIGHT = 0.9
@@ -113,6 +113,8 @@ def call_groq(prompt):
             if r.status_code == 429:
                 print(f"[Groq] key #{idx} kena rate limit, coba key berikutnya")
                 continue
+            if r.status_code >= 400:
+                print(f"[Groq] key #{idx} error {r.status_code}: {r.text[:300]}")
             r.raise_for_status()
             content = r.json()["choices"][0]["message"]["content"]
             print(f"[Groq] berhasil pakai key #{idx}")
