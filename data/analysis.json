@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-17T13:57:22.092665+00:00",
-  "final_score": -0.518,
+  "updated_at": "2026-07-17T15:14:23.013059+00:00",
+  "final_score": -0.5,
   "final_label": "Bearish",
-  "summary": "Beberapa kasus penipuan besar (UK, US, Belanda) menambah tekanan regulasi, sementara otoritas Eropa memperlambat lisensi MiCA dengan menambah 14 CASP. SBI akuisisi Coinhako memperkuat eksposur institusional di Asia, dan Citadel investasikan $400\u202fJuta ke Crypto.com, mengangkat valuasi menjadi $20\u202fMiliar. Namun, Bitcoin terus turun di bawah $63\u202fK akibat penurunan AI\u2011driven risk\u2011off dan penjualan oleh long\u2011term holders, sementara Ether tertekan lebih tajam. Stablecoin diprediksi mengikis simpanan bank, menambah kekhawatiran likuiditas. Secara keseluruhan, kombinasi tekanan regulasi, penurunan harga, dan aliran modal institusional menciptakan pasar yang cenderung lemah.",
+  "summary": "Bitcoin kembali turun di bawah $62,5K, dipicu tekanan geopolitik (serangan Iran) dan gelombang risk\u2011off yang meluas dari saham AI ke crypto. AI kompetisi China\u2011Kimi menambah beban bearish, sementara penjualan oleh long\u2011term holder memperparah penurunan. Di sisi lain, institusi memperkuat ekosistem: HSBC dapat masuk Digital Securities Sandbox BOE, SBI bangun jaringan aset lintas batas dan akuisisi Coinhako, serta Citadel investasikan $400\u202fJuta di Crypto.com. Regulasi menguat dengan ESMA menambah 14 CASP ke register MiCA, sementara BVI muncul sebagai hub crypto tak terduga. Namun kasus fraud, kebangkrutan Knaken, dan hukuman hacker menambah ketidakpastian pasar. Potensi: tekanan harga jangka pendek tetap kuat, meski fondasi institusional terus tumbuh.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.543,
-    "technical_score": -0.294,
-    "technical_avg_change_pct": -2.94,
-    "rule_based_score": -0.086,
-    "rule_based_bull_hits": 16,
-    "rule_based_bear_hits": 19,
+    "news_score": -0.526,
+    "technical_score": -0.265,
+    "technical_avg_change_pct": -2.65,
+    "rule_based_score": -0.053,
+    "rule_based_bull_hits": 18,
+    "rule_based_bear_hits": 20,
     "ai_bias": -1.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
