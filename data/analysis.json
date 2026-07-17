@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T12:00:26.988457+00:00",
-  "final_score": -0.048,
-  "final_label": "Netral",
-  "summary": "AI hype melambat, menurunkan volatilitas Bitcoin yang kini menguji level $63.000 di tengah gelombang risk\u2011off global dan penurunan chip trade. Ether jatuh lebih tajam, namun ETF Bitcoin mencatat aliran masuk $368\u202fJuta dalam tiga hari, menambah dukungan institusional. Regulasi mengencang: ESMA menambah 14 CASP ke register MiCA, memperlambat lisensi, sementara penangkapan hacker di UK dan dakwaan fraud di AS meningkatkan tekanan keamanan. Investasi strategis muncul, seperti valuasi $20\u202fM",
+  "updated_at": "2026-07-17T13:57:22.092665+00:00",
+  "final_score": -0.518,
+  "final_label": "Bearish",
+  "summary": "Beberapa kasus penipuan besar (UK, US, Belanda) menambah tekanan regulasi, sementara otoritas Eropa memperlambat lisensi MiCA dengan menambah 14 CASP. SBI akuisisi Coinhako memperkuat eksposur institusional di Asia, dan Citadel investasikan $400\u202fJuta ke Crypto.com, mengangkat valuasi menjadi $20\u202fMiliar. Namun, Bitcoin terus turun di bawah $63\u202fK akibat penurunan AI\u2011driven risk\u2011off dan penjualan oleh long\u2011term holders, sementara Ether tertekan lebih tajam. Stablecoin diprediksi mengikis simpanan bank, menambah kekhawatiran likuiditas. Secara keseluruhan, kombinasi tekanan regulasi, penurunan harga, dan aliran modal institusional menciptakan pasar yang cenderung lemah.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.032,
-    "technical_score": -0.194,
-    "technical_avg_change_pct": -1.94,
-    "rule_based_score": -0.032,
-    "rule_based_bull_hits": 15,
-    "rule_based_bear_hits": 16,
-    "ai_bias": null
+    "news_score": -0.543,
+    "technical_score": -0.294,
+    "technical_avg_change_pct": -2.94,
+    "rule_based_score": -0.086,
+    "rule_based_bull_hits": 16,
+    "rule_based_bear_hits": 19,
+    "ai_bias": -1.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
