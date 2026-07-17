@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T18:42:18.907226+00:00",
-  "final_score": 0.019,
+  "updated_at": "2026-07-17T19:48:29.333158+00:00",
+  "final_score": 0.006,
   "final_label": "Netral",
-  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
+  "summary": "Berita minggu ini menyoroti tekanan regulasi dan geopolitik sekaligus dorongan adopsi institusional. Consensys terpaksa hadapi sorotan karena kerja outsourc ke Korea Utara, sementara Senator Warren minta laporan crypto Trump 2026, menambah beban kepatuhan. Di sisi lain, OKX meluncurkan USDT\u2011USDC konversi yang patuh MiCA, HSBC masuk sandbox sekuritas digital, dan SBI memperluas jaringan Asia lewat akuisisi Coinhako. Cardano mempercepat desentralisasi pengembangan, dan AI Kimi K3 mengalahkan model Barat, menambah kegunaan blockchain. Stablecoin kembali dipilih saat dolar melemah, namun Bitcoin turun di bawah $62,5K akibat ketegangan Iran dan persaingan AI China. Pasar berada dalam keseimbangan antara peluang institusional dan risiko regulasi/geopolitik.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.032,
-    "technical_score": -0.095,
-    "technical_avg_change_pct": -0.95,
-    "rule_based_score": 0.032,
-    "rule_based_bull_hits": 16,
-    "rule_based_bear_hits": 15,
-    "ai_bias": null
+    "news_score": 0.015,
+    "technical_score": -0.07,
+    "technical_avg_change_pct": -0.7,
+    "rule_based_score": 0.03,
+    "rule_based_bull_hits": 17,
+    "rule_based_bear_hits": 16,
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
