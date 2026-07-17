@@ -12,7 +12,7 @@ OUTPUT_FILE = "data/analysis.json"
 # Rotasi sampai 5 Groq API key biar gak kena rate limit harian.
 # Set di GitHub Secrets: GROQ_API_KEY_1, GROQ_API_KEY_2, ... GROQ_API_KEY_5
 GROQ_KEYS = [
-    os.environ.get(f"GROQ_API_KEY_{i}") for i in range(1, 6)
+    os.environ.get(f"GROQ_API_KEY_{i}") for i in range(1, 11)
 ]
 GROQ_KEYS = [k for k in GROQ_KEYS if k]  # buang yang kosong
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
