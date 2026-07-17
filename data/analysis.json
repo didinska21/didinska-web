@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-07-17T00:32:40.009812+00:00",
-  "final_score": -0.048,
+  "updated_at": "2026-07-17T00:39:33.159384+00:00",
+  "final_score": -0.05,
   "final_label": "Netral",
   "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
     "news_score": -0.03,
-    "technical_score": -0.212,
-    "technical_avg_change_pct": -2.12,
+    "technical_score": -0.23,
+    "technical_avg_change_pct": -2.3,
     "rule_based_score": -0.03,
     "rule_based_bull_hits": 16,
     "rule_based_bear_hits": 17,
