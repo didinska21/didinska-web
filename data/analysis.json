@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T00:48:54.680174+00:00",
-  "final_score": 0.417,
-  "final_label": "Bullish",
-  "summary": "Likuiditas klaster Bitcoin dan aliran futures kini mengarahkan harga naik, didukung kenaikan mingguan 6% meski sempat tertekan oleh penurunan saham AS. Institusi besar terus masuk: Citadel investasikan $400\u202fJt ke Crypto.com (valuasi $20\u202fM), T.\u202fRowe Price luncurkan ETF multi\u2011token, Morgan Stanley buka perdagangan BTC, ETH, SOL di E*Trade, serta Visa luncurkan platform stablecoin untuk bank. Regulasi menguat lewat lisensi MiCA BitPay dan pendaftaran agen sekuritas Injective. Sisi negatif muncul lewat pemotongan pekerjaan Polygon, kegagalan 1inch founder, dan kekhawatiran struktur pasar. Secara keseluruhan, arus institusional dan adopsi regulasi memberi dorongan positif bagi pasar.",
+  "updated_at": "2026-07-17T01:13:40.475149+00:00",
+  "final_score": -0.03,
+  "final_label": "Netral",
+  "summary": "Likuiditas Bitcoin kini terpusat dalam \u201ccluster\u201d yang dipengaruhi aliran futures, memperkuat tren naik setelah kenaikan mingguan 6% namun masih rentan pada penurunan saham AS, seperti penurunan Micron. Institusi besar terus masuk: Citadel invest $400\u202fJt di Crypto.com (valuasi $20\u202fM), T.\u202fRowe Price luncurkan ETF multi\u2011token, Morgan Stanley buka perdagangan BTC/ETH/SOL di E*Trade, serta Visa luncurkan platform stablecoin. Regulasi menguat lewat lisensi MiCA BitPay dan pendaftaran SEC Injective. Sisi negatif muncul dari pemotongan tenaga kerja Polygon dan kebocoran data AI. Secara keseluruhan, dorongan institusional menyeimbangkan tekanan makro, menandakan pasar berada di persimpangan antara stabilitas dan volatilitas.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.485,
-    "technical_score": -0.195,
-    "technical_avg_change_pct": -1.95,
+    "news_score": -0.015,
+    "technical_score": -0.169,
+    "technical_avg_change_pct": -1.69,
     "rule_based_score": -0.03,
     "rule_based_bull_hits": 16,
     "rule_based_bear_hits": 17,
-    "ai_bias": 1.0
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
