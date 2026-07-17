@@ -186,15 +186,39 @@
     padding: 14px 16px;
     margin-bottom: 8px;
   }
-  .card a.title-link {
+  .card .title-link {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.92rem;
     line-height: 1.4;
     display: block;
     margin-bottom: 6px;
+    cursor: pointer;
   }
-  .card a.title-link:hover { color: var(--teal); }
+  .card .title-link:hover { color: var(--teal); }
+  .card-detail {
+    display: none;
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+  }
+  .card.expanded .card-detail { display: block; }
+  .card-detail .rangkuman {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .source-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--teal);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+  .source-link:hover { border-color: var(--teal); }
   .card-meta {
     display: flex;
     justify-content: space-between;
@@ -316,6 +340,11 @@
     return Math.floor(diff/86400) + " hari lalu";
   }
 
+  function toggleCard(cardId) {
+    const el = document.getElementById(cardId);
+    if (el) el.classList.toggle("expanded");
+  }
+
   function renderFeed() {
     const list = document.getElementById("feedList");
     let items = [];
@@ -338,16 +367,22 @@
       return;
     }
 
-    list.innerHTML = items.slice(0, 40).map(item => {
+    list.innerHTML = items.slice(0, 40).map((item, idx) => {
       if (item._type === "news") {
+        const displayTitle = item.title_id || item.title;
+        const rangkuman = item.summary_id || item.summary || "Rangkuman belum tersedia.";
+        const cardId = "news-" + idx;
         return `
-          <div class="card">
+          <div class="card" id="${cardId}">
             <div class="card-meta">
               <span class="source-badge">${item.source}</span>
               <span class="time">${timeAgo(item.published_at)}</span>
             </div>
-            <a class="title-link" href="${item.url}" target="_blank" rel="noopener">${item.title}</a>
-            ${item.summary ? `<div class="card-summary">${item.summary}</div>` : ""}
+            <div class="title-link" onclick="toggleCard('${cardId}')">${displayTitle}</div>
+            <div class="card-detail">
+              <div class="rangkuman">${rangkuman}</div>
+              <a class="source-link" href="${item.url}" target="_blank" rel="noopener">Buka sumber asli ↗</a>
+            </div>
           </div>
         `;
       } else {
