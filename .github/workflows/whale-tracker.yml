@@ -2,7 +2,7 @@ name: News Tracker
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -63,6 +63,6 @@ jobs:
         run: |
           git config user.name "news-tracker-bot"
           git config user.email "actions@github.com"
-          git add data/news.json data/events.json data/analysis.json
+          git add data/news.json data/events.json data/analysis.json data/api_status.json
           git diff --quiet --cached || git commit -m "Update news & analysis [skip ci]"
           git push
