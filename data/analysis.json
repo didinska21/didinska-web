@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T10:46:05.193804+00:00",
-  "final_score": -0.471,
-  "final_label": "Bearish",
-  "summary": "Bitcoin turun di bawah $63.000, dipicu oleh gelombang risk\u2011off global, penurunan AI saham, dan ketegangan geopolitik setelah serangan AS ke Iran serta komentar Trump tentang China. Ether jatuh lebih tajam, memperparah sentimen negatif. Di sisi regulasi, ESMA menambah 14 CASP ke register MiCA, menandakan proses lisensi yang masih lambat, sementara AS menuntut investor crypto atas dugaan penipuan $20\u202fjuta, menambah tekanan. Namun, aliran positif muncul: investasi $400\u202fjuta Citadel ke Crypto.com (valuasi $20\u202fmiliar), arus masuk $368\u202fjuta ke Bitcoin ETF, dan peluncuran Bybit di Indonesia. Risiko keamanan meningkat dengan malware macOS yang menargetkan wallet. Secara keseluruhan, tekanan pasar masih mendominasi meski ada dukungan likuiditas.",
+  "updated_at": "2026-07-17T12:00:26.988457+00:00",
+  "final_score": -0.048,
+  "final_label": "Netral",
+  "summary": "AI hype melambat, menurunkan volatilitas Bitcoin yang kini menguji level $63.000 di tengah gelombang risk\u2011off global dan penurunan chip trade. Ether jatuh lebih tajam, namun ETF Bitcoin mencatat aliran masuk $368\u202fJuta dalam tiga hari, menambah dukungan institusional. Regulasi mengencang: ESMA menambah 14 CASP ke register MiCA, memperlambat lisensi, sementara penangkapan hacker di UK dan dakwaan fraud di AS meningkatkan tekanan keamanan. Investasi strategis muncul, seperti valuasi $20\u202fM",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.5,
-    "technical_score": -0.205,
-    "technical_avg_change_pct": -2.05,
-    "rule_based_score": 0.0,
+    "news_score": -0.032,
+    "technical_score": -0.194,
+    "technical_avg_change_pct": -1.94,
+    "rule_based_score": -0.032,
     "rule_based_bull_hits": 15,
-    "rule_based_bear_hits": 15,
-    "ai_bias": -1.0
+    "rule_based_bear_hits": 16,
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
