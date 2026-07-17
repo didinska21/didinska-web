@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T06:39:17.861904+00:00",
-  "final_score": 0.415,
-  "final_label": "Bullish",
-  "summary": "Bitcoin turun di bawah $63\u202f000 dipicu gejolak geopolitik AS\u2011Iran dan komentar Trump tentang China, namun likuiditas cluster dan arus futures masih menunjang level support. Di sisi institusional, Citadel injeksi $400\u202fjuta ke Crypto.com, T.\u202fRowe\u202fPrice luncurkan ETF multi\u2011token, dan Morgan Stanley buka perdagangan BTC, ETH, Solana di E*Trade, menambah legitimasi pasar. Ekspansi regional muncul lewat Bybit yang masuk Indonesia pasca akuisisi NOBI serta BitPay dapat lisensi MiCA Belanda, memperluas penggunaan stablecoin. Inovasi teknis muncul dengan proposal \u201cDOG Mode\u201d untuk mitigasi spam Bitcoin dan rencana pemulihan kuantum. Secara keseluruhan, arus masuk institusional dan adopsi regulasi mengimbangi tekanan jangka pendek.",
+  "updated_at": "2026-07-17T08:56:28.536086+00:00",
+  "final_score": 0.006,
+  "final_label": "Netral",
+  "summary": "Ether kembali jatuh tajam, dua kali lebih cepat dari Bitcoin, memicu spekulasi \u201c$28\u202fJuta market bet\u201d yang menargetkan volatilitas ekstrem. Sementara itu, aliran dana ke Bitcoin ETFs menambah $368\u202fJuta dalam tiga hari, menguatkan permintaan institusional. Peluncuran Bybit di Indonesia dan investasi $400\u202fJuta Citadel ke Crypto.com memperluas ekosistem regional. Namun, tekanan geopolitik (serangan AS ke Iran) menurunkan Bitcoin di bawah $63\u202f000, dan kebijakan data\u2011restriction pada Ordinals menambah ketidakpastian regulasi. Di sisi lain, Morgan Stanley buka perdagangan Bitcoin, Ethereum, dan Solana via E*Trade, menandakan adopsi mainstream. Kombinasi aliran institusional positif dan volatilitas aset utama membuat pasar berada di titik keseimbangan.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.5,
-    "technical_score": -0.347,
-    "technical_avg_change_pct": -3.47,
-    "rule_based_score": 0.0,
-    "rule_based_bull_hits": 15,
-    "rule_based_bear_hits": 15,
-    "ai_bias": 1.0
+    "news_score": 0.034,
+    "technical_score": -0.243,
+    "technical_avg_change_pct": -2.43,
+    "rule_based_score": 0.067,
+    "rule_based_bull_hits": 16,
+    "rule_based_bear_hits": 14,
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
