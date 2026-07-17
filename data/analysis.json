@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-17T21:31:32.498735+00:00",
-  "final_score": -0.009,
-  "final_label": "Netral",
-  "summary": "ECB memperingatkan stablecoin dapat mengalirkan dana dari deposito bank, menambah tekanan regulasi di Eropa. Sementara itu, Galaxy menandatangani kesepakatan penamaan stadion Texas Tech, menandakan adopsi mainstream. Konsensys terlibat kontroversi outsourcing ke Korea Utara, menimbulkan kekhawatiran keamanan. Cardano menguat lewat desentralisasi pengembangan, dan OKX Europe meluncurkan USDC yang patuh MiCA, memperluas likuiditas regulatif. Persaingan Stripe\u2011Swift serta masuknya HSBC ke sandbox sekuritas digital mempercepat infrastruktur pembayaran. SBI memperluas ekosistem lintas\u2011batas dengan akuisisi Coinhako. Bitcoin tertekan di bawah $62,5K akibat ketegangan geopolitik Iran. Kombinasi tekanan regulasi dan adopsi institusional membuat pasar berada pada keseimbangan.",
+  "updated_at": "2026-07-17T22:27:01.982427+00:00",
+  "final_score": 0.427,
+  "final_label": "Bullish",
+  "summary": "FTX melanjutkan likuidasi dengan pembayaran $900\u202fJuta, menambah kepercayaan kreditor pada proses restrukturisasi. ECB mengingatkan risiko stablecoin yang dapat mengalirkan dana dari bank, memicu pengawasan regulator. Galaxy menandatangani kesepakatan penamaan stadion Texas Tech selama 15\u202ftahun, menegaskan adopsi institusional crypto. Konsensys terlibat kontroversi outsourcing ke Korea Utara, menimbulkan pertanyaan keamanan. Cardano dan OKX memperkuat ekosistem lewat desentralisasi dan kepatuhan MiCA. Stripe dan Swift bersaing menguasai infrastruktur pembayaran global, sementara SBI memperluas jejak Asia dengan akuisisi Coinhako. Tekanan geopolitik (Iran) menurunkan Bitcoin di bawah $62,5\u202fK, namun inovasi regulasi dan adopsi institusional memberi dukungan jangka panjang.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.0,
-    "technical_score": -0.087,
-    "technical_avg_change_pct": -0.87,
-    "rule_based_score": 0.0,
+    "news_score": 0.485,
+    "technical_score": -0.091,
+    "technical_avg_change_pct": -0.91,
+    "rule_based_score": -0.03,
     "rule_based_bull_hits": 16,
-    "rule_based_bear_hits": 16,
-    "ai_bias": 0.0
+    "rule_based_bear_hits": 17,
+    "ai_bias": 1.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
