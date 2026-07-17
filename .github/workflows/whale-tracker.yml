@@ -31,6 +31,15 @@ jobs:
           COINMARKETCAL_API_KEY: ${{ secrets.COINMARKETCAL_API_KEY }}
         run: python scripts/fetch_events.py
 
+      - name: Translate & rangkum berita (Bahasa Indonesia)
+        env:
+          GROQ_API_KEY_1: ${{ secrets.GROQ_API_KEY_1 }}
+          GROQ_API_KEY_2: ${{ secrets.GROQ_API_KEY_2 }}
+          GROQ_API_KEY_3: ${{ secrets.GROQ_API_KEY_3 }}
+          GROQ_API_KEY_4: ${{ secrets.GROQ_API_KEY_4 }}
+          GROQ_API_KEY_5: ${{ secrets.GROQ_API_KEY_5 }}
+        run: python scripts/translate_news.py
+
       - name: Analyze news
         env:
           GROQ_API_KEY_1: ${{ secrets.GROQ_API_KEY_1 }}
