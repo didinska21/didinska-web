@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-18T19:25:31.619490+00:00",
-  "final_score": -0.046,
-  "final_label": "Netral",
-  "summary": "Ekosistem crypto kini berada di persimpangan antara adopsi institusional dan tekanan regulasi. Tokenisasi menjadi prioritas 84\u202f% lembaga keuangan, sementara stablecoin semakin menggantikan dolar dalam pembayaran, menimbulkan peringatan ECB tentang potensi penarikan dana bank. Di sisi pasar, opsi call Bitcoin menargetkan $72\u202fribuan menjelang pertemuan Fed, menandakan ekspektasi bullish meski volatilitas tetap tinggi. Namun, $1,6\u202fmiliar likuiditas yang menganggur, serangan malware Kaspersky, serta tindakan regulator (mis. pemblokiran Polymarket di Prancis, kebijakan Trump di Brazil) menambah ketidakpastian. Inovasi AI (GPT\u20115.6, Kimi\u202fK3) dan langkah branding Galaxy di Texas men",
+  "updated_at": "2026-07-18T20:13:03.376114+00:00",
+  "final_score": 0.432,
+  "final_label": "Bullish",
+  "summary": "Ekosistem crypto kini dipengaruhi dua arus utama. Di sisi adopsi, generasi digital diprediksi lepas dari bank, didorong tokenisasi (84\u202f% lembaga keuangan) dan stablecoin yang menggantikan pembayaran tradisional\u2014terutama di Brazil dan setelah peringatan ECB tentang potensi penarikan dana bank. Di sisi risiko, Bitcoin menghadapi pertarungan tata kelola, sementara likuiditas $1,6\u202fmiliar menganggur dan malware Kaspersky menargetkan investor. Pasar futures menunjukkan optimism dengan call spread Bitcoin mengincar $72\u202frb menjelang pertemuan Fed. Sementara itu, regulasi ketat (Polymarket, Consensys) dan kolaborasi infrastruktur (Stripe vs SWIFT) menambah ketidakpastian operasional. Potensi volatilitas tinggi tetap tinggi, namun dorongan adopsi institusional memberi dukungan jangka menengah.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.062,
-    "technical_score": 0.096,
-    "technical_avg_change_pct": 0.96,
+    "news_score": 0.469,
+    "technical_score": 0.099,
+    "technical_avg_change_pct": 0.99,
     "rule_based_score": -0.062,
     "rule_based_bull_hits": 15,
     "rule_based_bear_hits": 17,
-    "ai_bias": null
+    "ai_bias": 1.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
