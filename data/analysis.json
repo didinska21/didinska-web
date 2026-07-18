@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-18T18:09:30.330846+00:00",
-  "final_score": -0.023,
+  "updated_at": "2026-07-18T19:25:31.619490+00:00",
+  "final_score": -0.046,
   "final_label": "Netral",
-  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
+  "summary": "Ekosistem crypto kini berada di persimpangan antara adopsi institusional dan tekanan regulasi. Tokenisasi menjadi prioritas 84\u202f% lembaga keuangan, sementara stablecoin semakin menggantikan dolar dalam pembayaran, menimbulkan peringatan ECB tentang potensi penarikan dana bank. Di sisi pasar, opsi call Bitcoin menargetkan $72\u202fribuan menjelang pertemuan Fed, menandakan ekspektasi bullish meski volatilitas tetap tinggi. Namun, $1,6\u202fmiliar likuiditas yang menganggur, serangan malware Kaspersky, serta tindakan regulator (mis. pemblokiran Polymarket di Prancis, kebijakan Trump di Brazil) menambah ketidakpastian. Inovasi AI (GPT\u20115.6, Kimi\u202fK3) dan langkah branding Galaxy di Texas men",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.032,
-    "technical_score": 0.059,
-    "technical_avg_change_pct": 0.59,
-    "rule_based_score": -0.032,
+    "news_score": -0.062,
+    "technical_score": 0.096,
+    "technical_avg_change_pct": 0.96,
+    "rule_based_score": -0.062,
     "rule_based_bull_hits": 15,
-    "rule_based_bear_hits": 16,
+    "rule_based_bear_hits": 17,
     "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
