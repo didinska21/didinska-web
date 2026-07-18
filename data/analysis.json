@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-18T12:35:00.416279+00:00",
-  "final_score": -0.004,
+  "updated_at": "2026-07-18T14:04:41.638189+00:00",
+  "final_score": -0.015,
   "final_label": "Netral",
-  "summary": "Pasar crypto kini berada di persimpangan regulasi dan adopsi institusional. ECB memperingatkan stablecoin dapat mengalirkan dana dari bank, menambah tekanan pada regulator Eropa, sementara OKX meluncurkan USDT\u2011USDC MiCA\u2011compliant di Eropa. Di sisi lain, FTX melanjutkan pembayaran $900\u202fJt ke kreditur, menegaskan proses likuidasi yang masih berjalan. Kaspersky mengungkap malware khusus investor crypto, meningkatkan kekhawatiran keamanan. Cardano mendapat dorongan harga lewat desentralisasi pengembangan, dan Galaxy menandatangani kesepakatan penamaan stadion, menandai branding crypto di ruang publik. Namun, tekanan geopolitik (serangan Iran) menurunkan Bitcoin di bawah $62,5\u202fK, dan regulator Prancis memblokir Polymarket, menambah ketidakpastian.",
+  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.015,
-    "technical_score": 0.094,
-    "technical_avg_change_pct": 0.94,
+    "news_score": -0.03,
+    "technical_score": 0.12,
+    "technical_avg_change_pct": 1.2,
     "rule_based_score": -0.03,
     "rule_based_bull_hits": 16,
     "rule_based_bear_hits": 17,
-    "ai_bias": 0.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
