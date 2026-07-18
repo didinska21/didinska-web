@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-18T15:08:53.010317+00:00",
-  "final_score": 0.453,
-  "final_label": "Bullish",
-  "summary": "Bitcoin diperkirakan naik ke $72.000 lewat akhir bulan lewat call spreads besar, bersamaan dengan pertemuan Fed yang dapat memicu volatilitas likuiditas. Sementara itu, tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan, menambah arus masuk institusional. Stablecoin mendapat sorotan regulator Eropa yang khawatir mengalirkan dana bank, dan OKX mulai menawarkan USDT\u2011to\u2011USDC yang patuh MiCA, menandakan adaptasi regulasi. Ancaman keamanan meningkat dengan malware khusus kripto dan outsourcing kode ke Korea Utara. FTX melanjutkan pembayaran $900\u202fJt, memberi kepercayaan pada proses likuidasi. Di sisi positif, Cardano menguat lewat desentralisasi pengembangan, dan Galaxy menandatangani kesepakatan branding stadion, menegaskan adopsi mainstream. Potensi pasar terjaga antara dorongan institusional dan tekanan regulasi/keamanan.",
+  "updated_at": "2026-07-18T16:09:17.095640+00:00",
+  "final_score": -0.046,
+  "final_label": "Netral",
+  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.485,
-    "technical_score": 0.166,
-    "technical_avg_change_pct": 1.66,
-    "rule_based_score": -0.03,
-    "rule_based_bull_hits": 16,
+    "news_score": -0.062,
+    "technical_score": 0.097,
+    "technical_avg_change_pct": 0.97,
+    "rule_based_score": -0.062,
+    "rule_based_bull_hits": 15,
     "rule_based_bear_hits": 17,
-    "ai_bias": 1.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
