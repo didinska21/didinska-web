@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-18T17:13:37.267202+00:00",
-  "final_score": -0.013,
+  "updated_at": "2026-07-18T18:09:30.330846+00:00",
+  "final_score": -0.023,
   "final_label": "Netral",
-  "summary": "Bitcoin kembali terjebak dalam pertempuran tata kelola (DOG Mode) bersamaan dengan spekulasi call spread yang menargetkan $72.000 menjelang pertemuan Fed, menambah volatilitas jangka pendek. Di sisi lain, stablecoin semakin menggeser pembayaran tradisional di Brasil dan Eropa, meski ECB mengingatkan risiko penarikan dana bank. Tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan, memperkuat adopsi institusional. Namun, ancaman keamanan meningkat (malware Kaspersky, outsourcing kode ke Korea Utara) dan regulasi ketat (blokir Polymarket, tekanan Trump). Likuiditas $1,6\u202fmiliar yang menganggur menandakan tekanan likuiditas. Secara keseluruhan, pasar berada dalam keseimbangan antara dorongan institusional dan tekanan regulasi/keamanan.",
+  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.016,
-    "technical_score": 0.013,
-    "technical_avg_change_pct": 0.13,
+    "news_score": -0.032,
+    "technical_score": 0.059,
+    "technical_avg_change_pct": 0.59,
     "rule_based_score": -0.032,
     "rule_based_bull_hits": 15,
     "rule_based_bear_hits": 16,
-    "ai_bias": 0.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
