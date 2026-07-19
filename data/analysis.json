@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-19T17:15:11.445409+00:00",
-  "final_score": -0.199,
+  "updated_at": "2026-07-19T18:11:07.185352+00:00",
+  "final_score": -0.102,
   "final_label": "Netral",
-  "summary": "Michael Saylor menentang BIP\u2011110, menambah tekanan pada upaya scaling Bitcoin. Di sisi regulasi, AS belum finalisasi aturan stablecoin, sementara Dunamu menghadapi sanksi Korea dan Tether USDT masuk hitungan mundur dua tahun, menimbulkan keraguan likuiditas. Kraken mengusulkan opsi sederhana untuk pasar derivatif, dan call spread Bitcoin",
+  "summary": "Michael Saylor menyoroti kelemahan BIP\u2011110, menambah skeptisisme terhadap upgrade Bitcoin. Sementara itu, hitung mundur 2\u2011tahun USDT menimbulkan kekhawatiran stabilitas stablecoin, dipercepat oleh penundaan aturan GENIUS Act. Kraken mengusulkan opsi sederhana untuk membuka pasar derivatif, dan Zcash meluncurkan node privasi Visa\u2011scale, memberi sinyal inovasi teknis. Namun, regulator Korea Selatan menindak Dunamu, Prancis blokir Polymarket, dan Kaspersky temukan malware khusus crypto, menambah tekanan regulasi dan keamanan. AI yang \u201cmenghancurkan internet\u201d serta laporan likuiditas $1,6\u202fmiliar menganggur menyoroti tantangan likuiditas. Secara keseluruhan, pasar berada di persimpangan antara inovasi dan risiko regulasi.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.231,
-    "technical_score": 0.093,
-    "technical_avg_change_pct": 0.93,
+    "news_score": -0.116,
+    "technical_score": 0.024,
+    "technical_avg_change_pct": 0.24,
     "rule_based_score": -0.231,
     "rule_based_bull_hits": 10,
     "rule_based_bear_hits": 16,
-    "ai_bias": null
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
