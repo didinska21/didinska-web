@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-19T03:46:31.883029+00:00",
-  "final_score": 0.418,
-  "final_label": "Bullish",
-  "summary": "Pemerintah Prancis kembali menindak Polymarket, menambah tekanan regulasi pada platform prediksi. Sementara itu, stablecoin dolar terus menggerus penggunaan uang fiat di Brazil dan Eropa, memicu peringatan ECB tentang potensi penarikan dana bank. Di sisi pasar, spekulan Bitcoin menumpuk call spread besar dengan target $72.000 menjelang pertemuan Fed, menandakan ekspektasi volatilitas naik. Likuiditas kripto senilai $1,6\u202fmiliar masih menganggur, menurunkan efisiensi pasar. Tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan, memperkuat adopsi institusional. Ancaman keamanan meningkat lewat malware Kaspersky dan outsourcing kode Consensys ke Korea Utara. Cardano memperoleh dorongan harga lewat desentralisasi lebih lanjut.",
+  "updated_at": "2026-07-19T06:18:26.918599+00:00",
+  "final_score": -0.032,
+  "final_label": "Netral",
+  "summary": "Zcash meluncurkan node dengan kapasitas 50.000 tps, menandai lonjakan privasi skala Visa, sementara tokenisasi kini diprioritaskan 84\u202f% lembaga keuangan. Di sisi regulasi, Prancis blokir Polymarket dan ECB memperingatkan stablecoin dapat mengalirkan dana dari bank, menambah tekanan kebijakan. Di Amerika, Bitcoin menghadapi pertarungan tata kelola dan call spread besar menargetkan $72\u202frb menjelang rapat Fed, meningkatkan volatilitas. Trump menyoroti sistem pembayaran Brasil, dan stablecoin mulai mengisi kekosongan dolar. Namun, $1,6\u202fmiliar likuiditas crypto menganggur, dan ancaman malware serta outsourcing ke Korea Utara menambah risiko operasional. Cardano terus desentralisasi, memberi dorongan positif pada ekosistem.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.452,
-    "technical_score": 0.117,
-    "technical_avg_change_pct": 1.17,
+    "news_score": -0.049,
+    "technical_score": 0.12,
+    "technical_avg_change_pct": 1.2,
     "rule_based_score": -0.097,
     "rule_based_bull_hits": 14,
     "rule_based_bear_hits": 17,
-    "ai_bias": 1.0
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
