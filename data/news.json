@@ -1,13 +1,33 @@
 [
   {
+    "id": "75a527768098b230",
+    "title": "Bitcoin’s quantum problem gets a recovery tool, but not for Satoshi’s 1.1 million coins",
+    "url": "https://www.coindesk.com/tech/2026/07/19/bitcoin-s-quantum-problem-gets-a-recovery-tool-but-not-for-satoshi-s-1-1-million-coin",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-19T10:00:00+00:00",
+    "title_id": "Masalah kuantum Bitcoin dapat diatasi dengan alat pemulihan, namun tidak untuk 1,1 juta koin Satoshi",
+    "summary_id": "Sebuah solusi baru muncul untuk melindungi jaringan Bitcoin dari ancaman komputasi kuantum, tetapi alat tersebut tidak dapat diterapkan pada koin Satoshi yang belum terpakai. Bagi trader, ini menandakan peningkatan keamanan jaringan sekaligus menegaskan bahwa aset lama tetap berisiko jika tidak di‑upgrade."
+  },
+  {
+    "id": "f17115932fe48352",
+    "title": "Electronic Transactions Association CEO Expecting More Partnerships with Bitcoin Startups",
+    "url": "https://cointelegraph.com/news/electronic-transactions-association-ceo-expecting-more-partnerships-with-bitcoin-startups?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Electronic Transactions Association (ETA) CEO, Jason Oxman, indicated that members of his organization might start recognizing Bitcoin’s disruptive potential, suggesting that this might lead to more partnerships between traditional electronic payment providers and Bitcoin startup",
+    "published_at": "2026-07-19T09:16:42+00:00",
+    "title_id": "CEO Electronic Transactions Association Antisipasi Lebih Banyak Kemitraan dengan Startup Bitcoin",
+    "summary_id": "Jason Oxman, CEO ETA, menyatakan bahwa anggotanya mulai menyadari potensi disruptif Bitcoin, sehingga kemungkinan besar akan muncul kolaborasi antara penyedia pembayaran tradisional dan startup crypto. Kemitraan ini dapat memperluas adopsi Bitcoin di sektor pembayaran, memberi peluang likuiditas dan integrasi bagi trader."
+  },
+  {
     "id": "5b53ea663bd9acaa",
     "title": "Inside Zcash's new node that targets Visa-scale privacy at 50,000 transactions per second",
     "url": "https://www.coindesk.com/tech/2026/07/16/inside-zcash-s-new-node-that-targets-visa-scale-privacy-at-50-000-transactions-per-second",
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-19T05:37:34+00:00",
-    "title_id": "Node Zcash Baru Siap Bersaing dengan Visa, Capai 50.000 Transaksi per Detik dengan Privasi Tinggi",
-    "summary_id": "Zcash meluncurkan node generasi berikutnya yang dapat memproses hingga 50 ribu transaksi per detik sambil menjaga privasi layaknya jaringan anonim. Jika berhasil, jaringan ini bisa menjadi alternatif skala Visa untuk pembayaran pribadi, membuka peluang adopsi massal bagi trader yang mengutamakan kerahasiaan."
+    "title_id": "Mengenal Node Baru Zcash yang Targetkan Privasi Skala Visa dengan 50.000 Transaksi per Detik",
+    "summary_id": "Zcash meluncurkan arsitektur node yang mampu memproses 50 ribu transaksi per detik sambil menjaga privasi setara Visa. Skalabilitas dan anonimitas yang ditingkatkan ini dapat membuat Zcash lebih kompetitif sebagai pilihan pembayaran pribadi bagi trader dan pengguna mainstream."
   },
   {
     "id": "0af9663ddf323336",
@@ -16,8 +36,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-18T21:52:18+00:00",
-    "title_id": "Prancis Perintahkan ISP Blokir Akses ke Polymarket",
-    "summary_id": "Otoritas Prancis memerintahkan semua penyedia layanan internet untuk memblokir situs Polymarket, platform prediksi pasar yang dianggap melanggar regulasi perjudian. Langkah ini menandakan tekanan regulator terhadap aplikasi berbasis kripto, yang dapat memengaruhi likuiditas dan aksesibilitas layanan serupa bagi trader."
+    "title_id": "Prancis Perintahkan ISP Nasional Blokir Polymarket",
+    "summary_id": "Regulator Prancis memerintahkan semua penyedia layanan internet di negara itu untuk memblokir akses ke Polymarket, platform pasar prediksi berbasis kripto, dengan alasan kepatuhan regulasi. Langkah ini menandakan tekanan regulatif yang semakin kuat terhadap aplikasi DeFi, yang dapat memengaruhi likuiditas dan eksposur pasar crypto di Eropa."
   },
   {
     "id": "78e2355c27d59b42",
@@ -26,8 +46,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-18T18:30:00+00:00",
-    "title_id": "Eksekutif Crypto Prediksi Generasi Digital Tidak Akan Pernah Membutuhkan Rekening Bank",
-    "summary_id": "Para pemimpin industri kripto berpendapat bahwa generasi milenial dan Gen Z akan beralih ke dompet digital dan DeFi, meninggalkan kebutuhan akan rekening bank tradisional. Perubahan ini memperluas basis pengguna kripto dan meningkatkan permintaan layanan on‑ramp/off‑ramp yang aman bagi trader."
+    "title_id": "Eksekutif Crypto Prediksi Generasi Digital Natives Mungkin Tak Perlu Rekening Bank",
+    "summary_id": "Para pemimpin industri crypto berpendapat bahwa generasi muda yang tumbuh dengan teknologi akan beralih ke layanan keuangan terdesentralisasi, meninggalkan rekening bank tradisional. Pergeseran ini membuka peluang bagi token dan protokol DeFi untuk menjadi instrumen utama dalam perdagangan dan penyimpanan nilai."
   },
   {
     "id": "384cd96d1a1e11ae",
@@ -36,8 +56,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-18T17:00:00+00:00",
-    "title_id": "DOG Mode Mengungkap Pertarungan Governance Bitcoin Selanjutnya",
-    "summary_id": "Artikel ini menjelaskan konflik tata kelola yang akan datang di komunitas Bitcoin, mulai dari perdebatan scaling hingga perubahan protokol, yang dibingkai dalam metafora “DOG Mode”. Perselisihan semacam ini dapat memicu volatilitas harga dan memengaruhi keputusan penambang serta investor."
+    "title_id": "DOG Mode Jelaskan Pertarungan Tata Kelola Bitcoin Selanjutnya",
+    "summary_id": "Analisis DOG Mode menguraikan konflik tata kelola yang akan datang di komunitas Bitcoin, terkait proposal upgrade protokol dan struktur biaya. Perselisihan semacam ini dapat memicu volatilitas harga dan memaksa trader menyesuaikan posisi mereka berdasarkan hasil keputusan komunitas."
   },
   {
     "id": "a952a3e78c9c0015",
@@ -46,8 +66,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-18T16:09:59+00:00",
-    "title_id": "Trump Serang Sistem Pembayaran Brasil, Sementara Stablecoin Dolar Menguasai Pasar Pembayaran",
-    "summary_id": "Mantan presiden AS, Donald Trump, mengkritik infrastruktur pembayaran Brasil, namun di balik itu stablecoin berbasis dolar secara diam-diam merebut pangsa pasar pembayaran lokal. Fenomena ini menandakan penetrasi stablecoin di ekonomi berkembang, memberi peluang arbitrase dan adopsi baru bagi trader kripto."
+    "title_id": "Trump Sasar Sistem Pembayaran Brasil Sementara Stablecoin Dolar Diam-diam Mengganti Pembayaran di Negara Itu",
+    "summary_id": "Mantan Presiden AS Donald Trump mengkritik infrastruktur pembayaran Brasil, sementara stablecoin berbasis dolar secara perlahan mengambil alih volume transaksi domestik. Tren adopsi stablecoin di pasar emerging seperti Brasil memberi sinyal peluang arbitrase dan diversifikasi bagi trader crypto."
   },
   {
     "id": "99fb9815834c3c41",
@@ -56,8 +76,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-18T15:50:31+00:00",
-    "title_id": "Mengapa $1,6 Miliar Likuiditas Crypto Menganggur dan Hilang Nilainya",
-    "summary_id": "Sebanyak $1,6 miliar likuiditas kripto terkunci dalam pool yang tidak aktif atau platform dengan imbal hasil rendah, sehingga tidak menghasilkan apa‑apa. Trader dapat memanfaatkan ketidakefisienan ini dengan memindahkan dana ke protokol dengan yield lebih tinggi atau likuiditas yang lebih dinamis."
+    "title_id": "Inilah Mengapa $1,6 Miliar Likuiditas Crypto Menganggur dan Terbuang",
+    "summary_id": "Laporan mengungkap bahwa sekitar $1,6 miliar likuiditas crypto terperangkap dalam platform dengan imbal hasil rendah atau menunggu regulasi, sehingga tidak berkontribusi pada pasar. Membuka kembali dana tersebut dapat meningkatkan volume perdagangan dan memperluas peluang profit bagi trader."
   },
   {
     "id": "8643a1a860e50172",
@@ -65,9 +85,7 @@
     "url": "https://decrypt.co/373770/openai-gpt-5-6-vs-anthropic-fable-5-review",
     "source": "Decrypt",
     "summary": "OpenAI's GPT-5.6 Sol or Anthropic's Claude Fable 5: Which one is right for you? The answer depends on your needs. Here's our review.",
-    "published_at": "2026-07-18T15:21:03+00:00",
-    "title_id": "Ulasan GPT-5.6 vs Claude Fable 5: Pilih Mana Sesuai Kebutuhan Anda",
-    "summary_id": "Perbandingan antara model AI OpenAI GPT‑5.6 Sol dan Anthropic Claude Fable 5 menyoroti kelebihan masing‑masing dalam analisis data, penulisan kode, dan pemahaman pasar kripto. Memilih AI yang tepat dapat mempercepat riset, mengoptimalkan strategi trading, dan mengurangi risiko keputusan yang kurang terinformasi."
+    "published_at": "2026-07-18T15:21:03+00:00"
   },
   {
     "id": "5c654a52f1829a3a",
@@ -75,9 +93,7 @@
     "url": "https://www.coindesk.com/markets/2026/07/18/massive-bitcoin-call-spreads-target-usd72-000-by-month-end-right-when-the-fed-meets",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-18T14:15:15+00:00",
-    "title_id": "Call Spread Bitcoin Besar Target $72.000 Menjelang Pertemuan Fed",
-    "summary_id": "Trader institusional menempatkan call spread besar yang menargetkan harga Bitcoin mencapai $72 ribu sebelum pertemuan Federal Reserve berikutnya, menandakan ekspektasi bullish kuat. Aliran opsi ini menjadi sinyal penting bagi pasar, karena dapat memicu pergerakan harga signifikan menjelang keputusan kebijakan moneter."
+    "published_at": "2026-07-18T14:15:15+00:00"
   },
   {
     "id": "54793e2752583a85",
@@ -85,9 +101,7 @@
     "url": "https://www.coindesk.com/business/2026/07/16/tokenization-has-become-a-strategic-priority-for-84-of-financial-firms",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-18T14:00:00+00:00",
-    "title_id": "Tokenisasi menjadi prioritas strategis bagi 84% perusahaan keuangan",
-    "summary_id": "Sebanyak 84% perusahaan keuangan kini menempatkan tokenisasi sebagai fokus utama strategi mereka. Hal ini menandakan peningkatan adopsi aset digital dan kemungkinan munculnya produk keuangan berbasis blockchain, yang dapat membuka peluang baru bagi trader crypto."
+    "published_at": "2026-07-18T14:00:00+00:00"
   },
   {
     "id": "552e43ae5e35357a",
@@ -95,9 +109,7 @@
     "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-18T11:42:51+00:00",
-    "title_id": "Ringkasan kejadian crypto hari ini",
-    "summary_id": "Berita harian ini merangkum pergerakan harga Bitcoin, tren DeFi, perkembangan Web3, serta regulasi terbaru yang memengaruhi pasar. Memantau rangkuman ini penting agar trader dapat menyesuaikan posisi mereka dengan cepat."
+    "published_at": "2026-07-18T11:42:51+00:00"
   },
   {
     "id": "ef8dfc0928963b5f",
@@ -105,9 +117,7 @@
     "url": "https://cointelegraph.com/news/kaspersky-malware-framework-crypto-investors?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Cybersecurity company Kaspersky said a newly identified malware framework is targeting cryptocurrency investors through social engineering tactics and trojanized GitHub apps.",
-    "published_at": "2026-07-18T11:40:48+00:00",
-    "title_id": "Kaspersky temukan kerangka malware yang menyasar investor crypto",
-    "summary_id": "Kaspersky mengungkap kerangka malware baru yang menyasar investor crypto lewat taktik rekayasa sosial dan aplikasi GitHub yang telah dibajak. Trader harus waspada terhadap ancaman ini dan memperkuat keamanan perangkat serta akun mereka."
+    "published_at": "2026-07-18T11:40:48+00:00"
   },
   {
     "id": "d34d16ef802614ab",
@@ -115,9 +125,7 @@
     "url": "https://cointelegraph.com/news/french-gambling-authority-blocks-polymarket?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "France’s gambling authority has ordered the country’s internet service providers to geoblock Polymarket, citing illegal gambling and market manipulation concerns.",
-    "published_at": "2026-07-18T09:58:55+00:00",
-    "title_id": "Regulator judi Prancis perintahkan ISP blokir Polymarket",
-    "summary_id": "Otoritas perjudian Prancis memerintahkan ISP untuk memblokir akses ke Polymarket karena dianggap melanggar aturan perjudian dan manipulasi pasar. Bagi trader, hal ini berarti platform prediksi pasar berbasis crypto menjadi lebih sulit diakses di wilayah tersebut."
+    "published_at": "2026-07-18T09:58:55+00:00"
   },
   {
     "id": "e13374ab7f238896",
@@ -125,9 +133,7 @@
     "url": "https://cointelegraph.com/news/ftx-distribute-millions-creditors-fifth-payment-round?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The FTX Recovery Trust and company have distributed about $10 billion since the exchange filed for bankruptcy in November 2022, leaving users cut off from their funds.",
-    "published_at": "2026-07-17T21:40:18+00:00",
-    "title_id": "FTX akan distribusikan $900 juta ke kreditor pada putaran pembayaran kelima",
-    "summary_id": "FTX mengumumkan pembayaran $900 juta kepada kreditor dalam gelombang kelima, menambah total distribusi hampir $10 miliar sejak kebangkrutan. Meskipun demikian, banyak pengguna masih belum menerima dana mereka, menyoroti proses pemulihan yang masih panjang."
+    "published_at": "2026-07-17T21:40:18+00:00"
   },
   {
     "id": "6aa7bdb2b069acc7",
@@ -135,9 +141,7 @@
     "url": "https://decrypt.co/373767/ecb-warns-stablecoins-drain-bank-deposits",
     "source": "Decrypt",
     "summary": "ECB board member Piero Cipollone laid out the three-layer threat banks face from digital payments, and pitched the digital euro as the only structural answer.",
-    "published_at": "2026-07-17T20:17:44+00:00",
-    "title_id": "ECB peringatkan stablecoin dapat menguras simpanan bank—Apa artinya",
-    "summary_id": "ECB memperingatkan bahwa stablecoin berpotensi menarik dana dari simpanan bank, mengancam likuiditas perbankan. Bank sentral menawarkan euro digital sebagai solusi struktural, yang dapat mengubah cara trader bertransaksi dengan aset fiat dan stablecoin."
+    "published_at": "2026-07-17T20:17:44+00:00"
   },
   {
     "id": "0520b9570cf6d969",
@@ -146,8 +150,8 @@
     "source": "Cointelegraph",
     "summary": "Galaxy Digital will rename Texas Tech’s football stadium under a 15-year agreement, expanding its West Texas presence as the state attracts growing crypto investment.",
     "published_at": "2026-07-17T20:03:32+00:00",
-    "title_id": "Galaxy dapat hak penamaan stadion Texas Tech selama 15 tahun",
-    "summary_id": "Galaxy Digital menandatangani kesepakatan penamaan stadion Texas Tech selama 15 tahun, memperkuat kehadirannya di Texas yang kini menjadi magnet investasi crypto. Langkah ini menandakan legitimasi dan pertumbuhan ekosistem kripto di wilayah tersebut."
+    "title_id": "Galaxy Digital Dapat Hak Penamaan Stadion Texas Tech Selama 15 Tahun",
+    "summary_id": "Galaxy Digital menandatangani kontrak 15 tahun untuk menamai stadion sepak bola Texas Tech, menandai ekspansi ke West Texas di tengah peningkatan investasi kripto di negara bagian tersebut. Bagi trader, ini sinyal adopsi institusional yang dapat meningkatkan eksposur dan likuiditas token terkait."
   },
   {
     "id": "8e61720d707ea3e0",
@@ -156,8 +160,8 @@
     "source": "Cointelegraph",
     "summary": "Through an introduction with a “reputable third-party service provider,“ the company took on a developer who, as part of an investigation, was revealed to be tied to North Korea.",
     "published_at": "2026-07-17T19:33:58+00:00",
-    "title_id": "Consensys tanpa sengaja alih daya pengembang ke pihak Korea Utara",
-    "summary_id": "Investigasi mengungkap bahwa Consensys secara tidak sengaja mengontrak pengembang yang terkait dengan Korea Utara melalui pihak ketiga. Insiden ini menimbulkan kekhawatiran tentang risiko rantai pasokan dan kepatuhan dalam proyek blockchain."
+    "title_id": "Consensys Tanpa Sadar Mengalihdayakan Pekerjaan Pengembang ke Korea Utara",
+    "summary_id": "Consensys melalui pihak ketiga mengontrak pengembang yang kemudian terungkap berafiliasi dengan Korea Utara, menimbulkan risiko keamanan dan kepatuhan. Trader harus waspada karena potensi regulasi dan reputasi yang dapat memengaruhi nilai aset yang terkait."
   },
   {
     "id": "05c15f68198bacce",
@@ -166,8 +170,8 @@
     "source": "Cointelegraph",
     "summary": "Bolivia moves to recognize USDT amid a dollar shortage, while Bitcoin miners’ AI ambitions face fresh investor scrutiny.",
     "published_at": "2026-07-17T19:23:53+00:00",
-    "title_id": "Bisnis Crypto: Saat Dollar Menghilang, Stablecoin Mengisi Kekosongan",
-    "summary_id": "Bolivia mengakui USDT karena kekurangan dolar, menegaskan peran stablecoin sebagai alternatif likuiditas. Sementara penambang Bitcoin yang menargetkan AI mendapat sorotan investor, menandakan risiko diversifikasi penambang. Ini penting bagi trader karena mengindikasikan permintaan stablecoin di pasar baru dan potensi volatilitas pada proyek penambangan AI."
+    "title_id": "Bisnis Kripto: Saat Dollar Menghilang, Stablecoin Mengisi Kekosongan",
+    "summary_id": "Bolivia mempertimbangkan pengakuan USDT sebagai respons kekurangan dolar, sementara penambang Bitcoin yang mengejar AI mendapat tekanan dari investor. Ini penting bagi trader karena menunjukkan peran stablecoin sebagai alternatif likuiditas di pasar yang tertekan."
   },
   {
     "id": "1be168c2549c5891",
@@ -176,8 +180,8 @@
     "source": "Decrypt",
     "summary": "Input Output is handing its core infrastructure to outside teams as ADA gets a lift from an imminent protocol upgrade.",
     "published_at": "2026-07-17T19:12:41+00:00",
-    "title_id": "Cardano Melonjak Saat Jaringan Tingkatkan Desentralisasi Pengembangan",
-    "summary_id": "Input Output menyerahkan infrastruktur inti ke tim eksternal, memicu kenaikan harga ADA menjelang upgrade protokol. Langkah desentralisasi ini dapat meningkatkan kepercayaan developer dan memperluas ekosistem, memberi peluang bagi trader untuk memanfaatkan momentum naik."
+    "title_id": "Cardano Menguat Saat Jaringan Tingkatkan Desentralisasi Pengembangan",
+    "summary_id": "Input Output memberi kontrol infrastruktur inti kepada tim eksternal, bersamaan dengan upgrade protokol yang akan datang, mendorong kenaikan harga ADA. Trader harus mencermati langkah ini karena desentralisasi dapat meningkatkan kepercayaan dan adopsi jaringan."
   },
   {
     "id": "28748d2b2bfdf130",
@@ -186,8 +190,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T18:00:11+00:00",
-    "title_id": "Pedagang Polymarket Turunkan Prediksi Lulusnya Clarity Act ke Level Terendah Karena Penundaan Senat",
-    "summary_id": "Karena Senat terus menunda Clarity Act, para trader di Polymarket menurunkan probabilitas keberlakuan undang‑undang tersebut ke titik terendah. Ketidakpastian regulasi ini dapat memengaruhi likuiditas dan harga aset terkait, sehingga trader perlu menyesuaikan eksposur mereka."
+    "title_id": "Pedagang Polymarket Turunkan Probabilitas Lulusnya Clarity Act ke Level Terendah Karena Penundaan Senat",
+    "summary_id": "Karena Senat menunda keputusan, pasar Polymarket menurunkan perkiraan keberhasilan Clarity Act, yang dapat memengaruhi regulasi aset kripto di Kanada. Trader perlu memantau perkembangan ini karena regulasi dapat mengubah sentimen pasar."
   },
   {
     "id": "329516bac1cb97c9",
@@ -197,7 +201,7 @@
     "summary": "Moonshot AI's 2.8-trillion-parameter open-weight model sent chip stocks tumbling and gave Wall Street a Friday it would rather forget.",
     "published_at": "2026-07-17T17:55:32+00:00",
     "title_id": "Kimi K3 Memicu Kembalinya Dampak DeepSeek di Pasar Saham",
-    "summary_id": "Model AI 2,8 triliun parameter dari Moonshot AI menyebabkan saham chip anjlok, memberi Wall Street hari yang buruk. Meskipun fokus pada saham, dampak AI besar dapat memengaruhi sentimen pasar crypto, terutama proyek‑proyek yang berhubungan dengan AI."
+    "summary_id": "Model AI 2,8 triliun parameter dari Moonshot AI menyebabkan penurunan tajam pada saham chip, menciptakan volatilitas yang juga dapat memengaruhi token terkait AI. Trader crypto harus memperhatikan korelasi antara AI besar dan pergerakan aset digital."
   },
   {
     "id": "477bd9a98c7f3703",
@@ -206,8 +210,8 @@
     "source": "Decrypt",
     "summary": "Moonshot AI's 2.8-trillion-parameter model tops Fable 5 on a creative writing benchmark and leads Arena AI's frontend code leaderboard—at Claude Sonnet pricing.",
     "published_at": "2026-07-17T17:36:42+00:00",
-    "title_id": "Kimi K3 dari China Dirilis, Mengalahkan Claude Fable dan GPT 5.6 Sol pada Benchmark Utama",
-    "summary_id": "Model Kimi K3 mencetak skor tertinggi pada tes penulisan kreatif dan leaderboard kode frontend, dengan harga bersaing Claude Sonnet. Keunggulan ini menandakan persaingan AI global yang dapat mempercepat adopsi AI dalam ekosistem blockchain, memberi peluang bagi token terkait AI."
+    "title_id": "Kimi K3 China Dirilis—Kalahkan Claude Fable dan GPT 5.6 Sol pada Benchmark Utama",
+    "summary_id": "Model Kimi K3 dengan 2,8 triliun parameter mengungguli pesaing dalam penulisan kreatif dan kode frontend, menawarkan performa tinggi dengan harga kompetitif. Bagi trader, keunggulan AI ini dapat mempercepat adopsi teknologi blockchain dan meningkatkan nilai proyek yang mengintegrasikannya."
   },
   {
     "id": "06c9f535737f3741",
@@ -217,7 +221,7 @@
     "summary": "",
     "published_at": "2026-07-17T17:23:01+00:00",
     "title_id": "Stripe dan SWIFT Bersaing Menguasai Infrastruktur Pembayaran Global Generasi Berikutnya",
-    "summary_id": "Stripe dan SWIFT berlomba mengembangkan jaringan pembayaran lintas batas yang lebih cepat dan terdesentralisasi. Perkembangan ini dapat mempengaruhi adopsi crypto sebagai jalur pembayaran, memberi trader indikasi arah integrasi fiat‑crypto."
+    "summary_id": "Dua raksasa pembayaran, Stripe dan SWIFT, berlomba mengembangkan jaringan pembayaran lintas batas yang lebih cepat dan terdesentralisasi, yang dapat membuka jalan bagi integrasi kripto dalam sistem keuangan mainstream. Trader harus memperhatikan karena perubahan ini dapat mempengaruhi likuiditas dan adopsi aset digital."
   },
   {
     "id": "9949466ba583f1e6",
@@ -226,8 +230,8 @@
     "source": "Decrypt",
     "summary": "The Nasdaq-listed digital-asset firm will rebrand the Red Raiders' home as \"Galaxy Stadium.\" The bigger bet is on the cheap power and open land of West Texas.",
     "published_at": "2026-07-17T17:09:33+00:00",
-    "title_id": "Galaxy Namai Stadion Texas Tech dalam Kesepakatan Crypto Selama 15 Tahun",
-    "summary_id": "Perusahaan aset digital Galaxy menandatangani kontrak sponsor stadion Texas Tech, memanfaatkan energi murah di West Texas. Masuknya dana crypto ke sektor tradisional meningkatkan visibilitas dan potensi adopsi token mereka, yang relevan bagi trader yang mencari eksposur pada aset berbasis real‑world."
+    "title_id": "Galaxy Namai Stadion Texas Tech dalam Kesepakatan Kripto Selama 15 Tahun",
+    "summary_id": "Perusahaan aset digital yang terdaftar di Nasdaq, Galaxy, menandatangani kontrak 15 tahun untuk mengganti nama stadion Texas Tech menjadi \"Galaxy Stadium\". Kesepakatan ini memanfaatkan listrik murah dan lahan luas di Texas Barat, menandakan strategi crypto firm untuk menancapkan brand di aset dunia nyata, yang bisa meningkatkan eksposur dan kepercayaan pasar."
   },
   {
     "id": "5c338e7da32faa0f",
@@ -236,8 +240,8 @@
     "source": "Cointelegraph",
     "summary": "The feature offers European customers a voluntary path away from Tether’s USDT as MiCA rules reshape the region’s stablecoin market.",
     "published_at": "2026-07-17T16:54:37+00:00",
-    "title_id": "OKX Eropa Izinkan Pengguna Konversi USDT ke USDC yang Sesuai MiCA",
-    "summary_id": "OKX menambahkan fitur bagi nasabah Eropa untuk menukar USDT ke USDC yang patuh regulasi MiCA, memberi alternatif stablecoin yang lebih aman. Trader di wilayah UE dapat mengurangi risiko regulasi dan meningkatkan likuiditas dengan stablecoin yang diakui."
+    "title_id": "OKX Europe Sediakan Fitur Konversi USDT ke USDC yang Sesuai MiCA",
+    "summary_id": "OKX Europe meluncurkan layanan bagi pengguna Eropa untuk menukar USDT menjadi USDC yang sudah memenuhi regulasi MiCA Uni Eropa. Langkah ini memberi trader stablecoin yang lebih aman secara hukum, sekaligus menyiapkan mereka menghadapi perubahan regulasi stablecoin di wilayah tersebut."
   },
   {
     "id": "427e63de5a15583d",
@@ -246,8 +250,8 @@
     "source": "Cointelegraph",
     "summary": "With the Senate likely voting on a crypto bill within days, Elizabeth Warren asked for information on Donald Trump’s earnings between January and July ahead of a 2027 deadline.",
     "published_at": "2026-07-17T16:48:22+00:00",
-    "title_id": "Senator Warren minta laporan 2026 atas penghasilan kripto Trump setelah pengungkapan $1,4 miliar",
-    "summary_id": "Warren menuntut data detail tentang pendapatan kripto Donald Trump dari Januari hingga Juli, menjelang batas akhir 2027, sementara Senat akan segera memutuskan undang‑undang kripto. Langkah ini menambah sorotan regulasi terhadap aset digital milik tokoh publik dan dapat memengaruhi persepsi pasar."
+    "title_id": "Senator Warren Minta Laporan 2026 atas Penghasilan Kripto Trump Setelah Pengungkapan $1,4 Miliar",
+    "summary_id": "Senator Elizabeth Warren menuntut transparansi atas pendapatan kripto Donald Trump antara Januari‑Juli, menjelang batas akhir pelaporan 2027. Permintaan ini muncul bersamaan dengan pemungutan suara Senate tentang undang‑undang kripto, menandakan peningkatan pengawasan politik yang dapat memengaruhi persepsi pasar."
   },
   {
     "id": "db4cc8cb48818a5f",
@@ -256,8 +260,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T16:23:26+00:00",
-    "title_id": "Cardano serahkan pengembangan inti ke tim eksternal sebagai upaya desentralisasi",
-    "summary_id": "Cardano memindahkan tanggung jawab pengembangan protokol utama kepada kontributor luar untuk mempercepat proses desentralisasi dan memberi komunitas kontrol lebih besar. Perubahan ini penting bagi trader karena dapat meningkatkan kepercayaan, adopsi, dan stabilitas jaringan."
+    "title_id": "Cardano Serahkan Pengembangan Inti ke Tim Eksternal untuk Dorong Desentralisasi",
+    "summary_id": "Cardano memutuskan menyerahkan pengembangan protokol inti kepada tim‑tim luar sebagai bagian dari upaya memperdalam desentralisasi jaringan. Pergeseran ini dapat memengaruhi jadwal upgrade, insentif pengembang, dan kepercayaan komunitas—faktor penting bagi trader yang memantau performa dan roadmap Cardano."
   },
   {
     "id": "be370917ec4dda20",
@@ -266,8 +270,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T15:36:39+00:00",
-    "title_id": "Mengintip taruhan besar Robinhood untuk menggaet jutaan pengguna kasual ke keuangan terdesentralisasi",
-    "summary_id": "Robinhood meluncurkan fitur yang menghubungkan pengguna biasa ke layanan DeFi, menggabungkan antarmuka familiar dengan protokol blockchain. Jika berhasil, likuiditas dan volume perdagangan kripto dapat melonjak, membuka peluang baru bagi trader."
+    "title_id": "Di Balik Taruhan Besar Robinhood Mengajak Jutaan Pengguna Kasual ke Keuangan Terdesentralisasi",
+    "summary_id": "Robinhood berusaha mengintegrasikan produk DeFi ke dalam platformnya, menargetkan basis ritel yang sangat besar untuk beralih ke layanan keuangan terdesentralisasi. Jika berhasil, aliran likuiditas dan adopsi massal dapat mengubah dinamika pasar kripto, menjadikannya sinyal penting bagi trader."
   },
   {
     "id": "ce01fafa56024899",
@@ -276,8 +280,8 @@
     "source": "Cointelegraph",
     "summary": "Bitcoin saw a key rejection at local highs before reversing lower, moving with stocks for a second day as US-Iran war downside took its toll.",
     "published_at": "2026-07-17T14:37:39+00:00",
-    "title_id": "Harga Bitcoin turun di bawah $62.5 ribu akibat serangan Iran menambah tekanan pada saham AS",
-    "summary_id": "Bitcoin jatuh setelah menolak level tertinggi dan mengikuti penurunan pasar saham yang dipicu ketegangan militer antara AS dan Iran. Trader harus siap menghadapi volatilitas tinggi yang dipicu faktor geopolitik."
+    "title_id": "Harga Bitcoin Turun di Bawah $62.5K Karena Ketegangan Iran Tekan Saham AS",
+    "summary_id": "Bitcoin mengalami penurunan di bawah $62.5 ribu setelah aksi militer Iran menambah tekanan pada pasar saham Amerika. Korelasi penurunan ini menegaskan bahwa sentimen risiko geopolitik dapat memengaruhi harga kripto, hal yang harus diwaspadai trader."
   },
   {
     "id": "f10f79a4fa70e04a",
@@ -286,8 +290,8 @@
     "source": "Cointelegraph",
     "summary": "The Bank of England approved HSBC Orion to go live in its Digital Securities Sandbox, with the first Digital Gilt Instrument transaction expected in the first quarter of 2027.",
     "published_at": "2026-07-17T13:54:27+00:00",
-    "title_id": "HSBC dapat persetujuan Bank of England untuk masuk ke Sandbox Sekuritas Digital",
-    "summary_id": "HSBC Orion mendapat lampu hijau dari Bank of England untuk beroperasi dalam sandbox sekuritas digital, dengan rencana meluncurkan instrumen Gilt Digital pada awal 2027. Langkah ini menandai adopsi institusional yang lebih luas terhadap aset digital, membuka pasar baru bagi investor."
+    "title_id": "HSBC Dapat Persetujuan Bank of England untuk Masuk Sandbox Sekuritas Digital",
+    "summary_id": "HSBC Orion mendapat lampu hijau dari Bank of England untuk beroperasi dalam sandbox sekuritas digital, dengan rencana transaksi gilt digital pertama pada kuartal pertama 2027. Inisiatif ini membuka jalan bagi tokenisasi obligasi pemerintah, menambah pilihan aset berbasis blockchain bagi investor kripto."
   },
   {
     "id": "9f93363083fbf857",
@@ -296,8 +300,8 @@
     "source": "Decrypt",
     "summary": "The gang built fake police websites to fool victims, then spent the stolen crypto on Rolexes and luxury holidays, the Met said.",
     "published_at": "2026-07-17T13:46:58+00:00",
-    "title_id": "Tiga Pria Dipenjara karena Menyamar Polisi dalam Penipuan Kripto UK senilai $5,3 juta",
-    "summary_id": "Sebuah sindikat membuat situs palsu seolah‑olah milik kepolisian untuk menipu korban, lalu menghabiskan crypto yang dicuri untuk barang mewah. Kasus ini mengingatkan trader pentingnya verifikasi sumber dan kewaspadaan terhadap skema penipuan."
+    "title_id": "Tiga Pria Dipenjara karena Menyamar Polisi dalam Penipuan Kripto UK Senilai $5,3 Juta",
+    "summary_id": "Polisi Met Inggris mengungkap jaringan penipuan kripto senilai $5,3 juta yang menggunakan situs palsu menyerupai kepolisian. Pelaku menghabiskan hasil curian untuk barang mewah, menyoroti risiko penipuan dalam ekosistem kripto dan pentingnya verifikasi sumber dana bagi trader."
   },
   {
     "id": "c88a71312a601ac5",
@@ -305,9 +309,7 @@
     "url": "https://www.coindesk.com/business/2026/07/17/japan-s-sbi-group-is-building-asia-s-first-cross-border-digital-asset-empire",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-17T13:46:46+00:00",
-    "title_id": "Grup SBI Jepang bangun kerajaan aset digital lintas batas pertama di Asia",
-    "summary_id": "SBI berencana menciptakan ekosistem aset digital yang terhubung antar negara di Asia, mencakup pertukaran, tokenisasi, dan layanan keuangan. Jika terealisasi, hal ini dapat meningkatkan likuiditas regional dan memberi peluang arbitrase bagi trader."
+    "published_at": "2026-07-17T13:46:46+00:00"
   },
   {
     "id": "ef3c9bf6fe18b8ea",
@@ -315,9 +317,7 @@
     "url": "https://cointelegraph.com/news/sbi-receives-mas-approval-to-acquire-singaporean-coinhako?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "SBI Holdings received regulatory approval to acquire a majority stake in Singapore-based crypto exchange Coinhako as it expands into stablecoins, onchain finance and tokenized assets.",
-    "published_at": "2026-07-17T13:30:20+00:00",
-    "title_id": "SBI akuisisi platform kripto Singapura Coinhako setelah mendapat persetujuan MAS",
-    "summary_id": "SBI Holdings membeli mayoritas saham Coinhako setelah regulator Singapura menyetujui, memperluas kehadirannya dalam stablecoin, keuangan on‑chain, dan aset tokenisasi. Akuisisi ini memperkuat jaringan likuiditas Asia, memberi trader akses lebih luas ke pasar kripto regional."
+    "published_at": "2026-07-17T13:30:20+00:00"
   },
   {
     "id": "6ed97c4eaf701bc8",
@@ -383,7 +383,9 @@
     "url": "https://cointelegraph.com/news/london-police-sentence-hackers-crypto-ransom-public-transport?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The pair pleaded guilty after investigators linked them to the Scattered Spider cybercrime group, which US prosecutors say extorted dozens of companies.",
-    "published_at": "2026-07-17T11:22:55+00:00"
+    "published_at": "2026-07-17T11:22:55+00:00",
+    "title_id": "Pengadilan Inggris Jatuhkan Hukuman pada 2 Peretas yang Terlibat dalam Skema Ransom Crypto senilai $115 Juta",
+    "summary_id": "Kedua tersangka mengaku bersalah setelah penyelidikan mengaitkan mereka dengan kelompok kriminal siber Scattered Spider, yang diduga memeras puluhan perusahaan. Kasus ini menegaskan bahwa otoritas internasional semakin agresif menindak kejahatan kripto, sehingga trader perlu memperhatikan risiko keamanan dan kepatuhan."
   },
   {
     "id": "16c793de9807172c",
@@ -391,7 +393,9 @@
     "url": "https://decrypt.co/373696/bitcoin-tests-63k-as-long-term-holders-keep-selling-at-a-loss",
     "source": "Decrypt",
     "summary": "Some two-thirds of the coins moving onto exchanges are long-term holders taking losses, as a macro risk-off drags on Bitcoin’s price.",
-    "published_at": "2026-07-17T11:21:16+00:00"
+    "published_at": "2026-07-17T11:21:16+00:00",
+    "title_id": "Bitcoin Menguji Level $63.000 Saat Pemegang Jangka Panjang Terus Jual dengan Rugi",
+    "summary_id": "Sekitar dua pertiga koin yang masuk ke bursa berasal dari pemegang lama yang menjual dengan kerugian, memperparah tekanan jual. Kondisi pasar yang risk‑off secara makro menurunkan harga, menandakan bahwa likuiditas negatif dapat terus mendorong Bitcoin turun lebih jauh."
   },
   {
     "id": "9a4cb06fb2415114",
@@ -400,8 +404,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T10:43:57+00:00",
-    "title_id": "Bitcoin kembali ke $63.000 saat Nasdaq menurunkan kerugian besar di awal perdagangan",
-    "summary_id": "Harga Bitcoin naik kembali ke level $63 ribu bersamaan dengan Nasdaq yang berhasil mengurangi kerugian besar di awal sesi. Bagi trader, ini menandakan adanya korelasi antara pasar saham dan crypto, serta potensi peluang beli bila sentimen ekuitas membaik."
+    "title_id": "Pasar Live: Bitcoin Kembali ke $63.000 Saat Nasdaq Mengurangi Kerugian Besar Awal",
+    "summary_id": "Bitcoin berhasil bangkit kembali ke zona $63 ribu setelah Nasdaq menutup sebagian kerugian awalnya, menunjukkan adanya koreksi positif di pasar saham yang menular ke crypto. Trader harus mencermati korelasi ini karena pergerakan saham besar dapat memicu likuiditas tambahan ke Bitcoin."
   },
   {
     "id": "d465c712ceb9129d",
@@ -410,8 +414,8 @@
     "source": "Cointelegraph",
     "summary": "ESMA adds 14 CASPs to its MiCA register, with banks and Ripple Payments Europe among the new entries as total providers reach 294.",
     "published_at": "2026-07-17T10:29:35+00:00",
-    "title_id": "ESMA tambahkan 14 CASP baru ke daftar MiCA saat proses perizinan melambat",
-    "summary_id": "Regulator Eropa ESMA menambahkan 14 penyedia layanan aset kripto (CASP) baru, termasuk bank dan Ripple Payments Europe, sehingga total terdaftar menjadi 294. Lambatnya proses lisensi memberi sinyal tantangan regulasi di UE, yang perlu dipantau trader untuk kepatuhan dan akses layanan."
+    "title_id": "ESMA Tambahkan 14 Penyedia Layanan Aset Kripto ke Daftar MiCA di Tengah Lambatnya Proses Lisensi",
+    "summary_id": "ESMA menambahkan 14 CASP baru, termasuk bank dan Ripple Payments Europe, sehingga total penyedia terdaftar mencapai 294. Meskipun pendaftaran berjalan, proses perizinan masih terhambat, yang berarti trader harus memastikan platform yang dipilih sudah terdaftar untuk menghindari risiko regulasi."
   },
   {
     "id": "b37c98a787456c12",
@@ -420,8 +424,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T10:26:06+00:00",
-    "title_id": "Gelombang risk-off menurunkan Bitcoin di bawah $63.000 saat penjualan AI meluas dari saham ke crypto",
-    "summary_id": "Bitcoin jatuh di bawah $63 ribu karena investor beralih dari aset berisiko setelah penurunan saham yang dipicu AI. Pergerakan ini menggarisbawahi sensitivitas BTC terhadap sentimen pasar global, sehingga trader harus menyesuaikan manajemen risiko mereka."
+    "title_id": "Gelombang Risk-Off Menurunkan Bitcoin di Bawah $63.000 Saat Penjualan AI Menyebar dari Saham ke Crypto",
+    "summary_id": "Sentimen risk‑off yang dipicu oleh penurunan saham AI menyebabkan aliran dana keluar dari pasar kripto, menurunkan Bitcoin di bawah $63 ribu. Ini mengingatkan trader bahwa pergerakan di sektor teknologi tradisional dapat langsung memengaruhi volatilitas crypto."
   },
   {
     "id": "94d3526390fad2c5",
@@ -430,8 +434,8 @@
     "source": "Decrypt",
     "summary": "The market maker's stake marks Crypto.com's first institutional funding round, as Wall Street deepens its push into crypto.",
     "published_at": "2026-07-17T10:12:33+00:00",
-    "title_id": "Crypto.com capai valuasi $20 miliar setelah investasi $400 juta dari Citadel Securities",
-    "summary_id": "Citadel Securities menanamkan $400 juta ke Crypto.com, menandai putaran pendanaan institusional pertama platform dan mengangkat valuasinya menjadi $20 miliar. Langkah ini menegaskan kepercayaan Wall Street pada infrastruktur crypto, yang dapat meningkatkan likuiditas dan layanan bagi trader."
+    "title_id": "Crypto.com Capai Valuasi $20 Miliar Usai Investasi $400 Juta dari Citadel Securities",
+    "summary_id": "Investasi institusional pertama Crypto.com dari Citadel Securities menilai perusahaan pada $20 miliar, menandai masuknya pemain Wall Street ke ekosistem kripto. Langkah ini meningkatkan legitimasi pasar dan dapat memicu aliran modal lebih besar bagi trader."
   },
   {
     "id": "1b9a04ba1b7d5649",
@@ -440,8 +444,8 @@
     "source": "Cointelegraph",
     "summary": "Bitcoin supply in loss hit 50% nearly 50 days ago, mimicking the countdown to BTC price bear-market bottoms.",
     "published_at": "2026-07-17T09:51:33+00:00",
-    "title_id": "Hitungan mundur dasar Bitcoin mendekati 50 hari setelah pasokan BTC dalam kerugian melewati 50%",
-    "summary_id": "Proporsi Bitcoin yang berada dalam posisi rugi telah melampaui 50% sekitar 50 hari yang lalu, metrik yang secara historis berhubungan dengan titik terendah pasar. Trader mengamati indikator ini sebagai sinyal potensial bahwa fase bearish mungkin akan berakhir."
+    "title_id": "Hitungan Mundur Bottom Bitcoin Mendekati 50 Hari Setelah Persentase Supply dalam Rugi Melewati 50%",
+    "summary_id": "Supply Bitcoin yang berada dalam posisi rugi mencapai 50% sekitar 50 hari yang lalu, pola yang historis biasanya menandai mendekatinya titik terendah pasar. Trader dapat menggunakannya sebagai indikator untuk menilai potensi pembalikan harga."
   },
   {
     "id": "76c692962a1bf91a",
@@ -450,8 +454,8 @@
     "source": "Cointelegraph",
     "summary": "Federal prosecutors allege the South Dakota investor used false promises to raise money, repaid earlier investors with new funds and laundered proceeds through crypto exchanges.",
     "published_at": "2026-07-17T09:25:33+00:00",
-    "title_id": "AS mengajukan dakwaan terhadap investor crypto atas dugaan skema penipuan $20 juta",
-    "summary_id": "Jaksa federal menuduh seorang investor dari South Dakota menggalang $20 juta lewat janji palsu, membayar investor awal dengan dana baru, dan mencuci uang melalui bursa crypto. Kasus ini menyoroti risiko penipuan dan pengawasan regulator, mengingatkan trader untuk selalu melakukan due diligence."
+    "title_id": "AS Tuntut Investor Crypto atas Dugaan Skema Penipuan $20 Juta",
+    "summary_id": "Seorang investor dari South Dakota dituduh menipu investor dengan janji palsu, mengembalikan dana menggunakan uang baru, dan mencuci hasilnya lewat bursa kripto. Kasus ini menyoroti risiko penipuan dalam ekosistem crypto dan pentingnya due diligence bagi trader."
   },
   {
     "id": "781c22b83251f005",
@@ -459,9 +463,7 @@
     "url": "https://www.coindesk.com/web3/2026/07/17/airbnb-ceo-says-x-account-was-hacked-attacker-posted-ai-slop-thread-on-tokenization",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-17T08:50:22+00:00",
-    "title_id": "CEO Airbnb klaim akun X diretas, penyerang memposting konten AI tentang tokenisasi",
-    "summary_id": "CEO Airbnb melaporkan akun X (Twitter)nya diretas, dengan pelaku memposting tulisan AI yang tidak relevan tentang tokenisasi. Insiden ini mengingatkan trader akan bahaya keamanan siber dan penyebaran informasi palsu di ruang crypto."
+    "published_at": "2026-07-17T08:50:22+00:00"
   },
   {
     "id": "9f294361e5b4f999",
@@ -469,9 +471,7 @@
     "url": "https://cointelegraph.com/news/macos-malware-crypto-investors-slowmist?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "A macOS malware steals credentials to hijack Telegram sessions, decrypt cryptocurrency wallets or trick users into entering their wallet recovery phrases through fake applications.",
-    "published_at": "2026-07-17T08:48:20+00:00",
-    "title_id": "Malware macOS hijack sesi Telegram, target dompet kripto: SlowMist",
-    "summary_id": "SlowMist menemukan malware macOS yang mencuri kredensial Telegram untuk mengambil alih sesi, lalu mencoba mendekripsi dompet kripto atau menipu pengguna mengungkapkan frase pemulihan lewat aplikasi palsu. Hal ini menekankan pentingnya keamanan perangkat bagi pemilik aset crypto dan trader."
+    "published_at": "2026-07-17T08:48:20+00:00"
   },
   {
     "id": "a389e2c320866e7a",
@@ -479,9 +479,7 @@
     "url": "https://www.coindesk.com/markets/2026/07/17/ether-falls-twice-as-hard-as-bitcoin-and-hype-drops-10-as-the-chip-trade-unwinds",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-17T07:29:41+00:00",
-    "title_id": "Ether turun dua kali lebih tajam daripada Bitcoin, dan HYPE jatuh 10% saat perdagangan chip berakhir",
-    "summary_id": "Ether mengalami penurunan harga yang jauh lebih besar dibandingkan Bitcoin, sementara token HYPE juga turun 10% karena posisi spekulatif pada chip Nvidia mulai dibalik. Kondisi ini menandakan volatilitas tinggi di pasar kripto dan memberi sinyal bagi trader untuk memperketat manajemen risiko."
+    "published_at": "2026-07-17T07:29:41+00:00"
   },
   {
     "id": "254bf580c74ce9f4",
@@ -489,9 +487,7 @@
     "url": "https://www.coindesk.com/markets/2026/07/17/this-usd28-million-ether-market-bet-aims-to-profit-from-pure-market-chaos",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-17T07:28:52+00:00",
-    "title_id": "Taruhan pasar Ether senilai $28 juta ini berusaha meraup keuntungan dari kekacauan pasar",
-    "summary_id": "Seorang pemain besar menempatkan posisi senilai $28 juta pada Ether dengan tujuan memanfaatkan fluktuasi ekstrem yang terjadi di pasar. Langkah ini mengingatkan trader bahwa aliran dana besar dapat memperparah pergerakan harga dan menciptakan peluang sekaligus risiko."
+    "published_at": "2026-07-17T07:28:52+00:00"
   },
   {
     "id": "a111019447f8671a",
@@ -499,9 +495,7 @@
     "url": "https://cointelegraph.com/news/bitcoin-etfs-368-million-three-day-buying-streak?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "US spot Bitcoin ETFs attracted $79.2 million on Thursday, lifting their three-day inflow total to about $368 million as Bitcoin attempted a price recovery.",
-    "published_at": "2026-07-17T07:23:02+00:00",
-    "title_id": "ETF Bitcoin menambah $368 juta dalam tiga hari pembelian beruntun",
-    "summary_id": "ETF spot Bitcoin di AS menarik $79,2 juta pada hari Kamis, menjadikan total aliran masuk tiga hari mencapai sekitar $368 juta saat Bitcoin mencoba bangkit kembali. Masuknya dana institusional dalam jumlah besar memberi dukungan harga dan menjadi indikator penting bagi trader."
+    "published_at": "2026-07-17T07:23:02+00:00"
   },
   {
     "id": "f357e32fde47a5fa",
@@ -509,9 +503,7 @@
     "url": "https://cointelegraph.com/news/ordinals-dev-leonidas-proposes-new-bitcoin-client-dog-mode?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "“Over time the economic incentives will drive $DOG Mode’s adoption and force Bitcoin Core to stop gatekeeping and allow these completely valid transactions,” said Leonidas.",
-    "published_at": "2026-07-17T05:54:04+00:00",
-    "title_id": "Pendukung Ordinals Leonidas usulkan klien Bitcoin baru: ‘$DOG Mode’",
-    "summary_id": "Leonidas memperkenalkan ‘$DOG Mode’, sebuah klien Bitcoin yang memungkinkan transaksi ordinals tanpa dibatasi oleh aturan Bitcoin Core. Jika diadopsi, mode ini dapat membuka peluang baru bagi trader yang memanfaatkan data ordinals dan mengubah dinamika jaringan."
+    "published_at": "2026-07-17T05:54:04+00:00"
   },
   {
     "id": "31f78fa0b77b9813",
@@ -519,9 +511,7 @@
     "url": "https://www.coindesk.com/tech/2026/07/17/bitcoin-s-anti-spam-fight-gets-a-dog-mode-reply",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-17T05:32:00+00:00",
-    "title_id": "DOG Mode vs BIP-110: Mengupas klien Bitcoin yang dirancang untuk melewati batasan data",
-    "summary_id": "Artikel membandingkan dua solusi, DOG Mode dan BIP-110, yang keduanya berupaya mengatasi batas ukuran blok Bitcoin. Perubahan protokol semacam ini dapat memengaruhi biaya transaksi dan kapasitas jaringan, hal penting bagi trader yang memperhatikan kecepatan dan biaya eksekusi."
+    "published_at": "2026-07-17T05:32:00+00:00"
   },
   {
     "id": "6d29d62f500fcdcb",
@@ -529,9 +519,7 @@
     "url": "https://cointelegraph.com/news/crypto-exchange-bybit-launches-in-indonesia-after-nobi-acquisition?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The launch gives Bybit a locally operated platform in one of Asia’s largest crypto markets, home to more than 21 million crypto exchange users.",
-    "published_at": "2026-07-17T04:16:32+00:00",
-    "title_id": "Bursa kripto Bybit resmi hadir di Indonesia usai akuisisi NOBI",
-    "summary_id": "Bybit meluncurkan platform lokal di Indonesia, pasar kripto terbesar di Asia dengan lebih dari 21 juta pengguna. Kehadiran ini memberi trader akses regulasi domestik, likuiditas tambahan, dan peluang perdagangan yang lebih luas."
+    "published_at": "2026-07-17T04:16:32+00:00"
   },
   {
     "id": "c3acb9618903548e",
@@ -540,8 +528,8 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-17T04:10:09+00:00",
-    "title_id": "Bitcoin turun di bawah $63.000 setelah AS melancarkan aksi baru terhadap Iran; komentar Trump soal China menambah ketidakpastian",
-    "summary_id": "Harga Bitcoin jatuh di bawah $63 ribu akibat ketegangan geopolitik antara AS dan Iran serta pernyataan Trump mengenai China yang menambah keraguan pasar. Geopolitik yang tidak menentu dapat memicu volatilitas tajam, sehingga trader harus siap mengelola eksposur."
+    "title_id": "Bitcoin turun di bawah $63.000 setelah serangan baru AS ke Iran; komentar Trump tentang China menambah ketidakpastian",
+    "summary_id": "Geopolitik kembali mengguncang pasar kripto, dengan harga Bitcoin jatuh di bawah $63 ribu setelah AS melancarkan aksi militer baru ke Iran. Di samping itu, pernyataan Donald Trump soal China menambah keraguan investor. Trader harus waspada terhadap volatilitas yang dipicu oleh faktor eksternal ini."
   },
   {
     "id": "8d5c08a298a14457",
@@ -550,8 +538,8 @@
     "source": "Cointelegraph",
     "summary": "The paid Truth API is aimed at high-frequency trading firms seeking “the fastest” access to market-moving Truth Social posts, including those from US President Donald Trump.",
     "published_at": "2026-07-17T02:23:40+00:00",
-    "title_id": "Trump Media jual akses latensi rendah ke postingan Trump untuk Wall Street",
-    "summary_id": "Trump Media memperkenalkan API berbayar yang memberi firma high‑frequency trading akses tercepat ke postingan Truth Social, termasuk dari Donald Trump. Data real‑time ini dapat memicu pergerakan harga yang cepat, sehingga trader harus memantau sumber informasi ini secara cermat."
+    "title_id": "Trump Media jual akses latensi rendah ke postingan Trump bagi Wall Street",
+    "summary_id": "Trump Media memperkenalkan API berbayar yang memberi firma high‑frequency trading akses hampir real‑time ke postingan Truth Social. Karena tweet Trump dapat memicu pergerakan harga aset, akses cepat ini menjadi senjata baru bagi trader yang mengandalkan berita mikro. Memantau layanan ini penting untuk mengantisipasi lonjakan volatilitas."
   },
   {
     "id": "1d3db35a716f86b2",
@@ -559,7 +547,9 @@
     "url": "https://cointelegraph.com/news/balaji-seeks-malaysia-deal-threatens-exit-after-network-school-probe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "“If we are not welcome, there are many other countries that would welcome us,” said Network School founder Balaji Srinivasan in a message to the Malaysian prime minister.",
-    "published_at": "2026-07-17T01:54:00+00:00"
+    "published_at": "2026-07-17T01:54:00+00:00",
+    "title_id": "Balaji cari kesepakatan dengan Malaysia, ancam keluar setelah penyelidikan Network School",
+    "summary_id": "Pendiri Network School, Balaji Srinivasan, menegaskan bahwa jika pemerintah Malaysia tidak menyambut proyeknya, ia akan mencari negara lain. Ancaman ini menyoroti ketegangan regulasi yang dapat memengaruhi ekosistem kripto regional. Trader perlu memperhatikan kemungkinan perubahan alokasi investasi lintas‑negara."
   },
   {
     "id": "b48096df62d0863c",
@@ -597,7 +587,9 @@
     "url": "https://decrypt.co/373682/leaks-reveal-suno-fed-thousands-hours-deezer-youtube-pond5-data-ai",
     "source": "Decrypt",
     "summary": "Source code leaked reveals how substantial portions of Suno’s training library were assembled.",
-    "published_at": "2026-07-16T21:01:03+00:00"
+    "published_at": "2026-07-16T21:01:03+00:00",
+    "title_id": "Bocoran tunjukkan Suno mengumpulkan ribuan jam data Deezer, YouTube, dan Pond5 untuk AI‑nya",
+    "summary_id": "Kode sumber yang bocor mengungkap bahwa Suno melatih model AI dengan jutaan menit konten musik dan video dari Deezer, YouTube, serta Pond5. Data skala besar ini dapat menghasilkan musik AI yang lebih realistis, membuka peluang baru bagi NFT musik dan platform kripto kreatif. Pelaku pasar harus menilai dampak kompetitifnya."
   },
   {
     "id": "aa80ab3a40f298ea",
@@ -635,7 +627,9 @@
     "url": "https://decrypt.co/373681/morgan-stanley-launches-bitcoin-ethereum-solana-trading-etrade",
     "source": "Decrypt",
     "summary": "Eligible customers can now buy, sell, and hold Bitcoin, Ethereum, and Solana with Morgan Stanley via Zero Hash.",
-    "published_at": "2026-07-16T20:01:03+00:00"
+    "published_at": "2026-07-16T20:01:03+00:00",
+    "title_id": "Morgan Stanley luncurkan perdagangan Bitcoin, Ethereum, dan Solana di E*Trade",
+    "summary_id": "Melalui kerja sama dengan Zero Hash, nasabah Morgan Stanley kini dapat membeli, menjual, dan menyimpan tiga aset kripto utama lewat platform E*Trade. Langkah ini menandai masuknya institusi ke pasar retail kripto yang lebih luas. Trader dapat mengharapkan likuiditas yang lebih baik dan produk yang lebih terintegrasi."
   },
   {
     "id": "5eae5341e0cbbfbd",
@@ -653,7 +647,9 @@
     "url": "https://decrypt.co/373666/bitcoin-q-day-recovery-proposal-prove-ownership-quantum-attack",
     "source": "Decrypt",
     "summary": "Project Eleven says a new post-quantum cryptographic proof could help Bitcoin users recover wallets after Q-Day by verifying ownership.",
-    "published_at": "2026-07-16T19:00:32+00:00"
+    "published_at": "2026-07-16T19:00:32+00:00",
+    "title_id": "Proposal pemulihan Bitcoin Q‑Day beri cara bagi pengguna membuktikan kepemilikan setelah serangan kuantum",
+    "summary_id": "Proyek Eleven mengusulkan skema kriptografi pasca‑kuantum yang memungkinkan pemilik dompet Bitcoin membuktikan kepemilikan bila jaringan diserang oleh komputer kuantum. Jika berhasil, mekanisme ini dapat menyelamatkan nilai jutaan dolar dari potensi kerusakan. Trader harus memperhatikan perkembangan keamanan ini sebagai faktor risiko jangka panjang."
   },
   {
     "id": "0a983cf46b9c8170",
@@ -671,7 +667,9 @@
     "url": "https://www.coindesk.com/markets/2026/07/16/usd1-9-trillion-asset-manager-t-rowe-price-bets-on-active-management-with-first-multi-token-crypto-etf",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-16T18:38:13+00:00"
+    "published_at": "2026-07-16T18:38:13+00:00",
+    "title_id": "Manajer aset $1,9 triliun T. Rowe Price taruhan pada manajemen aktif lewat ETF kripto multi‑token pertama",
+    "summary_id": "T. Rowe Price meluncurkan ETF kripto pertama yang menampung beberapa token sekaligus, menandai pergeseran dari strategi pasif ke manajemen aktif di ruang aset digital. Produk ini memberi investor institusional eksposur terdiversifikasi dengan kontrol alokasi yang lebih fleksibel. Trader dapat mengantisipasi aliran dana baru ke token yang masuk dalam ETF."
   },
   {
     "id": "be7ee1e63b05398d",
@@ -679,7 +677,9 @@
     "url": "https://decrypt.co/373671/mira-murati-inkling-ai-model-openai-open-source",
     "source": "Decrypt",
     "summary": "Mira Murati's Inkling won't dethrone the best Chinese open-weights models, but it gives Western developers something they haven't yet had.",
-    "published_at": "2026-07-16T18:27:11+00:00"
+    "published_at": "2026-07-16T18:27:11+00:00",
+    "title_id": "Mira Murati luncurkan model AI pertamanya setelah keluar dari OpenAI—dan sepenuhnya open source",
+    "summary_id": "Mira Murati memperkenalkan Inkling, model AI yang dirilis secara terbuka setelah ia meninggalkan OpenAI. Meskipun belum menyaingi model China terkemuka, Inkling memberi komunitas Barat akses ke teknologi canggih tanpa batasan lisensi. Bagi pengembang kripto, ini membuka peluang integrasi AI dalam analisis data dan otomatisasi strategi perdagangan."
   },
   {
     "id": "c72205f9dbc442d1",
@@ -687,7 +687,9 @@
     "url": "https://www.coindesk.com/business/2026/07/16/citadel-securities-invests-usd400-million-in-crypto-com-valuing-exchange-at-usd20-billion",
     "source": "CoinDesk",
     "summary": "",
-    "published_at": "2026-07-16T18:00:00+00:00"
+    "published_at": "2026-07-16T18:00:00+00:00",
+    "title_id": "Citadel Securities Suntikkan $400 Juta ke Crypto.com, Nilai Bursa Capai $20 Miliar",
+    "summary_id": "Citadel Securities menanamkan dana sebesar $400 juta ke Crypto.com, menilai bursa tersebut sebesar $20 miliar. Langkah ini menandakan kepercayaan institusional yang kuat terhadap ekosistem kripto, yang dapat meningkatkan likuiditas dan menarik lebih banyak investor. Bagi trader, ekspektasi kenaikan volume dan potensi kenaikan harga token terkait menjadi hal yang patut dipantau."
   },
   {
     "id": "c5794d065d689bcc",
@@ -695,7 +697,9 @@
     "url": "https://decrypt.co/373668/visa-stablecoin-platform-banks-fintech-open-usd",
     "source": "Decrypt",
     "summary": "The Visa Stablecoin Platform will let financial institutions integrate stablecoin payments and treasury operations into Visa's existing network.",
-    "published_at": "2026-07-16T17:57:57+00:00"
+    "published_at": "2026-07-16T17:57:57+00:00",
+    "title_id": "Visa Luncurkan Platform Stablecoin untuk Bank dan Fintech",
+    "summary_id": "Visa memperkenalkan platform stablecoin yang memungkinkan bank dan perusahaan fintech mengintegrasikan pembayaran serta operasi treasury berbasis stablecoin ke jaringan Visa. Ini membuka pintu bagi adopsi massal stablecoin dalam transaksi harian dan memperluas ekosistem pembayaran digital. Trader crypto harus memperhatikan kemungkinan lonjakan permintaan stablecoin dan dampaknya pada likuiditas pasar."
   },
   {
     "id": "786792a3abfd62a0",
@@ -715,7 +719,7 @@
     "summary": "The post-CPI rally gave XRP a nudge. The coin barely moved. Now the chart is filling in the picture.",
     "published_at": "2026-07-16T16:56:54+00:00",
     "title_id": "XRP Tertinggal Saat Bitcoin Beristirahat: Analisis",
-    "summary_id": "Setelah data CPI, Bitcoin sempat melambat dan XRP tidak mampu mengikuti pergerakannya, hanya bergerak tipis. Grafik menunjukkan XRP masih mencari arah, menandakan momentum lemah dibanding Bitcoin. Trader crypto perlu memantau kekuatan relatif ini untuk mengatur posisi di pasar altcoin."
+    "summary_id": "Setelah rally pasca CPI, Bitcoin mengalami jeda sementara XRP hampir tidak bergerak, menandakan ketidaksejajaran performa antara keduanya. Analisis grafik menunjukkan bahwa XRP masih mencari arah, sementara Bitcoin mengisi kembali kekosongan harga. Bagi trader, perbedaan ini memberi sinyal untuk menyesuaikan strategi alokasi aset antara Bitcoin dan altcoin seperti XRP."
   },
   {
     "id": "216c4b205736a6c6",
@@ -746,25 +750,5 @@
     "published_at": "2026-07-16T16:32:01+00:00",
     "title_id": "E*TRADE dari Morgan Stanley Luncurkan Perdagangan Crypto Spot lewat Zero Hash",
     "summary_id": "E*TRADE kini memungkinkan klien ritelnya untuk membeli, menjual, dan menyimpan Bitcoin, Ether, serta Solana secara langsung lewat kerjasama dengan Zero Hash. Ini membuka pintu bagi investor tradisional masuk pasar crypto dengan regulasi yang lebih ketat."
-  },
-  {
-    "id": "84fab51b44ab8922",
-    "title": "Tradable’s $1B Stellar deal adds to institutional tokenization boom",
-    "url": "https://cointelegraph.com/news/tradables-1b-stellar-deal-adds-to-institutional-tokenization-boom?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Tradable will bring up to $1 billion in private credit assets to Stellar, extending the blockchain’s push into institutional finance and tokenized real-world assets.",
-    "published_at": "2026-07-16T16:19:16+00:00",
-    "title_id": "Kesepakatan $1 Miliar Tradable dengan Stellar Perkuat Tren Tokenisasi Institusional",
-    "summary_id": "Tradable akan menyalurkan hingga $1 miliar aset kredit privat ke jaringan Stellar, memperluas penggunaan blockchain untuk keuangan institusional dan tokenisasi aset dunia nyata. Langkah ini membuka likuiditas baru serta peluang investasi di aset‑aset tokenized bagi para trader crypto."
-  },
-  {
-    "id": "5167134e17ef06f0",
-    "title": "Visa backs Open USD with new stablecoin platform as Circle faces fresh competition",
-    "url": "https://www.coindesk.com/business/2026/07/16/visa-backs-open-usd-with-new-stablecoin-platform-as-circle-faces-fresh-competition",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-16T16:14:30+00:00",
-    "title_id": "Visa dukung Open USD lewat platform stablecoin baru saat Circle menghadapi kompetisi baru",
-    "summary_id": "Visa meluncurkan dukungan untuk stablecoin Open USD melalui jaringan platform baru, menambah opsi likuiditas bagi pengguna kripto. Langkah ini menambah tekanan kompetitif pada Circle, yang sebelumnya mendominasi pasar stablecoin, sehingga trader perlu memantau pergeseran likuiditas dan adopsi token baru."
   }
 ]
