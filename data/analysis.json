@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-18T23:04:58.525556+00:00",
-  "final_score": -0.073,
+  "updated_at": "2026-07-19T00:05:01.444149+00:00",
+  "final_score": -0.031,
   "final_label": "Netral",
-  "summary": "Regulasi mengencang setelah Prancis perintahkan ISP blokir Polymarket, sementara ECB memperingatkan stablecoin dapat mengalirkan dana dari bank. Di sisi lain, tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan, dan stablecoin semakin mengisi kesenjangan pembayaran, terutama di Brazil. Bitcoin dipertaruhkan pada governance fight baru dan opsi call besar menargetkan $72\u202f000 menjelang rapat Fed, menambah volatilitas jangka pendek. Ancaman keamanan tetap tinggi dengan",
+  "summary": "Regulasi ketat kembali menguji ekosistem crypto, dengan Prancis memerintahkan ISP blokir Polymarket dan Brazil menjadi target kebijakan pembayaran oleh Trump, sementara ECB memperingatkan stablecoin dapat mengalirkan dana dari bank. Di sisi lain, adopsi stablecoin terus melaju, tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan, dan Cardano memperkuat desentralisasi. Bitcoin menghadapi pertarungan tata kelola dan pasar opsi menargetkan $72\u202f000 menjelang pertemuan Fed, menambah spekulasi bullish. Namun, $1,6\u202fmiliar likuiditas crypto menganggur, malware baru mengincar investor, dan insiden outsourcing ke Korea Utara menambah risiko operasional. Kombinasi tekanan regulasi dan peluang adopsi membuat pasar berada di titik keseimbangan.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.097,
-    "technical_score": 0.139,
-    "technical_avg_change_pct": 1.39,
+    "news_score": -0.049,
+    "technical_score": 0.127,
+    "technical_avg_change_pct": 1.27,
     "rule_based_score": -0.097,
     "rule_based_bull_hits": 14,
     "rule_based_bear_hits": 17,
-    "ai_bias": null
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
