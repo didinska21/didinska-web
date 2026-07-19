@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-07-19T14:06:00.166813+00:00",
+  "updated_at": "2026-07-19T15:11:00.279589+00:00",
   "final_score": -0.085,
   "final_label": "Netral",
-  "summary": "Berita terbaru menyoroti tekanan regulasi dan keamanan yang meningkat: USDT menghadapi hitung mundur dua tahun, sementara agen AS belum finalisasi aturan stablecoin (GENIUS Act). Korea Selatan menindak Dunamu, dan Prancis memblokir Polymarket, menambah ketidakpastian pasar. Di sisi teknis, Kraken mengusulkan opsi sederhana untuk membuka pasar derivatif, Zcash meluncurkan node privasi 50\u202frb tps, dan ada solusi pemulihan untuk masalah kuantum Bitcoin. AI dan malware (Kaspersky) menambah risiko keamanan, sementara tokenisasi kini menjadi prioritas 84\u202f% lembaga keuangan. Sentimen bullish muncul lewat call spread Bitcoin ke $72\u202frb menjelang Fed, namun likuiditas $1,6\u202fmiliar yang menganggur menahan momentum.",
+  "summary": "Pasar crypto kini berada di persimpangan antara tekanan regulasi dan inovasi produk. Di AS, penundaan GENIUS Act menunda aturan stablecoin, sementara Tether USDT menghadapi hitungan mundur dua tahun yang menambah ketidakpastian. Korea Selatan dan Prancis meningkatkan pengawasan, mengancam platform seperti Upbit dan Polymarket. Di sisi lain, Kraken mengusulkan opsi derivatif lebih sederhana, dan call spread Bitcoin menargetkan $72\u202frb menjelang pertemuan Fed, menandakan ekspektasi bullish jangka pendek. Teknologi privasi Zcash dan alat pemulihan kuantum Bitcoin memperkuat kepercayaan teknis, sementara tokenisasi kini diprioritaskan 84\u202f% institusi keuangan. Namun, $1,6\u202fmiliar likuiditas yang menganggur dan ancaman malware menambah risiko jangka menengah.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
     "news_score": -0.107,
-    "technical_score": 0.114,
-    "technical_avg_change_pct": 1.14,
+    "technical_score": 0.11,
+    "technical_avg_change_pct": 1.1,
     "rule_based_score": -0.214,
     "rule_based_bull_hits": 11,
     "rule_based_bear_hits": 17,
