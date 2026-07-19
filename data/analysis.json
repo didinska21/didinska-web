@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-19T16:09:59.356683+00:00",
-  "final_score": 0.357,
-  "final_label": "Bullish",
-  "summary": "Bitcoin kembali jadi sorotan; Michael Saylor menolak rencana \u201cclean\u2011up\u201d blockchain, sementara muncul alat pemulihan quantum yang belum menyentuh 1,1\u202fjuta koin Satoshi. Tether menghadapi hitung mundur 2\u202ftahun yang menambah ketidakpastian stablecoin, dipercepat oleh penundaan aturan GENIUS Act. Kraken mengusulkan opsi sederhana untuk membuka pasar derivatif, dan call spread besar menargetkan $72\u202fribuan menjelang pertemuan Fed, menandakan ekspektasi bullish jangka pendek. Di sisi regulasi, Dunamu masuk proses sanksi Korea, dan Prancis blokir Polymarket, menambah tekanan compliance. Teknologi privacy Zcash capai 50\u202frb tps, dan tokenisasi kini prioritas 84\u202f% institusi, namun $1,6\u202fmiliar likuiditas menganggur serta ancaman malware Kaspersky menurunkan kepercayaan.",
+  "updated_at": "2026-07-19T17:15:11.445409+00:00",
+  "final_score": -0.199,
+  "final_label": "Netral",
+  "summary": "Michael Saylor menentang BIP\u2011110, menambah tekanan pada upaya scaling Bitcoin. Di sisi regulasi, AS belum finalisasi aturan stablecoin, sementara Dunamu menghadapi sanksi Korea dan Tether USDT masuk hitungan mundur dua tahun, menimbulkan keraguan likuiditas. Kraken mengusulkan opsi sederhana untuk pasar derivatif, dan call spread Bitcoin",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.385,
-    "technical_score": 0.107,
-    "technical_avg_change_pct": 1.07,
+    "news_score": -0.231,
+    "technical_score": 0.093,
+    "technical_avg_change_pct": 0.93,
     "rule_based_score": -0.231,
     "rule_based_bull_hits": 10,
     "rule_based_bear_hits": 16,
-    "ai_bias": 1.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
