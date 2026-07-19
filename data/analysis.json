@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-19T21:23:53.251928+00:00",
-  "final_score": -0.555,
-  "final_label": "Bearish",
-  "summary": "Regulasi stablecoin masih buntu setelah US agencies melewatkan batas akhir GENIUS Act, menambah ketidakpastian bagi USDT yang kini mendekati hitungan mundur dua tahun. Sementara itu, kritik keras Michael Saylor terhadap BIP\u2011110 dan rencana pembersihan blockchain menandai gesekan antara pendukung institusional dan inovator. Di sisi pasar, Kraken mengusulkan opsi derivatif lebih sederhana, dan call spread Bitcoin menarget $72\u202frb menjelang pertemuan Fed, mengindikasikan ekspektasi volatilitas naik. Tekanan regulasi di Korea (Dunamu) dan Prancis (Polymarket) serta adopsi tokenisasi oleh 84\u202f% lembaga keuangan menambah dinamika lintas\u2011negara. AI dan quantum computing terus menjadi ancaman teknis, sementara privasi Zcash berupaya skala Visa.",
+  "updated_at": "2026-07-19T22:14:56.811567+00:00",
+  "final_score": -0.105,
+  "final_label": "Netral",
+  "summary": "Pasar crypto kini berada di persimpangan antara tekanan regulasi dan inovasi teknis. GENIUS Act merayakan setahun, namun US agencies belum finalisasi aturan stablecoin, sementara Tether USDT menghadapi hitung mundur dua tahun, menambah ketidakpastian likuiditas. Kritik Michael Saylor terhadap BIP\u2011110 dan seruan Dunamu terhadap regulator Korea menambah skeptisisme. Di sisi lain, Kraken mengusulkan opsi derivatif lebih sederhana, dan Zcash meluncurkan node 50\u202frb TPS, memperkuat privasi skala Visa. Alat pemulihan quantum dan tokenisasi yang kini diprioritaskan 84\u202f% lembaga keuangan membuka peluang jangka panjang. Namun, $1,6\u202fmiliar likuiditas yang menganggur serta spekulasi call spread Bitcoin ke $72\u202fk menjelang Fed menandakan pasar masih menahan napas.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.616,
-    "technical_score": -0.011,
-    "technical_avg_change_pct": -0.11,
+    "news_score": -0.116,
+    "technical_score": -0.008,
+    "technical_avg_change_pct": -0.08,
     "rule_based_score": -0.231,
     "rule_based_bull_hits": 10,
     "rule_based_bear_hits": 16,
-    "ai_bias": -1.0
+    "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
