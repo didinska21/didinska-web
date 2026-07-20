@@ -1,5 +1,29 @@
 [
   {
+    "id": "6df9228aa7377403",
+    "title": "Bank of Korea Scales Up CBDC Pilot With Half a Million Users",
+    "url": "https://decrypt.co/373905/bank-korea-scales-up-cbdc-pilot-half-million-users",
+    "source": "Decrypt",
+    "summary": "Phase 1 of Project Hangang opened 81,000 wallets with 42% of them using the CBDC. Phase 2 is bigger, and this time it moves real government money.",
+    "published_at": "2026-07-20T21:12:03+00:00"
+  },
+  {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-20T21:07:27+00:00"
+  },
+  {
+    "id": "50cabb3a1d517c0d",
+    "title": "SEC sues Mining Automatic and founder over alleged $22M crypto mining scheme",
+    "url": "https://cointelegraph.com/news/sec-sues-mining-automatic-and-founder-over-alleged-22m-crypto-mining-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The SEC alleges Mining Automatic and its founder raised $22 million from investors by promising guaranteed crypto mining returns while spending only a fraction of the funds on mining operations.",
+    "published_at": "2026-07-20T20:27:54+00:00"
+  },
+  {
     "id": "39bbf51acf1b611d",
     "title": "Russia's First Comprehensive Crypto Law Is Two Votes Away From Passing",
     "url": "https://decrypt.co/373880/russia-first-comprehensive-crypto-law",
@@ -136,14 +160,6 @@
     "source": "Cointelegraph",
     "summary": "Renowned trading analyst Peter Brandt says investing in Bitcoin today, will pay off much better in two to three years than buying AI stocks at current prices.",
     "published_at": "2026-07-20T13:30:00+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-20T13:07:28+00:00"
   },
   {
     "id": "762dd89d7ff78b48",
@@ -331,7 +347,7 @@
   },
   {
     "id": "2ff745c7296f71a1",
-    "title": "Live updates: Bitcoin rises to one-month high of $65,400",
+    "title": "Live updates: Bitcoin rises to one-month high of $65,700 before pulling back with stocks",
     "url": "https://www.coindesk.com/tech/2026/07/20/live-markets-oil-bounce-and-lingering-ai-selloff-pushes-bitcoin-under-usd64-000",
     "source": "CoinDesk",
     "summary": "",
@@ -656,21 +672,5 @@
     "published_at": "2026-07-17T18:00:11+00:00",
     "title_id": "Pedagang Polymarket turunkan peluang lolosnya Clarity Act ke level terendah karena penundaan Senat",
     "summary_id": "Di Polymarket, para trader menurunkan odds keberhasilan Clarity Act karena Senat terus menunda pembahasan, mencerminkan ketidakpastian regulasi. Bagi trader crypto, perubahan odds ini mempengaruhi pasar prediksi dan menyoroti pentingnya mengikuti perkembangan legislasi yang dapat memengaruhi ekosistem kripto."
-  },
-  {
-    "id": "329516bac1cb97c9",
-    "title": "Kimi K3 Just Triggered DeepSeek Flashbacks for the Stock Market",
-    "url": "https://decrypt.co/373736/kimi-k3-triggered-deepseek-flashbacks-stock-market",
-    "source": "Decrypt",
-    "summary": "Moonshot AI's 2.8-trillion-parameter open-weight model sent chip stocks tumbling and gave Wall Street a Friday it would rather forget.",
-    "published_at": "2026-07-17T17:55:32+00:00"
-  },
-  {
-    "id": "477bd9a98c7f3703",
-    "title": "China’s Kimi K3 Is Out—And Beats Claude Fable and GPT 5.6 Sol on Key Benchmarks",
-    "url": "https://decrypt.co/373716/china-kimi-k3-largest-open-source-ai-model-ever-beats-claude-fable-gpt-5-6-sol",
-    "source": "Decrypt",
-    "summary": "Moonshot AI's 2.8-trillion-parameter model tops Fable 5 on a creative writing benchmark and leads Arena AI's frontend code leaderboard—at Claude Sonnet pricing.",
-    "published_at": "2026-07-17T17:36:42+00:00"
   }
 ]
