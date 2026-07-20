@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-20T16:18:34.011640+00:00",
-  "final_score": 0.045,
-  "final_label": "Netral",
-  "summary": "Bitmine menurunkan pembelian ETH dan mengalihkan $86\u202fJuta ke buyback saham, menandakan tekanan pada permintaan ETH. Sementara itu, Michael Saylor\u2019s Strategy menambah cadangan kas $225\u2011$263\u202fJuta lewat",
+  "updated_at": "2026-07-20T18:25:18.725435+00:00",
+  "final_score": 0.487,
+  "final_label": "Bullish",
+  "summary": "Bitcoin kembali mendapat sorotan positif lewat ETF yang kini \u201cgreen\u201d, sementara harga menembus batas $65\u202fK di tengah penurunan saham teknologi institusional. Di sisi lain, dana besar seperti Strategy dan Bitmine menambah cadangan kas (Strategy lewat penjualan MSTR, Bitmine via buyback saham) tanpa mengurangi kepemilikan Bitcoin, menandakan kepercayaan jangka panjang. Ether kini melampaui Bitcoin dalam akumulasi treasury Bitmine, meski pembelian ETH diperlambat. AI mining dan cloud (Hut\u202f8, IREN) mengamankan kontrak bernilai miliaran, memperkuat permintaan energi kripto. Regulasi mulai terstruktur di Nigeria dan Vietnam, meningkatkan kepastian pasar. Risiko tetap ada dari serangan cross\u2011chain (Allbridge) dan penurunan tenaga kerja di Exodus.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": 0.032,
-    "technical_score": 0.16,
-    "technical_avg_change_pct": 1.6,
-    "rule_based_score": 0.032,
-    "rule_based_bull_hits": 16,
-    "rule_based_bear_hits": 15,
-    "ai_bias": null
+    "news_score": 0.517,
+    "technical_score": 0.217,
+    "technical_avg_change_pct": 2.17,
+    "rule_based_score": 0.034,
+    "rule_based_bull_hits": 15,
+    "rule_based_bear_hits": 14,
+    "ai_bias": 1.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
