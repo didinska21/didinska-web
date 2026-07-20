@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-07-20T10:25:53.458204+00:00",
-  "final_score": -0.097,
+  "updated_at": "2026-07-20T12:31:58.221115+00:00",
+  "final_score": -0.052,
   "final_label": "Netral",
-  "summary": "Bitcoin tetap di sekitar $64.000, dipengaruhi tekanan jual dari AI\u2011related sell\u2011off dan naiknya harga minyak. Aliran dana ke Bitcoin ETF berlanjut, namun volume masih kecil, menandakan momentum pemulihan lemah. Kejadian keamanan Allbridge (kerugian $1,65\u202fjuta) menambah kekhawatiran tentang protokol lintas\u2011rantai. Di sisi lain, Hyperliquid akan menambahkan pasar prediksi terdesentralisasi, dan adopsi stablecoin JPYC oleh perusahaan logistik Jepang serta rencana pilot CBDC fase\u202f2 Korea Selatan menunjukkan peningkatan penggunaan riil. Regulasi AS (GENIUS Act, CLARITY) dan penyelidikan manipulasi di Korea menambah ketidakpastian. Kombinasi inovasi dan risiko keamanan serta regulasi membuat pasar berada di zona netral dengan tekanan sedikit ke bawah.",
+  "summary": "Pasar crypto kini dipengaruhi oleh dua tren utama. Di satu sisi, Hyperliquid meluncurkan HIP\u20114, membuka prediksi pasar terdesentralisasi dengan insentif 500\u202frb HYPE, menambah likuiditas dan minat DeFi. Di sisi lain, regulator global memperketat kontrol: Vietnam beri denda untuk perdagangan tanpa lisensi, Rusia mendekati undang\u2011undang kripto, dan Bank Korea serta Korea Selatan persiapkan peluncuran CBDC, sementara Brasil menyiapkan task force tokenisasi. Risiko keamanan muncul lewat pencurian cold\u2011wallet ZIL dan exploit flash\u2011loan Allbridge. Sentimen harga Bitcoin tetap lemah meski ETF terus menerima aliran dana, dan indikator \u201cvolmageddon\u201d mengisyaratkan volatilitas tinggi. Kombinasi inovasi DeFi dan tekanan regulasi menimbulkan ketidakpastian jangka pendek.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.106,
-    "technical_score": -0.02,
-    "technical_avg_change_pct": -0.2,
-    "rule_based_score": -0.212,
-    "rule_based_bull_hits": 13,
-    "rule_based_bear_hits": 20,
+    "news_score": -0.062,
+    "technical_score": 0.042,
+    "technical_avg_change_pct": 0.42,
+    "rule_based_score": -0.125,
+    "rule_based_bull_hits": 14,
+    "rule_based_bear_hits": 18,
     "ai_bias": 0.0
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
