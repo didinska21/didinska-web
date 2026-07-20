@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-07-19T23:14:29.228536+00:00",
-  "final_score": -0.102,
-  "final_label": "Netral",
-  "summary": "Pasar crypto kini berada di persimpangan antara dorongan inovasi dan tekanan regulasi. Penundaan finalisasi aturan stablecoin oleh GENIUS Act serta hitungan mundur 2\u2011tahun USDT menambah ketidakpastian likuiditas. Kritik Michael Saylor terhadap BIP\u2011110 dan kebijakan Brazil yang mengalihkan pembayaran ke stablecoin dolar memperkuat skeptisisme. Di sisi lain, Kraken mengusulkan opsi derivatif lebih sederhana, Zcash meluncurkan node dengan kapasitas 50\u202frb TPS, dan 84\u202f% institusi keuangan menempatkan tokenisasi sebagai prioritas strategis, memberi sinyal adopsi institusional. Sementara Bitcoin menghadapi tantangan kuantum, alat pemulihan baru muncul. Secara keseluruhan, dinamika positif dan negatif seimbang, menahan arah pasar.",
+  "updated_at": "2026-07-20T02:12:55.261630+00:00",
+  "final_score": -0.25,
+  "final_label": "Bearish",
+  "summary": "Ringkasan AI belum tersedia, mengandalkan skor rule-based.",
   "breakdown": {
     "news_weight": 0.9,
     "technical_weight": 0.1,
-    "news_score": -0.116,
-    "technical_score": 0.022,
-    "technical_avg_change_pct": 0.22,
-    "rule_based_score": -0.231,
-    "rule_based_bull_hits": 10,
+    "news_score": -0.28,
+    "technical_score": 0.019,
+    "technical_avg_change_pct": 0.19,
+    "rule_based_score": -0.28,
+    "rule_based_bull_hits": 9,
     "rule_based_bear_hits": 16,
-    "ai_bias": 0.0
+    "ai_bias": null
   },
   "disclaimer": "Analisa edukatif berbasis berita & indikator sederhana, bukan saran finansial. Selalu DYOR."
 }
