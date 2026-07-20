@@ -1,13 +1,35 @@
 [
   {
+    "id": "39bbf51acf1b611d",
+    "title": "Russia's First Comprehensive Crypto Law Is Two Votes Away From Passing",
+    "url": "https://decrypt.co/373880/russia-first-comprehensive-crypto-law",
+    "source": "Decrypt",
+    "summary": "The bill licenses exchanges, caps retail investors at about $3,800 a year, and creates a legal pathway for Russian companies to pay foreign partners in crypto—bypassing Western sanctions.",
+    "published_at": "2026-07-20T20:02:33+00:00"
+  },
+  {
+    "id": "58871c205d74e6a0",
+    "title": "Exodus to cut 25% of staff in company reorganization",
+    "url": "https://cointelegraph.com/news/crypto-wallet-exodus-cut-staff-company-reorganization?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The wallet company said it expected the layoffs to generate between $10 million and $13 million in savings as part of its strategy to build a full-stack card issuance and payments platform.",
+    "published_at": "2026-07-20T19:29:11+00:00"
+  },
+  {
+    "id": "32cf9ccea1410f5f",
+    "title": "Cardano Triggers Hard Fork With First Community-Voted Upgrade",
+    "url": "https://decrypt.co/373858/cardano-van-rossem-hard-fork-live-community-upgrade",
+    "source": "Decrypt",
+    "summary": "For the first time in Cardano's history, no company flipped the switch on a major protocol update.",
+    "published_at": "2026-07-20T18:50:48+00:00"
+  },
+  {
     "id": "51d4d5b85abd6311",
     "title": "Bitcoin ETFs Are Green Again—Here’s Why Investors Should Zoom Out",
     "url": "https://decrypt.co/373850/bitcoin-etfs-green-inflows-why-investors-should-zoom-out",
     "source": "Decrypt",
     "summary": "Two consecutive weeks of inflows ended the worst sustained outflow streak in Bitcoin ETF history. Here's why patience may be required from investors.",
-    "published_at": "2026-07-20T17:59:51+00:00",
-    "title_id": "ETF Bitcoin Kembali Positif—Mengapa Investor Perlu Melihat Gambaran Besar",
-    "summary_id": "Setelah dua minggu aliran masuk dana, streak penarikan terburuk dalam sejarah ETF Bitcoin berakhir. Hal ini mengindikasikan bahwa pasar mulai stabil, namun investor tetap disarankan bersabar karena pergerakan harga masih dapat berfluktuasi."
+    "published_at": "2026-07-20T17:59:51+00:00"
   },
   {
     "id": "c87ee5ec10eb1541",
@@ -25,9 +47,7 @@
     "url": "https://cointelegraph.com/news/hut-8-iren-deals-lift-ai-focused-bitcoin-mining-stocks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Bitcoin miners rallied as investors cheered multi-billion-dollar AI infrastructure contracts, underscoring the sector’s accelerating shift toward data centers and cloud computing.",
-    "published_at": "2026-07-20T17:27:31+00:00",
-    "title_id": "Kesepakatan Hut 8 dan IREN Dorong Saham Penambangan Bitcoin Berbasis AI",
-    "summary_id": "Saham penambang Bitcoin naik tajam setelah kontrak infrastruktur AI bernilai miliaran dolar diumumkan. Ini menegaskan pergeseran industri penambangan ke pusat data dan layanan cloud, memberi sinyal peluang investasi di sektor yang menggabungkan AI dan mining."
+    "published_at": "2026-07-20T17:27:31+00:00"
   },
   {
     "id": "c099434712cf3c31",
@@ -35,9 +55,7 @@
     "url": "https://cointelegraph.com/news/nigeria-order-crypto-regulatory-framework?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The West African country’s executive order established a virtual asset council and addressed the fragmentation of crypto regulation for oversight and enforcement.",
-    "published_at": "2026-07-20T16:59:50+00:00",
-    "title_id": "Presiden Nigeria Tandatangani Perintah tentang Regulasi dan Pajak Kripto",
-    "summary_id": "Perintah eksekutif Nigeria membentuk dewan aset virtual dan menyatukan regulasi kripto yang sebelumnya terfragmentasi. Langkah ini penting bagi trader karena memberikan kepastian hukum dan kerangka pajak yang lebih jelas di pasar Afrika Barat."
+    "published_at": "2026-07-20T16:59:50+00:00"
   },
   {
     "id": "f68eaa3318a7d53c",
@@ -45,9 +63,7 @@
     "url": "https://cointelegraph.com/news/bernstein-raises-robinhood-price-target-cites-tokenization-and-prediction-markets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The brokerage’s blockchain strategy, including tokenized equities and its Arbitrum-based Robinhood Chain, could reduce its reliance on traditional crypto trading, analysts said.",
-    "published_at": "2026-07-20T16:53:25+00:00",
-    "title_id": "Bernstein Naikkan Target Harga Robinhood, Sebut Tokenisasi dan Pasar Prediksi",
-    "summary_id": "Analis Bernstein meningkatkan target harga Robinhood berkat strategi blockchainnya, termasuk ekuitas tokenisasi dan Robinhood Chain berbasis Arbitrum. Pendekatan ini dapat mengurangi ketergantungan pada perdagangan kripto tradisional, membuka peluang baru bagi trader platform."
+    "published_at": "2026-07-20T16:53:25+00:00"
   },
   {
     "id": "16106232fd984b3c",
@@ -55,9 +71,7 @@
     "url": "https://decrypt.co/373847/tom-lee-bitmine-taps-brakes-eth-buys-86m-stock-buyback",
     "source": "Decrypt",
     "summary": "\"The reduced pace of buys reflects that Bitmine repurchased 5.5 million common shares,\" Bitmine Chairman Tom Lee said in a statement.",
-    "published_at": "2026-07-20T16:12:36+00:00",
-    "title_id": "Bitmine Milik Tom Lee Mengurangi Pembelian ETH, Alihkan $86 Juta untuk Buyback Saham",
-    "summary_id": "Bitmine memperlambat pembelian ETH dan menggunakan $86 juta untuk membeli kembali 5,5 juta saham biasa. Perubahan alokasi dana ini menandakan fokus pada pengembalian nilai kepada pemegang saham, yang dapat memengaruhi sentimen pasar ETH."
+    "published_at": "2026-07-20T16:12:36+00:00"
   },
   {
     "id": "d61533d8e5abca60",
@@ -65,9 +79,7 @@
     "url": "https://decrypt.co/373834/strategy-raises-225m-for-cash-reserve-mstr-sale-bitcoin",
     "source": "Decrypt",
     "summary": "For the second consecutive week, Saylor's company sold MSTR stock instead of BTC to pad its reserves to $3.2 billion.",
-    "published_at": "2026-07-20T15:57:29+00:00",
-    "title_id": "Strategi Tambah Cadangan Kas $225 Juta lewat Penjualan MSTR, Simpanan Bitcoin Tak Diganggu",
-    "summary_id": "Perusahaan Michael Saylor menjual saham MicroStrategy lagi, menambah cadangan kas menjadi $3,2 miliar tanpa menyentuh kepemilikan Bitcoin. Ini menunjukkan keyakinan jangka panjang pada BTC sambil menjaga likuiditas untuk peluang investasi lain."
+    "published_at": "2026-07-20T15:57:29+00:00"
   },
   {
     "id": "feeefff08f6eb301",
@@ -75,9 +87,7 @@
     "url": "https://cointelegraph.com/markets/bitcoin-price-hits-65k-wall-as-stock-battle-record-institutional-tech-sell-off?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Bitcoin faced troublesome resistance at $65,000 while traders still saw a potential BTC price breakout into a “bullish market structure.”",
-    "published_at": "2026-07-20T15:47:00+00:00",
-    "title_id": "Harga Bitcoin Tersendat di $65K Saat Saham Hadapi Penjualan Teknologi Institusional Rekor",
-    "summary_id": "Bitcoin menemui resistance kuat di level $65.000, meski trader masih mengantisipasi breakout ke struktur pasar bullish. Batas ini penting bagi trader karena menentukan apakah momentum bullish dapat melanjutkan atau berbalik karena tekanan jual di sektor teknologi."
+    "published_at": "2026-07-20T15:47:00+00:00"
   },
   {
     "id": "c3c6931033889524",
@@ -539,9 +549,7 @@
     "url": "https://decrypt.co/373770/openai-gpt-5-6-vs-anthropic-fable-5-review",
     "source": "Decrypt",
     "summary": "OpenAI's GPT-5.6 Sol or Anthropic's Claude Fable 5: Which one is right for you? The answer depends on your needs. Here's our review.",
-    "published_at": "2026-07-18T15:21:03+00:00",
-    "title_id": "Ulasan GPT-5.6 vs Fable 5: Pilihan Anda Tergantung pada Faktor-Faktor Ini",
-    "summary_id": "Ulasan membandingkan GPT-5.6 Sol dari OpenAI dengan Claude Fable 5 dari Anthropic, menyoroti keunggulan masing‑masing dalam coding, penulisan kreatif, dan kecepatan. Pilihan model tergantung pada kebutuhan spesifik trader, karena AI yang tepat dapat mempercepat analisis pasar dan pembuatan konten."
+    "published_at": "2026-07-18T15:21:03+00:00"
   },
   {
     "id": "5c654a52f1829a3a",
@@ -599,9 +607,7 @@
     "url": "https://decrypt.co/373767/ecb-warns-stablecoins-drain-bank-deposits",
     "source": "Decrypt",
     "summary": "ECB board member Piero Cipollone laid out the three-layer threat banks face from digital payments, and pitched the digital euro as the only structural answer.",
-    "published_at": "2026-07-17T20:17:44+00:00",
-    "title_id": "ECB Peringatkan Stablecoin Bisa Menguras Simpanan Bank—Apa Artinya Bagi Kita",
-    "summary_id": "Anggota dewan ECB memperingatkan bahwa stablecoin dapat menarik dana dari deposito bank, menimbulkan risiko likuiditas sistemik. Mereka mengusulkan euro digital sebagai solusi struktural. Trader crypto harus memantau regulasi ini karena dapat memengaruhi permintaan dan likuiditas stablecoin di pasar."
+    "published_at": "2026-07-17T20:17:44+00:00"
   },
   {
     "id": "0520b9570cf6d969",
@@ -639,9 +645,7 @@
     "url": "https://decrypt.co/373749/caradno-ada-price-spikes-iohk-decentralizing-development",
     "source": "Decrypt",
     "summary": "Input Output is handing its core infrastructure to outside teams as ADA gets a lift from an imminent protocol upgrade.",
-    "published_at": "2026-07-17T19:12:41+00:00",
-    "title_id": "Cardano Menguat Saat Jaringan Tingkatkan Desentralisasi Pengembangan",
-    "summary_id": "Input Output menyerahkan infrastruktur inti Cardano ke tim eksternal dan menyiapkan upgrade protokol yang memperdalam desentralisasi. Langkah ini diharapkan meningkatkan kepercayaan developer dan adopsi ADA, memberi peluang bagi trader untuk memanfaatkan kenaikan harga token."
+    "published_at": "2026-07-17T19:12:41+00:00"
   },
   {
     "id": "28748d2b2bfdf130",
@@ -659,9 +663,7 @@
     "url": "https://decrypt.co/373736/kimi-k3-triggered-deepseek-flashbacks-stock-market",
     "source": "Decrypt",
     "summary": "Moonshot AI's 2.8-trillion-parameter open-weight model sent chip stocks tumbling and gave Wall Street a Friday it would rather forget.",
-    "published_at": "2026-07-17T17:55:32+00:00",
-    "title_id": "Kimi K3 Memicu Kembalinya Dampak DeepSeek di Pasar Saham",
-    "summary_id": "Model AI Kimi K3 dengan 2,8 triliun parameter dari Moonshot AI menyebabkan penurunan saham chip karena meningkatkan permintaan komputasi AI. Trader perlu waspada pada volatilitas sektor semikonduktor dan potensi pergeseran alokasi dana ke perusahaan AI."
+    "published_at": "2026-07-17T17:55:32+00:00"
   },
   {
     "id": "477bd9a98c7f3703",
@@ -669,38 +671,6 @@
     "url": "https://decrypt.co/373716/china-kimi-k3-largest-open-source-ai-model-ever-beats-claude-fable-gpt-5-6-sol",
     "source": "Decrypt",
     "summary": "Moonshot AI's 2.8-trillion-parameter model tops Fable 5 on a creative writing benchmark and leads Arena AI's frontend code leaderboard—at Claude Sonnet pricing.",
-    "published_at": "2026-07-17T17:36:42+00:00",
-    "title_id": "Kimi K3 dari China Dirilis—Kalahkan Claude Fable dan GPT-5.6 Sol pada Benchmark Utama",
-    "summary_id": "Kimi K3 mengungguli Claude Fable 5 dan GPT‑5.6 Sol pada tes penulisan kreatif dan kode frontend, dengan harga setara Claude Sonnet. Keunggulan ini menandakan persaingan AI yang semakin ketat, yang dapat memengaruhi layanan berbasis AI dalam ekosistem crypto."
-  },
-  {
-    "id": "06c9f535737f3741",
-    "title": "Stripe and Swift race to control the next generation of global payments infrastructure",
-    "url": "https://www.coindesk.com/business/2026/07/17/stripe-and-swift-race-to-control-the-next-generation-of-global-payments-infrastructure",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-17T17:23:01+00:00",
-    "title_id": "Stripe dan Swift Bersaing Kuasai Infrastruktur Pembayaran Global Generasi Berikutnya",
-    "summary_id": "Stripe dan jaringan SWIFT berlomba mengembangkan infrastruktur pembayaran lintas batas yang lebih cepat, terdesentralisasi, dan dapat diintegrasikan dengan crypto. Bagi trader, evolusi ini dapat mempermudah konversi fiat‑ke‑crypto dan meningkatkan likuiditas pasar global."
-  },
-  {
-    "id": "9949466ba583f1e6",
-    "title": "Galaxy Puts Its Name on Texas Tech's Stadium in a 15-Year, Crypto-Native Deal",
-    "url": "https://decrypt.co/373710/galaxy-texas-tech-stadium-15-year-crypto-native-deal",
-    "source": "Decrypt",
-    "summary": "The Nasdaq-listed digital-asset firm will rebrand the Red Raiders' home as \"Galaxy Stadium.\" The bigger bet is on the cheap power and open land of West Texas.",
-    "published_at": "2026-07-17T17:09:33+00:00",
-    "title_id": "Galaxy Namai Stadion Texas Tech dalam Kesepakatan Kripto 15 Tahun",
-    "summary_id": "Perusahaan aset digital Galaxy menandatangani kesepakatan 15‑tahun untuk menamai stadion Texas Tech, sekaligus menyoroti potensi energi murah di Texas untuk penambangan. Langkah ini menandakan integrasi crypto dengan olahraga dan membuka peluang investasi infrastruktur penambangan."
-  },
-  {
-    "id": "5c338e7da32faa0f",
-    "title": "OKX Europe lets users convert USDT to MiCA-compliant USDC",
-    "url": "https://cointelegraph.com/news/okx-europe-lets-users-convert-usdt-to-mica-compliant-usdc?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The feature offers European customers a voluntary path away from Tether’s USDT as MiCA rules reshape the region’s stablecoin market.",
-    "published_at": "2026-07-17T16:54:37+00:00",
-    "title_id": "OKX Europe Sediakan Konversi USDT ke USDC yang Sesuai MiCA",
-    "summary_id": "OKX Europe meluncurkan fitur yang memungkinkan pengguna Eropa menukar USDT ke USDC yang sudah memenuhi regulasi MiCA, memberi alternatif stablecoin yang lebih aman. Trader di UE dapat mengurangi eksposur pada Tether dan tetap patuh pada aturan baru."
+    "published_at": "2026-07-17T17:36:42+00:00"
   }
 ]

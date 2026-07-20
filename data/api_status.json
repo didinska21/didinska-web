@@ -1,12 +1,12 @@
 {
   "translate": {
-    "ok": true,
-    "reason": null,
-    "updated_at": "2026-07-20T18:25:17.486288+00:00"
+    "ok": false,
+    "reason": "invalid_api_key",
+    "updated_at": "2026-07-20T20:06:53.346944+00:00"
   },
   "analyze": {
-    "ok": true,
-    "reason": null,
-    "updated_at": "2026-07-20T18:25:18.725771+00:00"
+    "ok": false,
+    "reason": "invalid_api_key",
+    "updated_at": "2026-07-20T20:07:04.219987+00:00"
   }
 }
