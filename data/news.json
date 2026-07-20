@@ -1,5 +1,29 @@
 [
   {
+    "id": "bcd200327cd5434f",
+    "title": "Democrats added certain consumer protection rules to CLARITY: Coinbase exec",
+    "url": "https://cointelegraph.com/news/democrats-consumer-protections-clarity-act-ethics-debate?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Coinbase vice chair Ryan VanGrack said that Democratic lawmakers had added provisions on customer protection to a digital asset market structure bill under consideration in the US Senate.",
+    "published_at": "2026-07-20T21:41:23+00:00"
+  },
+  {
+    "id": "812c92c28a514d7a",
+    "title": "Tether Gold recognized as Accepted Spot Commodity in Abu Dhabi financial center",
+    "url": "https://cointelegraph.com/news/tether-gold-recognized-as-accepted-spot-commodity-in-abu-dhabi-financial-center?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The recognition allows regulated firms in Abu Dhabi Global Market to offer services involving Tether Gold as tokenized commodities gain broader adoption.",
+    "published_at": "2026-07-20T21:21:54+00:00"
+  },
+  {
+    "id": "79243c096eb163b1",
+    "title": "Bitcoin defies recent tech stocks sell-off. Are bulls eyeing a $70K rally?",
+    "url": "https://cointelegraph.com/markets/bitcoin-defies-recent-tech-stocks-sell-off-are-bulls-eyeing-70k-rally?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Despite muted derivatives sentiment, Bitcoin’s decoupling and Strategy’s cash raise set the stage for a potential rally to $70,000.",
+    "published_at": "2026-07-20T21:20:09+00:00"
+  },
+  {
     "id": "6df9228aa7377403",
     "title": "Bank of Korea Scales Up CBDC Pilot With Half a Million Users",
     "url": "https://decrypt.co/373905/bank-korea-scales-up-cbdc-pilot-half-million-users",
@@ -644,33 +668,5 @@
     "published_at": "2026-07-17T19:33:58+00:00",
     "title_id": "Consensys tanpa sengaja mengontrak pengembang yang terkait Korea Utara",
     "summary_id": "Konsorsium Consensys, lewat pihak ketiga yang dianggap terpercaya, mengontrak seorang pengembang yang kemudian terungkap memiliki kaitan dengan Korea Utara. Insiden ini mengingatkan trader tentang pentingnya due diligence pada mitra teknologi dalam ekosistem kripto untuk menghindari risiko geopolitik dan keamanan."
-  },
-  {
-    "id": "05c15f68198bacce",
-    "title": "Crypto Biz: When dollars disappear, stablecoins step in",
-    "url": "https://cointelegraph.com/news/crypto-biz-when-dollars-disappear-stablecoins-step-in?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Bolivia moves to recognize USDT amid a dollar shortage, while Bitcoin miners’ AI ambitions face fresh investor scrutiny.",
-    "published_at": "2026-07-17T19:23:53+00:00",
-    "title_id": "Bisnis Crypto: Stablecoin mengisi kekosongan saat dolar menghilang",
-    "summary_id": "Bolivia berencana mengakui USDT sebagai alat pembayaran karena kekurangan dolar, sementara penambang Bitcoin yang mengincar AI mendapat sorotan investor baru. Trader harus mencermati pergeseran penggunaan stablecoin di pasar emerging dan implikasi penambangan AI terhadap permintaan energi dan profitabilitas."
-  },
-  {
-    "id": "1be168c2549c5891",
-    "title": "Cardano Pumps as Network Moves to Further Decentralize Development",
-    "url": "https://decrypt.co/373749/caradno-ada-price-spikes-iohk-decentralizing-development",
-    "source": "Decrypt",
-    "summary": "Input Output is handing its core infrastructure to outside teams as ADA gets a lift from an imminent protocol upgrade.",
-    "published_at": "2026-07-17T19:12:41+00:00"
-  },
-  {
-    "id": "28748d2b2bfdf130",
-    "title": "Polymarket traders cut Clarity Act passage odds to record low as Senate delay drags on",
-    "url": "https://www.coindesk.com/markets/2026/07/17/polymarket-traders-cut-clarity-act-passage-odds-to-record-low-as-senate-delay-drags-on",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-17T18:00:11+00:00",
-    "title_id": "Pedagang Polymarket turunkan peluang lolosnya Clarity Act ke level terendah karena penundaan Senat",
-    "summary_id": "Di Polymarket, para trader menurunkan odds keberhasilan Clarity Act karena Senat terus menunda pembahasan, mencerminkan ketidakpastian regulasi. Bagi trader crypto, perubahan odds ini mempengaruhi pasar prediksi dan menyoroti pentingnya mengikuti perkembangan legislasi yang dapat memengaruhi ekosistem kripto."
   }
 ]
