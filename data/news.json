@@ -1,5 +1,21 @@
 [
   {
+    "id": "c4f8633210493610",
+    "title": "Bitcoin rally faces key test at $68,000 as 'summer slumber' grips crypto, analysts say",
+    "url": "https://www.coindesk.com/markets/2026/07/21/bitcoin-rally-faces-key-test-at-usd68-000-as-summer-slumber-grips-crypto-analysts-say",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T20:05:33+00:00"
+  },
+  {
+    "id": "a0b19b8ea4b93b11",
+    "title": "Pakistan steps up crypto enforcement with dedicated federal unit",
+    "url": "https://cointelegraph.com/news/pakistan-crypto-enforcement-dedicated-unit-crimes?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "A senior official with Pakistan’s Federal Investigation Agency reportedly recommended other agencies establish similar units to address crypto-related crime.",
+    "published_at": "2026-07-21T19:19:22+00:00"
+  },
+  {
     "id": "cb9221591ca94fa6",
     "title": "Google Ships New Gemini Flash Models, But Pro Is Still Missing",
     "url": "https://decrypt.co/373975/google-new-gemini-flash-models-pro-still-missing",
@@ -624,21 +640,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-20T11:15:57+00:00"
-  },
-  {
-    "id": "6ac13f1b66f6bce9",
-    "title": "Strategy's Michael Saylor Makes 110-Point Case Against Bitcoin's BIP-110",
-    "url": "https://decrypt.co/373819/strategys-michael-saylor-makes-110-point-case-against-bitcoins-bip-110",
-    "source": "Decrypt",
-    "summary": "The Strategy chairman argued that the soft fork is a 'bad idea,' warning that it would cause more harm than the problem it aims to solve.",
-    "published_at": "2026-07-20T11:12:57+00:00"
-  },
-  {
-    "id": "3e8888c6755a23be",
-    "title": "Bank of Korea prepares for live CBDC transactions with 9 banks in September",
-    "url": "https://www.coindesk.com/business/2026/07/20/bank-of-korea-prepares-for-live-cbdc-transactions-with-nine-banks-in-september",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T11:10:07+00:00"
   }
 ]
