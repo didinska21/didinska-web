@@ -1,5 +1,21 @@
 [
   {
+    "id": "7d81ffbebb067a4a",
+    "title": "Crypto lobby group Digital Chamber sues Illinois to block digital asset tax",
+    "url": "https://www.coindesk.com/policy/2026/07/21/crypto-lobby-group-tdc-sues-illinois-to-block-digital-asset-tax",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T22:08:10+00:00"
+  },
+  {
+    "id": "575b1ddebbcbaa8d",
+    "title": "CLARITY Act could help CFTC deal with prediction markets: Lawyer",
+    "url": "https://cointelegraph.com/news/clarity-act-cftc-prediction-markets-resources?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "According to one lawyer testifying before a House subcommittee hearing, the CLARITY Act could grant the CFTC the authority it needs to address the “explosive growth of prediction markets.”",
+    "published_at": "2026-07-21T21:36:43+00:00"
+  },
+  {
     "id": "c2c9f9c65d7b768f",
     "title": "OpenAI Models Escaped Locked Test Environment, Hacked Hugging Face to Cheat on Benchmark",
     "url": "https://decrypt.co/374015/openai-models-escaped-test-environment-hacked-hugging-face-cheat-benchmark",
@@ -624,21 +640,5 @@
     "source": "Cointelegraph",
     "summary": "Strategy boosted its cash reserve to $3.225 billion after selling MSTR shares, while investors weighed the value of its STRC preferred stock.",
     "published_at": "2026-07-20T12:39:49+00:00"
-  },
-  {
-    "id": "d8b2ba812cd03f95",
-    "title": "Saylor's Strategy raises cash reserves to $3.2 billion, leaving bitcoin holdings unchanged",
-    "url": "https://www.coindesk.com/business/2026/07/20/saylor-s-strategy-raises-cash-reserves-to-usd3-225-billion-leaving-bitcoin-holdings-unchanged",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T12:35:02+00:00"
-  },
-  {
-    "id": "6a6653422a37f308",
-    "title": "Hyperliquid sets 500,000 HYPE stake for permissionless prediction market deployers",
-    "url": "https://cointelegraph.com/news/hyperliquid-hype-stake-permissionless-prediction-markets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Hyperliquid plans to require developers to stake 500,000 HYPE, worth about $30.4 million, to deploy permissionless prediction markets under HIP-4.",
-    "published_at": "2026-07-20T12:20:23+00:00"
   }
 ]
