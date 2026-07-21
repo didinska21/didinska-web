@@ -1,5 +1,69 @@
 [
   {
+    "id": "fb719ec1c4693a46",
+    "title": "XRP Breaks Out on Clarity Act Hopes. The Charts Are Still Cautious",
+    "url": "https://decrypt.co/373951/xrp-price-clarity-act-hopes-charts-cautious",
+    "source": "Decrypt",
+    "summary": "The Ripple-linked token just had its best day in weeks, as Washington may finally be delivering what the XRP Army has been waiting for.",
+    "published_at": "2026-07-21T16:20:29+00:00"
+  },
+  {
+    "id": "1a108911a5022578",
+    "title": "Claude's Fable 5 just solved an 87-year-old math problem, and it matters for bitcoin",
+    "url": "https://www.coindesk.com/tech/2026/07/21/claude-s-fable-5-just-solved-an-87-year-old-math-problem-and-it-matters-for-bitcoin",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T16:19:24+00:00"
+  },
+  {
+    "id": "4b4f45632c37656c",
+    "title": "Galaxy sets up $5 million fund to help shield Bitcoin against quantum computing threats",
+    "url": "https://www.coindesk.com/tech/2026/07/21/galaxy-sets-up-usd5-million-fund-to-help-shield-bitcoin-against-quantum-computing-threats",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T16:16:14+00:00"
+  },
+  {
+    "id": "b13ab25ee3af967f",
+    "title": "BIS warns stablecoins could weaken capital controls in emerging markets",
+    "url": "https://cointelegraph.com/news/bis-study-says-stablecoins-bypass-capital-controls-more-easily-than-bank-deposits?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Researchers found dollar-backed stablecoins are less affected by capital controls than traditional bank deposits, raising new questions about monetary sovereignty in emerging markets.",
+    "published_at": "2026-07-21T16:11:54+00:00"
+  },
+  {
+    "id": "9be70b1e1f453a17",
+    "title": "Jack Mallers Quits Twenty One Capital as Tether's Bitcoin Merger Collapses",
+    "url": "https://decrypt.co/373940/jack-mallers-quits-twenty-one-capital-as-tethers-bitcoin-merger-collapses",
+    "source": "Decrypt",
+    "summary": "XXI stock dropped nearly 18% after the company's co-founder stepped down and Tether's plan to combine three Bitcoin firms officially fell apart.",
+    "published_at": "2026-07-21T16:06:20+00:00"
+  },
+  {
+    "id": "90d17066f882ad6f",
+    "title": "MEXC adds Bittensor TAO staking for its global user base",
+    "url": "https://cointelegraph.com/news/mexc-adds-bittensor-tao-staking-for-its-global-user-base?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The integration with validator Yuma gives millions of MEXC users access to Bittensor, an AI-focused blockchain whose ecosystem now spans 128 specialized subnets.",
+    "published_at": "2026-07-21T15:53:08+00:00"
+  },
+  {
+    "id": "225d95aa89a07960",
+    "title": "Russia’s parliament passes crypto market law with $3,800 annual cap for retail investors",
+    "url": "https://www.coindesk.com/policy/2026/07/21/russia-s-parliament-passes-crypto-market-law-rules-to-take-effect-sept-1",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T15:19:44+00:00"
+  },
+  {
+    "id": "50860937c115cf77",
+    "title": "Bitcoin nears seven-week high as stocks ignore Iran strikes, Trump 10% tariff plans",
+    "url": "https://cointelegraph.com/markets/bitcoin-nears-seven-week-high-as-stocks-ignore-iran-strikes-trump-10-tariff-plans?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Bitcoin and crypto joined US stocks in brushing off US-Iran war escalation and the threat of fresh trade tariffs before the end of the month.",
+    "published_at": "2026-07-21T15:14:37+00:00"
+  },
+  {
     "id": "b0f927e8c390465a",
     "title": "Augustus raises $180 million to build a clearing bank for the AI and stablecoin era",
     "url": "https://www.coindesk.com/business/2026/07/21/augustus-raises-usd180-million-to-build-a-clearing-bank-for-the-ai-and-stablecoin-era",
@@ -185,7 +249,7 @@
   },
   {
     "id": "76ddc5d19bfbc963",
-    "title": "Live markets: Bitcoin rises to five-week high above $66,400 on rising hope for Clarity Act",
+    "title": "Live markets: Bitcoin rises to five-week high near $67,000 on boosted hope for Clarity Act",
     "url": "https://www.coindesk.com/business/2026/07/21/live-markets-bitcoin-etfs-post-a-fifth-straight-day-of-inflows-in-a-first-since-april",
     "source": "CoinDesk",
     "summary": "",
@@ -576,69 +640,5 @@
     "source": "Cointelegraph",
     "summary": "US spot Bitcoin ETFs extended their inflow streak to two weeks with $75.7 million in net inflows, but analysts said demand remains insufficient to fuel a sustained uptrend.",
     "published_at": "2026-07-20T09:33:19+00:00"
-  },
-  {
-    "id": "e1a3901b05e1182d",
-    "title": "Cross-chain protocol Allbridge halts after $1.65 million flash loan exploit",
-    "url": "https://www.coindesk.com/business/2026/07/20/cross-chain-protocol-allbridge-halts-after-usd1-65-million-flash-loan-exploit",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T09:31:22+00:00"
-  },
-  {
-    "id": "173a24b99364a9d3",
-    "title": "U.S. regulatory developments and earnings, ECB rate decision: Crypto Week Ahead",
-    "url": "https://www.coindesk.com/markets/2026/07/20/u-s-regulatory-developments-and-earnings-ecb-rate-decision-crypto-week-ahead",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T08:57:53+00:00"
-  },
-  {
-    "id": "fc81bb75a80d54d2",
-    "title": "Amazon Japan supplier AZ-Com Maruwa to adopt yen stablecoin JPYC for payments",
-    "url": "https://www.coindesk.com/business/2026/07/20/amazon-japan-supplier-az-com-maruwa-to-adopt-yen-stablecoin-jpyc-for-payments",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T08:10:34+00:00"
-  },
-  {
-    "id": "2c4d09299b04f3e7",
-    "title": "South Korea eyes September launch for second phase of CBDC pilot: Report",
-    "url": "https://cointelegraph.com/news/south-korea-september-second-phase-cbdc-pilot?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The Bank of Korea’s CBDC pilot will add two regional banks, new payment features and tests of government subsidy payments using tokenized bank deposits",
-    "published_at": "2026-07-20T07:18:28+00:00"
-  },
-  {
-    "id": "2ff745c7296f71a1",
-    "title": "Live updates: Bitcoin rises to one-month high of $65,700 before pulling back with stocks",
-    "url": "https://www.coindesk.com/tech/2026/07/20/live-markets-oil-bounce-and-lingering-ai-selloff-pushes-bitcoin-under-usd64-000",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T07:15:47+00:00"
-  },
-  {
-    "id": "454c8d3e96737075",
-    "title": "Moonshot AI IPO push follows Kimi, Alibaba AI releases that shook bitcoin",
-    "url": "https://www.coindesk.com/tech/2026/07/20/moonshot-ai-ipo-push-follows-kimi-alibaba-ai-releases-that-shook-bitcoin",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T07:08:07+00:00"
-  },
-  {
-    "id": "2cf2d039118b2b81",
-    "title": "Bitcoin ETFs see new money again, but inflows remain ‘peanuts’ relative to the recent exodus",
-    "url": "https://www.coindesk.com/markets/2026/07/20/bitcoin-etfs-see-new-money-again-but-inflows-remain-peanuts-relative-to-the-recent-exodus",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T05:46:36+00:00"
-  },
-  {
-    "id": "d04bcd523090e2d1",
-    "title": "Bitcoin flat near $64,000 as oil hits a one-month high and Kimi AI selloff lingers",
-    "url": "https://www.coindesk.com/markets/2026/07/20/bitcoin-flat-near-usd64-000-as-oil-hits-a-one-month-high-and-kimi-ai-selloff-lingers",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T05:31:43+00:00"
   }
 ]
