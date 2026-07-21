@@ -1,5 +1,53 @@
 [
   {
+    "id": "cb9221591ca94fa6",
+    "title": "Google Ships New Gemini Flash Models, But Pro Is Still Missing",
+    "url": "https://decrypt.co/373975/google-new-gemini-flash-models-pro-still-missing",
+    "source": "Decrypt",
+    "summary": "As Gemini 3.5 Pro stalls in testing limbo, Google ships 3.6 Flash, 3.5 Flash-Lite, and a restricted cybersecurity model—and quietly teases Gemini 4.",
+    "published_at": "2026-07-21T18:55:45+00:00"
+  },
+  {
+    "id": "20b603a5c58dc33c",
+    "title": "Pavel Durov says Telegram to roll out native Gram crypto wallet",
+    "url": "https://cointelegraph.com/news/telegram-launch-native-self-custody-gram-wallet-for-over-1-billion-users-durov?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Telegram founder Pavel Durov said the messaging platform will roll out a native non-custodial Gram wallet this summer, bringing self-custody crypto transactions to its more than 1 billion users.",
+    "published_at": "2026-07-21T18:20:58+00:00"
+  },
+  {
+    "id": "a7a1ea358fd0cfc5",
+    "title": "White House pushes Senate Democrats to take 'historic' crypto Clarity Act ethics deal",
+    "url": "https://www.coindesk.com/policy/2026/07/21/white-house-pushes-senate-democrats-to-take-historic-crypto-clarity-act-ethics-deal",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T18:14:39+00:00"
+  },
+  {
+    "id": "43746173efbc8267",
+    "title": "Augustus Raises $180 Million to Build a Stablecoin-Ready 'Global Dollar Bank'",
+    "url": "https://decrypt.co/373996/augustus-raises-180-million-stablecoin-global-dollar-bank",
+    "source": "Decrypt",
+    "summary": "The Tiger Global-led round values the startup at $1 billion as it wires stablecoin rails directly into a federally chartered bank, aiming to modernize the correspondent-banking plumbing behind cross-border payments.",
+    "published_at": "2026-07-21T18:13:48+00:00"
+  },
+  {
+    "id": "fc63fd1c43815e49",
+    "title": "Movement Labs files for Chapter 11 bankruptcy months after token scandal",
+    "url": "https://www.coindesk.com/policy/2026/07/21/movement-labs-files-for-chapter-11-months-after-token-scandal-and-strategic-overhaul",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T17:54:40+00:00"
+  },
+  {
+    "id": "8dd2d19621c138b4",
+    "title": "Crypto market breakout could accelerate as AI trade cools, analyst says",
+    "url": "https://cointelegraph.com/markets/crypto-market-breakout-ai-trade-cools-analyst-says?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Bitcoin topped $67,000 while crypto stocks rallied on optimism over US crypto legislation and signs investors may be rotating out of AI trades.",
+    "published_at": "2026-07-21T17:46:30+00:00"
+  },
+  {
     "id": "fd55edca363c45cd",
     "title": "White House agrees to ethics provisions in market structure bill",
     "url": "https://cointelegraph.com/news/white-house-ethics-provisions-crypto-market-structure-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
@@ -265,7 +313,7 @@
   },
   {
     "id": "76ddc5d19bfbc963",
-    "title": "Live markets: Bitcoin rises to five-week high near $67,000 on boosted hope for Clarity Act",
+    "title": "Live markets: Bitcoin pulls back from five-week high on new Trump threats over Iran",
     "url": "https://www.coindesk.com/business/2026/07/21/live-markets-bitcoin-etfs-post-a-fifth-straight-day-of-inflows-in-a-first-since-april",
     "source": "CoinDesk",
     "summary": "",
@@ -592,53 +640,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-20T11:10:07+00:00"
-  },
-  {
-    "id": "18fa0c319ad259d5",
-    "title": "Crypto institutions look beyond audits as trust signals falter: Hacken",
-    "url": "https://cointelegraph.com/news/institutions-crypto-security-beyond-audits-hacken-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Institutional due diligence is shifting toward continuous monitoring, signer controls and incident readiness after operational failures accounted for most crypto losses.",
-    "published_at": "2026-07-20T11:00:00+00:00"
-  },
-  {
-    "id": "8a1b0e370175d9f7",
-    "title": "Capital B approves 10-for-1 reverse stock split to broaden investor base",
-    "url": "https://cointelegraph.com/news/capital-b-reverse-stock-split-investor-base?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Europe’s second-biggest Bitcoin treasury company said the September reverse stock split should attract more institutional investors to the French company.",
-    "published_at": "2026-07-20T10:54:00+00:00"
-  },
-  {
-    "id": "cc29601b4edb3b9f",
-    "title": "Russia’s parliament to hold final readings on crypto bill Tuesday",
-    "url": "https://cointelegraph.com/news/russia-crypto-bill-final-readings-july-21?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Russia’s State Duma is set to consider the crypto regulation bill in second and third readings, with rules for investors and cross-border payments included.",
-    "published_at": "2026-07-20T10:37:23+00:00"
-  },
-  {
-    "id": "98d45ec5177e5cec",
-    "title": "Grayscale plans regular cash payouts from ETH, SOL staking rewards",
-    "url": "https://cointelegraph.com/news/grayscale-eth-sol-staking-cash-payouts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Grayscale plans to establish regular cash distributions from staking rewards generated by its Ether and Solana exchange-traded products.",
-    "published_at": "2026-07-20T10:36:30+00:00"
-  },
-  {
-    "id": "b6046e9afb3abfc9",
-    "title": "Crypto market slips even as equities advance. Pump surges on social-media chatter",
-    "url": "https://www.coindesk.com/markets/2026/07/20/crypto-market-slips-even-as-equities-advance-pump-surges-on-social-media-chatter",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T10:33:14+00:00"
-  },
-  {
-    "id": "e5c7658c0c853e24",
-    "title": "Trader maintains $67K BTC price target: Five things to know in Bitcoin this week",
-    "url": "https://cointelegraph.com/markets/trader-preserves-67k-btc-price-target-five-things-to-know-in-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Bitcoin preserved a key long-term trend line as support for a third week as US-Iran war tensions delivered new five-week highs in oil prices.",
-    "published_at": "2026-07-20T10:26:36+00:00"
   }
 ]
