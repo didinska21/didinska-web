@@ -1,5 +1,77 @@
 [
   {
+    "id": "3f8b8f45bb962554",
+    "title": "Jack Mallers steps down as XXI Capital CEO as Tether's plans to merge three bitcoin firms falls",
+    "url": "https://www.coindesk.com/business/2026/07/21/jack-mallers-steps-down-as-xxi-capital-ceo-as-tether-s-plans-to-merge-three-bitcoin-firms-falls",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T12:42:29+00:00"
+  },
+  {
+    "id": "9ae205f0dd7490f0",
+    "title": "Tether-backed Twenty One, Strike merger plan scrapped: Bloomberg",
+    "url": "https://cointelegraph.com/news/tether-twenty-one-strike-merger-plan-scrapped-bloomberg?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Strike will remain a standalone company after the proposed three-way merger was scrapped, while Twenty One Capital and Elektron continue discussions, Bloomberg reported.",
+    "published_at": "2026-07-21T12:29:25+00:00"
+  },
+  {
+    "id": "5133f1c145bbe039",
+    "title": "Galaxy Commits Up to $5 Million to Prepare Bitcoin for Quantum Threat",
+    "url": "https://decrypt.co/373908/galaxy-commits-5-million-prepare-bitcoin-quantum-threat",
+    "source": "Decrypt",
+    "summary": "The crypto firm's initiative arrives as researchers, exchanges, and the U.S. government warn that \"Q-Day\" may land as soon as 2030.",
+    "published_at": "2026-07-21T12:01:03+00:00"
+  },
+  {
+    "id": "8991bf8dba3523db",
+    "title": "More MiCA-licensed crypto firms could exit EU market: Gate Europe CEO",
+    "url": "https://cointelegraph.com/news/mica-licensed-crypto-firms-eu-market-gate-europe-ceo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Gate Europe’s Giovanni Cunti says some MiCA-licensed crypto firms may struggle to sustain compliance costs as Europe enters its new regulatory era.",
+    "published_at": "2026-07-21T11:58:02+00:00"
+  },
+  {
+    "id": "0d8c3641b19796fe",
+    "title": "Morning Minute: The Clarity Act Has New Life",
+    "url": "https://decrypt.co/373924/morning-minute-the-clarity-act-has-new-life",
+    "source": "Decrypt",
+    "summary": "Odds of the Clarity Act passing in 2026 jumped to 42% after a surprising new development from the White House.",
+    "published_at": "2026-07-21T11:57:23+00:00"
+  },
+  {
+    "id": "9da39e9a457f2b96",
+    "title": "Russian parliament passes law regulating crypto market",
+    "url": "https://cointelegraph.com/news/russias-parliament-passes-law-regulating-crypto-market?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The State Duma legislation creates a regulated framework for crypto market participants and now moves to President Vladimir Putin for his signature before becoming law.",
+    "published_at": "2026-07-21T11:49:30+00:00"
+  },
+  {
+    "id": "72cb1cf890961d98",
+    "title": "Pakistan Launches Crypto Investigation Unit to Fight Money Laundering",
+    "url": "https://decrypt.co/373922/pakistan-launches-crypto-investigation-unit-to-fight-money-laundering",
+    "source": "Decrypt",
+    "summary": "Islamabad is building the enforcement side of its crypto push, standing up a unit to police money laundering even as it licenses exchanges.",
+    "published_at": "2026-07-21T11:40:48+00:00"
+  },
+  {
+    "id": "d3c7e2364a8e28eb",
+    "title": "Bitcoin rally has broad-based support as institutions, whales, options traders pile in",
+    "url": "https://www.coindesk.com/daybook-us/2026/07/21/bitcoin-rally-has-broad-based-support-as-institutions-whales-options-traders-pile-in",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T11:37:22+00:00"
+  },
+  {
+    "id": "11272a918bafadf4",
+    "title": "Clarity odds jump to 43% on Polymarket after unverified reports Trump agreed to ethics deal",
+    "url": "https://www.coindesk.com/markets/2026/07/21/clarity-act-odds-jump-11-points-on-polymarket-after-reports-trump-agreed-to-ethics-deal",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T11:19:18+00:00"
+  },
+  {
     "id": "3d593b8804bb6369",
     "title": "Crypto markets rally on Clarity progress report, Asian chip-stock rebound",
     "url": "https://www.coindesk.com/markets/2026/07/21/crypto-markets-rally-on-clarity-progress-report-asian-chip-stock-rebound",
@@ -9,11 +81,11 @@
   },
   {
     "id": "ccc0a413d9db9a83",
-    "title": "Bitcoin price gains to $66.3K as range breakout attempt sparks one-month high",
+    "title": "Bitcoin price gains to $66.3K as range breakout attempt sparks 1-month high",
     "url": "https://cointelegraph.com/markets/bitcoin-price-hits-663k-as-range-breakout-attempt-sparks-one-month-high?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Bitcoin beat out local resistance to pass $66,000 amid predictions of as much as 6% BTC price upside if momentum continued.",
-    "published_at": "2026-07-21T10:26:35+00:00"
+    "published_at": "2026-07-21T10:30:00+00:00"
   },
   {
     "id": "cbabc63c15f90451",
@@ -65,7 +137,7 @@
   },
   {
     "id": "76ddc5d19bfbc963",
-    "title": "Live markets: Bitcoin ETFs post a fifth straight day of inflows in a first since April",
+    "title": "Live markets: Bitcoin rises to five-week high above $66,400 on rising hope for Clarity Act",
     "url": "https://www.coindesk.com/business/2026/07/21/live-markets-bitcoin-etfs-post-a-fifth-straight-day-of-inflows-in-a-first-since-april",
     "source": "CoinDesk",
     "summary": "",
@@ -568,81 +640,5 @@
     "source": "Cointelegraph",
     "summary": "The fate of the CLARITY Act hinges on Trump’s ethics, so the odds aren’t looking great. Prediction market volumes hit new highs, and more news.",
     "published_at": "2026-07-20T00:12:06+00:00"
-  },
-  {
-    "id": "2f1420d23aa36958",
-    "title": "The GENIUS Act turns 1: State of Crypto",
-    "url": "https://www.coindesk.com/policy/2026/07/19/the-genius-act-turns-1-state-of-crypto",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T18:30:00+00:00"
-  },
-  {
-    "id": "1cf7b00d616a466a",
-    "title": "Saylor turns up heat with ‘110 reasons’ why BIP-110 is a bad idea",
-    "url": "https://cointelegraph.com/news/saylor-turns-up-heat-with-110-reasons-why-bip-110-is-a-bad-idea?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The man in control of the biggest Bitcoin corporate treasury said he shares the objectives but disagrees about the remedy detailed in the proposed temporary fork.",
-    "published_at": "2026-07-19T16:37:00+00:00"
-  },
-  {
-    "id": "6a04fbcd39165a5e",
-    "title": "Bitcoin's biggest advocate, Michael Saylor, says new plan to clean up the blockchain is 'a bad idea'",
-    "url": "https://www.coindesk.com/tech/2026/07/19/bitcoin-s-biggest-advocate-michael-saylor-says-new-plan-to-clean-up-the-blockchain-is-a-bad-idea",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T15:19:21+00:00"
-  },
-  {
-    "id": "357f15bedc3f6726",
-    "title": "AI is destroying the internet. Math is our only hope.",
-    "url": "https://www.coindesk.com/opinion/2026/07/17/ai-is-destroying-the-internet-math-is-our-only-hope",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T14:00:00+00:00"
-  },
-  {
-    "id": "282f7725b7d1f3a2",
-    "title": "Tether's USDT hits 2-year countdown threatening its position on U.S. crypto platforms",
-    "url": "https://www.coindesk.com/news-analysis/2026/07/17/tether-s-usdt-hits-2-year-countdown-threatening-its-position-on-u-s-crypto-platforms",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T13:00:00+00:00"
-  },
-  {
-    "id": "6a3ed7181fa1951b",
-    "title": "Kraken says simpler options can unlock crypto's next derivatives market",
-    "url": "https://www.coindesk.com/business/2026/07/19/kraken-says-simpler-options-can-unlock-crypto-s-next-derivatives-market",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T13:00:00+00:00"
-  },
-  {
-    "id": "9dea1c438872bfe3",
-    "title": "US agencies miss GENIUS Act deadline for final stablecoin rules",
-    "url": "https://cointelegraph.com/news/federal-agencies-miss-genius-act-deadline?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "US regulators failed to finalize implementing regulations by the GENIUS Act’s one-year deadline, issuing 10 proposed rules instead.",
-    "published_at": "2026-07-19T12:56:00+00:00",
-    "title_id": "Pemerintah AS Gagal Penuhi Tenggat GENIUS Act untuk Aturan Stablecoin",
-    "summary_id": "Regulator AS tidak menyelesaikan aturan stablecoin dalam batas waktu satu tahun yang ditetapkan oleh GENIUS Act, hanya mengeluarkan 10 proposal. Keterlambatan ini memperpanjang ketidakpastian bagi penerbit stablecoin dan trader, serta dapat menunda kepastian regulasi yang penting bagi stabilitas pasar."
-  },
-  {
-    "id": "1d6d1ef1edc03389",
-    "title": "Upbit parent Dunamu faces South Korean regulator sanctions process: Report",
-    "url": "https://cointelegraph.com/news/south-korean-regulator-inspection-letter-upbit-36m-hack?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Korea’s Virtual Asset User Protection Act lacks explicit sanctions provisions for hacking and similar incidents, clouding the scope of penalties facing the Upbit operator Dunamu.",
-    "published_at": "2026-07-19T10:23:00+00:00",
-    "title_id": "Induk Upbit, Dunamu, Hadapi Proses Sanksi Regulator Korea Selatan",
-    "summary_id": "Undang‑Undang Perlindungan Pengguna Aset Virtual Korea belum mengatur secara jelas sanksi untuk peretasan, sehingga Dunamu berada dalam zona abu‑abu terkait denda atau hukuman. Ketidakjelasan ini menambah risiko operasional bagi Upbit dan dapat memengaruhi kepercayaan pengguna."
-  },
-  {
-    "id": "75a527768098b230",
-    "title": "Bitcoin’s quantum problem gets a recovery tool, but not for Satoshi’s 1.1 million coins",
-    "url": "https://www.coindesk.com/tech/2026/07/19/bitcoin-s-quantum-problem-gets-a-recovery-tool-but-not-for-satoshi-s-1-1-million-coin",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T10:00:00+00:00"
   }
 ]
