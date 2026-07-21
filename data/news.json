@@ -1,5 +1,53 @@
 [
   {
+    "id": "b0f927e8c390465a",
+    "title": "Augustus raises $180 million to build a clearing bank for the AI and stablecoin era",
+    "url": "https://www.coindesk.com/business/2026/07/21/augustus-raises-usd180-million-to-build-a-clearing-bank-for-the-ai-and-stablecoin-era",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T14:27:03+00:00"
+  },
+  {
+    "id": "fe56ad808d6cacee",
+    "title": "MoneyGram's CEO says blockchain works best when customers don't know it's there",
+    "url": "https://www.coindesk.com/tech/2026/07/17/moneygram-s-ceo-says-blockchain-works-best-when-customers-don-t-know-it-s-there",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T13:38:13+00:00"
+  },
+  {
+    "id": "410f5faa0a90d558",
+    "title": "CoinShares debuts Bitcoin mining ETF in Europe entrance",
+    "url": "https://cointelegraph.com/news/coinshares-debuts-bitcoin-mining-ucits-etf-in-europe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The UCITS ETF, CoinShares’ first in Europe, began trading on Deutsche Börse Xetra, tracking a rules-based index of publicly listed BTC miners.",
+    "published_at": "2026-07-21T13:34:26+00:00"
+  },
+  {
+    "id": "61d04831ba76166a",
+    "title": "Robinhood-backed DEX Arcus expands with tokenized assets, perps",
+    "url": "https://cointelegraph.com/news/robinhood-backed-dex-arcus-debut-multi-asset-trading?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Arcus, built by the dYdX team, adds tokenized stocks and perpetual futures on Robinhood Chain as platforms compete to bring traditional assets onchain.",
+    "published_at": "2026-07-21T13:16:22+00:00"
+  },
+  {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-21T13:14:31+00:00"
+  },
+  {
+    "id": "605b8c8ea609aa93",
+    "title": "Morpho launches fixed-rate lending protocol on Base",
+    "url": "https://cointelegraph.com/news/morpho-midnight-fixed-rate-lending-base?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Morpho Midnight introduces fixed rates and defined maturities alongside Morpho Blue’s variable-rate lending markets.",
+    "published_at": "2026-07-21T13:00:00+00:00"
+  },
+  {
     "id": "3f8b8f45bb962554",
     "title": "Jack Mallers steps down as XXI Capital CEO as Tether's plans to merge three bitcoin firms falls",
     "url": "https://www.coindesk.com/business/2026/07/21/jack-mallers-steps-down-as-xxi-capital-ceo-as-tether-s-plans-to-merge-three-bitcoin-firms-falls",
@@ -25,7 +73,7 @@
   },
   {
     "id": "8991bf8dba3523db",
-    "title": "More MiCA-licensed crypto firms could exit EU market: Gate Europe CEO",
+    "title": "More MiCA-licensed crypto firms may exit EU market: Gate Europe CEO",
     "url": "https://cointelegraph.com/news/mica-licensed-crypto-firms-eu-market-gate-europe-ceo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Gate Europe’s Giovanni Cunti says some MiCA-licensed crypto firms may struggle to sustain compliance costs as Europe enters its new regulatory era.",
@@ -150,14 +198,6 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-21T06:15:26+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-21T05:50:34+00:00"
   },
   {
     "id": "fafb5eaf8961c71e",
@@ -600,45 +640,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-20T05:31:43+00:00"
-  },
-  {
-    "id": "c4f37ba8e4d88541",
-    "title": "Cardano activates van Rossem hard fork",
-    "url": "https://cointelegraph.com/news/cardano-activates-van-rossem-hard-fork-paving-way-for-leios?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The upgrade reduces smart contract execution costs while laying the groundwork for Ouroboros Leios, a major scalability upgrade expected later this year.",
-    "published_at": "2026-07-20T04:26:17+00:00"
-  },
-  {
-    "id": "1aa3dfdc8b9d278a",
-    "title": "Allbridge pauses cross-chain bridge after $1.65M exploit",
-    "url": "https://cointelegraph.com/news/allbridge-core-pauses-cross-chain-bridge-after-165m-exploit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The attacker allegedly used a flash loan and rapid swaps to manipulate the bridge’s stablecoin exchange rate.",
-    "published_at": "2026-07-20T02:23:36+00:00"
-  },
-  {
-    "id": "36be0b3b004cea14",
-    "title": "Japanese logistics company eyes JPYC stablecoin to pay drivers",
-    "url": "https://cointelegraph.com/news/japanese-logistics-company-eyes-jpyc-stablecoin-to-pay-drivers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The planned rollout would let thousands of transportation contractors receive digital yen payments more frequently and quickly.",
-    "published_at": "2026-07-20T01:27:42+00:00"
-  },
-  {
-    "id": "db5909f0794b4eab",
-    "title": "South Korea probed 40 cases of crypto manipulation over 2 years",
-    "url": "https://cointelegraph.com/news/south-korea-probed-40-cases-of-crypto-manipulation-over-2-years?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Financial Services Commission Chair Lee Eog-won posted the figures on the second anniversary of the enactment of the Virtual Asset User Protection Act.",
-    "published_at": "2026-07-20T00:33:12+00:00"
-  },
-  {
-    "id": "fde157e4fe178c54",
-    "title": "Will the US get CLARITY this week? Bitcoin’s new $80K target: Hodler’s Digest, July 19",
-    "url": "https://cointelegraph.com/magazine/will-the-us-get-finally-clarity-this-week-bitcoin-80k-hodlers-digest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The fate of the CLARITY Act hinges on Trump’s ethics, so the odds aren’t looking great. Prediction market volumes hit new highs, and more news.",
-    "published_at": "2026-07-20T00:12:06+00:00"
   }
 ]
