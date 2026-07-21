@@ -1,5 +1,53 @@
 [
   {
+    "id": "c2c9f9c65d7b768f",
+    "title": "OpenAI Models Escaped Locked Test Environment, Hacked Hugging Face to Cheat on Benchmark",
+    "url": "https://decrypt.co/374015/openai-models-escaped-test-environment-hacked-hugging-face-cheat-benchmark",
+    "source": "Decrypt",
+    "summary": "OpenAI's own models just broke out of a sandboxed environment, hacked Hugging Face, just to cheat on a cybersecurity evaluation.",
+    "published_at": "2026-07-21T21:29:03+00:00"
+  },
+  {
+    "id": "2468f1a00fd98a85",
+    "title": "Crypto Clarity Act still at mercy of ethics section as Democrats balk at Trump deal",
+    "url": "https://www.coindesk.com/policy/2026/07/21/crypto-clarity-act-still-at-mercy-of-ethics-section-as-democrats-balk-at-trump-deal",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T21:14:03+00:00"
+  },
+  {
+    "id": "e5691fd38740fc3a",
+    "title": "Movement Labs files for Chapter 11 bankruptcy after months of MOVE token turmoil",
+    "url": "https://cointelegraph.com/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The blockchain developer will continue operating under court supervision as it restructures following a market-making scandal, a co-founder’s suspension, and exchange delistings that rocked the project.",
+    "published_at": "2026-07-21T20:59:32+00:00"
+  },
+  {
+    "id": "ea60a31cfad1e4e6",
+    "title": "Ether breaks the $1.9K resistance; is $2.1K the next target for ETH bulls?",
+    "url": "https://cointelegraph.com/markets/ether-breaks-the-1900-resistance-is-2100-the-next-target-for-eth-bulls?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Ether’s rally faces onchain headwinds, but rising staking demand and Google earnings could spark the push toward $2,100.",
+    "published_at": "2026-07-21T20:26:13+00:00"
+  },
+  {
+    "id": "d4c8aa2ddc570914",
+    "title": "Pavel Durov Wants to Give a Billion Telegram Users a Crypto Wallet",
+    "url": "https://decrypt.co/374001/pavel-durov-telegram-crypto-wallet-billion-users",
+    "source": "Decrypt",
+    "summary": "The promise of instant, zero-fee crypto transactions for over a billion Telegram users sent its native Gram token up 7%.",
+    "published_at": "2026-07-21T20:20:49+00:00"
+  },
+  {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-21T20:12:18+00:00"
+  },
+  {
     "id": "c4f8633210493610",
     "title": "Bitcoin rally faces key test at $68,000 as 'summer slumber' grips crypto, analysts say",
     "url": "https://www.coindesk.com/markets/2026/07/21/bitcoin-rally-faces-key-test-at-usd68-000-as-summer-slumber-grips-crypto-analysts-say",
@@ -174,14 +222,6 @@
     "source": "Cointelegraph",
     "summary": "Arcus, built by the dYdX team, adds tokenized stocks and perpetual futures on Robinhood Chain as platforms compete to bring traditional assets onchain.",
     "published_at": "2026-07-21T13:16:22+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-21T13:14:31+00:00"
   },
   {
     "id": "605b8c8ea609aa93",
@@ -600,45 +640,5 @@
     "source": "Cointelegraph",
     "summary": "Hyperliquid plans to require developers to stake 500,000 HYPE, worth about $30.4 million, to deploy permissionless prediction markets under HIP-4.",
     "published_at": "2026-07-20T12:20:23+00:00"
-  },
-  {
-    "id": "43b351b7b37d6927",
-    "title": "Vietnam sets fines for unlicensed crypto trading ahead of regulation rollout",
-    "url": "https://cointelegraph.com/news/vietnam-crypto-traders-unlicensed-platforms-fines?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The new rules establish penalties as much as $1,900 for crypto violations, including unlicensed trading and AML breaches, ahead of Vietnam’s regulated crypto market launch.",
-    "published_at": "2026-07-20T12:04:06+00:00"
-  },
-  {
-    "id": "8eb737f7b123f4e9",
-    "title": "Zilliqa asks exchanges to pause ZIL transfers after suspected cold wallet theft",
-    "url": "https://cointelegraph.com/news/zilliqa-zil-deposit-halt-exchange-partner-wallet-breach?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Zilliqa said exchanges paused ZIL deposits and withdrawals after an exchange partner’s cold wallet was compromised, with the amount stolen still undisclosed.",
-    "published_at": "2026-07-20T12:03:35+00:00"
-  },
-  {
-    "id": "a0961f8d643d0046",
-    "title": "Brazil’s securities regulator sets up task force with 60-day deadline for tokenization proposal",
-    "url": "https://www.coindesk.com/policy/2026/07/20/brazil-s-securities-regulator-sets-up-task-force-with-60-day-deadline-for-tokenization-proposal",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T12:02:28+00:00"
-  },
-  {
-    "id": "c7d0436c62e018bc",
-    "title": "Morning Minute: Hyperliquid Opens Prediction Markets to Anyone in HIP-4 Upgrade",
-    "url": "https://decrypt.co/373828/morning-minute-hyperliquid-opens-prediction-markets-to-anyone-in-hip-4-upgrade",
-    "source": "Decrypt",
-    "summary": "Plus, a selloff in Oil has markets looking green into the Monday open. And PUMP is leading all alt movers on the week at a surprising time.",
-    "published_at": "2026-07-20T12:00:02+00:00"
-  },
-  {
-    "id": "54f5c90b89366c0d",
-    "title": "A bitcoin 'volmageddon' may be brewing, key indicator suggests",
-    "url": "https://www.coindesk.com/daybook-us/2026/07/20/a-bitcoin-volmageddon-may-be-brewing-key-indicator-suggests",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T11:15:57+00:00"
   }
 ]
