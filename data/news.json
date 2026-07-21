@@ -1,5 +1,29 @@
 [
   {
+    "id": "3d593b8804bb6369",
+    "title": "Crypto markets rally on Clarity progress report, Asian chip-stock rebound",
+    "url": "https://www.coindesk.com/markets/2026/07/21/crypto-markets-rally-on-clarity-progress-report-asian-chip-stock-rebound",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-21T11:02:48+00:00"
+  },
+  {
+    "id": "ccc0a413d9db9a83",
+    "title": "Bitcoin price gains to $66.3K as range breakout attempt sparks one-month high",
+    "url": "https://cointelegraph.com/markets/bitcoin-price-hits-663k-as-range-breakout-attempt-sparks-one-month-high?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Bitcoin beat out local resistance to pass $66,000 amid predictions of as much as 6% BTC price upside if momentum continued.",
+    "published_at": "2026-07-21T10:26:35+00:00"
+  },
+  {
+    "id": "cbabc63c15f90451",
+    "title": "Worldcoin’s WLD Jumps 8% on Grayscale ETF Filing",
+    "url": "https://decrypt.co/373913/worldcoins-wld-jumps-8-on-grayscale-etf-filing",
+    "source": "Decrypt",
+    "summary": "The asset manager's S-1 for a spot WLD fund would be the first U.S. ETF tied to Sam Altman's biometric crypto project.",
+    "published_at": "2026-07-21T10:16:58+00:00"
+  },
+  {
     "id": "697cf883e2dde42c",
     "title": "UK Lawmakers Launch Inquiry Into Crypto Banking Access",
     "url": "https://decrypt.co/373910/uk-lawmakers-launch-inquiry-into-crypto-banking-access",
@@ -17,7 +41,7 @@
   },
   {
     "id": "e1fc1726805b43cd",
-    "title": "Bitcoin ETFs post five-day inflow streak, longest since May",
+    "title": "Bitcoin ETFs post 5-day inflow streak, longest since May",
     "url": "https://cointelegraph.com/news/bitcoin-etfs-five-day-inflow-streak-btc-65k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "US spot Bitcoin ETFs recorded $227 million in inflows as BTC climbed above $65,000, extending their longest winning streak since early May.",
@@ -65,7 +89,7 @@
   },
   {
     "id": "fafb5eaf8961c71e",
-    "title": "Bitcoin hits a two-week high near $65,500 as the chip trade turns back into a tailwind",
+    "title": "Bitcoin hits one-month high above $66,000 as the chip trade turns back into a tailwind",
     "url": "https://www.coindesk.com/markets/2026/07/21/bitcoin-hits-a-two-week-high-near-usd65-500-as-the-chip-trade-turns-back-into-a-tailwind",
     "source": "CoinDesk",
     "summary": "",
@@ -620,31 +644,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-19T10:00:00+00:00"
-  },
-  {
-    "id": "f17115932fe48352",
-    "title": "Electronic Transactions Association CEO Expecting More Partnerships with Bitcoin Startups",
-    "url": "https://cointelegraph.com/news/electronic-transactions-association-ceo-expecting-more-partnerships-with-bitcoin-startups?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Electronic Transactions Association (ETA) CEO, Jason Oxman, indicated that members of his organization might start recognizing Bitcoin’s disruptive potential, suggesting that this might lead to more partnerships between traditional electronic payment providers and Bitcoin startup",
-    "published_at": "2026-07-19T09:16:42+00:00",
-    "title_id": "CEO Electronic Transactions Association Antisipasi Lebih Banyak Kemitraan dengan Startup Bitcoin",
-    "summary_id": "Jason Oxman, CEO ETA, menyatakan bahwa anggotanya mulai menyadari potensi disruptif Bitcoin, sehingga kemungkinan besar akan muncul kolaborasi antara penyedia pembayaran tradisional dan startup kripto. Hal ini penting bagi trader karena dapat memperluas infrastruktur pembayaran dan meningkatkan likuiditas pasar Bitcoin."
-  },
-  {
-    "id": "5b53ea663bd9acaa",
-    "title": "Inside Zcash's new node that targets Visa-scale privacy at 50,000 transactions per second",
-    "url": "https://www.coindesk.com/tech/2026/07/16/inside-zcash-s-new-node-that-targets-visa-scale-privacy-at-50-000-transactions-per-second",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-19T05:37:34+00:00"
-  },
-  {
-    "id": "0af9663ddf323336",
-    "title": "France orders country's internet service providers to block Polymarket",
-    "url": "https://www.coindesk.com/policy/2026/07/18/france-orders-country-s-internet-service-providers-to-block-polymarket",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-18T21:52:18+00:00"
   }
 ]
