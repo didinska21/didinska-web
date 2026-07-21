@@ -1,5 +1,21 @@
 [
   {
+    "id": "fd55edca363c45cd",
+    "title": "White House agrees to ethics provisions in market structure bill",
+    "url": "https://cointelegraph.com/news/white-house-ethics-provisions-crypto-market-structure-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The price of Bitcoin moved above $66,000 to reach a seven-week high on Tuesday as reports circulated of a deal with the White House to address ethics in the CLARITY Act.",
+    "published_at": "2026-07-21T17:30:58+00:00"
+  },
+  {
+    "id": "6322ef4926a86e38",
+    "title": "Google Is Building an AI Chip Just for Gemini—And Investors Already Moved On It",
+    "url": "https://decrypt.co/373967/google-ai-chip-gemini-frozenv2",
+    "source": "Decrypt",
+    "summary": "Codenamed Frozen v2, Google's new server chip would bake part of Gemini's architecture directly into hardware for a projected 6–10x efficiency gain.",
+    "published_at": "2026-07-21T17:24:37+00:00"
+  },
+  {
     "id": "fb719ec1c4693a46",
     "title": "XRP Breaks Out on Clarity Act Hopes. The Charts Are Still Cautious",
     "url": "https://decrypt.co/373951/xrp-price-clarity-act-hopes-charts-cautious",
@@ -624,21 +640,5 @@
     "source": "Cointelegraph",
     "summary": "Bitcoin preserved a key long-term trend line as support for a third week as US-Iran war tensions delivered new five-week highs in oil prices.",
     "published_at": "2026-07-20T10:26:36+00:00"
-  },
-  {
-    "id": "1bbd06664acfcd3b",
-    "title": "Hyperliquid plans to add decentralized prediction markets in upgrade to HIP-4",
-    "url": "https://www.coindesk.com/business/2026/07/20/hyperliquid-plans-to-add-decentralized-prediction-markets-in-upgrade-to-hip-4",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T10:04:25+00:00"
-  },
-  {
-    "id": "1ac20c4f1dfd25c8",
-    "title": "Bitcoin ETF inflows extend to second week, but recovery lacks momentum",
-    "url": "https://cointelegraph.com/news/bitcoin-etf-inflows-second-but-recovery-lacks-momentum?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "US spot Bitcoin ETFs extended their inflow streak to two weeks with $75.7 million in net inflows, but analysts said demand remains insufficient to fuel a sustained uptrend.",
-    "published_at": "2026-07-20T09:33:19+00:00"
   }
 ]
