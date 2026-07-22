@@ -1,10 +1,34 @@
 [
   {
+    "id": "ea72fb03aa3f6ac0",
+    "title": "AI models escaped OpenAI’s sandbox and hit Hugging Face. Crypto is where that gets dangerous",
+    "url": "https://www.coindesk.com/markets/2026/07/22/ai-models-escaped-openai-s-sandbox-and-hit-hugging-face-crypto-is-where-that-gets-dangerous",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T06:01:56+00:00"
+  },
+  {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-22T05:43:51+00:00"
+  },
+  {
+    "id": "6de3f9bb5cc5a15f",
+    "title": "Bitcoin holds near $66,300 as chips extend their rally and the yen hits a 40-year low",
+    "url": "https://www.coindesk.com/markets/2026/07/22/bitcoin-holds-near-usd66-300-as-chips-extend-their-rally-and-the-yen-hits-a-40-year-low",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T05:03:39+00:00"
+  },
+  {
     "id": "376ba5135d392826",
     "title": "Balance Coin crashes 99% after reported $915K exploit",
     "url": "https://cointelegraph.com/news/algorithmic-stablecoin-balance-coin-plummets-99-after-exploit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
-    "summary": "Blockchain security firms linked the collapse to a suspected attack on 42DAO, the decentralized organization that governs the Balance Protocol ecosystem.",
+    "summary": "The attack allowed the exploiter to liquidate multiple Bitcoin-backed vaults before swapping the assets for profit.",
     "published_at": "2026-07-22T03:12:48+00:00"
   },
   {
@@ -68,12 +92,12 @@
     "title": "Movement Labs files for Chapter 11 bankruptcy after months of MOVE token turmoil",
     "url": "https://cointelegraph.com/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
-    "summary": "The blockchain developer will continue operating under court supervision as it restructures following a market-making scandal, a co-founder’s suspension, and exchange delistings that rocked the project.",
+    "summary": "The blockchain developer will continue operating under court supervision as it restructures following a market-making scandal, a co-founder’s suspension and exchange delistings that rocked the project.",
     "published_at": "2026-07-21T20:59:32+00:00"
   },
   {
     "id": "ea60a31cfad1e4e6",
-    "title": "Ether breaks the $1.9K resistance; is $2.1K the next target for ETH bulls?",
+    "title": "Ether breaks the $1.9K resistance: Is $2.1K the next target for ETH bulls?",
     "url": "https://cointelegraph.com/markets/ether-breaks-the-1900-resistance-is-2100-the-next-target-for-eth-bulls?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "Ether’s rally faces onchain headwinds, but rising staking demand and Google earnings could spark the push toward $2,100.",
@@ -86,14 +110,6 @@
     "source": "Decrypt",
     "summary": "The promise of instant, zero-fee crypto transactions for over a billion Telegram users sent its native Gram token up 7%.",
     "published_at": "2026-07-21T20:20:49+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-21T20:12:18+00:00"
   },
   {
     "id": "c4f8633210493610",
@@ -624,21 +640,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-20T14:31:23+00:00"
-  },
-  {
-    "id": "a8ae52e435f905b7",
-    "title": "Exodus to cut 25% of global workforce in payments shift",
-    "url": "https://www.coindesk.com/business/2026/07/20/exodus-to-cut-25-of-global-workforce-in-payments-shift",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T13:53:08+00:00"
-  },
-  {
-    "id": "34845ddbf8557355",
-    "title": "AI compute stocks bounce as Hut 8, IREN land billions in new contracts",
-    "url": "https://www.coindesk.com/business/2026/07/20/hut-8-surges-on-usd9-8-billion-ai-data-center-lease-lifting-compute-sector",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T13:49:24+00:00"
   }
 ]
