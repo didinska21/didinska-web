@@ -1,5 +1,37 @@
 [
   {
+    "id": "312e83b965936b4b",
+    "title": "Franklin Templeton Says Agentic AI Is Crypto's 'Killer Use Case'",
+    "url": "https://decrypt.co/374055/franklin-templeton-agentic-ai-crypto-killer-use-case",
+    "source": "Decrypt",
+    "summary": "The asset manager argues that AI software capable of paying for things autonomously will need blockchain rails to work—and that most investors aren't positioned for it.",
+    "published_at": "2026-07-22T19:04:05+00:00"
+  },
+  {
+    "id": "236577819c20450c",
+    "title": "Bitcoin Is Bouncing: Here’s the Bull and Bear Case for Its Next Move",
+    "url": "https://decrypt.co/374059/bitcoin-price-bounce-bull-bear-case",
+    "source": "Decrypt",
+    "summary": "The good news: Bitcoin is holding onto key support, and rising. The bad news: a \"death cross\" is still active, and prediction markets are still overwhelmingly bearish.",
+    "published_at": "2026-07-22T18:48:45+00:00"
+  },
+  {
+    "id": "a2a777db98bfcbb3",
+    "title": "US officials barred until 2029 from issuing or sponsoring tokens under CLARITY’s proposed ethics rules",
+    "url": "https://cointelegraph.com/news/clarity-act-ethics-public-officials-president-barred-crypto?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "According to Senator Cynthia Lummis, one of the bill’s advocates, the ethics language would apply to US presidents’ crypto ventures, including Donald Trump’s.",
+    "published_at": "2026-07-22T18:41:30+00:00"
+  },
+  {
+    "id": "55d895832a6c0625",
+    "title": "Anthropic joins UK FCA’s AI regulatory sandbox as second cohort launches",
+    "url": "https://cointelegraph.com/news/anthropic-joins-uk-fcas-ai-regulatory-sandbox-as-second-cohort-launches?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Anthropic will provide Claude AI models to companies participating in the UK Financial Conduct Authority’s next Supercharged Sandbox cohort, as the regulator pushes to test AI applications in financial services.",
+    "published_at": "2026-07-22T17:57:11+00:00"
+  },
+  {
     "id": "6389d1e34437852e",
     "title": "Clarity Act Latest Draft Bars Trump From Crypto Ventures—But Only Until 2029",
     "url": "https://decrypt.co/374056/clarity-act-draft-trump-crypto-ventures",
@@ -33,7 +65,7 @@
   },
   {
     "id": "bb489756334a60b0",
-    "title": "New Clarity Act emerges that's a start on the final draft, makes ethics rule temporary",
+    "title": "New draft of Clarity Act is out, and it would impose limits on Trump's crypto empire",
     "url": "https://www.coindesk.com/policy/2026/07/22/new-clarity-act-emerges-that-s-a-start-on-the-final-draft-makes-ethics-rule-temporary",
     "source": "CoinDesk",
     "summary": "",
@@ -606,37 +638,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-21T12:42:29+00:00"
-  },
-  {
-    "id": "9ae205f0dd7490f0",
-    "title": "Tether-backed Twenty One, Strike merger plan scrapped: Bloomberg",
-    "url": "https://cointelegraph.com/news/tether-twenty-one-strike-merger-plan-scrapped-bloomberg?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Strike will remain a standalone company after the proposed three-way merger was scrapped, while Twenty One Capital and Elektron continue discussions, Bloomberg reported.",
-    "published_at": "2026-07-21T12:29:25+00:00"
-  },
-  {
-    "id": "5133f1c145bbe039",
-    "title": "Galaxy Commits Up to $5 Million to Prepare Bitcoin for Quantum Threat",
-    "url": "https://decrypt.co/373908/galaxy-commits-5-million-prepare-bitcoin-quantum-threat",
-    "source": "Decrypt",
-    "summary": "The crypto firm's initiative arrives as researchers, exchanges, and the U.S. government warn that \"Q-Day\" may land as soon as 2030.",
-    "published_at": "2026-07-21T12:01:03+00:00"
-  },
-  {
-    "id": "8991bf8dba3523db",
-    "title": "More MiCA-licensed crypto firms may exit EU market: Gate Europe CEO",
-    "url": "https://cointelegraph.com/news/mica-licensed-crypto-firms-eu-market-gate-europe-ceo?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Gate Europe’s Giovanni Cunti says some MiCA-licensed crypto firms may struggle to sustain compliance costs as Europe enters its new regulatory era.",
-    "published_at": "2026-07-21T11:58:02+00:00"
-  },
-  {
-    "id": "0d8c3641b19796fe",
-    "title": "Morning Minute: The Clarity Act Has New Life",
-    "url": "https://decrypt.co/373924/morning-minute-the-clarity-act-has-new-life",
-    "source": "Decrypt",
-    "summary": "Odds of the Clarity Act passing in 2026 jumped to 42% after a surprising new development from the White House.",
-    "published_at": "2026-07-21T11:57:23+00:00"
   }
 ]
