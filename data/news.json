@@ -1,5 +1,29 @@
 [
   {
+    "id": "376ba5135d392826",
+    "title": "Balance Coin crashes 99% after reported $915K exploit",
+    "url": "https://cointelegraph.com/news/algorithmic-stablecoin-balance-coin-plummets-99-after-exploit?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Blockchain security firms linked the collapse to a suspected attack on 42DAO, the decentralized organization that governs the Balance Protocol ecosystem.",
+    "published_at": "2026-07-22T03:12:48+00:00"
+  },
+  {
+    "id": "3296561385cc6de8",
+    "title": "OpenAI says AI models escaped containment to hack Hugging Face",
+    "url": "https://cointelegraph.com/news/openai-models-hacked-hugging-face-to-cheat-on-a-test?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "OpenAI called it an “unprecedented cyber incident” after its AI models broke out of their sandbox to hack an AI startup during a security evaluation.",
+    "published_at": "2026-07-22T02:45:55+00:00"
+  },
+  {
+    "id": "a74045b532b5b9a4",
+    "title": "Balaji’s Network School turns to Kazakhstan amid Malaysia setback",
+    "url": "https://cointelegraph.com/news/balajis-network-school-turns-to-kazakhstan-amid-malaysia-setback?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The agreement gives Balaji Srinivasan’s tech community a potential new base as Malaysian authorities clamp down on the Network School over alleged licensing breaches.",
+    "published_at": "2026-07-22T01:05:25+00:00"
+  },
+  {
     "id": "75b05d235ddf6ac4",
     "title": "DAT Went Wrong: Satsuma to Unwind Bitcoin Treasury, Sell Off $43 Million in BTC",
     "url": "https://decrypt.co/374018/dat-satsuma-unwind-bitcoin-treasury-sell-off-btc",
@@ -616,29 +640,5 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-20T13:49:24+00:00"
-  },
-  {
-    "id": "d9fefb0b22f9c920",
-    "title": "Allbridge Pauses Cross-Chain Protocol After $1.65M Flash Loan Attack",
-    "url": "https://decrypt.co/373831/allbridge-pauses-cross-chain-protocol-after-1-65m-flash-loan-attack",
-    "source": "Decrypt",
-    "summary": "An attacker used a flash loan to distort the bridge's Solana stablecoin pools before moving the proceeds to Ethereum, security firms said.",
-    "published_at": "2026-07-20T13:47:06+00:00"
-  },
-  {
-    "id": "c8e369ae9999c6e0",
-    "title": "Peter Brandt predicts the exact day Bitcoin’s bear market will be over",
-    "url": "https://cointelegraph.com/magazine/peter-brandt-says-bitcoins-bear-market-isnt-over-predicts-final-bottom-in-october?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Renowned trading analyst Peter Brandt says investing in Bitcoin today, will pay off much better in two to three years than buying AI stocks at current prices.",
-    "published_at": "2026-07-20T13:30:00+00:00"
-  },
-  {
-    "id": "762dd89d7ff78b48",
-    "title": "Tom Lee's Bitmine slowed ether purchases as it bought back $86 million in stock",
-    "url": "https://www.coindesk.com/business/2026/07/20/tom-lee-s-bitmine-slowed-ether-purchases-as-it-bought-back-usd86-million-in-stock",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T12:55:36+00:00"
   }
 ]
