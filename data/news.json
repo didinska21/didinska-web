@@ -1,5 +1,29 @@
 [
   {
+    "id": "e8874f8b7264b68e",
+    "title": "Kraken Parent Company Makes Moves to Offer xStocks From Global Markets",
+    "url": "https://decrypt.co/374106/kraken-parent-xstocks-beyond-us-equities",
+    "source": "Decrypt",
+    "summary": "Payward and fintech GTN are teaming up to bring xStocks—blockchain-based copies of real company shares—to Hong Kong, the UK, Europe, and South Korea.",
+    "published_at": "2026-07-22T20:07:34+00:00"
+  },
+  {
+    "id": "245809cf6e51f430",
+    "title": "Alibaba's New Qwen Image 3 AI Wants to Be Useful, Not Just Pretty",
+    "url": "https://decrypt.co/374084/alibaba-qwen-image-3-ai-useful-not-just-pretty",
+    "source": "Decrypt",
+    "summary": "Qwen Image 3.0 generates dense newspapers and infographic grids in one shot and renders text down to 10 pixels. The catch: no benchmarks, no open weights.",
+    "published_at": "2026-07-22T19:46:59+00:00"
+  },
+  {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-22T19:24:18+00:00"
+  },
+  {
     "id": "312e83b965936b4b",
     "title": "Franklin Templeton Says Agentic AI Is Crypto's 'Killer Use Case'",
     "url": "https://decrypt.co/374055/franklin-templeton-agentic-ai-crypto-killer-use-case",
@@ -166,14 +190,6 @@
     "source": "Cointelegraph",
     "summary": "Franklin Templeton’s digital assets lead said that the autonomous AI agent economy will increase demand for blockchain protocols hosting machine-to-machine micropayments.",
     "published_at": "2026-07-22T13:18:50+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-22T12:54:29+00:00"
   },
   {
     "id": "6143f189e4b4ab1c",
@@ -622,21 +638,5 @@
     "source": "Cointelegraph",
     "summary": "Arcus, built by the dYdX team, adds tokenized stocks and perpetual futures on Robinhood Chain as platforms compete to bring traditional assets onchain.",
     "published_at": "2026-07-21T13:16:22+00:00"
-  },
-  {
-    "id": "605b8c8ea609aa93",
-    "title": "Morpho launches fixed-rate lending protocol on Base",
-    "url": "https://cointelegraph.com/news/morpho-midnight-fixed-rate-lending-base?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Morpho Midnight introduces fixed rates and defined maturities alongside Morpho Blue’s variable-rate lending markets.",
-    "published_at": "2026-07-21T13:00:00+00:00"
-  },
-  {
-    "id": "3f8b8f45bb962554",
-    "title": "Jack Mallers steps down as XXI Capital CEO as Tether's plans to merge three bitcoin firms falls",
-    "url": "https://www.coindesk.com/business/2026/07/21/jack-mallers-steps-down-as-xxi-capital-ceo-as-tether-s-plans-to-merge-three-bitcoin-firms-falls",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T12:42:29+00:00"
   }
 ]
