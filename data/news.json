@@ -1,5 +1,77 @@
 [
   {
+    "id": "ea07b91dd8141281",
+    "title": "Digital Chamber sues Illinois officials over new state 0.2% crypto tax",
+    "url": "https://cointelegraph.com/news/digital-chamber-lawsuit-illinois-crypto-tax?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The group alleged that the tax signed into law in June “discriminates against people who transact in digital assets“ and should be blocked from implementation and enforcement.",
+    "published_at": "2026-07-22T16:28:10+00:00"
+  },
+  {
+    "id": "7c1710951ead5316",
+    "title": "Hugging Face CEO Thanks Chinese AI for Saving the Day After OpenAI Hack",
+    "url": "https://decrypt.co/374052/hugging-face-ceo-thanks-chinese-ai-saving-day-after-openai-hack",
+    "source": "Decrypt",
+    "summary": "When American commercial AI refused to help investigate the breach, Hugging Face ran Chinese model GLM 5.2 locally. Its CEO now says there's an important lesson in this.",
+    "published_at": "2026-07-22T16:23:16+00:00"
+  },
+  {
+    "id": "bb489756334a60b0",
+    "title": "New Clarity Act emerges that's a start on the final draft, makes ethics rule temporary",
+    "url": "https://www.coindesk.com/policy/2026/07/22/new-clarity-act-emerges-that-s-a-start-on-the-final-draft-makes-ethics-rule-temporary",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T16:15:55+00:00"
+  },
+  {
+    "id": "ea6c751446e75577",
+    "title": "BitGo, OTC Markets plan tokenized securities access for broker-dealers",
+    "url": "https://cointelegraph.com/news/bitgo-otc-markets-tokenized-securities-broker-dealers?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The proposed alliance would enable more than 150 broker-dealers to trade and settle digital asset securities through OTC Link ATS using BitGo’s custody infrastructure.",
+    "published_at": "2026-07-22T16:10:22+00:00"
+  },
+  {
+    "id": "3fdcf9f6d0d16b72",
+    "title": "Bitcoin price avoids major Iran jitters as S&P 500 ‘short squeeze’ on horizon",
+    "url": "https://cointelegraph.com/markets/bitcoin-price-avoids-major-iran-jitters-as-sp-500-short-squeeze-on-horizon?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Bitcoin and US stocks stayed strong in the face of US-Iran escalation as analysis predicted BTC price action outperforming equities later.",
+    "published_at": "2026-07-22T15:55:20+00:00"
+  },
+  {
+    "id": "d4a00080526403bb",
+    "title": "Revolut hits $115 billion valuation in employee share sale: WSJ",
+    "url": "https://www.coindesk.com/business/2026/07/22/revolut-hits-usd115-billion-valuation-in-employee-share-sale-wsj",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T15:53:54+00:00"
+  },
+  {
+    "id": "8d7c81264bb39c74",
+    "title": "SEC's Peirce warns some DeFi vaults, onchain lending may fall under securities laws",
+    "url": "https://www.coindesk.com/policy/2026/07/22/sec-s-peirce-warns-some-defi-vaults-onchain-lending-may-fall-under-securities-laws",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T15:37:36+00:00"
+  },
+  {
+    "id": "d826aa145f62e2f0",
+    "title": "UK digital bond plans hinge on one missing piece: onchain cash",
+    "url": "https://www.coindesk.com/business/2026/07/22/uk-digital-bond-plans-hinge-on-one-missing-piece-onchain-cash",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T15:36:49+00:00"
+  },
+  {
+    "id": "8e4ae5ecbf7a26aa",
+    "title": "US Seizes More Than $25M in Crypto Tied to Investment and Romance Scams",
+    "url": "https://decrypt.co/374049/us-seizes-more-than-25m-in-crypto-tied-to-investment-and-romance-scams",
+    "source": "Decrypt",
+    "summary": "Prosecutors filed five forfeiture cases as Secret Service agents traced funds from thousands of victims to launderers in Southeast Asia.",
+    "published_at": "2026-07-22T15:10:46+00:00"
+  },
+  {
     "id": "a2e4b76cbc3c5586",
     "title": "Crypto Long & Short: The crypto question isn't what to own — it's what you can survive holding",
     "url": "https://www.coindesk.com/coindesk-indices/2026/07/22/crypto-long-and-short-the-crypto-question-isn-t-what-to-own-it-s-what-you-can-survive-holding",
@@ -209,7 +281,7 @@
   },
   {
     "id": "ac8d16bddb8bd4be",
-    "title": "Live updates: Bitcoin slips under $66,000 as oil's surge sacks strength from risk markets",
+    "title": "Live updates: Bitcoin holds near $66,000 as stocks claw back from big early decline",
     "url": "https://www.coindesk.com/tech/2026/07/22/live-updates-bitcoin-under-usd66-000-as-traders-await-alphabet-earnings-to-gauge-ai-trade",
     "source": "CoinDesk",
     "summary": "",
@@ -566,77 +638,5 @@
     "source": "Decrypt",
     "summary": "Islamabad is building the enforcement side of its crypto push, standing up a unit to police money laundering even as it licenses exchanges.",
     "published_at": "2026-07-21T11:40:48+00:00"
-  },
-  {
-    "id": "d3c7e2364a8e28eb",
-    "title": "Bitcoin rally has broad-based support as institutions, whales, options traders pile in",
-    "url": "https://www.coindesk.com/daybook-us/2026/07/21/bitcoin-rally-has-broad-based-support-as-institutions-whales-options-traders-pile-in",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T11:37:22+00:00"
-  },
-  {
-    "id": "11272a918bafadf4",
-    "title": "Clarity odds jump to 43% on Polymarket after unverified reports Trump agreed to ethics deal",
-    "url": "https://www.coindesk.com/markets/2026/07/21/clarity-act-odds-jump-11-points-on-polymarket-after-reports-trump-agreed-to-ethics-deal",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T11:19:18+00:00"
-  },
-  {
-    "id": "3d593b8804bb6369",
-    "title": "Crypto markets rally on Clarity progress report, Asian chip-stock rebound",
-    "url": "https://www.coindesk.com/markets/2026/07/21/crypto-markets-rally-on-clarity-progress-report-asian-chip-stock-rebound",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T11:02:48+00:00"
-  },
-  {
-    "id": "ccc0a413d9db9a83",
-    "title": "Bitcoin price gains to $66.3K as range breakout attempt sparks 1-month high",
-    "url": "https://cointelegraph.com/markets/bitcoin-price-hits-663k-as-range-breakout-attempt-sparks-one-month-high?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Bitcoin beat out local resistance to pass $66,000 amid predictions of as much as 6% BTC price upside if momentum continued.",
-    "published_at": "2026-07-21T10:30:00+00:00"
-  },
-  {
-    "id": "cbabc63c15f90451",
-    "title": "Worldcoin’s WLD Jumps 8% on Grayscale ETF Filing",
-    "url": "https://decrypt.co/373913/worldcoins-wld-jumps-8-on-grayscale-etf-filing",
-    "source": "Decrypt",
-    "summary": "The asset manager's S-1 for a spot WLD fund would be the first U.S. ETF tied to Sam Altman's biometric crypto project.",
-    "published_at": "2026-07-21T10:16:58+00:00"
-  },
-  {
-    "id": "697cf883e2dde42c",
-    "title": "UK Lawmakers Launch Inquiry Into Crypto Banking Access",
-    "url": "https://decrypt.co/373910/uk-lawmakers-launch-inquiry-into-crypto-banking-access",
-    "source": "Decrypt",
-    "summary": "A cross-party group is examining why UK banks block accounts and payments for crypto firms—and whether it's holding the sector back.",
-    "published_at": "2026-07-21T09:05:35+00:00"
-  },
-  {
-    "id": "68d49bfd511e6767",
-    "title": "UK parliamentary group probes banking barriers for crypto firms",
-    "url": "https://cointelegraph.com/news/uk-inquiry-banking-barriers-crypto-firms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "A UK parliamentary group launched an inquiry into banking restrictions on crypto firms and consumers, including their impact on investment and competition.",
-    "published_at": "2026-07-21T08:51:06+00:00"
-  },
-  {
-    "id": "e1fc1726805b43cd",
-    "title": "Bitcoin ETFs post 5-day inflow streak, longest since May",
-    "url": "https://cointelegraph.com/news/bitcoin-etfs-five-day-inflow-streak-btc-65k?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "US spot Bitcoin ETFs recorded $227 million in inflows as BTC climbed above $65,000, extending their longest winning streak since early May.",
-    "published_at": "2026-07-21T07:28:29+00:00"
-  },
-  {
-    "id": "09c709686a8b19ad",
-    "title": "XRP jumps 4% as traders watch 'triangle breakout' toward $1.35",
-    "url": "https://www.coindesk.com/markets/2026/07/21/xrp-jumps-4-as-traders-watch-triangle-breakout-toward-usd1-35",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T07:21:04+00:00"
   }
 ]
