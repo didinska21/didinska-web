@@ -1,5 +1,21 @@
 [
   {
+    "id": "6389d1e34437852e",
+    "title": "Clarity Act Latest Draft Bars Trump From Crypto Ventures—But Only Until 2029",
+    "url": "https://decrypt.co/374056/clarity-act-draft-trump-crypto-ventures",
+    "source": "Decrypt",
+    "summary": "The long-awaited market-structure bill would block officials and their spouses from issuing digital assets and shield non-custodial developers, but the ethics ban expires in 2029 and enforcement rests solely with the DOJ.",
+    "published_at": "2026-07-22T17:51:54+00:00"
+  },
+  {
+    "id": "49e1eb55cac7cd76",
+    "title": "SEC’s Peirce says crypto vaults and onchain lending may fall under securities laws",
+    "url": "https://cointelegraph.com/news/secs-hester-peirce-says-crypto-vaults-and-onchain-lending-may-fall-under-securities-laws?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The SEC commissioner said crypto vaults, onchain lending products and other asset management tools may trigger US securities laws depending on how they are structured and operated.",
+    "published_at": "2026-07-22T17:39:57+00:00"
+  },
+  {
     "id": "ea07b91dd8141281",
     "title": "Digital Chamber sues Illinois officials over new state 0.2% crypto tax",
     "url": "https://cointelegraph.com/news/digital-chamber-lawsuit-illinois-crypto-tax?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
@@ -622,21 +638,5 @@
     "source": "Decrypt",
     "summary": "Odds of the Clarity Act passing in 2026 jumped to 42% after a surprising new development from the White House.",
     "published_at": "2026-07-21T11:57:23+00:00"
-  },
-  {
-    "id": "9da39e9a457f2b96",
-    "title": "Russian parliament passes law regulating crypto market",
-    "url": "https://cointelegraph.com/news/russias-parliament-passes-law-regulating-crypto-market?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The State Duma legislation creates a regulated framework for crypto market participants and now moves to President Vladimir Putin for his signature before becoming law.",
-    "published_at": "2026-07-21T11:49:30+00:00"
-  },
-  {
-    "id": "72cb1cf890961d98",
-    "title": "Pakistan Launches Crypto Investigation Unit to Fight Money Laundering",
-    "url": "https://decrypt.co/373922/pakistan-launches-crypto-investigation-unit-to-fight-money-laundering",
-    "source": "Decrypt",
-    "summary": "Islamabad is building the enforcement side of its crypto push, standing up a unit to police money laundering even as it licenses exchanges.",
-    "published_at": "2026-07-21T11:40:48+00:00"
   }
 ]
