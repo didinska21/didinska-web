@@ -1,5 +1,37 @@
 [
   {
+    "id": "666fd499978e040c",
+    "title": "Galaxy pledges $5M for developers quantum-proofing Bitcoin",
+    "url": "https://cointelegraph.com/news/galaxy-pledges-5m-developers-quantum-proofing-bitcoin?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Galaxy pledged up to $5 million in grants for developers working on Bitcoin’s quantum security and elected a council of quantum-advisory experts to research quantum-resistant migration solutions.",
+    "published_at": "2026-07-22T09:30:05+00:00"
+  },
+  {
+    "id": "5c0d198f7c44f467",
+    "title": "Balance stablecoin collapses 99% after $1 million exploit drains its bitcoin vaults",
+    "url": "https://www.coindesk.com/tech/2026/07/22/balance-stablecoin-collapses-99-after-usd1-million-exploit-drains-its-bitcoin-vaults",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T09:01:54+00:00"
+  },
+  {
+    "id": "ac8d16bddb8bd4be",
+    "title": "Live updates: Bitcoin under $66,000 as traders await Alphabet earnings to gauge AI trade",
+    "url": "https://www.coindesk.com/tech/2026/07/22/live-updates-bitcoin-under-usd66-000-as-traders-await-alphabet-earnings-to-gauge-ai-trade",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T08:13:28+00:00"
+  },
+  {
+    "id": "9e173afabfc679c9",
+    "title": "Bitcoin ETFs extend inflow streak to 6 days with $203M added",
+    "url": "https://cointelegraph.com/news/bitcoin-etfs-203-million-inflow-streak-six-days?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "US spot Bitcoin ETFs extended their inflow streak to six sessions, bringing in about $930 million while remaining down $4.84 billion on a net basis year to date.",
+    "published_at": "2026-07-22T07:57:03+00:00"
+  },
+  {
     "id": "ea72fb03aa3f6ac0",
     "title": "AI models escaped OpenAI’s sandbox and hit Hugging Face. Crypto is where that gets dangerous",
     "url": "https://www.coindesk.com/markets/2026/07/22/ai-models-escaped-openai-s-sandbox-and-hit-hugging-face-crypto-is-where-that-gets-dangerous",
@@ -608,37 +640,5 @@
     "source": "Decrypt",
     "summary": "\"The reduced pace of buys reflects that Bitmine repurchased 5.5 million common shares,\" Bitmine Chairman Tom Lee said in a statement.",
     "published_at": "2026-07-20T16:12:36+00:00"
-  },
-  {
-    "id": "d61533d8e5abca60",
-    "title": "Strategy Pads Cash Reserve By $225M With MSTR Sale, Bitcoin Stash Remains Untouched",
-    "url": "https://decrypt.co/373834/strategy-raises-225m-for-cash-reserve-mstr-sale-bitcoin",
-    "source": "Decrypt",
-    "summary": "For the second consecutive week, Saylor's company sold MSTR stock instead of BTC to pad its reserves to $3.2 billion.",
-    "published_at": "2026-07-20T15:57:29+00:00"
-  },
-  {
-    "id": "feeefff08f6eb301",
-    "title": "Bitcoin price hits $65K wall as stocks battle ‘record’ institutional tech sell-off",
-    "url": "https://cointelegraph.com/markets/bitcoin-price-hits-65k-wall-as-stock-battle-record-institutional-tech-sell-off?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Bitcoin faced troublesome resistance at $65,000 while traders still saw a potential BTC price breakout into a “bullish market structure.”",
-    "published_at": "2026-07-20T15:47:00+00:00"
-  },
-  {
-    "id": "c3c6931033889524",
-    "title": "IREN jumps 16% after raising AI cloud revenue target above $4B",
-    "url": "https://cointelegraph.com/news/iren-jumps-16-after-raising-ai-cloud-revenue-target-above-4b?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The Bitcoin miner raised its year-end AI cloud revenue target to more than $4 billion after signing $2.8 billion in new contracts with AI developers.",
-    "published_at": "2026-07-20T15:20:25+00:00"
-  },
-  {
-    "id": "e95ceb533128153c",
-    "title": "Inside Cardano's 'Van Rossum' hard fork, and what it means for users",
-    "url": "https://www.coindesk.com/markets/2026/07/20/inside-cardano-s-van-rossum-hard-fork-and-what-it-means-for-users",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-20T14:31:23+00:00"
   }
 ]
