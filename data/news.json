@@ -1,5 +1,69 @@
 [
   {
+    "id": "552e43ae5e35357a",
+    "title": "Here’s what happened in crypto today",
+    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
+    "published_at": "2026-07-22T12:54:29+00:00"
+  },
+  {
+    "id": "6143f189e4b4ab1c",
+    "title": "Justin Sun's HTX 'Rotating' On-Chain Wallets Amid UK Sanctions: TRM Labs",
+    "url": "https://decrypt.co/374030/justin-suns-htx-rotating-on-chain-wallets-amid-uk-sanctions-trm-labs",
+    "source": "Decrypt",
+    "summary": "TRM Labs says the UK-sanctioned exchange has rotated hot wallets across blockchains, leaving address-list screening struggling to keep pace.",
+    "published_at": "2026-07-22T12:44:48+00:00"
+  },
+  {
+    "id": "ffefbe4dadde22da",
+    "title": "Kalshi rolls out Midterm Hubs ahead of the November elections in the U.S.",
+    "url": "https://www.coindesk.com/markets/2026/07/22/kalshi-rolls-out-midterm-hubs-ahead-of-the-november-elections-in-the-u-s",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T12:12:10+00:00"
+  },
+  {
+    "id": "8fc7dbabc7b919d9",
+    "title": "Bitcoin analysis eyes ‘serious volume’ after Binance sees 9K BTC daily outflow",
+    "url": "https://cointelegraph.com/markets/bitcoin-analysis-eyes-serious-volume-after-binance-sees-9k-btc-daily-outflow?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Binance set multimonth records for net BTC outflows on Tuesday, adding to an emerging trend of positive inflows to the US spot Bitcoin ETFs.",
+    "published_at": "2026-07-22T11:55:21+00:00"
+  },
+  {
+    "id": "cc6b2c7452c45ea7",
+    "title": "Morning Minute: OpenAI Model Escapes Containment, Hacks Hugging Face",
+    "url": "https://decrypt.co/374029/morning-minute-openai-model-escapes-containment-hacks-hugging-face",
+    "source": "Decrypt",
+    "summary": "Plus, the BTC ETFs stay green. The Clarity Act hits a wall over who enforces the ethics rules. And Jack Mallers walks away from XXI Capital.",
+    "published_at": "2026-07-22T11:50:29+00:00"
+  },
+  {
+    "id": "5207ce6b2213389b",
+    "title": "Zilliqa Ledger app vulnerability lets attackers recover signer’s private keys",
+    "url": "https://cointelegraph.com/news/zilliqa-ledger-vulnerability-attackers-recover-private-keys?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "A security vulnerability in the Zilliqa Ledger app is enabling attackers to reconstruct private keys using publicly available onchain data.",
+    "published_at": "2026-07-22T11:49:53+00:00"
+  },
+  {
+    "id": "e90b572f7011a1e6",
+    "title": "Midnight token rebounds 19% after Wanchain bridge hack, Hoskinson calls for ZK revamp",
+    "url": "https://www.coindesk.com/business/2026/07/22/midnight-token-rebounds-after-wanchain-bridge-hack-hoskinson-calls-for-industry-overhaul",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T11:45:42+00:00"
+  },
+  {
+    "id": "31d5205d3f1f36fa",
+    "title": "US seeks forfeiture of $25M in crypto tied to romance, investment scams",
+    "url": "https://cointelegraph.com/news/doj-25m-crypto-forfeiture-romance-investment-scams?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "US prosecutors are seeking more than $25 million in cryptocurrency allegedly connected to international fraud and laundering networks.",
+    "published_at": "2026-07-22T11:32:40+00:00"
+  },
+  {
     "id": "369b0ed1fd52981d",
     "title": "Here's why bitcoin bulls should take a closer look at interest rates",
     "url": "https://www.coindesk.com/daybook-us/2026/07/22/here-s-why-bitcoin-bulls-should-take-a-closer-look-at-interest-rates",
@@ -29,6 +93,14 @@
     "url": "https://cointelegraph.com/news/talos-brings-institutional-trading-tools-to-kalshi-prediction-markets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
     "source": "Cointelegraph",
     "summary": "The integration provides institutional clients with access to Kalshi’s event contracts and crypto perpetuals via Talos’ existing trading infrastructure.",
+    "published_at": "2026-07-22T11:00:00+00:00"
+  },
+  {
+    "id": "18fa0c319ad259d5",
+    "title": "Crypto institutions look beyond audits as trust signals falter: Hacken",
+    "url": "https://cointelegraph.com/news/institutions-crypto-security-beyond-audits-hacken-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Institutional due diligence is shifting toward continuous monitoring, signer controls and incident readiness after operational failures accounted for most crypto losses.",
     "published_at": "2026-07-22T11:00:00+00:00"
   },
   {
@@ -89,7 +161,7 @@
   },
   {
     "id": "ac8d16bddb8bd4be",
-    "title": "Live updates: Bitcoin under $66,000 as traders await Alphabet earnings to gauge AI trade",
+    "title": "Live updates: Bitcoin slips under $66,000 as oil's surge sacks strength from risk markets",
     "url": "https://www.coindesk.com/tech/2026/07/22/live-updates-bitcoin-under-usd66-000-as-traders-await-alphabet-earnings-to-gauge-ai-trade",
     "source": "CoinDesk",
     "summary": "",
@@ -110,14 +182,6 @@
     "source": "CoinDesk",
     "summary": "",
     "published_at": "2026-07-22T06:01:56+00:00"
-  },
-  {
-    "id": "552e43ae5e35357a",
-    "title": "Here’s what happened in crypto today",
-    "url": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Need to know what happened in crypto today? Here is the latest news on daily trends and events impacting Bitcoin price, blockchain, DeFi, Web3 and crypto regulation.",
-    "published_at": "2026-07-22T05:43:51+00:00"
   },
   {
     "id": "6de3f9bb5cc5a15f",
@@ -574,69 +638,5 @@
     "source": "Cointelegraph",
     "summary": "The settlements add to former Celsius CEO Alex Mashinsky’s $10 million FTC settlement in April.",
     "published_at": "2026-07-21T03:21:52+00:00"
-  },
-  {
-    "id": "edaa676b35545c9d",
-    "title": "Binance & OKX users face $1,900 fines in Vietnam, Coinbase in China? Asia Express",
-    "url": "https://cointelegraph.com/magazine/binance-users-face-1900-fines-in-vietnam-coinbase-in-china-asia-express?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Retail users in Vietnam who trade on offshore crypto exchanges like Binance or OKX face heavy penalties. Network School controversy in Malaysia over Israeli citizen ban.",
-    "published_at": "2026-07-21T02:42:14+00:00"
-  },
-  {
-    "id": "0191d2fb31addb2d",
-    "title": "London Stock Exchange eyes overnight trading launch in 2027: FT",
-    "url": "https://cointelegraph.com/news/london-stock-exchange-plans-round-the-clock-trading-in-2027-ft?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The move comes as traditional exchanges face growing competition from crypto markets and tokenized equity platforms that offer around-the-clock trading.",
-    "published_at": "2026-07-21T01:16:50+00:00"
-  },
-  {
-    "id": "688483771b9f738b",
-    "title": "Patrick Witt defers military training as CLARITY heads to Senate",
-    "url": "https://cointelegraph.com/news/patrick-witt-defers-military-training-as-clarity-heads-to-senate?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The decision keeps the administration’s chief crypto policy negotiator in place during what could be a decisive few weeks for the CLARITY Act.",
-    "published_at": "2026-07-21T00:02:04+00:00"
-  },
-  {
-    "id": "bcd200327cd5434f",
-    "title": "Democrats added certain consumer protection rules to CLARITY: Coinbase exec",
-    "url": "https://cointelegraph.com/news/democrats-consumer-protections-clarity-act-ethics-debate?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Coinbase vice chair Ryan VanGrack said that Democratic lawmakers had added provisions on customer protection to a digital asset market structure bill under consideration in the US Senate.",
-    "published_at": "2026-07-20T21:41:23+00:00"
-  },
-  {
-    "id": "812c92c28a514d7a",
-    "title": "Tether Gold recognized as Accepted Spot Commodity in Abu Dhabi financial center",
-    "url": "https://cointelegraph.com/news/tether-gold-recognized-as-accepted-spot-commodity-in-abu-dhabi-financial-center?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The recognition allows regulated firms in Abu Dhabi Global Market to offer services involving Tether Gold as tokenized commodities gain broader adoption.",
-    "published_at": "2026-07-20T21:21:54+00:00"
-  },
-  {
-    "id": "79243c096eb163b1",
-    "title": "Bitcoin defies recent tech stocks sell-off: Are bulls eyeing $70K rally?",
-    "url": "https://cointelegraph.com/markets/bitcoin-defies-recent-tech-stocks-sell-off-are-bulls-eyeing-70k-rally?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Despite muted derivatives sentiment, Bitcoin’s decoupling and Strategy’s cash raise set the stage for a potential rally to $70,000.",
-    "published_at": "2026-07-20T21:20:09+00:00"
-  },
-  {
-    "id": "6df9228aa7377403",
-    "title": "Bank of Korea Scales Up CBDC Pilot With Half a Million Users",
-    "url": "https://decrypt.co/373905/bank-korea-scales-up-cbdc-pilot-half-million-users",
-    "source": "Decrypt",
-    "summary": "Phase 1 of Project Hangang opened 81,000 wallets with 42% of them using the CBDC. Phase 2 is bigger, and this time it moves real government money.",
-    "published_at": "2026-07-20T21:12:03+00:00"
-  },
-  {
-    "id": "50cabb3a1d517c0d",
-    "title": "SEC sues Mining Automatic and founder over alleged $22M crypto mining scheme",
-    "url": "https://cointelegraph.com/news/sec-sues-mining-automatic-and-founder-over-alleged-22m-crypto-mining-scheme?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The SEC alleges Mining Automatic and its founder raised $22 million from investors by promising guaranteed crypto mining returns while spending only a fraction of the funds on mining operations.",
-    "published_at": "2026-07-20T20:27:54+00:00"
   }
 ]
