@@ -1,5 +1,37 @@
 [
   {
+    "id": "1fb1c6c31994bf59",
+    "title": "Coinbase Wants to Be Canada's One-Stop Shop for Stocks, Crypto and Prediction Markets",
+    "url": "https://decrypt.co/374110/coinbase-canada-stocks-crypto-prediction-markets",
+    "source": "Decrypt",
+    "summary": "The company's \"Everything Exchange\" is heading north. No launch date set yet, but the Coinbase Canada CEO says phase two for the company is in motion.",
+    "published_at": "2026-07-22T21:13:04+00:00"
+  },
+  {
+    "id": "99592180ac07142f",
+    "title": "S&P launches blockchain fundamentals index for digital assets",
+    "url": "https://cointelegraph.com/news/sp-launches-blockchain-fundamentals-index-digital-assets?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "The benchmark tracks blockchain networks using protocol revenue, offering an alternative to traditional market capitalization-weighted crypto indexes.",
+    "published_at": "2026-07-22T21:09:59+00:00"
+  },
+  {
+    "id": "ffdf30a9e00886f9",
+    "title": "Tesla holds bitcoin treasury steady, reports $112M impairment loss",
+    "url": "https://www.coindesk.com/markets/2026/07/22/tesla-holds-bitcoin-steady-reports-usd112m-impairment-loss",
+    "source": "CoinDesk",
+    "summary": "",
+    "published_at": "2026-07-22T20:40:24+00:00"
+  },
+  {
+    "id": "298a4ad992df574a",
+    "title": "Crypto PAC pours $1M into Michigan Democratic primary race",
+    "url": "https://cointelegraph.com/news/crypto-pac-michigan-democratic-primary-race?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+    "source": "Cointelegraph",
+    "summary": "Donavan McKinney, running against Michigan incumbent Shri Thanedar, said that “the crypto lobby is paying my opponent back for helping Trump“ with the PAC-funded ads.",
+    "published_at": "2026-07-22T20:38:08+00:00"
+  },
+  {
     "id": "e8874f8b7264b68e",
     "title": "Kraken Parent Company Makes Moves to Offer xStocks From Global Markets",
     "url": "https://decrypt.co/374106/kraken-parent-xstocks-beyond-us-equities",
@@ -606,37 +638,5 @@
     "source": "Cointelegraph",
     "summary": "Bitcoin and crypto joined US stocks in brushing off US-Iran war escalation and the threat of fresh trade tariffs before the end of the month.",
     "published_at": "2026-07-21T15:14:37+00:00"
-  },
-  {
-    "id": "b0f927e8c390465a",
-    "title": "Augustus raises $180 million to build a clearing bank for the AI and stablecoin era",
-    "url": "https://www.coindesk.com/business/2026/07/21/augustus-raises-usd180-million-to-build-a-clearing-bank-for-the-ai-and-stablecoin-era",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T14:27:03+00:00"
-  },
-  {
-    "id": "fe56ad808d6cacee",
-    "title": "MoneyGram's CEO says blockchain works best when customers don't know it's there",
-    "url": "https://www.coindesk.com/tech/2026/07/17/moneygram-s-ceo-says-blockchain-works-best-when-customers-don-t-know-it-s-there",
-    "source": "CoinDesk",
-    "summary": "",
-    "published_at": "2026-07-21T13:38:13+00:00"
-  },
-  {
-    "id": "410f5faa0a90d558",
-    "title": "CoinShares debuts Bitcoin mining ETF in Europe entrance",
-    "url": "https://cointelegraph.com/news/coinshares-debuts-bitcoin-mining-ucits-etf-in-europe?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "The UCITS ETF, CoinShares’ first in Europe, began trading on Deutsche Börse Xetra, tracking a rules-based index of publicly listed BTC miners.",
-    "published_at": "2026-07-21T13:34:26+00:00"
-  },
-  {
-    "id": "61d04831ba76166a",
-    "title": "Robinhood-backed DEX Arcus expands with tokenized assets, perps",
-    "url": "https://cointelegraph.com/news/robinhood-backed-dex-arcus-debut-multi-asset-trading?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-    "source": "Cointelegraph",
-    "summary": "Arcus, built by the dYdX team, adds tokenized stocks and perpetual futures on Robinhood Chain as platforms compete to bring traditional assets onchain.",
-    "published_at": "2026-07-21T13:16:22+00:00"
   }
 ]
