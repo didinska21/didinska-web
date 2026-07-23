@@ -1,6 +1,6 @@
 // ⚙️ GANTI INI ke URL worker Cloudflare kamu setelah deploy, misalnya:
 // const API_BASE = "https://didinska-bot.username.workers.dev";
-const API_BASE = "https://GANTI-DENGAN-URL-WORKER-KAMU.workers.dev";
+const API_BASE = "https://didinska-web.mr-didinska21.workers.dev";
 
 async function apiGet(path) {
   const res = await fetch(`${API_BASE}${path}`);
