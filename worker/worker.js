@@ -60,7 +60,7 @@ export default {
 
     // ---- API publik buat website statis ----
     if (url.pathname === "/api/jadwal" && request.method === "GET") {
-      return handleApiJadwal(env);
+      return handleApiJadwal(request, env);
     }
     if (url.pathname === "/api/analisa" && request.method === "POST") {
       return handleApiAnalisa(request, env);
@@ -814,9 +814,11 @@ async function readHistory(env) {
 // ══════════════════════════════════════════════════════════
 //  API HANDLERS — dipakai website statis
 // ══════════════════════════════════════════════════════════
-async function handleApiJadwal(env) {
+async function handleApiJadwal(request, env) {
   try {
-    const list = await buildScheduleList(env);
+    const url = new URL(request.url);
+    const forceRefresh = url.searchParams.get("refresh") === "true";
+    const list = await buildScheduleList(env, forceRefresh);
     return jsonResponse({ ok: true, list });
   } catch (e) {
     return jsonResponse({ ok: false, error: e.message }, 500);
