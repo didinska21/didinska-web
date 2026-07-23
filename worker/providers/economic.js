@@ -25,6 +25,7 @@
 
 import { fmtWIBDate, fmtWIBTime, fmtISODate } from "../utils/timezone.js";
 import { buildProviderChain } from "./providerFactory.js";
+import { recordProviderSuccess, recordProviderFailure } from "./healthMonitor.js";
 
 const TE_BASE_URL = "https://api.tradingeconomics.com/calendar";
 const TE_TIMEOUT_MS = 10000;
@@ -221,9 +222,11 @@ function isCacheFresh(cache) {
 //  request → getEconomicEvents() → cek KV cache
 //    → cache masih valid (< 30 menit)     → return cache
 //    → cache expired / kosong             → loop Provider Factory chain
-//        → provider sukses                → normalize → simpan ke KV → return
-//        → provider gagal                 → lanjut provider berikutnya
-//                                            (cuma kalau ALLOW_PROVIDER_FALLBACK)
+//        → provider sukses                → normalize → catat health (sukses)
+//                                            → simpan ke KV → return
+//        → provider gagal                 → catat health (gagal) → lanjut
+//                                            provider berikutnya (cuma kalau
+//                                            ALLOW_PROVIDER_FALLBACK)
 //    → semua provider gagal & cache lama ADA → return cache lama (JANGAN throw)
 //    → semua provider gagal & cache kosong   → throw Error
 // ══════════════════════════════════════════════════════════
@@ -237,16 +240,21 @@ export async function getEconomicEvents(env) {
   const chain = buildProviderChain(env);
 
   for (const { name, provider } of chain) {
+    const startedAt = Date.now();
     try {
       const raw = await provider.fetch(env);
+      const responseTimeMs = Date.now() - startedAt;
       const normalized = provider.normalize(raw);
       const items = buildScheduleItems(normalized);
 
       console.log(`[Provider] ${name} OK`);
+      await recordProviderSuccess(env, name, responseTimeMs);
       await writeEconomicCache(env, items);
       return items;
     } catch (e) {
+      const responseTimeMs = Date.now() - startedAt;
       console.error(`[Provider] ${name} FAILED:`, e.message);
+      await recordProviderFailure(env, name, responseTimeMs);
     }
   }
 
@@ -280,17 +288,22 @@ export async function refreshEconomicCache(env) {
   const chain = buildProviderChain(env);
 
   for (const { name, provider } of chain) {
+    const startedAt = Date.now();
     try {
       const raw = await provider.fetch(env);
+      const responseTimeMs = Date.now() - startedAt;
       const normalized = provider.normalize(raw);
       const items = buildScheduleItems(normalized);
 
       console.log(`[CRON] Provider ${name} OK`);
+      await recordProviderSuccess(env, name, responseTimeMs);
       await writeEconomicCache(env, items);
       console.log("[CRON] Cache Updated");
       return items.length;
     } catch (e) {
+      const responseTimeMs = Date.now() - startedAt;
       console.error(`[CRON] Provider ${name} FAILED:`, e.message);
+      await recordProviderFailure(env, name, responseTimeMs);
     }
   }
 
