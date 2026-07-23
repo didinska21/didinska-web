@@ -7,4 +7,4 @@ compatibility_date = "2024-11-01"
 # Dashboard Cloudflare → Workers & Pages → KV → klik namespace-nya → copy "Namespace ID".
 [[kv_namespaces]]
 binding = "didinska-kv"
-id = "c7362f869d124fd7ad5647304fd40014"
+id = "ce570a8bd07c4ef48e3e7a1301023024"
