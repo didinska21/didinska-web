@@ -6,6 +6,13 @@
 //  itu pekerjaan sprint terpisah.
 // ══════════════════════════════════════════════════════════
 export const EODHDProvider = {
+  // Sprint 11.1: stub belum punya API key/implementasi apa pun, jadi
+  // selalu dianggap belum dikonfigurasi — konsisten dengan provider lain
+  // yang sudah pakai isConfigured() (lihat economic.js/fmp.js).
+  isConfigured(env) {
+    return false;
+  },
+
   async fetch(env) {
     throw new Error("Provider belum diimplementasikan");
   },
