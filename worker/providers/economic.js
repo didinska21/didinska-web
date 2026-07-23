@@ -57,6 +57,16 @@ function sleep(ms) {
 // ══════════════════════════════════════════════════════════
 export const TradingEconomicsProvider = {
   /**
+   * Sprint 11.1: dipakai chain runner di bawah untuk membedakan
+   * "provider belum dikonfigurasi" (UNAVAILABLE) dari kegagalan teknis
+   * (FAILED) TANPA perlu memanggil fetch()/menangkap exception dulu.
+   * Tidak pernah throw — murni pengecekan boolean.
+   */
+  isConfigured(env) {
+    return !!env.TRADINGECONOMICS_API_KEY;
+  },
+
+  /**
    * Ambil data mentah economic calendar dari TradingEconomics.
    * - Timeout via AbortController (TE_TIMEOUT_MS)
    * - Retry sederhana maks TE_MAX_RETRIES kali, HANYA untuk error jaringan
@@ -230,17 +240,65 @@ function isCacheFresh(cache) {
 }
 
 // ══════════════════════════════════════════════════════════
-//  Flow (sprint 5 + multi-provider sprint 6):
+//  attemptProviderChain(env, chain, logTag) — Sprint 11.1
+//  Satu-satunya tempat yang benar-benar mencoba provider satu per satu
+//  (dipakai oleh getEconomicEvents & refreshEconomicCache — sebelumnya
+//  masing-masing punya salinan loop yang nyaris identik).
+//
+//  Untuk tiap provider dalam chain, urutan ceknya:
+//    1. provider.isConfigured(env) === false → UNAVAILABLE. Provider
+//       memang belum di-setup (API key belum ada), BUKAN kegagalan
+//       teknis. Di-skip diam-diam ke provider berikutnya, TIDAK
+//       memanggil recordProviderFailure sama sekali (supaya tidak
+//       merusak statistik Health Monitor — lihat healthMonitor.js).
+//    2. provider.fetch(env) sukses → SUCCESS, catat health sukses,
+//       kembalikan { name, items }.
+//    3. provider.fetch(env) throw → FAILED (kegagalan teknis nyata,
+//       mis. HTTP error/timeout/JSON invalid meski API key ada), catat
+//       health gagal, lanjut provider berikutnya.
+//
+//  Kalau semua provider di chain habis tanpa sukses, return null —
+//  pemanggil (getEconomicEvents/refreshEconomicCache) yang menentukan
+//  langkah selanjutnya (fallback ke cache lama / return 0 / dst),
+//  karena perilaku itu berbeda antara jalur request dan jalur cron.
+// ══════════════════════════════════════════════════════════
+async function attemptProviderChain(env, chain, logTag) {
+  for (const { name, provider } of chain) {
+    if (provider.isConfigured && !provider.isConfigured(env)) {
+      console.log(`${logTag} ${name} unavailable (API key not configured)`);
+      continue;
+    }
+
+    console.log(`${logTag} ${name} selected`);
+    const startedAt = Date.now();
+    try {
+      const raw = await provider.fetch(env);
+      const responseTimeMs = Date.now() - startedAt;
+      const normalized = provider.normalize(raw);
+      const items = buildScheduleItems(normalized);
+
+      console.log(`${logTag} ${name} success`);
+      await recordProviderSuccess(env, name, responseTimeMs);
+      return { name, items };
+    } catch (e) {
+      const responseTimeMs = Date.now() - startedAt;
+      console.error(`${logTag} ${name} failed:`, e.message);
+      await recordProviderFailure(env, name, responseTimeMs);
+    }
+  }
+  return null;
+}
+
+// ══════════════════════════════════════════════════════════
+//  Flow (sprint 5 + multi-provider sprint 6, disederhanakan sprint 11.1):
 //  request → getEconomicEvents() → cek KV cache
 //    → cache masih valid (< 30 menit)     → return cache
-//    → cache expired / kosong             → loop Provider Factory chain
-//        → provider sukses                → normalize → catat health (sukses)
-//                                            → simpan ke KV → return
-//        → provider gagal                 → catat health (gagal) → lanjut
-//                                            provider berikutnya (cuma kalau
-//                                            ALLOW_PROVIDER_FALLBACK)
-//    → semua provider gagal & cache lama ADA → return cache lama (JANGAN throw)
-//    → semua provider gagal & cache kosong   → throw Error
+//    → cache expired / kosong             → attemptProviderChain()
+//        → ada provider sukses            → simpan ke KV → return
+//        → semua provider gagal/unavailable & cache lama ADA
+//                                          → return cache lama (JANGAN throw)
+//        → semua provider gagal/unavailable & cache kosong
+//                                          → throw Error
 // ══════════════════════════════════════════════════════════
 export async function getEconomicEvents(env) {
   const cache = await readEconomicCache(env);
@@ -250,28 +308,15 @@ export async function getEconomicEvents(env) {
   }
 
   const chain = buildProviderChain(env);
+  const result = await attemptProviderChain(env, chain, "[Provider]");
 
-  for (const { name, provider } of chain) {
-    const startedAt = Date.now();
-    try {
-      const raw = await provider.fetch(env);
-      const responseTimeMs = Date.now() - startedAt;
-      const normalized = provider.normalize(raw);
-      const items = buildScheduleItems(normalized);
-
-      console.log(`[Provider] ${name} OK`);
-      await recordProviderSuccess(env, name, responseTimeMs);
-      await writeEconomicCache(env, items);
-      return items;
-    } catch (e) {
-      const responseTimeMs = Date.now() - startedAt;
-      console.error(`[Provider] ${name} FAILED:`, e.message);
-      await recordProviderFailure(env, name, responseTimeMs);
-    }
+  if (result) {
+    await writeEconomicCache(env, result.items);
+    return result.items;
   }
 
   if (cache && Array.isArray(cache.data)) {
-    console.error("[ECONOMIC] Semua provider gagal, fallback ke cache lama.");
+    console.error("[ECONOMIC] Semua provider gagal/unavailable, fallback ke cache lama.");
     return cache.data;
   }
 
@@ -285,42 +330,29 @@ export async function getEconomicEvents(env) {
 //  getEconomicEvents() di atas dan hanya membaca KV cache (tidak diubah).
 //
 //  Pakai chain provider yang sama (buildProviderChain — tidak diubah)
-//  dan writeEconomicCache yang sama (tidak diubah). Bedanya dengan
-//  getEconomicEvents(): fungsi ini SELALU coba fetch data terbaru
-//  (tidak cek freshness cache dulu), karena tujuannya memang me-refresh
-//  cache di background.
+//  lewat attemptProviderChain() yang sama dengan getEconomicEvents().
+//  Bedanya dengan getEconomicEvents(): fungsi ini SELALU coba fetch data
+//  terbaru (tidak cek freshness cache dulu), karena tujuannya memang
+//  me-refresh cache di background.
 //
-//  Aturan wajib: kalau semua provider gagal, cache lama TIDAK disentuh
-//  sama sekali (tidak dihapus, tidak ditimpa data kosong) — cukup log
-//  kegagalan dan return 0.
+//  Aturan wajib: kalau semua provider gagal/unavailable, cache lama
+//  TIDAK disentuh sama sekali (tidak dihapus, tidak ditimpa data
+//  kosong) — cukup log kegagalan dan return 0.
 // ══════════════════════════════════════════════════════════
 export async function refreshEconomicCache(env) {
   console.log("[CRON] Refresh Economic Calendar");
 
   const chain = buildProviderChain(env);
+  const result = await attemptProviderChain(env, chain, "[CRON]");
 
-  for (const { name, provider } of chain) {
-    const startedAt = Date.now();
-    try {
-      const raw = await provider.fetch(env);
-      const responseTimeMs = Date.now() - startedAt;
-      const normalized = provider.normalize(raw);
-      const items = buildScheduleItems(normalized);
-
-      console.log(`[CRON] Provider ${name} OK`);
-      await recordProviderSuccess(env, name, responseTimeMs);
-      await writeEconomicCache(env, items);
-      console.log("[CRON] Cache Updated");
-      return items.length;
-    } catch (e) {
-      const responseTimeMs = Date.now() - startedAt;
-      console.error(`[CRON] Provider ${name} FAILED:`, e.message);
-      await recordProviderFailure(env, name, responseTimeMs);
-    }
+  if (result) {
+    await writeEconomicCache(env, result.items);
+    console.log("[CRON] Cache Updated");
+    return result.items.length;
   }
 
-  // Semua provider gagal → cache lama (kalau ada) dibiarkan apa adanya,
-  // writeEconomicCache() sengaja TIDAK dipanggil di jalur ini.
+  // Semua provider gagal/unavailable → cache lama (kalau ada) dibiarkan
+  // apa adanya, writeEconomicCache() sengaja TIDAK dipanggil di jalur ini.
   console.error("[CRON] Refresh Failed");
   return 0;
 }
