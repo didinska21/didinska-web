@@ -140,13 +140,13 @@ async function answerCallback(env, callbackId, text) {
 //  SESSION (Cloudflare KV)
 // ══════════════════════════════════════════════════════════
 async function getSession(env, uid) {
-  const raw = await env.BOT_KV.get(`session:${uid}`);
+  const raw = await env['didinska-kv'].get(`session:${uid}`);
   if (raw) return JSON.parse(raw);
   return { state: "idle", schedule: [], last_opinions: [], last_event: null };
 }
 
 async function saveSession(env, uid, s) {
-  await env.BOT_KV.put(`session:${uid}`, JSON.stringify(s), { expirationTtl: 60 * 60 * 24 * 7 }); // 7 hari
+  await env['didinska-kv'].put(`session:${uid}`, JSON.stringify(s), { expirationTtl: 60 * 60 * 24 * 7 }); // 7 hari
 }
 
 // ══════════════════════════════════════════════════════════
@@ -541,7 +541,7 @@ async function getCryptoEvents(env) {
 // ══════════════════════════════════════════════════════════
 async function buildScheduleList(env, forceRefresh = false) {
   if (!forceRefresh) {
-    const cacheRaw = await env.BOT_KV.get(SCHEDULE_CACHE_KEY);
+    const cacheRaw = await env['didinska-kv'].get(SCHEDULE_CACHE_KEY);
     if (cacheRaw) {
       try {
         const cached = JSON.parse(cacheRaw);
@@ -557,7 +557,7 @@ async function buildScheduleList(env, forceRefresh = false) {
 
   const list = mergeAndSort(macro, crypto);
   if (list.length > 0) {
-    await env.BOT_KV.put(SCHEDULE_CACHE_KEY, JSON.stringify({ list, ts: Date.now() }), { expirationTtl: SCHEDULE_CACHE_TTL });
+    await env['didinska-kv'].put(SCHEDULE_CACHE_KEY, JSON.stringify({ list, ts: Date.now() }), { expirationTtl: SCHEDULE_CACHE_TTL });
   }
   return list;
 }
@@ -789,7 +789,7 @@ function parseSentiment(finalText) {
 async function appendHistory(env, record) {
   let list = [];
   try {
-    const raw = await env.BOT_KV.get(HISTORY_KEY);
+    const raw = await env['didinska-kv'].get(HISTORY_KEY);
     if (raw) list = JSON.parse(raw);
     if (!Array.isArray(list)) list = [];
   } catch (e) {
@@ -797,12 +797,12 @@ async function appendHistory(env, record) {
   }
   list.unshift(record);
   if (list.length > HISTORY_MAX_ITEMS) list = list.slice(0, HISTORY_MAX_ITEMS);
-  await env.BOT_KV.put(HISTORY_KEY, JSON.stringify(list));
+  await env['didinska-kv'].put(HISTORY_KEY, JSON.stringify(list));
 }
 
 async function readHistory(env) {
   try {
-    const raw = await env.BOT_KV.get(HISTORY_KEY);
+    const raw = await env['didinska-kv'].get(HISTORY_KEY);
     if (!raw) return [];
     const list = JSON.parse(raw);
     return Array.isArray(list) ? list : [];
