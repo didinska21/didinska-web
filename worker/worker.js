@@ -25,6 +25,7 @@ import { handleUpdate } from "./utils/telegram.js";
 import { handleApiJadwal } from "./services/calendar.js";
 import { handleApiAnalisa } from "./services/analysis.js";
 import { handleApiRiwayat } from "./utils/history.js";
+import { refreshEconomicCache } from "./providers/economic.js";
 
 // ══════════════════════════════════════════════════════════
 //  ENTRY POINT
@@ -71,5 +72,18 @@ export default {
     }
 
     return new Response("Not found", { status: 404 });
+  },
+
+  // Sprint 7: Cloudflare Cron Trigger — refresh KV cache Economic Calendar
+  // di background. Tidak menyentuh fetch handler di atas sama sekali.
+  async scheduled(event, env, ctx) {
+    try {
+      await refreshEconomicCache(env);
+    } catch (e) {
+      // refreshEconomicCache() sendiri sudah menangani & mencatat error
+      // provider-nya masing-masing dan tidak throw pada kondisi normal;
+      // catch ini cuma jaring pengaman kalau ada error tak terduga lain.
+      console.error("[CRON] Refresh Failed:", e.message);
+    }
   },
 };
