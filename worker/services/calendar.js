@@ -1,4 +1,4 @@
-import { createEconomicProvider } from "../providers/economic.js";
+import { getEconomicEvents } from "../providers/economic.js";
 import { getCryptoEvents } from "../providers/crypto.js";
 import { jsonResponse } from "../utils/cors.js";
 
@@ -19,9 +19,8 @@ export async function buildScheduleList(env, forceRefresh = false) {
     }
   }
 
-  const provider = await createEconomicProvider();
   const [macro, crypto] = await Promise.all([
-    provider.fetch(env).catch((e) => { console.error("[MACRO] Error tak tertangani:", e.message); return []; }),
+    getEconomicEvents(env).catch((e) => { console.error("[MACRO] Error tak tertangani:", e.message); return []; }),
     getCryptoEvents(env).catch((e) => { console.error("[CRYPTO] Error tak tertangani:", e.message); return []; }),
   ]);
 
