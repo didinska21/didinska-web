@@ -4,7 +4,12 @@ const API_BASE = "https://didinska-web.mr-didinska21.workers.dev";
 
 async function apiGet(path) {
   const res = await fetch(`${API_BASE}${path}`);
-  const data = await res.json();
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    throw new Error(`Server tidak merespons dengan format yang benar (HTTP ${res.status}). Coba lagi beberapa saat lagi.`);
+  }
   if (!data.ok) throw new Error(data.error || "Gagal ambil data.");
   return data;
 }
@@ -15,7 +20,12 @@ async function apiPost(path, body) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  const data = await res.json();
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    throw new Error(`Server tidak merespons dengan format yang benar (HTTP ${res.status}). Coba lagi beberapa saat lagi.`);
+  }
   if (!data.ok) throw new Error(data.error || "Gagal memproses.");
   return data;
 }
