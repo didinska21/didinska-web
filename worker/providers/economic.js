@@ -1,10 +1,22 @@
 // ══════════════════════════════════════════════════════════
-//  ECONOMIC CALENDAR PROVIDER — TradingEconomics (+ Multi Provider)
+//  ECONOMIC CALENDAR PROVIDER — TradingEconomics (opsional, + Multi Provider)
 //  Sprint 4: implementasi TradingEconomicsProvider (fetch/normalize).
 //  Sprint 5: KV cache (readEconomicCache/writeEconomicCache).
 //  Sprint 6: getEconomicEvents() sekarang lewat Provider Factory
 //            (providers/providerFactory.js) dengan fallback berurutan
 //            TradingEconomics → FMP (stub) → EODHD (stub).
+//  Sprint 11: FMP menjadi provider DEFAULT (lihat providerFactory.js —
+//            DEFAULT_PROVIDER_KEY), TradingEconomics menjadi provider
+//            OPSIONAL/tambahan (tetap dipakai kalau ECONOMIC_PROVIDER
+//            di-set eksplisit ke "tradingeconomics" dan
+//            TRADINGECONOMICS_API_KEY tersedia). Provider di file ini
+//            (TradingEconomicsProvider) TIDAK diubah sama sekali —
+//            fetch() di bawah tetap throw Error yang jelas kalau
+//            secret-nya tidak ada; itu sudah cukup untuk kebutuhan
+//            Sprint 11 karena error tsb ditangkap oleh chain loop di
+//            getEconomicEvents/refreshEconomicCache (lanjut ke provider
+//            berikutnya kalau fallback aktif, atau berhenti dengan rapi
+//            tanpa meng-crash Worker kalau fallback mati).
 //
 //  Dokumentasi resmi TradingEconomics yang jadi acuan (JANGAN tambah
 //  endpoint/parameter di luar yang didokumentasikan tanpa cek ulang):
