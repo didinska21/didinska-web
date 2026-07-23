@@ -1,0 +1,10 @@
+name = "didinska-api"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# ⚠️ Ganti "PASTE_KV_NAMESPACE_ID_DI_SINI" dengan ID KV Namespace kamu yang sudah ada
+# (yang dipakai bot Telegram lama). Cara lihat ID-nya:
+# Dashboard Cloudflare → Workers & Pages → KV → klik namespace-nya → copy "Namespace ID".
+[[kv_namespaces]]
+binding = "BOT_KV"
+id = "PASTE_KV_NAMESPACE_ID_DI_SINI"
