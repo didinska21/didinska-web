@@ -29,6 +29,9 @@
   </div>
 
   <div id="tab-akan">
+    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+      <button class="btn ghost" id="refresh-btn" onclick="refreshJadwal()">🔄 Refresh Jadwal</button>
+    </div>
     <div id="list-akan" class="loading">Memuat jadwal…</div>
   </div>
 
@@ -53,10 +56,10 @@ document.querySelectorAll(".tab").forEach((btn) => {
   });
 });
 
-async function loadAkanTerjadi() {
+async function loadAkanTerjadi(forceRefresh) {
   const el = document.getElementById("list-akan");
   try {
-    const { list } = await apiGet("/api/jadwal");
+    const { list } = await apiGet(forceRefresh ? "/api/jadwal?refresh=true" : "/api/jadwal");
     if (!list.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang yang berhasil ditemukan.</div>'; return; }
     el.innerHTML = list.map((it) => {
       const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
@@ -102,6 +105,19 @@ async function loadSudahTerjadi() {
     }).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat riwayat: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function refreshJadwal() {
+  const btn = document.getElementById("refresh-btn");
+  btn.disabled = true;
+  btn.textContent = "⏳ Refreshing...";
+  document.getElementById("list-akan").innerHTML = '<div class="loading">Mencari jadwal terbaru... (~15-30 detik, karena scrape ulang dari sumber resmi)</div>';
+  try {
+    await loadAkanTerjadi(true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "🔄 Refresh Jadwal";
   }
 }
 
