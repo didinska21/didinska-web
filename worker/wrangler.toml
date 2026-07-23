@@ -5,3 +5,10 @@ compatibility_date = "2024-11-01"
 [[kv_namespaces]]
 binding = "didinska-kv"
 id = "ce570a8bd07c4ef48e3e7a1301023024"
+
+# Sprint 7: jadwalkan scheduled() di worker.js supaya benar-benar jalan.
+# Interval 30 menit disamakan dengan ECONOMIC_CACHE_TTL_SECONDS di
+# providers/economic.js, supaya cache economic_calendar_v1 di-refresh
+# di background persis sebelum masuk masa "stale".
+[triggers]
+crons = ["*/30 * * * *"]
