@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadwal News — Didinska</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="jadwal.html" class="active">Jadwal News</a>
+    <a href="analisa.html">Analisa News</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-top:20px;">
+    <h1 style="font-size:28px;">Jadwal News</h1>
+    <p>Pantau event yang akan datang, atau lihat dampak historis dari event yang sudah terjadi.</p>
+  </section>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="akan">Akan terjadi</button>
+    <button class="tab" data-tab="sudah">Sudah terjadi</button>
+  </div>
+
+  <div id="tab-akan">
+    <div id="list-akan" class="loading">Memuat jadwal…</div>
+  </div>
+
+  <div id="tab-sudah" style="display:none;">
+    <div id="list-sudah" class="loading">Memuat riwayat…</div>
+  </div>
+
+  <footer>
+    🏛️ = scrape langsung dari kalender resmi &middot; 🪙 = hasil pencarian berita, cek ulang di sumber resmi.
+  </footer>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.querySelectorAll(".tab").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const target = btn.dataset.tab;
+    document.getElementById("tab-akan").style.display = target === "akan" ? "block" : "none";
+    document.getElementById("tab-sudah").style.display = target === "sudah" ? "block" : "none";
+  });
+});
+
+async function loadAkanTerjadi() {
+  const el = document.getElementById("list-akan");
+  try {
+    const { list } = await apiGet("/api/jadwal");
+    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang yang berhasil ditemukan.</div>'; return; }
+    el.innerHTML = list.map((it) => {
+      const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
+      const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
+      return `
+        <div class="card">
+          <div class="card-row">
+            <div>
+              <span class="card-tag">${tag}</span>
+              <div class="card-title">${escapeHtml(it.event)}</div>
+            </div>
+            <div class="card-date">${it.date}<br>${jam}</div>
+          </div>
+        </div>`;
+    }).join("");
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function loadSudahTerjadi() {
+  const el = document.getElementById("list-sudah");
+  try {
+    const { list } = await apiGet("/api/riwayat");
+    if (!list.length) {
+      el.innerHTML = '<div class="empty">Belum ada riwayat. Jalankan analisa di menu "Analisa News" dulu — hasilnya otomatis masuk ke sini kalau tanggal & koinnya kedeteksi.</div>';
+      return;
+    }
+    el.innerHTML = list.map((it) => {
+      const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
+      return `
+        <div class="card">
+          <div class="card-row">
+            <div>
+              <span class="card-tag">${tag}</span>
+              <div class="card-title">${escapeHtml(it.event)}</div>
+            </div>
+            <div class="card-date">${it.date}</div>
+          </div>
+          ${sentimentBadge(it.sentiment)}
+          ${impactStrip(it.impact, it.coin)}
+        </div>`;
+    }).join("");
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Gagal memuat riwayat: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+loadAkanTerjadi();
+loadSudahTerjadi();
+</script>
+</body>
+</html>

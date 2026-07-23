@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Didinska — Jadwal & Analisa News Crypto</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
+  <div class="nav-links">
+    <a href="index.html" class="active">Beranda</a>
+    <a href="jadwal.html">Jadwal News</a>
+    <a href="analisa.html">Analisa News</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero">
+    <h1>Konteks di balik<br><span class="accent">tiap pergerakan market.</span></h1>
+    <p>Jadwal event ekonomi & kripto, plus rekap apa yang biasanya terjadi ke harga setelah news serupa muncul.</p>
+    <div class="disclaimer">⚠️ Analisa edukatif berbasis berita & data publik, bukan saran finansial. Selalu riset sendiri (DYOR) sebelum ambil posisi.</div>
+  </section>
+
+  <div class="section-label">Event terdekat</div>
+  <div id="next-event" class="loading">Memuat jadwal…</div>
+
+  <div class="section-label">Riwayat dampak terbaru</div>
+  <div id="latest-impact" class="loading">Memuat riwayat…</div>
+
+  <footer>
+    DIDINSKA · analisa edukatif dari berita &amp; data publik, bukan saran finansial
+  </footer>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+async function loadNextEvent() {
+  const el = document.getElementById("next-event");
+  try {
+    const { list } = await apiGet("/api/jadwal");
+    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang.</div>'; return; }
+    const it = list[0];
+    const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
+    const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
+    el.innerHTML = `
+      <div class="card">
+        <div class="card-row">
+          <div>
+            <span class="card-tag">${tag}</span>
+            <div class="card-title">${escapeHtml(it.event)}</div>
+          </div>
+          <div class="card-date">${it.date}<br>${jam}</div>
+        </div>
+      </div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function loadLatestImpact() {
+  const el = document.getElementById("latest-impact");
+  try {
+    const { list } = await apiGet("/api/riwayat");
+    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada riwayat analisa tersimpan.</div>'; return; }
+    const it = list[0];
+    el.innerHTML = `
+      <div class="card">
+        <div class="card-row">
+          <div class="card-title">${escapeHtml(it.event)}</div>
+          <div class="card-date">${it.date}</div>
+        </div>
+        ${sentimentBadge(it.sentiment)}
+        ${impactStrip(it.impact, it.coin)}
+      </div>`;
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Gagal memuat riwayat: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+loadNextEvent();
+loadLatestImpact();
+</script>
+</body>
+</html>

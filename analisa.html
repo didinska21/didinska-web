@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analisa News — Didinska</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="jadwal.html">Jadwal News</a>
+    <a href="analisa.html" class="active">Analisa News</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <section class="hero" style="padding-top:20px;">
+    <h1 style="font-size:28px;">Analisa News</h1>
+    <p>Pilih event, lalu jalankan analisa konsensus AI untuk lihat sentimen & dampaknya ke market.</p>
+  </section>
+
+  <div id="list-events" class="loading">Memuat jadwal…</div>
+  <div id="result-area"></div>
+
+  <footer>
+    Hasil analisa disimpan otomatis ke "Jadwal News &gt; Sudah terjadi" kalau tanggal &amp; koinnya kedeteksi.
+  </footer>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+let scheduleCache = [];
+
+async function loadEvents() {
+  const el = document.getElementById("list-events");
+  try {
+    const { list } = await apiGet("/api/jadwal");
+    scheduleCache = list;
+    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada event yang bisa dianalisa saat ini.</div>'; return; }
+    el.innerHTML = list.map((it, idx) => {
+      const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
+      const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
+      return `
+        <div class="card" id="ev-card-${idx}">
+          <div class="card-row">
+            <div>
+              <span class="card-tag">${tag}</span>
+              <div class="card-title">${escapeHtml(it.event)}</div>
+            </div>
+            <div class="card-date">${it.date}<br>${jam}</div>
+          </div>
+          <div style="margin-top:10px; display:flex; gap:8px;">
+            <button class="btn" onclick="runAnalysis(${idx}, 5)">Analisa (5 AI)</button>
+            <button class="btn ghost" onclick="runAnalysis(${idx}, 10)">Analisa (10 AI)</button>
+          </div>
+        </div>`;
+    }).join("");
+  } catch (e) {
+    el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
+  }
+}
+
+async function runAnalysis(idx, nAi) {
+  const card = document.getElementById(`ev-card-${idx}`);
+  const buttons = card.querySelectorAll("button");
+  buttons.forEach((b) => (b.disabled = true));
+  const resultArea = document.getElementById("result-area");
+  resultArea.innerHTML = `<div class="loading">⏳ Menjalankan ${nAi} AI... (~10-20 detik)</div>`;
+
+  try {
+    const { result } = await apiPost("/api/analisa", { source: "schedule", idx, n_ai: nAi });
+    resultArea.innerHTML = `
+      <div class="section-label">Hasil analisa</div>
+      <div class="card">
+        <div class="card-title">${escapeHtml(result.event)}</div>
+        <div class="card-date">${result.date}</div>
+        ${sentimentBadge(result.sentiment)}
+        ${impactStrip(result.impact, result.coin)}
+        <pre style="white-space:pre-wrap; font-family:var(--font-body); font-size:14px; margin-top:14px; color:var(--text);">${escapeHtml(result.final)}</pre>
+      </div>`;
+  } catch (e) {
+    resultArea.innerHTML = `<div class="empty">Gagal menjalankan analisa: ${escapeHtml(e.message)}</div>`;
+  } finally {
+    buttons.forEach((b) => (b.disabled = false));
+  }
+}
+
+loadEvents();
+</script>
+</body>
+</html>
