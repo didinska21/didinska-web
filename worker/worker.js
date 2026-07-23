@@ -26,6 +26,7 @@ import { handleApiJadwal } from "./services/calendar.js";
 import { handleApiAnalisa } from "./services/analysis.js";
 import { handleApiRiwayat } from "./utils/history.js";
 import { refreshEconomicCache } from "./providers/economic.js";
+import { handleApiProviderHealth } from "./providers/healthMonitor.js"; // Sprint 10
 
 // ══════════════════════════════════════════════════════════
 //  ENTRY POINT
@@ -69,6 +70,11 @@ export default {
     }
     if (url.pathname === "/api/riwayat" && request.method === "GET") {
       return handleApiRiwayat(env);
+    }
+    // Sprint 10: status kesehatan tiap Economic Provider (KV terpisah
+    // "provider_health", tidak menyentuh cache economic_calendar_v1).
+    if (url.pathname === "/api/provider-health" && request.method === "GET") {
+      return handleApiProviderHealth(env);
     }
 
     return new Response("Not found", { status: 404 });
