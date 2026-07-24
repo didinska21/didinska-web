@@ -1,11 +1,12 @@
-// test deploy
-
 /**
  * 📰 News & Economic Calendar Analyst Bot — Cloudflare Workers edition
  * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
  * v3.0 — Ditambah API publik buat website statis (GitHub Pages):
  *
- *   GET  /api/jadwal          → jadwal event MENDATANG (macro + crypto)
+ *   GET  /api/jadwal          → jadwal event crypto MENDATANG (search-based).
+ *                                Event ekonomi/makro Sprint 12 dst. dikelola
+ *                                manual lewat data/jadwal.js di sisi website,
+ *                                tidak lagi lewat Worker ini sama sekali.
  *   POST /api/analisa         → jalankan analisa N-AI untuk 1 event,
  *                                otomatis simpan ke riwayat kalau ketemu
  *                                koin yang relevan (dipakai buat "sudah terjadi")
@@ -27,8 +28,6 @@ import { handleUpdate } from "./utils/telegram.js";
 import { handleApiJadwal } from "./services/calendar.js";
 import { handleApiAnalisa } from "./services/analysis.js";
 import { handleApiRiwayat } from "./utils/history.js";
-import { refreshEconomicCache } from "./providers/economic.js";
-import { handleApiProviderHealth } from "./providers/healthMonitor.js"; // Sprint 10
 
 // ══════════════════════════════════════════════════════════
 //  ENTRY POINT
@@ -73,25 +72,7 @@ export default {
     if (url.pathname === "/api/riwayat" && request.method === "GET") {
       return handleApiRiwayat(env);
     }
-    // Sprint 10: status kesehatan tiap Economic Provider (KV terpisah
-    // "provider_health", tidak menyentuh cache economic_calendar_v1).
-    if (url.pathname === "/api/provider-health" && request.method === "GET") {
-      return handleApiProviderHealth(env);
-    }
 
     return new Response("Not found", { status: 404 });
-  },
-
-  // Sprint 7: Cloudflare Cron Trigger — refresh KV cache Economic Calendar
-  // di background. Tidak menyentuh fetch handler di atas sama sekali.
-  async scheduled(event, env, ctx) {
-    try {
-      await refreshEconomicCache(env);
-    } catch (e) {
-      // refreshEconomicCache() sendiri sudah menangani & mencatat error
-      // provider-nya masing-masing dan tidak throw pada kondisi normal;
-      // catch ini cuma jaring pengaman kalau ada error tak terduga lain.
-      console.error("[CRON] Refresh Failed:", e.message);
-    }
   },
 };
