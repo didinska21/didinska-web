@@ -31,6 +31,7 @@
   </footer>
 </div>
 
+<script src="data/jadwal.js"></script>
 <script src="assets/app.js"></script>
 <script>
 let scheduleCache = [];
@@ -38,26 +39,31 @@ let scheduleCache = [];
 async function loadEvents() {
   const el = document.getElementById("list-events");
   try {
-    const { list } = await apiGet("/api/jadwal");
-    scheduleCache = list;
-    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada event yang bisa dianalisa saat ini.</div>'; return; }
-    el.innerHTML = list.map((it, idx) => {
-      const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
-      const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
-      return `
-        <div class="card" id="ev-card-${idx}">
-          <div class="card-row">
-            <div>
-              <span class="card-tag">${tag}</span>
-              <div class="card-title">${escapeHtml(it.event)}</div>
-            </div>
-            <div class="card-date">${it.date}<br>${jam}</div>
-          </div>
-          <div style="margin-top:10px; display:flex; gap:8px;">
-            <button class="btn" onclick="runAnalysis(${idx}, 5)">Analisa (5 AI)</button>
-            <button class="btn ghost" onclick="runAnalysis(${idx}, 10)">Analisa (10 AI)</button>
-          </div>
+    const manual = getManualEconomicEvents();
+    let cryptoList = [];
+    try {
+      const { list } = await apiGet("/api/jadwal");
+      cryptoList = list;
+    } catch (e) {
+      console.error("Gagal ambil jadwal crypto:", e.message);
+    }
+    // Simpan idx asli di list crypto backend (SEBELUM digabung & diurutkan
+    // ulang bareng event manual) — dipakai runAnalysis() supaya body.idx
+    // yang dikirim ke /api/analisa tetap cocok posisinya di
+    // buildScheduleList() sisi server.
+    const cryptoTagged = cryptoList.map((it, cryptoIdx) => ({ ...it, _cryptoIdx: cryptoIdx }));
+    const combined = [...manual, ...cryptoTagged].sort((a, b) => (a._sort || 0) - (b._sort || 0));
+
+    scheduleCache = combined;
+    if (!combined.length) { el.innerHTML = '<div class="empty">Belum ada event yang bisa dianalisa saat ini.</div>'; return; }
+
+    el.innerHTML = combined.map((it, idx) => {
+      const buttons = `
+        <div style="margin-top:10px; display:flex; gap:8px;">
+          <button class="btn" onclick="runAnalysis(${idx}, 5)">Analisa (5 AI)</button>
+          <button class="btn ghost" onclick="runAnalysis(${idx}, 10)">Analisa (10 AI)</button>
         </div>`;
+      return eventCardHtml(it, { cardId: `ev-card-${idx}`, footerHtml: buttons });
     }).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
@@ -71,8 +77,17 @@ async function runAnalysis(idx, nAi) {
   const resultArea = document.getElementById("result-area");
   resultArea.innerHTML = `<div class="loading">⏳ Menjalankan ${nAi} AI... (~10-20 detik)</div>`;
 
+  const it = scheduleCache[idx];
+  // Event crypto (dari backend) tetap lewat idx seperti sebelumnya.
+  // Event manual (dari data/jadwal.js) TIDAK dikenal server, jadi
+  // dikirim sebagai event custom — analysis.js sudah mendukung jalur
+  // ini sejak awal, tidak perlu perubahan backend sama sekali.
+  const body = it.category === "crypto"
+    ? { source: "schedule", idx: it._cryptoIdx, n_ai: nAi }
+    : { event: it.event, date: it.date, date_iso_full: it.date_iso_full, category: it.category, n_ai: nAi };
+
   try {
-    const { result } = await apiPost("/api/analisa", { source: "schedule", idx, n_ai: nAi });
+    const { result } = await apiPost("/api/analisa", body);
     resultArea.innerHTML = `
       <div class="section-label">Hasil analisa</div>
       <div class="card">
