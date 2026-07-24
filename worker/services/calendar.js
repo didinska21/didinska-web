@@ -1,4 +1,3 @@
-import { getEconomicEvents } from "../providers/economic.js";
 import { getCryptoEvents } from "../providers/crypto.js";
 import { jsonResponse } from "../utils/cors.js";
 
@@ -6,7 +5,14 @@ export const SCHEDULE_CACHE_KEY = "news_schedule_cache_v4";
 export const SCHEDULE_CACHE_TTL = 6 * 60 * 60; // 6 jam
 
 // ══════════════════════════════════════════════════════════
-//  JADWAL NEWS — gabungan macro (scrape) + crypto (search)
+//  JADWAL NEWS — crypto (search)
+//  Sprint 12: Economic Calendar (macro) TIDAK lagi diambil di sini.
+//  Event macro sekarang dikelola manual lewat file statis
+//  `data/jadwal.js` (window.ECONOMIC_EVENTS) dan dirender LANGSUNG di
+//  browser (lihat assets/app.js) — TANPA lewat Worker/KV sama sekali.
+//  Fungsi & endpoint di bawah ini murni buat jadwal CRYPTO (masih pakai
+//  Serper search, tidak terpengaruh perubahan Sprint 12) yang dipakai
+//  oleh /api/jadwal (analisa.html) & Telegram Bot.
 // ══════════════════════════════════════════════════════════
 export async function buildScheduleList(env, forceRefresh = false) {
   if (!forceRefresh) {
@@ -19,21 +25,22 @@ export async function buildScheduleList(env, forceRefresh = false) {
     }
   }
 
-  const [macro, crypto] = await Promise.all([
-    getEconomicEvents(env).catch((e) => { console.error("[MACRO] Error tak tertangani:", e.message); return []; }),
-    getCryptoEvents(env).catch((e) => { console.error("[CRYPTO] Error tak tertangani:", e.message); return []; }),
-  ]);
+  const crypto = await getCryptoEvents(env).catch((e) => { console.error("[CRYPTO] Error tak tertangani:", e.message); return []; });
 
-  const list = mergeAndSort(macro, crypto);
+  const list = mergeAndSort(crypto);
   if (list.length > 0) {
     await env['didinska-kv'].put(SCHEDULE_CACHE_KEY, JSON.stringify({ list, ts: Date.now() }), { expirationTtl: SCHEDULE_CACHE_TTL });
   }
   return list;
 }
 
-export function mergeAndSort(macro, crypto) {
+// Sprint 12: dulu menggabungkan macro + crypto (2 argumen), sekarang
+// cuma crypto. Nama & bentuk (filter + sort + slice 15) sengaja
+// dipertahankan sama supaya scheduleText/scheduleKb/Telegram bot yang
+// konsumsi hasilnya tidak perlu ikut berubah.
+export function mergeAndSort(crypto) {
   const now = Date.now();
-  const all = [...macro, ...crypto].filter((it) => typeof it._sort === "number" && it._sort >= now - 24 * 3600 * 1000);
+  const all = crypto.filter((it) => typeof it._sort === "number" && it._sort >= now - 24 * 3600 * 1000);
   all.sort((a, b) => (a._sort || 0) - (b._sort || 0));
   return all.slice(0, 15);
 }
@@ -46,7 +53,7 @@ export function scheduleText(list) {
     const tag = it.category === "crypto" ? "🪙" : "🏛️";
     lines.push(`${i + 1}. ${tag} *${it.date}, ${jam}* — ${it.event}`);
   });
-  lines.push("\n_🏛️ = scrape langsung dari kalender resmi · 🪙 = hasil pencarian berita, cek ulang di sumber resmi._");
+  lines.push("\n_🪙 = hasil pencarian berita, cek ulang di sumber resmi. Jadwal event ekonomi/makro sekarang dikelola manual, cek di website._");
   return lines.join("\n");
 }
 
