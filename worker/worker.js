@@ -1,3 +1,5 @@
+// test deploy
+
 /**
  * 📰 News & Economic Calendar Analyst Bot — Cloudflare Workers edition
  * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
