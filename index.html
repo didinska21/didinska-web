@@ -35,26 +35,23 @@
   </footer>
 </div>
 
+<script src="data/jadwal.js"></script>
 <script src="assets/app.js"></script>
 <script>
 async function loadNextEvent() {
   const el = document.getElementById("next-event");
   try {
-    const { list } = await apiGet("/api/jadwal");
-    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang.</div>'; return; }
-    const it = list[0];
-    const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
-    const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
-    el.innerHTML = `
-      <div class="card">
-        <div class="card-row">
-          <div>
-            <span class="card-tag">${tag}</span>
-            <div class="card-title">${escapeHtml(it.event)}</div>
-          </div>
-          <div class="card-date">${it.date}<br>${jam}</div>
-        </div>
-      </div>`;
+    const manual = getManualEconomicEvents();
+    let cryptoList = [];
+    try {
+      const { list } = await apiGet("/api/jadwal");
+      cryptoList = list;
+    } catch (e) {
+      console.error("Gagal ambil jadwal crypto:", e.message);
+    }
+    const combined = [...manual, ...cryptoList].sort((a, b) => (a._sort || 0) - (b._sort || 0));
+    if (!combined.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang.</div>'; return; }
+    el.innerHTML = eventCardHtml(combined[0]);
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
   }
