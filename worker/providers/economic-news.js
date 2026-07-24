@@ -1,4 +1,5 @@
 import { serperSearch, extractItems } from "./crypto.js";
+import { appendLog } from "../utils/log.js";
 
 // ══════════════════════════════════════════════════════════
 //  ECONOMIC NEWS PRE-FETCHER — Sprint "gali duluan di background"
@@ -104,18 +105,30 @@ export async function appendNewsToBucket(env, key, newItems) {
 //  Entry point dipanggil dari scheduled() handler di worker.js
 // ──────────────────────────────────────────────────────────
 export async function refreshNearestEventNews(env) {
-  const events = await fetchManualEconomicEvents();
-  const nearest = pickNearestEvent(events);
-  if (!nearest) {
-    console.log("[CRON economic-news] Tidak ada event mendatang di data/jadwal.js.");
-    return { ok: true, event: null };
+  try {
+    const events = await fetchManualEconomicEvents();
+    const nearest = pickNearestEvent(events);
+    if (!nearest) {
+      console.log("[CRON economic-news] Tidak ada event mendatang di data/jadwal.js.");
+      await appendLog(env, { level: "info", message: "Tidak ada event mendatang di data/jadwal.js." });
+      return { ok: true, event: null };
+    }
+
+    const key = newsBucketKey(nearest.event, nearest.date);
+    const searchData = await serperSearch(env, `${nearest.event} dampak market analisis`, "news", 10);
+    const items = extractItems(searchData, "news");
+    await appendNewsToBucket(env, key, items);
+
+    console.log(`[CRON economic-news] "${nearest.event}" (${nearest.date}) — +${items.length} item mentah digabung ke bucket "${key}".`);
+    await appendLog(env, {
+      level: "info",
+      message: `+${items.length} item berita baru digabung ke bucket.`,
+      event: nearest.event,
+      eventDate: nearest.date,
+    });
+    return { ok: true, event: nearest.event, date: nearest.date, itemsFetched: items.length };
+  } catch (e) {
+    await appendLog(env, { level: "error", message: e.message });
+    throw e; // tetap dilempar biar worker.js bisa console.error sebagai fallback terakhir
   }
-
-  const key = newsBucketKey(nearest.event, nearest.date);
-  const searchData = await serperSearch(env, `${nearest.event} dampak market analisis`, "news", 10);
-  const items = extractItems(searchData, "news");
-  await appendNewsToBucket(env, key, items);
-
-  console.log(`[CRON economic-news] "${nearest.event}" (${nearest.date}) — +${items.length} item mentah digabung ke bucket "${key}".`);
-  return { ok: true, event: nearest.event, date: nearest.date, itemsFetched: items.length };
 }
