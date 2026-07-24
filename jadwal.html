@@ -29,9 +29,6 @@
   </div>
 
   <div id="tab-akan">
-    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
-      <button class="btn ghost" id="refresh-btn" onclick="refreshJadwal()">🔄 Refresh Jadwal</button>
-    </div>
     <div id="list-akan" class="loading">Memuat jadwal…</div>
   </div>
 
@@ -44,6 +41,7 @@
   </footer>
 </div>
 
+<script src="data/jadwal.js"></script>
 <script src="assets/app.js"></script>
 <script>
 document.querySelectorAll(".tab").forEach((btn) => {
@@ -56,25 +54,15 @@ document.querySelectorAll(".tab").forEach((btn) => {
   });
 });
 
-async function loadAkanTerjadi(forceRefresh) {
+// Sprint 12: jadwal event ekonomi/makro sekarang murni statis, dibaca
+// langsung dari data/jadwal.js (window.ECONOMIC_EVENTS) — TANPA request
+// ke Worker/API sama sekali.
+function loadAkanTerjadi() {
   const el = document.getElementById("list-akan");
   try {
-    const { list } = await apiGet(forceRefresh ? "/api/jadwal?refresh=true" : "/api/jadwal");
-    if (!list.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang yang berhasil ditemukan.</div>'; return; }
-    el.innerHTML = list.map((it) => {
-      const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
-      const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
-      return `
-        <div class="card">
-          <div class="card-row">
-            <div>
-              <span class="card-tag">${tag}</span>
-              <div class="card-title">${escapeHtml(it.event)}</div>
-            </div>
-            <div class="card-date">${it.date}<br>${jam}</div>
-          </div>
-        </div>`;
-    }).join("");
+    const manual = getManualEconomicEvents();
+    if (!manual.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang. Jadwal dikelola manual — cek lagi nanti.</div>'; return; }
+    el.innerHTML = manual.map((it) => eventCardHtml(it)).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
   }
@@ -105,19 +93,6 @@ async function loadSudahTerjadi() {
     }).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat riwayat: ${escapeHtml(e.message)}</div>`;
-  }
-}
-
-async function refreshJadwal() {
-  const btn = document.getElementById("refresh-btn");
-  btn.disabled = true;
-  btn.textContent = "⏳ Refreshing...";
-  document.getElementById("list-akan").innerHTML = '<div class="loading">Mencari jadwal terbaru... (~15-30 detik, karena scrape ulang dari sumber resmi)</div>';
-  try {
-    await loadAkanTerjadi(true);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = "🔄 Refresh Jadwal";
   }
 }
 
