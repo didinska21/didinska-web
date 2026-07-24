@@ -5,3 +5,9 @@ compatibility_date = "2024-11-01"
 [[kv_namespaces]]
 binding = "didinska-kv"
 id = "ce570a8bd07c4ef48e3e7a1301023024"
+
+[triggers]
+# Tiap 2 jam (12x/hari) — gali berita background buat event ekonomi
+# terdekat. Interval ini dipilih biar aman buat kuota Serper API free
+# tier. Kalau kuota longgar, bisa dirapatkan ke "0 * * * *" (tiap jam).
+crons = ["0 */2 * * *"]
