@@ -4,6 +4,7 @@ import { analyzeEvent, parseSentiment } from "../services/analysis.js";
 import { detectCoin, computePriceImpact } from "../providers/crypto.js";
 import { appendHistory } from "./history.js";
 import { friendlyErrorMessage } from "../providers/groq.js";
+import { readLogs } from "./log.js";
 
 // ══════════════════════════════════════════════════════════
 //  WHITELIST
@@ -116,8 +117,28 @@ async function handleMessage(message, env) {
       "❓ *BANTUAN*\n\n" +
       "📅 *Jadwal News* → lihat daftar event ekonomi & kripto terdekat (yang AKAN datang, bukan yang sudah lewat). FOMC/ECB/CPI/PPI/NFP di-scrape langsung dari halaman kalender resmi (federalreserve.gov, ecb.europa.eu, bls.gov). Event kripto dari hasil pencarian jadwal/deadline terkini.\n\n" +
       "📰 *Analisa News* → sama seperti Jadwal News, tapi tiap event bisa di-tap. Pilih 5 atau 10 AI, bot akan cari berita terkait event itu dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
+      "📋 */log* → lihat riwayat cron gali-berita background (jalan tiap 2 jam, target event ekonomi terdekat dari data/jadwal.js).\n\n" +
       "Data di-cache 6 jam. Tap '🔄 Refresh Jadwal' kalau mau paksa update."
     );
+    return;
+  }
+
+  if (txt === "/log") {
+    const logs = await readLogs(env);
+    if (!logs.length) {
+      await sendMessage(env, chatId, "📭 Belum ada log cron tersimpan (atau semua entry sudah auto-expire).");
+      return;
+    }
+    const lines = ["📋 *LOG CRON GALI BERITA*\n_(auto-hapus setelah 3 hari atau event lewat)_\n"];
+    logs.slice(0, 15).forEach((l) => {
+      const wib = new Date(new Date(l.ts).getTime() + 7 * 3600 * 1000);
+      const jam = `${String(wib.getUTCHours()).padStart(2, "0")}:${String(wib.getUTCMinutes()).padStart(2, "0")}`;
+      const tgl = `${wib.getUTCDate()}/${wib.getUTCMonth() + 1}`;
+      const icon = l.level === "error" ? "❌" : "✅";
+      const ctx = l.event ? ` [${l.event}]` : "";
+      lines.push(`${icon} ${tgl} ${jam} WIB${ctx} — ${l.message}`);
+    });
+    await sendMessage(env, chatId, lines.join("\n"));
     return;
   }
 
