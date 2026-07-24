@@ -67,6 +67,16 @@ function fmtDateParam(d) {
 // ══════════════════════════════════════════════════════════
 export const FMPProvider = {
   /**
+   * Sprint 11.1: dipakai chain runner (economic.js) untuk membedakan
+   * "provider belum dikonfigurasi" (UNAVAILABLE) dari kegagalan teknis
+   * (FAILED) TANPA perlu memanggil fetch()/menangkap exception dulu.
+   * Tidak pernah throw — murni pengecekan boolean.
+   */
+  isConfigured(env) {
+    return !!env.FMP_API_KEY;
+  },
+
+  /**
    * Ambil data mentah economic calendar dari FMP.
    * - Timeout via AbortController (FMP_TIMEOUT_MS)
    * - Retry sederhana maks FMP_MAX_RETRIES kali, HANYA untuk error jaringan
