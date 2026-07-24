@@ -1,5 +1,6 @@
 import { callGroqIndexed, friendlyErrorMessage, MODELS } from "../providers/groq.js";
 import { serperSearch, detectCoin, computePriceImpact } from "../providers/crypto.js";
+import { newsBucketKey, readNewsBucket, appendNewsToBucket } from "../providers/economic-news.js";
 import { appendHistory } from "../utils/history.js";
 import { jsonResponse } from "../utils/cors.js";
 import { buildScheduleList } from "./calendar.js";
@@ -49,12 +50,38 @@ export async function analyzeEvent(env, event, nTotal) {
     newsItems = webData.organic || [];
   }
 
-  const items = newsItems
-    .slice(0, 10)
+  // Gabung sama bucket berita yang udah kekumpul di background (cron
+  // tiap 2 jam, lihat providers/economic-news.js) — jadi AI gak cuma
+  // modal 1x search saat itu juga, tapi juga cuplikan dari beberapa
+  // jam terakhir. Bucket dicari pakai key yang sama persis dengan yang
+  // dipakai cron (nama event + tanggal ISO), jadi otomatis nyambung
+  // kalau event ini juga lagi digali di background.
+  let bucketItems = [];
+  if (event.date_iso_full) {
+    bucketItems = await readNewsBucket(env, newsBucketKey(event.event, event.date_iso_full));
+  }
+  const combined = [...newsItems, ...bucketItems];
+  const seen = new Set();
+  const merged = [];
+  for (const it of combined) {
+    const dedupeKey = (it.title || "").trim().toLowerCase();
+    if (!dedupeKey || seen.has(dedupeKey)) continue;
+    seen.add(dedupeKey);
+    merged.push(it);
+  }
+
+  const items = merged
+    .slice(0, 15) // dinaikkan dari 10 → 15 karena sekarang sumbernya lebih kaya (fresh + bucket)
     .map((o) => `- [${o.date || "?"}] ${o.title}: ${o.snippet || ""} (sumber: ${o.source || o.link || "?"})`)
     .join("\n");
 
   if (!items) throw new Error("Tidak menemukan cuplikan berita terkait event ini, coba lagi nanti atau pilih event lain.");
+
+  // Simpan hasil fresh search ke bucket juga, biar analisa manual pun
+  // ikut memperkaya bucket buat pemakaian berikutnya (bukan cuma cron).
+  if (event.date_iso_full && newsItems.length) {
+    await appendNewsToBucket(env, newsBucketKey(event.event, event.date_iso_full), newsItems).catch(() => {});
+  }
 
   const basePrompt = `EVENT: ${event.event} (${event.date})\n\nCUPLIKAN BERITA TERKAIT (hasil pencarian):\n${items}\n\nAnalisa dampak event ini ke market berdasarkan cuplikan di atas.`;
 
