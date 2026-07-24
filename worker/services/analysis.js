@@ -1,4 +1,4 @@
-import { callGroqIndexed, friendlyErrorMessage } from "../providers/groq.js";
+import { callGroqIndexed, friendlyErrorMessage, MODELS } from "../providers/groq.js";
 import { serperSearch, detectCoin, computePriceImpact } from "../providers/crypto.js";
 import { appendHistory } from "../utils/history.js";
 import { jsonResponse } from "../utils/cors.js";
@@ -33,8 +33,9 @@ FORMAT OUTPUT WAJIB:
 💥 Dampak     : [ringkas]
 📝 Kesimpulan :
 [Maksimal 5 kalimat Bahasa Indonesia.]
-⚠️ Catatan    : Ini konsensus dari ${nOpinions} analis independen + 1 panggilan penyimpul (total ${nTotal} panggilan model AI YANG SAMA)
-dengan variasi random sampling, bukan ${nTotal} model berbeda — anggap sebagai pengecekan konsistensi, bukan validasi independen penuh.
+⚠️ Catatan    : Ini konsensus dari ${nOpinions} analis independen + 1 panggilan penyimpul (total ${nTotal} panggilan AI,
+campuran model ${MODELS.join(" & ")} dengan variasi sampling) — anggap sebagai pengecekan konsistensi lintas model,
+bukan validasi independen penuh oleh manusia/lembaga berbeda.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 }
 
@@ -57,13 +58,18 @@ export async function analyzeEvent(env, event, nTotal) {
 
   const basePrompt = `EVENT: ${event.event} (${event.date})\n\nCUPLIKAN BERITA TERKAIT (hasil pencarian):\n${items}\n\nAnalisa dampak event ini ke market berdasarkan cuplikan di atas.`;
 
+  // 5 nilai temperature disilang dengan 2 model (MODELS) = 10 kombinasi
+  // unik (model,temp) sebelum berulang — cukup buat mode 10 AI (9 opini)
+  // tanpa ada dua analis yang persis sama konfigurasinya.
+  const TEMPERATURES = [0.4, 0.5, 0.6, 0.7, 0.8];
   const oneOpinion = async (idx) => {
-    const temp = 0.4 + (idx % 5) * 0.1;
+    const model = MODELS[idx % MODELS.length];
+    const temp = TEMPERATURES[idx % TEMPERATURES.length];
     try {
       return await callGroqIndexed(
         env, idx,
         [{ role: "system", content: NEWS_ANALYST_PROMPT }, { role: "user", content: basePrompt }],
-        700, temp
+        700, temp, model
       );
     } catch (e) {
       if (e.isRateLimit) return `[RATE_LIMIT AI #${idx + 1}]`;
@@ -79,6 +85,14 @@ export async function analyzeEvent(env, event, nTotal) {
     err.isRateLimit = true;
     throw err;
   }
+  // Guard tambahan: kalau semua analis gagal karena SEBAB LAIN (bukan
+  // rate limit — misal Groq down, network error, dll), jangan tetap
+  // paksa AI penyimpul bikin "voting" dari data yang isinya cuma
+  // string error semua. Gagal jelas lebih baik daripada konsensus palsu.
+  const allFailed = opinions.every((op) => op.startsWith("[RATE_LIMIT") || op.startsWith("[ERROR"));
+  if (allFailed) {
+    throw new Error("Semua analis AI gagal merespons (bukan karena rate limit) — coba lagi beberapa saat lagi.");
+  }
 
   let consensusInput = `Berikut ${nOpinions} analisis independen untuk event yang sama:\n\n`;
   opinions.forEach((op, i) => {
@@ -89,7 +103,7 @@ export async function analyzeEvent(env, event, nTotal) {
   const final = await callGroqIndexed(
     env, nOpinions,
     [{ role: "system", content: newsConsensusPrompt(nTotal, nOpinions) }, { role: "user", content: consensusInput }],
-    1200, 0.3
+    1200, 0.3, MODELS[0]
   );
   return { final, opinions };
 }
