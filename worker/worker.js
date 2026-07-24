@@ -20,6 +20,10 @@
  *
  * Semua logic bot Telegram yang lama (v2.4) TIDAK diubah — cuma ditambah.
  *
+ * CRON (tiap 2 jam, lihat wrangler.toml): gali berita background buat
+ * 1 event ekonomi paling dekat (dari data/jadwal.js), simpan ke bucket
+ * KV supaya /api/analisa punya lebih banyak konteks pas dipanggil.
+ *
  * File ini murni router: semua logic ada di providers/services/utils.
  */
 
@@ -28,6 +32,7 @@ import { handleUpdate } from "./utils/telegram.js";
 import { handleApiJadwal } from "./services/calendar.js";
 import { handleApiAnalisa } from "./services/analysis.js";
 import { handleApiRiwayat } from "./utils/history.js";
+import { refreshNearestEventNews } from "./providers/economic-news.js";
 
 // ══════════════════════════════════════════════════════════
 //  ENTRY POINT
@@ -74,5 +79,19 @@ export default {
     }
 
     return new Response("Not found", { status: 404 });
+  },
+
+  // ══════════════════════════════════════════════════════════
+  //  CRON TRIGGER — jalan tiap 2 jam (lihat wrangler.toml).
+  //  Gali berita buat 1 event ekonomi paling dekat di background,
+  //  supaya pas user klik "Analisa" di website, AI-nya udah punya
+  //  banyak konteks (bukan cuma dari 1x search saat itu juga).
+  // ══════════════════════════════════════════════════════════
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(
+      refreshNearestEventNews(env).catch((e) => {
+        console.error("[CRON economic-news] Gagal:", e.message);
+      })
+    );
   },
 };
