@@ -11,13 +11,19 @@
 //  CATATAN Sprint 11 (TradingEconomics jadi opsional):
 //  Satu-satunya perubahan di file ini adalah nilai default
 //  ECONOMIC_PROVIDER — dari "tradingeconomics" menjadi "fmp". File ini
-//  tetap satu-satunya tempat default tsb ditentukan (baik untuk
-//  createEconomicProvider maupun buildProviderChain), jadi tidak ada
-//  file lain yang perlu (atau boleh) menentukan provider secara manual.
+//  tetap satu-satunya tempat default tsb ditentukan (untuk
+//  buildProviderChain), jadi tidak ada file lain yang perlu (atau
+//  boleh) menentukan provider secara manual.
 //  TradingEconomicsProvider sendiri TIDAK dihapus dan tetap terdaftar
 //  penuh di registry — kalau user set ECONOMIC_PROVIDER=tradingeconomics
 //  dan TRADINGECONOMICS_API_KEY tersedia, provider itu tetap terpakai
 //  seperti biasa.
+//
+//  CATATAN Sprint 11.1: createEconomicProvider(env) (dulu ada di sini)
+//  dihapus — sudah diaudit dan dipastikan tidak dipakai di mana pun
+//  (buildProviderChain adalah satu-satunya fungsi yang benar-benar
+//  dikonsumsi economic.js). Dead code, aman dihapus, tidak mengubah
+//  behaviour apa pun yang terlihat dari luar.
 // ══════════════════════════════════════════════════════════
 import { TradingEconomicsProvider } from "./economic.js";
 import { FMPProvider } from "./fmp.js";
@@ -45,18 +51,6 @@ const DEFAULT_PROVIDER_KEY = "fmp";
 // selaras dengan FMP sebagai provider default dan TradingEconomics
 // sebagai provider tambahan/opsional.
 export const FALLBACK_ORDER = ["fmp", "tradingeconomics", "eodhd"];
-
-/**
- * createEconomicProvider(env)
- * Baca env.ECONOMIC_PROVIDER lalu balikin satu provider (bukan chain).
- * Default: fmp (Sprint 11) — dipakai juga kalau nilainya tidak dikenali.
- */
-export function createEconomicProvider(env) {
-  const registry = getRegistry();
-  const key = (env.ECONOMIC_PROVIDER || DEFAULT_PROVIDER_KEY).toLowerCase();
-  const entry = registry[key] || registry[DEFAULT_PROVIDER_KEY];
-  return entry.provider;
-}
 
 /**
  * buildProviderChain(env)
