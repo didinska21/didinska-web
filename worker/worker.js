@@ -13,10 +13,11 @@
  *   GET  /api/riwayat         → daftar event yang SUDAH dianalisa,
  *                                lengkap dengan harga sebelum/sesudah (CoinGecko)
  *
- * Semua endpoint /api/* pakai CORS terbuka (Access-Control-Allow-Origin: *)
- * supaya bisa langsung di-fetch dari website statis manapun. Kalau mau
- * dibatasi cuma domain GitHub Pages kamu, tinggal ganti nilai di
- * CORS_ALLOW_ORIGIN di utils/cors.js.
+ * Semua endpoint /api/* (KECUALI /api/auth sendiri) WAJIB header
+ * "X-Access-Key" yang valid — key di-generate lewat bot Telegram
+ * (/newkey), dicek ke KV (utils/access-keys.js). CORS tetap terbuka
+ * (Access-Control-Allow-Origin: *) karena proteksinya di level key,
+ * bukan di level origin.
  *
  * Semua logic bot Telegram yang lama (v2.4) TIDAK diubah — cuma ditambah.
  *
@@ -27,12 +28,13 @@
  * File ini murni router: semua logic ada di providers/services/utils.
  */
 
-import { corsHeaders } from "./utils/cors.js";
+import { corsHeaders, jsonResponse } from "./utils/cors.js";
 import { handleUpdate } from "./utils/telegram.js";
 import { handleApiJadwal } from "./services/calendar.js";
 import { handleApiAnalisa } from "./services/analysis.js";
 import { handleApiRiwayat } from "./utils/history.js";
 import { refreshNearestEventNews } from "./providers/economic-news.js";
+import { isValidKey, handleApiAuth } from "./utils/access-keys.js";
 
 // ══════════════════════════════════════════════════════════
 //  ENTRY POINT
@@ -68,6 +70,17 @@ export default {
     }
 
     // ---- API publik buat website statis ----
+    // /api/auth TIDAK butuh key (justru buat NGECEK key), sisanya wajib.
+    if (url.pathname === "/api/auth" && request.method === "POST") {
+      return handleApiAuth(request, env);
+    }
+
+    if (url.pathname.startsWith("/api/")) {
+      const key = request.headers.get("X-Access-Key");
+      const valid = await isValidKey(env, key);
+      if (!valid) return jsonResponse({ ok: false, error: "Access key tidak valid atau belum dimasukkan." }, 401);
+    }
+
     if (url.pathname === "/api/jadwal" && request.method === "GET") {
       return handleApiJadwal(request, env);
     }
