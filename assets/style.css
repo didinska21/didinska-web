@@ -149,3 +149,32 @@ footer{
 @media (max-width:520px){
   .nav-links a{padding:8px 10px; font-size:13px;}
 }
+
+/* ---- Access Gate ---- */
+.access-gate{
+  position:fixed; inset:0; z-index:100;
+  display:flex; align-items:center; justify-content:center;
+  padding:20px;
+  background:var(--bg);
+}
+.access-gate-box{
+  width:100%; max-width:360px;
+  background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:28px 24px; text-align:center;
+}
+.access-gate-title{
+  font-family:var(--font-display); font-weight:700; font-size:20px; margin-bottom:6px;
+}
+.access-gate-title .dot{color:var(--brand);}
+.access-gate-box p{color:var(--text-muted); font-size:14px; margin:0 0 20px;}
+.access-gate-input{
+  width:100%; padding:11px 14px; border-radius:9px; margin-bottom:12px;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  font-family:var(--font-mono); font-size:14px; letter-spacing:0.03em;
+  text-align:center; box-sizing:border-box;
+}
+.access-gate-input:focus{outline:none; border-color:var(--brand);}
+.access-gate-box .btn{width:100%;}
+.access-gate-error{
+  color:var(--bear); font-size:13px; margin-top:12px; min-height:16px;
+}
