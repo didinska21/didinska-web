@@ -25,7 +25,16 @@ export async function tg(env, method, payload) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
-  return res.json();
+  const data = await res.json();
+  // Telegram API sering nolak request (mis. Markdown gak valid) dengan
+  // HTTP 200 + {ok:false} — BUKAN error HTTP, jadi gampang ke-skip diam-
+  // diam kalau gak dicek eksplisit. Catat ke console minimal, biar
+  // ketauan di Observability/wrangler tail walau gak bikin whole request
+  // gagal (pesan lain yang masih dalam antrian tetap coba dikirim).
+  if (!data.ok) {
+    console.error(`[telegram] ${method} ditolak Telegram: ${data.description || "(tanpa deskripsi)"}`);
+  }
+  return data;
 }
 
 export async function sendMessage(env, chatId, text, extra = {}) {
@@ -129,16 +138,22 @@ async function handleMessage(message, env) {
       await sendMessage(env, chatId, "📭 Belum ada log cron tersimpan (atau semua entry sudah auto-expire).");
       return;
     }
-    const lines = ["📋 *LOG CRON GALI BERITA*\n_(auto-hapus setelah 3 hari atau event lewat)_\n"];
+    // Isi log (nama event, pesan error) adalah konten dinamis/gak terduga
+    // — bisa aja ngandung karakter yang bentrok sama parser Markdown
+    // Telegram (mis. tanda kurung siku dianggap awal link, underscore
+    // ganjil dianggap italic gak lengkap), yang bikin SELURUH pesan
+    // ditolak Telegram tanpa error jelas di sisi kita. Makanya khusus
+    // buat /log, parse_mode dimatikan total (plain text, paling aman).
+    const lines = ["LOG CRON GALI BERITA (auto-hapus setelah 3 hari atau event lewat)\n"];
     logs.slice(0, 15).forEach((l) => {
       const wib = new Date(new Date(l.ts).getTime() + 7 * 3600 * 1000);
       const jam = `${String(wib.getUTCHours()).padStart(2, "0")}:${String(wib.getUTCMinutes()).padStart(2, "0")}`;
       const tgl = `${wib.getUTCDate()}/${wib.getUTCMonth() + 1}`;
       const icon = l.level === "error" ? "❌" : "✅";
-      const ctx = l.event ? ` [${l.event}]` : "";
+      const ctx = l.event ? ` (${l.event})` : "";
       lines.push(`${icon} ${tgl} ${jam} WIB${ctx} — ${l.message}`);
     });
-    await sendMessage(env, chatId, lines.join("\n"));
+    await sendMessage(env, chatId, lines.join("\n"), { parse_mode: undefined });
     return;
   }
 
