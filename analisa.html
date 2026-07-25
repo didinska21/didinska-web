@@ -8,10 +8,20 @@
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-brand">
-    <a href="index.html">DIDINSKA<span class="dot">.</span></a>
+<div id="access-gate" class="access-gate">
+  <div class="access-gate-box">
+    <div class="access-gate-title">🔒 DIDINSKA<span class="dot">.</span></div>
+    <p>Masukkan access key buat lanjut ke situs ini.</p>
+    <input type="password" id="access-gate-input" class="access-gate-input" placeholder="Access key" autocomplete="off">
+    <button id="access-gate-submit" class="btn">Masuk</button>
+    <div id="access-gate-error" class="access-gate-error"></div>
   </div>
+</div>
+
+<div id="app-content" style="display:none;">
+
+<nav class="nav">
+  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
   <div class="nav-links">
     <a href="index.html">Beranda</a>
     <a href="jadwal.html">Jadwal News</a>
@@ -29,12 +39,15 @@
   <div id="result-area"></div>
 
   <footer>
-    Hasil analisa disimpan otomatis ke "Jadwal News &gt; Sudah terjadi" kalau tanggal &amp; koinnya kedeteksi.
+    Hasil analisa dijalankan lewat konsensus beberapa AI (Groq), gabungan berita fresh & yang sudah dikumpulkan background.
   </footer>
+</div>
+
 </div>
 
 <script src="data/jadwal.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/auth.js"></script>
 <script>
 let scheduleCache = [];
 
@@ -106,7 +119,10 @@ async function runAnalysis(idx, nAi) {
   }
 }
 
-loadEvents();
+(async () => {
+  const authorized = await initAccessGate();
+  if (authorized) loadEvents();
+})();
 </script>
 </body>
 </html>
