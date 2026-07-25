@@ -8,6 +8,15 @@ import { readLogs, clearLogs } from "./log.js";
 import { createKey, listKeys, revokeKey } from "./access-keys.js";
 import { fetchManualEconomicEvents, pickNearestEvent, newsBucketKey, readNewsBucket } from "../providers/economic-news.js";
 
+// Escape karakter spesial Markdown Telegram (_ * ` [) di teks BEBAS
+// (mis. label yang diketik manual) sebelum digabung ke pesan
+// ber-parse_mode Markdown — supaya gak bentrok kayak kasus /log dulu.
+// Isi di DALAM backtick (`...`) gak perlu di-escape, backtick sendiri
+// otomatis bikin region literal.
+function escapeMarkdown(text) {
+  return (text || "").replace(/([_*`[])/g, "\\$1");
+}
+
 // ══════════════════════════════════════════════════════════
 //  WHITELIST
 // ══════════════════════════════════════════════════════════
@@ -201,10 +210,10 @@ async function handleMessage(message, env) {
   if (txt === "/newkey" || txt.startsWith("/newkey ")) {
     const label = txt.slice("/newkey".length).trim();
     const key = await createKey(env, label);
+    const safeLabel = escapeMarkdown(label);
     await sendMessage(
       env, chatId,
-      `Access key baru dibuat${label ? ` (${label})` : ""}:\n\n${key}\n\nShare key ini ke orang yang mau dikasih akses website. Cek daftar/cabut lewat /keys dan /revokekey.`,
-      { parse_mode: undefined }
+      `Access key baru dibuat${safeLabel ? ` (${safeLabel})` : ""}:\n\n\`${key}\`\n\nTap key di atas buat copy. Share ke orang yang mau dikasih akses website. Cek daftar/cabut lewat /keys dan /revokekey.`
     );
     return;
   }
@@ -219,16 +228,20 @@ async function handleMessage(message, env) {
     keys.forEach((k) => {
       const wib = new Date(new Date(k.createdAt).getTime() + 7 * 3600 * 1000);
       const tgl = `${wib.getUTCDate()}/${wib.getUTCMonth() + 1}/${wib.getUTCFullYear()}`;
-      lines.push(`${k.key}${k.label ? ` (${k.label})` : ""} — dibuat ${tgl}`);
+      const safeLabel = escapeMarkdown(k.label);
+      lines.push(`\`${k.key}\`${safeLabel ? ` (${safeLabel})` : ""} — dibuat ${tgl}`);
     });
     lines.push("\nHapus lewat /revokekey <key>");
-    await sendMessage(env, chatId, lines.join("\n"), { parse_mode: undefined });
+    await sendMessage(env, chatId, lines.join("\n"));
     return;
   }
 
   if (txt.startsWith("/revokekey ")) {
     const key = txt.slice("/revokekey ".length).trim();
     const ok = await revokeKey(env, key);
+    // Input di sini diketik manual (bisa typo/karakter aneh) — TIDAK
+    // dibungkus backtick, tetep plain text (parse_mode: undefined)
+    // biar gak berisiko kayak kasus /log dulu.
     await sendMessage(
       env, chatId,
       ok ? `Key ${key} sudah dicabut, gak bisa dipakai lagi buat akses website.` : `Key ${key} gak ketemu di daftar (cek /keys).`,
