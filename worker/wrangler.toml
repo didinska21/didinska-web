@@ -11,9 +11,9 @@ id = "ce570a8bd07c4ef48e3e7a1301023024"
 # tanpa nunggu 2 jam. INGET balikin ke versi production di bawah kalau
 # testing udah selesai (5 menit sekali = 288x/hari, boros kuota Serper
 # kalau dibiarkan lama-lama).
-crons = ["*/5 * * * *"]
+# crons = ["*/5 * * * *"]
 
 # Versi PRODUCTION (tiap 2 jam, 12x/hari — aman buat kuota Serper free
 # tier). Buat balikin: hapus baris "crons" testing di atas, uncomment
 # baris di bawah ini.
-# crons = ["0 */2 * * *"]
+crons = ["0 */2 * * *"]
