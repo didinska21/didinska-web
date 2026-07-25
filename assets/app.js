@@ -3,7 +3,9 @@
 const API_BASE = "https://didinska-api.mr-didinska21.workers.dev";
 
 async function apiGet(path) {
-  const res = await fetch(`${API_BASE}${path}`);
+  const res = await fetch(`${API_BASE}${path}`, {
+    headers: { "X-Access-Key": getStoredAccessKey() },
+  });
   let data;
   try {
     data = await res.json();
@@ -17,7 +19,7 @@ async function apiGet(path) {
 async function apiPost(path, body) {
   const res = await fetch(`${API_BASE}${path}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "X-Access-Key": getStoredAccessKey() },
     body: JSON.stringify(body),
   });
   let data;
