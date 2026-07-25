@@ -61,3 +61,7 @@ export async function readLogs(env) {
     return [];
   }
 }
+
+export async function clearLogs(env) {
+  await env['didinska-kv'].delete(LOG_KEY);
+}
