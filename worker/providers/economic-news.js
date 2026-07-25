@@ -23,10 +23,14 @@ const NEWS_BUCKET_TTL_SECONDS = 21 * 24 * 60 * 60; // 21 hari — cukup buat sik
 
 // ──────────────────────────────────────────────────────────
 //  Fetch & parse data/jadwal.js
-//  File itu BUKAN JSON murni (key tanpa quote, trailing comma,
-//  komentar) — jadi dievaluasi pakai Function constructor. Ini aman
-//  karena sumbernya file kita sendiri di repo kita sendiri (bukan
-//  input dari user luar), bukan lubang keamanan.
+//  PENTING: file ini BUKAN JSON murni (key tanpa quote, trailing
+//  comma, komentar) — awalnya di-eval pakai `new Function(...)`, TAPI
+//  Cloudflare Workers MELARANG eksekusi kode dari string demi keamanan
+//  ("Code generation from strings disallowed"), jadi itu gagal total
+//  di production meski lolos di testing lokal (Node.js gak punya
+//  batasan itu). Solusinya: parser berbasis regex murni di bawah ini —
+//  gak eksekusi kode apapun, cuma baca teks. Format data/jadwal.js
+//  TIDAK perlu diubah sama sekali.
 // ──────────────────────────────────────────────────────────
 export async function fetchManualEconomicEvents() {
   const res = await fetch(MANUAL_EVENTS_URL);
@@ -36,14 +40,80 @@ export async function fetchManualEconomicEvents() {
   const match = /window\.ECONOMIC_EVENTS\s*=\s*(\[[\s\S]*\])\s*;/.exec(text);
   if (!match) throw new Error("Format data/jadwal.js tidak dikenali (window.ECONOMIC_EVENTS tidak ketemu).");
 
-  let events;
-  try {
-    events = new Function(`"use strict"; return (${match[1]});`)();
-  } catch (e) {
-    throw new Error(`Gagal parse isi window.ECONOMIC_EVENTS: ${e.message}`);
+  const blocks = splitTopLevelObjects(match[1]);
+  if (!blocks.length) throw new Error("Tidak ada event yang berhasil di-parse dari window.ECONOMIC_EVENTS.");
+
+  return blocks.map((block) => ({
+    id: extractNumberField(block, "id"),
+    date: extractStringField(block, "date"),
+    time: extractStringField(block, "time"),
+    currency: extractStringField(block, "currency"),
+    impact: extractStringField(block, "impact"),
+    event: extractStringField(block, "event"),
+    forecast: extractStringField(block, "forecast"),
+    previous: extractStringField(block, "previous"),
+    description: extractStringField(block, "description"),
+    affected: extractArrayField(block, "affected"),
+    notes: extractStringField(block, "notes"),
+    source: extractStringField(block, "source"),
+  }));
+}
+
+// Pecah teks array jadi blok { ... } di level teratas — depth-aware
+// (ngitung buka/tutup kurung kurawal) dan sadar string literal (koma
+// atau kurung DI DALAM string, misal di "notes", gak dianggap pemisah).
+function splitTopLevelObjects(arrayText) {
+  const blocks = [];
+  let depth = 0;
+  let start = -1;
+  let inString = false;
+  let stringChar = null;
+  for (let i = 0; i < arrayText.length; i++) {
+    const c = arrayText[i];
+    if (inString) {
+      if (c === "\\") { i++; continue; } // lompatin karakter setelah backslash (escaped)
+      if (c === stringChar) inString = false;
+      continue;
+    }
+    if (c === '"' || c === "'" || c === "`") {
+      inString = true;
+      stringChar = c;
+      continue;
+    }
+    if (c === "{") {
+      if (depth === 0) start = i;
+      depth++;
+    } else if (c === "}") {
+      depth--;
+      if (depth === 0 && start !== -1) {
+        blocks.push(arrayText.slice(start, i + 1));
+        start = -1;
+      }
+    }
   }
-  if (!Array.isArray(events)) throw new Error("window.ECONOMIC_EVENTS bukan array.");
-  return events;
+  return blocks;
+}
+
+function extractStringField(block, field) {
+  const re = new RegExp(`${field}\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"`);
+  const m = re.exec(block);
+  return m ? m[1].replace(/\\"/g, '"').replace(/\\\\/g, "\\") : "";
+}
+
+function extractNumberField(block, field) {
+  const re = new RegExp(`${field}\\s*:\\s*(-?\\d+(?:\\.\\d+)?)`);
+  const m = re.exec(block);
+  return m ? Number(m[1]) : null;
+}
+
+function extractArrayField(block, field) {
+  const re = new RegExp(`${field}\\s*:\\s*\\[([^\\]]*)\\]`);
+  const m = re.exec(block);
+  if (!m) return [];
+  return m[1]
+    .split(",")
+    .map((s) => s.trim().replace(/^["']|["']$/g, ""))
+    .filter(Boolean);
 }
 
 // Cari event WIB paling dekat yang datetime-nya masih di masa depan.
