@@ -1,4 +1,5 @@
 import { getCryptoEvents } from "../providers/crypto.js";
+import { getUpcomingManualScheduleItems } from "../providers/economic-news.js";
 import { jsonResponse } from "../utils/cors.js";
 
 export const SCHEDULE_CACHE_KEY = "news_schedule_cache_v4";
@@ -12,7 +13,7 @@ export const SCHEDULE_CACHE_TTL = 6 * 60 * 60; // 6 jam
 //  browser (lihat assets/app.js) — TANPA lewat Worker/KV sama sekali.
 //  Fungsi & endpoint di bawah ini murni buat jadwal CRYPTO (masih pakai
 //  Serper search, tidak terpengaruh perubahan Sprint 12) yang dipakai
-//  oleh /api/jadwal (analisa.html) & Telegram Bot.
+//  oleh /api/jadwal (analisa.html).
 // ══════════════════════════════════════════════════════════
 export async function buildScheduleList(env, forceRefresh = false) {
   if (!forceRefresh) {
@@ -34,6 +35,23 @@ export async function buildScheduleList(env, forceRefresh = false) {
   return list;
 }
 
+// KHUSUS bot Telegram — gabung crypto (buildScheduleList, cached 6 jam)
+// + event ekonomi manual (data/jadwal.js, fetch langsung tiap panggil —
+// filenya kecil & jarang berubah, gak perlu cache KV terpisah) supaya
+// bot konsisten dengan yang ditampilkan website. SENGAJA TIDAK dipakai
+// /api/jadwal — website sudah gabung manual+crypto sendiri di app.js,
+// kalau ditambah di sini juga nanti event manual muncul dobel di web.
+export async function buildBotScheduleList(env, forceRefresh = false) {
+  const [cryptoList, manualList] = await Promise.all([
+    buildScheduleList(env, forceRefresh),
+    getUpcomingManualScheduleItems().catch((e) => {
+      console.error("[BOT SCHEDULE] Gagal ambil event manual dari data/jadwal.js:", e.message);
+      return [];
+    }),
+  ]);
+  return [...manualList, ...cryptoList].sort((a, b) => (a._sort || 0) - (b._sort || 0)).slice(0, 20);
+}
+
 // Sprint 12: dulu menggabungkan macro + crypto (2 argumen), sekarang
 // cuma crypto. Nama & bentuk (filter + sort + slice 15) sengaja
 // dipertahankan sama supaya scheduleText/scheduleKb/Telegram bot yang
@@ -53,7 +71,7 @@ export function scheduleText(list) {
     const tag = it.category === "crypto" ? "🪙" : "🏛️";
     lines.push(`${i + 1}. ${tag} *${it.date}, ${jam}* — ${it.event}`);
   });
-  lines.push("\n_🪙 = hasil pencarian berita, cek ulang di sumber resmi. Jadwal event ekonomi/makro sekarang dikelola manual, cek di website._");
+  lines.push("\n_🏛️ = jadwal ekonomi/makro (manual, sumber resmi) · 🪙 = hasil pencarian berita, cek ulang di sumber resmi._");
   return lines.join("\n");
 }
 
