@@ -6,6 +6,7 @@ import { appendHistory } from "./history.js";
 import { friendlyErrorMessage } from "../providers/groq.js";
 import { readLogs, clearLogs } from "./log.js";
 import { createKey, listKeys, revokeKey } from "./access-keys.js";
+import { fetchManualEconomicEvents, pickNearestEvent, newsBucketKey, readNewsBucket } from "../providers/economic-news.js";
 
 // ══════════════════════════════════════════════════════════
 //  WHITELIST
@@ -128,6 +129,7 @@ async function handleMessage(message, env) {
       "📅 *Jadwal News* → lihat daftar event ekonomi & kripto terdekat (yang AKAN datang, bukan yang sudah lewat). FOMC/ECB/CPI/PPI/NFP di-scrape langsung dari halaman kalender resmi (federalreserve.gov, ecb.europa.eu, bls.gov). Event kripto dari hasil pencarian jadwal/deadline terkini.\n\n" +
       "📰 *Analisa News* → sama seperti Jadwal News, tapi tiap event bisa di-tap. Pilih 5 atau 10 AI, bot akan cari berita terkait event itu dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
       "📋 */log* → lihat riwayat cron gali-berita background (jalan tiap 2 jam, target event ekonomi terdekat dari data/jadwal.js).\n" +
+      "📰 */berita* → lihat ISI berita yang udah kekumpul (judul, ringkasan, sumber) buat event terdekat.\n" +
       "🗑️ */clearlog* → kosongkan riwayat log cron.\n\n" +
       "🔑 */newkey [label]* → generate access key baru buat website (share manual ke yang mau dikasih akses).\n" +
       "📜 */keys* → lihat semua access key yang aktif.\n" +
@@ -149,7 +151,7 @@ async function handleMessage(message, env) {
     // ganjil dianggap italic gak lengkap), yang bikin SELURUH pesan
     // ditolak Telegram tanpa error jelas di sisi kita. Makanya khusus
     // buat /log, parse_mode dimatikan total (plain text, paling aman).
-    const lines = ["LOG CRON GALI BERITA (auto-hapus setelah 3 hari atau event lewat)\n"];
+    const lines = ["LOG CRON GALI BERITA (auto-hapus 1 hari setelah event lewat)\n"];
     logs.slice(0, 15).forEach((l) => {
       const wib = new Date(new Date(l.ts).getTime() + 7 * 3600 * 1000);
       const jam = `${String(wib.getUTCHours()).padStart(2, "0")}:${String(wib.getUTCMinutes()).padStart(2, "0")}`;
@@ -159,6 +161,34 @@ async function handleMessage(message, env) {
       lines.push(`${icon} ${tgl} ${jam} WIB${ctx} — ${l.message}`);
     });
     await sendMessage(env, chatId, lines.join("\n"), { parse_mode: undefined });
+    return;
+  }
+
+  if (txt === "/berita") {
+    try {
+      const events = await fetchManualEconomicEvents();
+      const nearest = pickNearestEvent(events);
+      if (!nearest) {
+        await sendMessage(env, chatId, "📭 Gak ada event mendatang di data/jadwal.js buat dicek beritanya.");
+        return;
+      }
+      const bucket = await readNewsBucket(env, newsBucketKey(nearest.event, nearest.date));
+      if (!bucket.length) {
+        await sendMessage(
+          env, chatId,
+          `Belum ada berita yang kekumpul buat "${nearest.event}" (${nearest.date}). Cron jalan tiap 2 jam, cek lagi nanti.`,
+          { parse_mode: undefined }
+        );
+        return;
+      }
+      const lines2 = [`BERITA TERKUMPUL — ${nearest.event} (${nearest.date})\n${bucket.length} artikel:\n`];
+      bucket.forEach((it, i) => {
+        lines2.push(`${i + 1}. ${it.title || "(tanpa judul)"}\n   ${it.snippet || "(tanpa ringkasan)"}\n   Sumber: ${it.source || it.link || "?"}${it.date ? ` · ${it.date}` : ""}`);
+      });
+      await sendMessage(env, chatId, lines2.join("\n\n"), { parse_mode: undefined });
+    } catch (e) {
+      await sendMessage(env, chatId, `Gagal ambil berita: ${e.message}`, { parse_mode: undefined });
+    }
     return;
   }
 
