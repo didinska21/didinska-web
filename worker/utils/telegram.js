@@ -1,5 +1,5 @@
 import { getSession, saveSession } from "./session.js";
-import { buildScheduleList, scheduleText, scheduleKb, jadwalViewKb } from "../services/calendar.js";
+import { buildBotScheduleList, scheduleText, scheduleKb, jadwalViewKb } from "../services/calendar.js";
 import { analyzeEvent, parseSentiment } from "../services/analysis.js";
 import { detectCoin, computePriceImpact } from "../providers/crypto.js";
 import { appendHistory } from "./history.js";
@@ -145,7 +145,7 @@ async function handleMessage(message, env) {
   if (txt === "📅 Jadwal News") {
     await sendMessage(env, chatId, "⏳ Mencari jadwal event terbaru...");
     try {
-      const list = await buildScheduleList(env);
+      const list = await buildBotScheduleList(env);
       s.schedule = list;
       await saveSession(env, uid, s);
       await sendMessage(env, chatId, scheduleText(list), { reply_markup: jadwalViewKb() });
@@ -158,7 +158,7 @@ async function handleMessage(message, env) {
   if (txt === "📰 Analisa News") {
     await sendMessage(env, chatId, "⏳ Mencari jadwal event terbaru...");
     try {
-      const list = await buildScheduleList(env);
+      const list = await buildBotScheduleList(env);
       s.schedule = list;
       await saveSession(env, uid, s);
       if (!list.length) {
@@ -187,7 +187,7 @@ async function handleCallback(cb, env) {
   if (data === "refresh_jadwal_view") {
     await editMessageText(env, chatId, cb.message.message_id, "⏳ Refreshing jadwal...");
     try {
-      const list = await buildScheduleList(env, true);
+      const list = await buildBotScheduleList(env, true);
       s.schedule = list;
       await saveSession(env, uid, s);
       await editMessageText(env, chatId, cb.message.message_id, scheduleText(list), { reply_markup: jadwalViewKb() });
@@ -200,7 +200,7 @@ async function handleCallback(cb, env) {
   if (data === "refresh_schedule") {
     await editMessageText(env, chatId, cb.message.message_id, "⏳ Refreshing jadwal...");
     try {
-      const list = await buildScheduleList(env, true);
+      const list = await buildBotScheduleList(env, true);
       s.schedule = list;
       await saveSession(env, uid, s);
       await editMessageText(env, chatId, cb.message.message_id, "📰 *ANALISA NEWS*\n\nTap salah satu event buat dianalisa:", { reply_markup: scheduleKb(list) });
