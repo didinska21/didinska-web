@@ -8,10 +8,20 @@
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-brand">
-    <a href="index.html">DIDINSKA<span class="dot">.</span></a>
+<div id="access-gate" class="access-gate">
+  <div class="access-gate-box">
+    <div class="access-gate-title">🔒 DIDINSKA<span class="dot">.</span></div>
+    <p>Masukkan access key buat lanjut ke situs ini.</p>
+    <input type="password" id="access-gate-input" class="access-gate-input" placeholder="Access key" autocomplete="off">
+    <button id="access-gate-submit" class="btn">Masuk</button>
+    <div id="access-gate-error" class="access-gate-error"></div>
   </div>
+</div>
+
+<div id="app-content" style="display:none;">
+
+<nav class="nav">
+  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
   <div class="nav-links">
     <a href="index.html" class="active">Beranda</a>
     <a href="jadwal.html">Jadwal News</a>
@@ -34,8 +44,11 @@
   </footer>
 </div>
 
+</div>
+
 <script src="data/jadwal.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/auth.js"></script>
 <script>
 async function loadNextEvent() {
   const el = document.getElementById("next-event");
@@ -56,7 +69,10 @@ async function loadNextEvent() {
   }
 }
 
-loadNextEvent();
+(async () => {
+  const authorized = await initAccessGate();
+  if (authorized) loadNextEvent();
+})();
 </script>
 </body>
 </html>
