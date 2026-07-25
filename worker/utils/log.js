@@ -4,25 +4,36 @@
 //  akses filesystem/git saat runtime, jadi KV adalah "file" yang
 //  paling setara di lingkungan ini).
 //
-//  Auto-hapus per-entry kalau SALAH SATU tercapai:
-//    - umur entry > LOG_MAX_AGE_DAYS hari, ATAU
-//    - event yang terkait entry itu sudah lewat tanggalnya
+//  Auto-hapus per-entry:
+//    - Entry yang PUNYA eventDate: basi begitu event itu sudah lewat
+//      LEBIH DARI 1 hari (bukan lagi berdasarkan umur log itu sendiri
+//      — jadi log tetap ada selama event masih relevan, walau itu
+//      artinya bertahan berminggu-minggu kalau eventnya masih jauh).
+//    - Entry TANPA eventDate (mis. gagal fetch data/jadwal.js itu
+//      sendiri, sebelum sempat tau event mana yang dituju) — gak ada
+//      acuan event buat nentuin kapan basi, jadi tetap pakai fallback
+//      umur (FALLBACK_MAX_AGE_DAYS) biar gak numpuk selamanya.
 //  Dicek ulang tiap kali ada tulisan baru DAN tiap kali dibaca — jadi
 //  tetap bersih walau cron sempat berhenti lama.
 // ══════════════════════════════════════════════════════════
 export const LOG_KEY = "cron_log_v1";
 export const LOG_MAX_ITEMS = 200;
-const LOG_MAX_AGE_DAYS = 3;
-const LOG_KV_TTL_SECONDS = 30 * 24 * 60 * 60; // safety net kalau cron berhenti total lama
+const FALLBACK_MAX_AGE_DAYS = 7; // cuma buat entry tanpa eventDate
+const LOG_KV_TTL_SECONDS = 60 * 24 * 60 * 60; // safety net kalau cron berhenti total lama (event terjauh saat ini ~Des 2026)
 
 function isExpired(entry, now) {
   const ts = new Date(entry.ts).getTime();
   if (isNaN(ts)) return true; // entry rusak, buang aja
-  const tooOld = now.getTime() - ts > LOG_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
-  const eventPassed = entry.eventDate
-    ? new Date(`${entry.eventDate}T23:59:59+07:00`).getTime() < now.getTime()
-    : false;
-  return tooOld || eventPassed;
+
+  if (entry.eventDate) {
+    // Basi begitu event sudah lewat LEBIH dari 1 hari (grace period 1
+    // hari setelah tanggal event, bukan tanggal log-nya dibuat).
+    const eventEndOfDay = new Date(`${entry.eventDate}T23:59:59+07:00`).getTime();
+    if (isNaN(eventEndOfDay)) return true;
+    return now.getTime() > eventEndOfDay + 24 * 60 * 60 * 1000;
+  }
+
+  return now.getTime() - ts > FALLBACK_MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
 }
 
 // event & eventDate opsional — diisi kalau log ini terkait 1 event
