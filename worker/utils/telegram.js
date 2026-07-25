@@ -5,6 +5,7 @@ import { detectCoin, computePriceImpact } from "../providers/crypto.js";
 import { appendHistory } from "./history.js";
 import { friendlyErrorMessage } from "../providers/groq.js";
 import { readLogs, clearLogs } from "./log.js";
+import { createKey, listKeys, revokeKey } from "./access-keys.js";
 
 // ══════════════════════════════════════════════════════════
 //  WHITELIST
@@ -128,6 +129,9 @@ async function handleMessage(message, env) {
       "📰 *Analisa News* → sama seperti Jadwal News, tapi tiap event bisa di-tap. Pilih 5 atau 10 AI, bot akan cari berita terkait event itu dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
       "📋 */log* → lihat riwayat cron gali-berita background (jalan tiap 2 jam, target event ekonomi terdekat dari data/jadwal.js).\n" +
       "🗑️ */clearlog* → kosongkan riwayat log cron.\n\n" +
+      "🔑 */newkey [label]* → generate access key baru buat website (share manual ke yang mau dikasih akses).\n" +
+      "📜 */keys* → lihat semua access key yang aktif.\n" +
+      "❌ */revokekey <key>* → cabut 1 access key.\n\n" +
       "Data di-cache 6 jam. Tap '🔄 Refresh Jadwal' kalau mau paksa update."
     );
     return;
@@ -161,6 +165,45 @@ async function handleMessage(message, env) {
   if (txt === "/clearlog") {
     await clearLogs(env);
     await sendMessage(env, chatId, "🗑️ Log cron sudah dikosongkan.");
+    return;
+  }
+
+  if (txt === "/newkey" || txt.startsWith("/newkey ")) {
+    const label = txt.slice("/newkey".length).trim();
+    const key = await createKey(env, label);
+    await sendMessage(
+      env, chatId,
+      `Access key baru dibuat${label ? ` (${label})` : ""}:\n\n${key}\n\nShare key ini ke orang yang mau dikasih akses website. Cek daftar/cabut lewat /keys dan /revokekey.`,
+      { parse_mode: undefined }
+    );
+    return;
+  }
+
+  if (txt === "/keys") {
+    const keys = await listKeys(env);
+    if (!keys.length) {
+      await sendMessage(env, chatId, "📭 Belum ada access key. Pakai /newkey [label] buat bikin.");
+      return;
+    }
+    const lines = ["DAFTAR ACCESS KEY WEBSITE\n"];
+    keys.forEach((k) => {
+      const wib = new Date(new Date(k.createdAt).getTime() + 7 * 3600 * 1000);
+      const tgl = `${wib.getUTCDate()}/${wib.getUTCMonth() + 1}/${wib.getUTCFullYear()}`;
+      lines.push(`${k.key}${k.label ? ` (${k.label})` : ""} — dibuat ${tgl}`);
+    });
+    lines.push("\nHapus lewat /revokekey <key>");
+    await sendMessage(env, chatId, lines.join("\n"), { parse_mode: undefined });
+    return;
+  }
+
+  if (txt.startsWith("/revokekey ")) {
+    const key = txt.slice("/revokekey ".length).trim();
+    const ok = await revokeKey(env, key);
+    await sendMessage(
+      env, chatId,
+      ok ? `Key ${key} sudah dicabut, gak bisa dipakai lagi buat akses website.` : `Key ${key} gak ketemu di daftar (cek /keys).`,
+      { parse_mode: undefined }
+    );
     return;
   }
 
