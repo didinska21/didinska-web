@@ -1,5 +1,6 @@
 import { serperSearch, extractItems } from "./crypto.js";
 import { appendLog } from "../utils/log.js";
+import { fmtWIBDate, fmtWIBTime } from "../utils/timezone.js";
 
 // ══════════════════════════════════════════════════════════
 //  ECONOMIC NEWS PRE-FETCHER — Sprint "gali duluan di background"
@@ -69,6 +70,47 @@ export function pickNearestEvent(events, now = new Date()) {
 // nyambung tanpa perlu mapping tambahan.
 export function newsBucketKey(eventName, dateIso) {
   return `news_bucket:${eventName}|${dateIso}`;
+}
+
+// ──────────────────────────────────────────────────────────
+//  Normalisasi 1 event manual (raw dari data/jadwal.js) jadi bentuk
+//  "schedule item" yang sama persis dengan yang dipakai buildScheduleList()
+//  di calendar.js (date, date_iso_full, time_wib, event, category, _sort)
+//  — supaya bisa digabung & di-render pakai scheduleText()/scheduleKb()
+//  yang sudah ada, tanpa perlu duplikat logic tampilan.
+// ──────────────────────────────────────────────────────────
+function toScheduleItem(it) {
+  if (!it.date || !it.event) return null;
+  const timeOk = it.time && it.time !== "-";
+  // Instant sebenarnya (buat sorting & filter "sudah lewat/belum") —
+  // date+time di data/jadwal.js sudah WIB (+07:00), gak perlu hitung DST.
+  const trueInstant = new Date(`${it.date}T${timeOk ? it.time : "00:00"}:00+07:00`);
+  if (isNaN(trueInstant.getTime())) return null;
+  // fmtWIBDate/fmtWIBTime (utils/timezone.js) mengharapkan Date yang
+  // field getUTC*-nya sudah merepresentasikan jam WIB langsung (konvensi
+  // yang sama dipakai etToWIB/cetToWIB dulu) — jadi digeser +7 jam dulu
+  // KHUSUS buat pemanggilan format ini, bukan buat _sort.
+  const wibShifted = new Date(trueInstant.getTime() + 7 * 3600 * 1000);
+  return {
+    date: fmtWIBDate(wibShifted),
+    date_iso_full: it.date,
+    time_wib: timeOk ? fmtWIBTime(wibShifted) : "-",
+    event: it.event,
+    category: "economic",
+    _sort: trueInstant.getTime(),
+  };
+}
+
+// Semua event manual yang masih mendatang, dinormalisasi & diurutkan —
+// dipakai bot Telegram (lihat services/calendar.js: buildBotScheduleList)
+// supaya "Jadwal News"/"Analisa News" di bot konsisten dengan website
+// (yang juga baca data/jadwal.js yang sama, cuma di sisi client).
+export async function getUpcomingManualScheduleItems(now = new Date()) {
+  const events = await fetchManualEconomicEvents();
+  return events
+    .map(toScheduleItem)
+    .filter((it) => it && it._sort >= now.getTime())
+    .sort((a, b) => a._sort - b._sort);
 }
 
 export async function readNewsBucket(env, key) {
