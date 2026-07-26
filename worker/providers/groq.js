@@ -91,7 +91,7 @@ export async function callGroqIndexed(env, idx, messages, maxTokens = 1200, temp
 
 export function friendlyErrorMessage(e, context) {
   if (e.isRateLimit) {
-    return `🚫 *Limit Groq API tercapai*\n\nSemua API key Groq lagi kena rate limit. Biasanya reset per jam atau per hari tergantung tier akun Groq kamu.\n\n💡 Coba lagi beberapa jam lagi atau besok ya.`;
+    return `🚫 *Sedang sibuk*\n\nLayanan AI lagi kena batas pemakaian. Biasanya reset dalam beberapa jam.\n\n💡 Coba lagi nanti ya.`;
   }
   return `❌ Gagal ${context}: ${e.message}`;
 }
