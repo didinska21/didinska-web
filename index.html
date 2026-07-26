@@ -1,78 +1,48 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Didinska — Jadwal & Analisa News Crypto</title>
-<link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didinska Analytics</title>
+    
+    <!-- Link ke file CSS utama -->
+    <link rel="stylesheet" href="assets/style.css">
+    
+    <!-- AOS CSS untuk efek elemen bermunculan -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-<div id="access-gate" class="access-gate">
-  <div class="access-gate-box">
-    <div class="access-gate-title">🔒 DIDINSKA<span class="dot">.</span></div>
-    <p>Masukkan access key buat lanjut ke situs ini.</p>
-    <input type="password" id="access-gate-input" class="access-gate-input" placeholder="Access key" autocomplete="off">
-    <button id="access-gate-submit" class="btn">Masuk</button>
-    <div id="access-gate-error" class="access-gate-error"></div>
-  </div>
-</div>
+    <!-- Hero Section (Bagian Atas) -->
+    <div class="glass-card" data-aos="zoom-in" data-aos-duration="1200" style="margin-top: 10vh; text-align: center;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Dashboard Sistem Analitik</h1>
+        <p style="color: #cbd5e1; margin-bottom: 20px;">Pemantauan data real-time yang didukung oleh integrasi AI.</p>
+        
+        <!-- Animasi Lottie (Animasi hidup tanpa video/gif berat) -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ujncxz8z.json" background="transparent" speed="1" style="width: 250px; height: 250px; margin: 0 auto;" loop autoplay></lottie-player>
 
-<div id="app-content" style="display:none;">
+        <button class="btn-glow">Mulai Analisis</button>
+    </div>
 
-<nav class="nav">
-  <div class="nav-brand">DIDINSKA<span class="dot">.</span></div>
-  <div class="nav-links">
-    <a href="index.html" class="active">Beranda</a>
-    <a href="jadwal.html">Jadwal News</a>
-    <a href="analisa.html">Analisa News</a>
-  </div>
-</nav>
+    <!-- Section Fitur (Contoh efek Scroll) -->
+    <div class="glass-card" data-aos="fade-up" data-aos-duration="1200" style="margin-top: 20px; margin-bottom: 10vh;">
+        <h2>Infrastruktur Sistem</h2>
+        <ul style="margin-top: 15px; margin-left: 20px; line-height: 1.8; color: #cbd5e1;">
+            <li>Pengolahan Data Kripto & Ekonomi Cepat</li>
+            <li>Infrastruktur Serverless Cloudflare Workers</li>
+            <li>Sistem Notifikasi Pintar via Telegram</li>
+        </ul>
+    </div>
 
-<div class="wrap">
-  <section class="hero">
-    <h1>Konteks di balik<br><span class="accent">tiap pergerakan market.</span></h1>
-    <p>Jadwal event ekonomi & kripto yang akan datang.</p>
-    <div class="disclaimer">⚠️ Analisa edukatif berbasis berita & data publik, bukan saran finansial. Selalu riset sendiri (DYOR) sebelum ambil posisi.</div>
-  </section>
+    <!-- Inisialisasi Script AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Menyalakan trigger animasi ketika di-scroll
+        AOS.init();
+    </script>
 
-  <div class="section-label">Event terdekat</div>
-  <div id="next-event" class="loading">Memuat jadwal…</div>
-
-  <footer>
-    DIDINSKA · analisa edukatif dari berita &amp; data publik, bukan saran finansial
-  </footer>
-</div>
-
-</div>
-
-<script src="data/jadwal.js"></script>
-<script src="assets/app.js"></script>
-<script src="assets/auth.js"></script>
-<script>
-async function loadNextEvent() {
-  const el = document.getElementById("next-event");
-  try {
-    const manual = getManualEconomicEvents();
-    let cryptoList = [];
-    try {
-      const { list } = await apiGet("/api/jadwal");
-      cryptoList = list;
-    } catch (e) {
-      console.error("Gagal ambil jadwal crypto:", e.message);
-    }
-    const combined = [...manual, ...cryptoList].sort((a, b) => (a._sort || 0) - (b._sort || 0));
-    if (!combined.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang.</div>'; return; }
-    el.innerHTML = eventCardHtml(combined[0]);
-  } catch (e) {
-    el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
-  }
-}
-
-(async () => {
-  const authorized = await initAccessGate();
-  if (authorized) loadNextEvent();
-})();
-</script>
+    <!-- Script logika website kamu -->
+    <script src="assets/app.js"></script>
 </body>
 </html>
