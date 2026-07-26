@@ -1,6 +1,7 @@
 import { callGroqIndexed, friendlyErrorMessage, MODELS } from "../providers/groq.js";
 import { serperSearch, detectCoin, computePriceImpact } from "../providers/crypto.js";
 import { newsBucketKey, readNewsBucket, appendNewsToBucket } from "../providers/economic-news.js";
+import { buildMemoryContext } from "../utils/memory.js";
 import { appendHistory } from "../utils/history.js";
 import { jsonResponse } from "../utils/cors.js";
 import { buildScheduleList } from "./calendar.js";
@@ -83,7 +84,14 @@ export async function analyzeEvent(env, event, nTotal) {
     await appendNewsToBucket(env, newsBucketKey(event.event, event.date_iso_full), newsItems).catch(() => {});
   }
 
-  const basePrompt = `EVENT: ${event.event} (${event.date})\n\nCUPLIKAN BERITA TERKAIT (hasil pencarian):\n${items}\n\nAnalisa dampak event ini ke market berdasarkan cuplikan di atas.`;
+  // Konteks memori (catatan manual + riwayat analisa event serupa) —
+  // disisip ke basePrompt yang dipakai SEMUA panggilan AI (opini +
+  // konsensus), jadi analisa baru "nyambung" sama pola/catatan lama.
+  const memoryContext = await buildMemoryContext(env, event.event);
+
+  const basePrompt = `EVENT: ${event.event} (${event.date})\n\n` +
+    (memoryContext ? `${memoryContext}\n\n` : "") +
+    `CUPLIKAN BERITA TERKAIT (hasil pencarian):\n${items}\n\nAnalisa dampak event ini ke market berdasarkan cuplikan di atas. Catatan/riwayat di atas (kalau ada) cuma konteks tambahan, jangan jadi satu-satunya dasar analisa — tetap utamakan cuplikan berita.`;
 
   // 5 nilai temperature disilang dengan 2 model (MODELS) = 10 kombinasi
   // unik (model,temp) sebelum berulang — cukup buat mode 10 AI (9 opini)
