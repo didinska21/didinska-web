@@ -1,5 +1,6 @@
 import { getCryptoEvents } from "../providers/crypto.js";
 import { getUpcomingManualScheduleItems } from "../providers/economic-news.js";
+import { appendLog } from "../utils/log.js";
 import { jsonResponse } from "../utils/cors.js";
 
 export const SCHEDULE_CACHE_KEY = "news_schedule_cache_v4";
@@ -46,6 +47,7 @@ export async function buildBotScheduleList(env, forceRefresh = false) {
     buildScheduleList(env, forceRefresh),
     getUpcomingManualScheduleItems().catch((e) => {
       console.error("[BOT SCHEDULE] Gagal ambil event manual dari data/jadwal.js:", e.message);
+      appendLog(env, { level: "error", message: `[Jadwal News bot] Gagal ambil event manual: ${e.message}` }).catch(() => {});
       return [];
     }),
   ]);
@@ -71,7 +73,7 @@ export function scheduleText(list) {
     const tag = it.category === "crypto" ? "🪙" : "🏛️";
     lines.push(`${i + 1}. ${tag} *${it.date}, ${jam}* — ${it.event}`);
   });
-  lines.push("\n_🏛️ = jadwal ekonomi/makro (manual, sumber resmi) · 🪙 = hasil pencarian berita, cek ulang di sumber resmi._");
+  lines.push("\n_🏛️ = ekonomi/makro · 🪙 = crypto. Cek ulang ke sumber resmi sebelum ambil keputusan._");
   return lines.join("\n");
 }
 
