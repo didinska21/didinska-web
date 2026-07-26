@@ -39,7 +39,7 @@
   <div id="list-akan" class="loading">Memuat jadwal…</div>
 
   <footer>
-    🏛️ = jadwal ekonomi/makro (manual, dari sumber resmi) &middot; 🪙 = hasil pencarian berita, cek ulang di sumber resmi.
+    🏛️ = ekonomi/makro &middot; 🪙 = crypto. Cek ulang ke sumber resmi sebelum ambil keputusan.
   </footer>
 </div>
 
@@ -56,7 +56,7 @@ function loadAkanTerjadi() {
   const el = document.getElementById("list-akan");
   try {
     const manual = getManualEconomicEvents();
-    if (!manual.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang. Jadwal dikelola manual — cek lagi nanti.</div>'; return; }
+    if (!manual.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang. Cek lagi nanti.</div>'; return; }
     el.innerHTML = manual.map((it) => eventCardHtml(it)).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
