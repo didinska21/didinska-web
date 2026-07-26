@@ -136,8 +136,8 @@ async function handleMessage(message, env) {
   if (txt === "/help" || txt === "❓ Bantuan") {
     await sendMessage(env, chatId,
       "❓ *BANTUAN*\n\n" +
-      "📅 *Jadwal News* → lihat daftar event ekonomi & kripto terdekat (yang AKAN datang, bukan yang sudah lewat). FOMC/ECB/CPI/PPI/NFP di-scrape langsung dari halaman kalender resmi (federalreserve.gov, ecb.europa.eu, bls.gov). Event kripto dari hasil pencarian jadwal/deadline terkini.\n\n" +
-      "📰 *Analisa News* → sama seperti Jadwal News, tapi tiap event bisa di-tap. Pilih 5 atau 10 AI, bot akan cari berita terkait event itu dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
+      "📅 *Jadwal News* → lihat daftar event ekonomi & kripto terdekat yang akan datang.\n\n" +
+      "📰 *Analisa News* → tap salah satu event, pilih 5 atau 10 AI, bot bakal cari berita terkait dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
       "📋 */log* → lihat riwayat cron gali-berita background (jalan tiap 2 jam, target event ekonomi terdekat dari data/jadwal.js).\n" +
       "📰 */berita* → lihat ISI berita yang udah kekumpul (judul, ringkasan, sumber) buat event terdekat.\n" +
       "🧠 */inget <teks>* → simpan catatan yang ikut jadi konteks tiap Analisa News dijalankan.\n" +
