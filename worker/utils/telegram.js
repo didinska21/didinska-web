@@ -7,6 +7,7 @@ import { friendlyErrorMessage } from "../providers/groq.js";
 import { readLogs, clearLogs } from "./log.js";
 import { createKey, listKeys, revokeKey } from "./access-keys.js";
 import { fetchManualEconomicEvents, pickNearestEvent, newsBucketKey, readNewsBucket } from "../providers/economic-news.js";
+import { addNote, listNotes, deleteNote } from "./memory.js";
 
 // Escape karakter spesial Markdown Telegram (_ * ` [) di teks BEBAS
 // (mis. label yang diketik manual) sebelum digabung ke pesan
@@ -139,6 +140,9 @@ async function handleMessage(message, env) {
       "📰 *Analisa News* → sama seperti Jadwal News, tapi tiap event bisa di-tap. Pilih 5 atau 10 AI, bot akan cari berita terkait event itu dan menyimpulkan sentimen/dampaknya ke market.\n\n" +
       "📋 */log* → lihat riwayat cron gali-berita background (jalan tiap 2 jam, target event ekonomi terdekat dari data/jadwal.js).\n" +
       "📰 */berita* → lihat ISI berita yang udah kekumpul (judul, ringkasan, sumber) buat event terdekat.\n" +
+      "🧠 */inget <teks>* → simpan catatan yang ikut jadi konteks tiap Analisa News dijalankan.\n" +
+      "📓 */memori* → lihat semua catatan.\n" +
+      "🗑️ */lupa <id>* → hapus 1 catatan.\n" +
       "🗑️ */clearlog* → kosongkan riwayat log cron.\n\n" +
       "🔑 */newkey [label]* → generate access key baru buat website (share manual ke yang mau dikasih akses).\n" +
       "📜 */keys* → lihat semua access key yang aktif.\n" +
@@ -198,6 +202,41 @@ async function handleMessage(message, env) {
     } catch (e) {
       await sendMessage(env, chatId, `Gagal ambil berita: ${e.message}`, { parse_mode: undefined });
     }
+    return;
+  }
+
+  if (txt === "/inget" || txt.startsWith("/inget ")) {
+    const text = txt.slice("/inget".length).trim();
+    if (!text) {
+      await sendMessage(env, chatId, "Format: /inget <hal yang mau diingat>\nContoh: /inget FOMC biasanya volatile 15-30 menit setelah statement rilis.", { parse_mode: undefined });
+      return;
+    }
+    const note = await addNote(env, text);
+    await sendMessage(env, chatId, `Diingat (id: ${note.id}):\n${note.text}\n\nIni bakal ikut jadi konteks tiap kali Analisa News dijalankan. Lihat semua: /memori · Hapus: /lupa ${note.id}`, { parse_mode: undefined });
+    return;
+  }
+
+  if (txt === "/memori") {
+    const notes = await listNotes(env);
+    if (!notes.length) {
+      await sendMessage(env, chatId, "📭 Belum ada catatan. Pakai /inget <teks> buat nambah.");
+      return;
+    }
+    const lines = ["CATATAN MEMORI (ikut dipakai pas Analisa News)\n"];
+    notes.forEach((n) => {
+      const wib = new Date(new Date(n.createdAt).getTime() + 7 * 3600 * 1000);
+      const tgl = `${wib.getUTCDate()}/${wib.getUTCMonth() + 1}/${wib.getUTCFullYear()}`;
+      lines.push(`[${n.id}] ${n.text} (${tgl})`);
+    });
+    lines.push("\nHapus lewat /lupa <id>");
+    await sendMessage(env, chatId, lines.join("\n"), { parse_mode: undefined });
+    return;
+  }
+
+  if (txt.startsWith("/lupa ")) {
+    const id = txt.slice("/lupa ".length).trim();
+    const ok = await deleteNote(env, id);
+    await sendMessage(env, chatId, ok ? `Catatan ${id} sudah dihapus.` : `Catatan ${id} gak ketemu (cek /memori).`, { parse_mode: undefined });
     return;
   }
 
