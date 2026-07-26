@@ -35,9 +35,7 @@ FORMAT OUTPUT WAJIB:
 💥 Dampak     : [ringkas]
 📝 Kesimpulan :
 [Maksimal 5 kalimat Bahasa Indonesia.]
-⚠️ Catatan    : Ini konsensus dari ${nOpinions} analis independen + 1 panggilan penyimpul (total ${nTotal} panggilan AI,
-campuran model ${MODELS.join(" & ")} dengan variasi sampling) — anggap sebagai pengecekan konsistensi lintas model,
-bukan validasi independen penuh oleh manusia/lembaga berbeda.
+⚠️ Catatan    : Hasil konsensus AI, bukan nasihat finansial. Selalu cek ulang ke sumber resmi.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 }
 
