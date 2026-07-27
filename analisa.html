@@ -10,8 +10,9 @@
 
 <div id="access-gate" class="access-gate">
   <div class="access-gate-box">
-    <div class="access-gate-title">🔒 DIDINSKA<span class="dot">.</span></div>
-    <p>Masukkan access key buat lanjut ke situs ini.</p>
+    <div class="access-gate-lock">🔒</div>
+    <div class="access-gate-title">DIDINSKA<span class="dot">.</span></div>
+    <p>Akses terbatas. Masukkan key untuk melanjutkan.</p>
     <input type="password" id="access-gate-input" class="access-gate-input" placeholder="Access key" autocomplete="off">
     <button id="access-gate-submit" class="btn">Masuk</button>
     <div id="access-gate-error" class="access-gate-error"></div>
@@ -30,8 +31,9 @@
 </nav>
 
 <div class="wrap">
-  <section class="hero" style="padding-top:20px;">
-    <h1 style="font-size:28px;">Analisa News</h1>
+  <section class="hero" style="padding-top:24px;">
+    <div class="eyebrow"><span class="pulse-dot"></span> Konsensus AI</div>
+    <h1 style="font-size:32px;">Analisa <span class="accent">News</span></h1>
     <p>Pilih event, lalu jalankan analisa konsensus AI untuk lihat sentimen & dampaknya ke market.</p>
   </section>
 
@@ -62,10 +64,6 @@ async function loadEvents() {
     } catch (e) {
       console.error("Gagal ambil jadwal crypto:", e.message);
     }
-    // Simpan idx asli di list crypto backend (SEBELUM digabung & diurutkan
-    // ulang bareng event manual) — dipakai runAnalysis() supaya body.idx
-    // yang dikirim ke /api/analisa tetap cocok posisinya di
-    // buildScheduleList() sisi server.
     const cryptoTagged = cryptoList.map((it, cryptoIdx) => ({ ...it, _cryptoIdx: cryptoIdx }));
     const combined = [...manual, ...cryptoTagged].sort((a, b) => (a._sort || 0) - (b._sort || 0));
 
@@ -74,11 +72,11 @@ async function loadEvents() {
 
     el.innerHTML = combined.map((it, idx) => {
       const buttons = `
-        <div style="margin-top:10px; display:flex; gap:8px;">
+        <div style="margin-top:12px; display:flex; gap:8px;">
           <button class="btn" onclick="runAnalysis(${idx}, 5)">Analisa (5 AI)</button>
           <button class="btn ghost" onclick="runAnalysis(${idx}, 10)">Analisa (10 AI)</button>
         </div>`;
-      return eventCardHtml(it, { cardId: `ev-card-${idx}`, footerHtml: buttons });
+      return eventCardHtml(it, { cardId: `ev-card-${idx}`, footerHtml: buttons, idx });
     }).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
@@ -90,13 +88,9 @@ async function runAnalysis(idx, nAi) {
   const buttons = card.querySelectorAll("button");
   buttons.forEach((b) => (b.disabled = true));
   const resultArea = document.getElementById("result-area");
-  resultArea.innerHTML = `<div class="loading">⏳ Menjalankan ${nAi} AI... (~10-20 detik)</div>`;
+  resultArea.innerHTML = `<div class="loading"><span class="pulse-dot"></span> Menjalankan ${nAi} AI... (~10-20 detik)</div>`;
 
   const it = scheduleCache[idx];
-  // Event crypto (dari backend) tetap lewat idx seperti sebelumnya.
-  // Event manual (dari data/jadwal.js) TIDAK dikenal server, jadi
-  // dikirim sebagai event custom — analysis.js sudah mendukung jalur
-  // ini sejak awal, tidak perlu perubahan backend sama sekali.
   const body = it.category === "crypto"
     ? { source: "schedule", idx: it._cryptoIdx, n_ai: nAi }
     : { event: it.event, date: it.date, date_iso_full: it.date_iso_full, category: it.category, n_ai: nAi };
@@ -107,7 +101,7 @@ async function runAnalysis(idx, nAi) {
       <div class="section-label">Hasil analisa</div>
       <div class="card">
         <div class="card-title">${escapeHtml(result.event)}</div>
-        <div class="card-date">${result.date}</div>
+        <div class="card-date" style="text-align:left; margin-bottom:8px;">${result.date}</div>
         ${sentimentBadge(result.sentiment)}
         ${impactStrip(result.impact, result.coin)}
         <pre style="white-space:pre-wrap; font-family:var(--font-body); font-size:14px; margin-top:14px; color:var(--text);">${escapeHtml(result.final)}</pre>
