@@ -141,11 +141,13 @@ function impactBadge(impact) {
 // Satu kartu event, dipakai index.html/jadwal.html/analisa.html supaya
 // field manual (forecast/previous/affected/notes/dst) tampil konsisten
 // tanpa nge-duplikasi template di 3 tempat. footerHtml opsional buat
-// halaman yang butuh tambahan (mis. tombol Analisa).
-function eventCardHtml(it, { cardId, footerHtml } = {}) {
+// halaman yang butuh tambahan (mis. tombol Analisa). idx opsional buat
+// stagger animation (kartu muncul satu-satu, bukan sekaligus).
+function eventCardHtml(it, { cardId, footerHtml, idx } = {}) {
   const tag = it.category === "crypto" ? "🪙 Crypto" : "🏛️ Makro";
   const jam = it.time_wib && it.time_wib !== "-" ? `${it.time_wib} WIB` : "jam belum diketahui";
   const isManual = it.category === "economic";
+  const staggerMs = typeof idx === "number" ? Math.min(idx * 60, 480) : 0;
 
   const meta = isManual ? `
     <div class="event-meta">
@@ -160,7 +162,7 @@ function eventCardHtml(it, { cardId, footerHtml } = {}) {
   ` : "";
 
   return `
-    <div class="card"${cardId ? ` id="${cardId}"` : ""}>
+    <div class="card"${cardId ? ` id="${cardId}"` : ""} style="--stagger:${staggerMs}ms">
       <div class="card-row">
         <div>
           <span class="card-tag">${tag}</span>
