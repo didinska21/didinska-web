@@ -10,8 +10,9 @@
 
 <div id="access-gate" class="access-gate">
   <div class="access-gate-box">
-    <div class="access-gate-title">🔒 DIDINSKA<span class="dot">.</span></div>
-    <p>Masukkan access key buat lanjut ke situs ini.</p>
+    <div class="access-gate-lock">🔒</div>
+    <div class="access-gate-title">DIDINSKA<span class="dot">.</span></div>
+    <p>Akses terbatas. Masukkan key untuk melanjutkan.</p>
     <input type="password" id="access-gate-input" class="access-gate-input" placeholder="Access key" autocomplete="off">
     <button id="access-gate-submit" class="btn">Masuk</button>
     <div id="access-gate-error" class="access-gate-error"></div>
@@ -30,8 +31,9 @@
 </nav>
 
 <div class="wrap">
-  <section class="hero" style="padding-top:20px;">
-    <h1 style="font-size:28px;">Jadwal News</h1>
+  <section class="hero" style="padding-top:24px;">
+    <div class="eyebrow"><span class="pulse-dot"></span> Diperbarui berkala</div>
+    <h1 style="font-size:32px;">Jadwal <span class="accent">News</span></h1>
     <p>Pantau event yang akan datang.</p>
   </section>
 
@@ -49,15 +51,12 @@
 <script src="assets/app.js"></script>
 <script src="assets/auth.js"></script>
 <script>
-// Sprint 12: jadwal event ekonomi/makro sekarang murni statis, dibaca
-// langsung dari data/jadwal.js (window.ECONOMIC_EVENTS) — TANPA request
-// ke Worker/API sama sekali.
 function loadAkanTerjadi() {
   const el = document.getElementById("list-akan");
   try {
     const manual = getManualEconomicEvents();
     if (!manual.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang. Cek lagi nanti.</div>'; return; }
-    el.innerHTML = manual.map((it) => eventCardHtml(it)).join("");
+    el.innerHTML = manual.map((it, idx) => eventCardHtml(it, { idx })).join("");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
   }
