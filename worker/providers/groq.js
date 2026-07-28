@@ -1,18 +1,29 @@
 // ══════════════════════════════════════════════════════════
 //  GROQ
 // ──────────────────────────────────────────────────────────
-//  MODELS: dua model production Groq yang genuinely berbeda
-//  (bukan cuma temperature beda di model yang sama), dipakai buat
-//  ensemble analisa. "llama-3.3-70b-versatile" (model lama) SUDAH
-//  DIUMUMKAN DEPRECATED oleh Groq — shutdown 16 Agustus 2026 — jadi
-//  diganti ke pengganti resmi mereka: openai/gpt-oss-120b (utama,
-//  paling kuat reasoning-nya, dipakai juga buat panggilan penyimpul)
-//  dan openai/gpt-oss-20b (lebih kecil/cepat, sumber pendapat kedua).
-//  Keduanya "Production Models" di Groq (bukan Preview), gratis di
-//  tier developer. Kalau nanti Groq deprecate salah satu lagi, cek
+//  MODELS: 4 model/system Groq dipakai buat ensemble analisa —
+//  disilang round-robin biar tiap analis genuinely beda, bukan cuma
+//  temperature beda di model yang sama.
+//
+//  - openai/gpt-oss-120b   → Production, paling stabil. Dipakai juga
+//                            buat panggilan penyimpul (DEFAULT_MODEL).
+//  - groq/compound         → "System" (bukan model biasa) — otomatis
+//                            bisa web search/eksekusi kode sendiri di
+//                            background sebelum jawab. Latency bisa
+//                            lebih variatif dari model biasa.
+//  - llama-3.3-70b-versatile → ⚠️ SUDAH DIUMUMKAN DEPRECATED, shutdown
+//                            16 Agustus 2026. Sengaja tetap dipakai
+//                            (permintaan eksplisit) — error handling
+//                            di bawah udah toleran per-slot, jadi kalau
+//                            ini mati nanti, cuma 1/4 slot yang mulai
+//                            gagal, bukan bikin semuanya rusak. CABUT
+//                            dari array ini begitu tanggal itu lewat.
+//  - groq/compound-mini    → System juga, versi lebih ringan/cepat.
+//
+//  Kalau nanti Groq deprecate salah satu lagi, cek
 //  https://console.groq.com/docs/models sebelum ganti model string.
 // ══════════════════════════════════════════════════════════
-export const MODELS = ["openai/gpt-oss-120b", "openai/gpt-oss-20b"];
+export const MODELS = ["openai/gpt-oss-120b", "groq/compound", "llama-3.3-70b-versatile", "groq/compound-mini"];
 export const DEFAULT_MODEL = MODELS[0];
 
 const DEFAULT_TIMEOUT_MS = 25000;
