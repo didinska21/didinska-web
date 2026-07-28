@@ -37,7 +37,11 @@
     <p>Pilih event, lalu jalankan analisa konsensus AI untuk lihat sentimen & dampaknya ke market.</p>
   </section>
 
-  <div id="list-events" class="loading">Memuat jadwal…</div>
+  <div class="carousel-wrap">
+    <div id="list-events" class="carousel loading">Memuat jadwal…</div>
+    <button class="carousel-nav prev" aria-label="Sebelumnya">‹</button>
+    <button class="carousel-nav next" aria-label="Berikutnya">›</button>
+  </div>
   <div id="result-area"></div>
 
   <footer>
@@ -78,6 +82,7 @@ async function loadEvents() {
         </div>`;
       return eventCardHtml(it, { cardId: `ev-card-${idx}`, footerHtml: buttons, idx });
     }).join("");
+    initCarouselNav("list-events");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
   }
