@@ -37,11 +37,20 @@
     <p>Pilih event, lalu jalankan analisa konsensus AI untuk lihat sentimen & dampaknya ke market.</p>
   </section>
 
-  <div class="carousel-wrap">
-    <div id="list-events" class="carousel loading">Memuat jadwal…</div>
-    <button class="carousel-nav prev" aria-label="Sebelumnya">‹</button>
-    <button class="carousel-nav next" aria-label="Berikutnya">›</button>
+  <div id="list-events-section">
+    <div class="carousel-wrap">
+      <div id="list-events" class="carousel loading">Memuat jadwal…</div>
+      <button class="carousel-nav prev" aria-label="Sebelumnya">‹</button>
+      <button class="carousel-nav next" aria-label="Berikutnya">›</button>
+    </div>
   </div>
+
+  <div id="analysis-loading" class="analysis-loading" style="display:none;">
+    <div class="signal-rings"><i></i><i></i><i></i><div class="core"></div></div>
+    <div id="analysis-loading-text" class="analysis-loading-text">Mencari berita terkait…</div>
+    <div class="analysis-loading-sub">Biasanya 10-20 detik</div>
+  </div>
+
   <div id="result-area"></div>
 
   <footer>
@@ -88,12 +97,33 @@ async function loadEvents() {
   }
 }
 
+// Ganti teks loading tiap beberapa detik dengan fade, biar kerasa
+// "hidup" walau sebenarnya cuma 1 network call yang gak punya progress
+// asli buat dilaporkan.
+function cycleLoadingText(el, messages, intervalMs) {
+  let i = 0;
+  el.textContent = messages[0];
+  return setInterval(() => {
+    i = (i + 1) % messages.length;
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.textContent = messages[i];
+      el.style.opacity = 1;
+    }, 220);
+  }, intervalMs);
+}
+
 async function runAnalysis(idx, nAi) {
-  const card = document.getElementById(`ev-card-${idx}`);
-  const buttons = card.querySelectorAll("button");
-  buttons.forEach((b) => (b.disabled = true));
+  const listSection = document.getElementById("list-events-section");
+  const loadingEl = document.getElementById("analysis-loading");
+  const loadingTextEl = document.getElementById("analysis-loading-text");
   const resultArea = document.getElementById("result-area");
-  resultArea.innerHTML = `<div class="loading"><span class="pulse-dot"></span> Menjalankan ${nAi} AI... (~10-20 detik)</div>`;
+
+  listSection.style.display = "none";
+  resultArea.innerHTML = "";
+  loadingEl.style.display = "flex";
+  const messages = ["Mencari berita terkait…", `Menjalankan konsensus ${nAi} AI…`, "Menyusun kesimpulan…", "Hampir selesai…"];
+  const cycleId = cycleLoadingText(loadingTextEl, messages, 2600);
 
   const it = scheduleCache[idx];
   const body = it.category === "crypto"
@@ -102,6 +132,8 @@ async function runAnalysis(idx, nAi) {
 
   try {
     const { result } = await apiPost("/api/analisa", body);
+    clearInterval(cycleId);
+    loadingEl.style.display = "none";
     resultArea.innerHTML = `
       <div class="section-label">Hasil analisa</div>
       <div class="card">
@@ -110,12 +142,20 @@ async function runAnalysis(idx, nAi) {
         ${sentimentBadge(result.sentiment)}
         ${impactStrip(result.impact, result.coin)}
         <pre style="white-space:pre-wrap; font-family:var(--font-body); font-size:14px; margin-top:14px; color:var(--text);">${escapeHtml(result.final)}</pre>
+        <button class="btn ghost" style="margin-top:16px;" onclick="backToList()">‹ Analisa event lain</button>
       </div>`;
   } catch (e) {
-    resultArea.innerHTML = `<div class="empty">Gagal menjalankan analisa: ${escapeHtml(e.message)}</div>`;
-  } finally {
-    buttons.forEach((b) => (b.disabled = false));
+    clearInterval(cycleId);
+    loadingEl.style.display = "none";
+    resultArea.innerHTML = `
+      <div class="empty">Gagal menjalankan analisa: ${escapeHtml(e.message)}</div>
+      <button class="btn ghost" onclick="backToList()">‹ Kembali ke jadwal</button>`;
   }
+}
+
+function backToList() {
+  document.getElementById("result-area").innerHTML = "";
+  document.getElementById("list-events-section").style.display = "";
 }
 
 (async () => {
