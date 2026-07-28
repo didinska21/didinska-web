@@ -38,7 +38,11 @@
   </section>
 
   <div class="section-label">Akan terjadi</div>
-  <div id="list-akan" class="loading">Memuat jadwal…</div>
+  <div class="carousel-wrap">
+    <div id="list-akan" class="carousel loading">Memuat jadwal…</div>
+    <button class="carousel-nav prev" aria-label="Sebelumnya">‹</button>
+    <button class="carousel-nav next" aria-label="Berikutnya">›</button>
+  </div>
 
   <footer>
     🏛️ = ekonomi/makro &middot; 🪙 = crypto. Cek ulang ke sumber resmi sebelum ambil keputusan.
@@ -57,6 +61,7 @@ function loadAkanTerjadi() {
     const manual = getManualEconomicEvents();
     if (!manual.length) { el.innerHTML = '<div class="empty">Belum ada jadwal event mendatang. Cek lagi nanti.</div>'; return; }
     el.innerHTML = manual.map((it, idx) => eventCardHtml(it, { idx })).join("");
+    initCarouselNav("list-akan");
   } catch (e) {
     el.innerHTML = `<div class="empty">Gagal memuat jadwal: ${escapeHtml(e.message)}</div>`;
   }
