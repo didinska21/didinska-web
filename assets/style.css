@@ -283,6 +283,67 @@ footer{
   color:var(--bear); font-size:13px; margin-top:12px; min-height:16px;
 }
 
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE — phone (default) → tablet (≥640px) → iPad/desktop kecil
+   (≥900px) → desktop besar (≥1200px). .wrap melebar bertahap biar
+   gak kepenuhan di layar besar, tapi teks tetap nyaman dibaca.
+   ══════════════════════════════════════════════════════════ */
+@media (min-width:640px){
+  .wrap{max-width:760px;}
+  .hero h1{font-size:clamp(34px, 5vw, 44px);}
+}
+@media (min-width:900px){
+  .wrap{max-width:880px; padding-top:32px;}
+  .nav{padding:20px 32px;}
+}
+@media (min-width:1200px){
+  .wrap{max-width:1040px;}
+}
+
+/* ---- Carousel: kartu geser horizontal dengan "peek" ----
+   Kartu berikutnya sengaja keliatan sebagian di tepi, biar user tau
+   ada lagi yang bisa digeser. Native scroll-snap browser yang jalanin
+   swipe-nya (gak butuh JS) — panah prev/next cuma bonus buat mouse/
+   trackpad di tablet/desktop. */
+.carousel-wrap{position:relative; margin:0 -20px; padding:0 20px;}
+.carousel{
+  display:flex; gap:14px;
+  overflow-x:auto; scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding-bottom:6px;
+}
+.carousel::-webkit-scrollbar{display:none;}
+.carousel .card{
+  flex:0 0 82%;
+  scroll-snap-align:start;
+  margin-bottom:0;
+}
+.carousel-nav{
+  display:none;
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:38px; height:38px; border-radius:50%;
+  align-items:center; justify-content:center;
+  background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  cursor:pointer; z-index:2; font-size:16px;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.carousel-nav:hover{border-color:var(--gold-dim); transform:translateY(-50%) scale(1.06);}
+.carousel-nav.prev{left:2px;}
+.carousel-nav.next{right:2px;}
+
+@media (min-width:640px){
+  .carousel .card{flex-basis:56%;}
+}
+@media (min-width:900px){
+  .carousel-wrap{margin:0 -32px; padding:0 32px;}
+  .carousel .card{flex-basis:37%;}
+  .carousel-nav{display:flex;}
+}
+@media (min-width:1200px){
+  .carousel .card{flex-basis:29%;}
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{
