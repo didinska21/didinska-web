@@ -174,3 +174,17 @@ function eventCardHtml(it, { cardId, footerHtml, idx } = {}) {
       ${footerHtml || ""}
     </div>`;
 }
+
+// Aktifin panah prev/next buat carousel (bonus buat mouse/trackpad —
+// swipe di touchscreen udah jalan sendiri via CSS scroll-snap, gak
+// butuh JS). Panggil SETELAH kartu di-render (innerHTML di-set).
+function initCarouselNav(carouselId) {
+  const el = document.getElementById(carouselId);
+  const wrap = el && el.closest(".carousel-wrap");
+  if (!el || !wrap) return;
+  const prev = wrap.querySelector(".carousel-nav.prev");
+  const next = wrap.querySelector(".carousel-nav.next");
+  const step = () => (el.querySelector(".card")?.offsetWidth || 300) + 14;
+  if (prev) prev.onclick = () => el.scrollBy({ left: -step(), behavior: "smooth" });
+  if (next) next.onclick = () => el.scrollBy({ left: step(), behavior: "smooth" });
+}
