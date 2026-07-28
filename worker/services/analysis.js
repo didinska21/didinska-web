@@ -141,11 +141,17 @@ export async function analyzeEvent(env, event, nTotal) {
   return { final, opinions };
 }
 
-// Ambil label sentimen dari teks hasil konsensus (buat disimpan terstruktur di riwayat).
+// Ambil KHUSUS baris "🏆 Sentimen" — bukan scan seluruh teks, karena
+// baris "📊 Voting" selalu punya kata Bullish/Bearish/Netral SEKALIGUS
+// (breakdown suara, bukan hasil akhir), jadi kalau discan bareng gampang
+// salah baca. Gak lagi wajib ada emoji persis nempel di kata — 2 model
+// (gpt-oss-120b/20b) gak selalu 100% taat format persis, jadi cukup cek
+// kata kuncinya di baris yang tepat.
 export function parseSentiment(finalText) {
-  if (/Bullish/i.test(finalText) && /🟢/.test(finalText)) return "Bullish";
-  if (/Bearish/i.test(finalText) && /🔴/.test(finalText)) return "Bearish";
-  if (/Netral/i.test(finalText)) return "Netral";
+  const trophyLine = finalText.split("\n").find((l) => l.includes("🏆"));
+  const line = trophyLine || finalText.split("\n").find((l) => /sentimen/i.test(l)) || "";
+  if (/bearish/i.test(line)) return "Bearish";
+  if (/bullish/i.test(line)) return "Bullish";
   return "Netral";
 }
 
