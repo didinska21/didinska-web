@@ -128,7 +128,12 @@ async function runAnalysis(idx, nAi) {
   const it = scheduleCache[idx];
   const body = it.category === "crypto"
     ? { source: "schedule", idx: it._cryptoIdx, n_ai: nAi }
-    : { event: it.event, date: it.date, date_iso_full: it.date_iso_full, category: it.category, n_ai: nAi };
+    : {
+        event: it.event, date: it.date, date_iso_full: it.date_iso_full, category: it.category,
+        currency: it.currency, impact: it.impact, forecast: it.forecast, previous: it.previous,
+        description: it.description, notes: it.notes, affected: it.affected,
+        n_ai: nAi,
+      };
 
   try {
     const { result } = await apiPost("/api/analisa", body);
