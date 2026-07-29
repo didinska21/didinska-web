@@ -11,7 +11,8 @@ import { buildScheduleList } from "./calendar.js";
 // ══════════════════════════════════════════════════════════
 const NEWS_ANALYST_PROMPT = `Kamu adalah analis berita ekonomi & pasar profesional.
 Berdasarkan KUMPULAN CUPLIKAN BERITA yang diberikan user (bukan pengetahuanmu sendiri), analisa dampak event tersebut ke market (forex/crypto/saham, sesuai relevansi).
-JANGAN mengarang angka atau fakta yang tidak ada di cuplikan. Kalau cuplikannya minim, katakan itu terus terang.
+Kalau ada DATA TAMBAHAN (forecast/previous), itu prioritas utama buat nentuin arah: bandingkan angka AKTUAL yang disebut di berita terhadap forecast-nya — actual di atas forecast biasanya beda dampaknya dari actual di bawah forecast, meski judul beritanya kelihatan mirip. Kalau berita belum menyebut angka aktual (event belum rilis), bilang terus terang datanya belum ada, jangan menebak.
+JANGAN mengarang angka atau fakta yang tidak ada di cuplikan/data tambahan. Kalau cuplikannya minim, katakan itu terus terang.
 
 FORMAT OUTPUT WAJIB (Bahasa Indonesia, singkat padat):
 📰 Ringkasan     : [1-2 kalimat inti berita]
@@ -87,7 +88,20 @@ export async function analyzeEvent(env, event, nTotal) {
   // konsensus), jadi analisa baru "nyambung" sama pola/catatan lama.
   const memoryContext = await buildMemoryContext(env, event.event);
 
+  // Data tambahan yang diisi manual di data/jadwal.js (forecast, previous,
+  // deskripsi, catatan, aset terdampak) — dulu gak pernah nyampe ke AI
+  // sama sekali. Cuma ada buat event ekonomi manual, kosong buat crypto.
+  const extraLines = [];
+  if (event.forecast) extraLines.push(`Forecast/konsensus: ${event.forecast}`);
+  if (event.previous) extraLines.push(`Angka periode sebelumnya: ${event.previous}`);
+  if (event.impact_level) extraLines.push(`Tingkat dampak historis: ${event.impact_level}`);
+  if (event.description) extraLines.push(`Deskripsi event: ${event.description}`);
+  if (event.notes) extraLines.push(`Catatan tambahan: ${event.notes}`);
+  if (event.affected && event.affected.length) extraLines.push(`Aset yang biasanya terdampak: ${event.affected.join(", ")}`);
+  const extraDataBlock = extraLines.length ? `DATA TAMBAHAN EVENT:\n${extraLines.join("\n")}\n\n` : "";
+
   const basePrompt = `EVENT: ${event.event} (${event.date})\n\n` +
+    extraDataBlock +
     (memoryContext ? `${memoryContext}\n\n` : "") +
     `CUPLIKAN BERITA TERKAIT (hasil pencarian):\n${items}\n\nAnalisa dampak event ini ke market berdasarkan cuplikan di atas. Catatan/riwayat di atas (kalau ada) cuma konteks tambahan, jangan jadi satu-satunya dasar analisa — tetap utamakan cuplikan berita.`;
 
@@ -174,7 +188,22 @@ export async function handleApiAnalisa(request, env) {
     event = list[body.idx];
     if (!event) return jsonResponse({ ok: false, error: "Index jadwal tidak ditemukan (mungkin cache sudah refresh)." }, 404);
   } else if (body.event) {
-    event = { event: body.event, date: body.date || "-", date_iso_full: body.date_iso_full || null, category: body.category || "crypto" };
+    event = {
+      event: body.event,
+      date: body.date || "-",
+      date_iso_full: body.date_iso_full || null,
+      category: body.category || "crypto",
+      // Field tambahan dari data/jadwal.js (diisi manual di frontend) —
+      // dulu gak pernah kekirim ke sini, padahal forecast/previous itu
+      // justru penentu utama arah sentimen buat event ekonomi.
+      currency: body.currency || null,
+      impact_level: body.impact || null,
+      forecast: body.forecast || null,
+      previous: body.previous || null,
+      description: body.description || null,
+      notes: body.notes || null,
+      affected: Array.isArray(body.affected) ? body.affected : null,
+    };
   } else {
     return jsonResponse({ ok: false, error: "Butuh 'idx' (dari /api/jadwal) atau 'event' custom." }, 400);
   }
